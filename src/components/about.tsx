@@ -53,7 +53,7 @@ export default function ContentSection() {
             alt="team image"
             height="480"
             width="720"
-            loading="lazy"
+            priority
           />
         </ScrollView>
         <ScrollView>
