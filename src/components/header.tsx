@@ -112,7 +112,7 @@ export const HeroHeader = () => {
                 <LanguageSwitcher
                   className={cn(
                     "hidden lg:block",
-                    isScrolled && "lg:absolute lg:right-6 lg:top-4"
+                    isScrolled && "lg:absolute lg:right-5 lg:top-4"
                   )}
                 />
                 {/* <Button
