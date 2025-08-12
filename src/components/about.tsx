@@ -38,7 +38,7 @@ export default function ContentSection() {
           </ScrollView>
           <ScrollView>
             <p>
-              Lume Studio was born from a simple idea—great design should do
+              MicroStudio was born from a simple idea—great design should do
               more than just look good; it should make an impact. What started
               as a passion for creativity turned into a full-fledged design
               agency dedicated to helping brands tell their stories, connect
