@@ -9,6 +9,15 @@ const resources = {
         title: 'Design With Intent, Engineering With Precision.',
         subtitle: 'Custom websites and web apps on modern stacks-fast delivery, strong reliability, real ROI.',
       },
+      header: {
+        nav: {
+          home: 'Home',
+          about: 'About',
+          services: 'Services',
+          portfolio: 'Portfolio',
+        },
+        cta: 'Partner with us',
+      },
     },
   },
   ru: {
@@ -17,6 +26,15 @@ const resources = {
         title: 'Дизайн с намерением, инженерия с точностью.',
         subtitle: 'Пользовательские сайты и веб-приложения на современных стеках — быстрая доставка, высокая надёжность, реальная окупаемость.',
       },
+      header: {
+        nav: {
+          home: 'Главная',
+          about: 'О нас',
+          services: 'Услуги',
+          portfolio: 'Портфолио',
+        },
+        cta: 'Сотрудничать с нами',
+      },
     },
   },
   es: {
@@ -24,6 +42,15 @@ const resources = {
       hero: {
         title: 'Diseño con intención, ingeniería con precisión.',
         subtitle: 'Sitios web y aplicaciones web personalizados con pilas modernas: entrega rápida, gran fiabilidad y verdadero retorno de inversión.',
+      },
+      header: {
+        nav: {
+          home: 'Inicio',
+          about: 'Nosotros',
+          services: 'Servicios',
+          portfolio: 'Portafolio',
+        },
+        cta: 'Colabora con nosotros',
       },
     },
   },

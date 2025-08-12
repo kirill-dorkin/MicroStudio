@@ -1,18 +1,18 @@
 export const NAV_LINKS = [
   {
-    name: "Home",
+    key: "home",
     href: "/#home",
   },
   {
-    name: "About",
+    key: "about",
     href: "/#about",
   },
   {
-    name: "Services",
+    key: "services",
     href: "/#services",
   },
   {
-    name: "Portfolio",
+    key: "portfolio",
     href: "/#portfolio",
   },
 ];

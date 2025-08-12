@@ -7,10 +7,12 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import { NAV_LINKS } from "@/content/nav";
 import { LanguageSwitcher } from "./language-switcher";
+import { useTranslation } from "react-i18next";
 
 export const HeroHeader = () => {
   const [menuState, setMenuState] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
+  const { t } = useTranslation();
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -58,13 +60,13 @@ export const HeroHeader = () => {
 
             <div className="absolute inset-0 m-auto hidden size-fit lg:block">
               <ul className="flex gap-8 text-sm">
-                {NAV_LINKS.map((item, index) => (
-                  <li key={index}>
+                {NAV_LINKS.map((item) => (
+                  <li key={item.key}>
                     <Link
                       href={item.href}
                       className=" hover:text-accent-foreground block duration-150"
                     >
-                      <span>{item.name}</span>
+                      <span>{t(`header.nav.${item.key}`)}</span>
                     </Link>
                   </li>
                 ))}
@@ -74,14 +76,14 @@ export const HeroHeader = () => {
             <div className="bg-background in-data-[state=active]:block lg:in-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
               <div className="lg:hidden">
                 <ul className="space-y-6 text-base">
-                  {NAV_LINKS.map((item, index) => (
-                    <li key={index}>
+                  {NAV_LINKS.map((item) => (
+                    <li key={item.key}>
                       <Link
                         href={item.href}
                         className="text-muted-foreground hover:text-accent-foreground block duration-150"
                         onClick={() => setMenuState(false)}
                       >
-                        <span>{item.name}</span>
+                        <span>{t(`header.nav.${item.key}`)}</span>
                       </Link>
                     </li>
                   ))}
@@ -104,13 +106,13 @@ export const HeroHeader = () => {
                   className={cn(isScrolled && "lg:hidden")}
                 >
                   <Link href="/full-version" onClick={() => setMenuState(false)}>
-                    <span>Partner with us</span>
+                    <span>{t("header.cta")}</span>
                   </Link>
                 </Button>
                 <LanguageSwitcher
                   className={cn(
                     "hidden lg:block",
-                    isScrolled && "lg:fixed lg:right-6 lg:top-4"
+                    isScrolled && "lg:absolute lg:right-6 lg:top-4"
                   )}
                 />
                 {/* <Button
