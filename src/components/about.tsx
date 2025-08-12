@@ -38,11 +38,11 @@ export default function ContentSection() {
           </ScrollView>
           <ScrollView>
             <p>
-              MicroStudio was born from a simple idea—great design should do
-              more than just look good; it should make an impact. What started
-              as a passion for creativity turned into a full-fledged design
-              agency dedicated to helping brands tell their stories, connect
-              with audiences, and stand out in a crowded world.
+              What began as a love for clean design became a studio where design 
+              and code work together to deliver outcomes. We craft custom sites 
+              and web apps, from animated marketing pages to complex product UIs, 
+              with measurable gains in speed, conversion, and reliability. Fully 
+              remote, bilingual (RU/EN), global.
             </p>
           </ScrollView>
         </div>
