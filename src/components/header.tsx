@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import React from "react";
 import { cn } from "@/lib/utils";
 import { NAV_LINKS } from "@/content/nav";
+import { LanguageSwitcher } from "./language-switcher";
 
 export const HeroHeader = () => {
   const [menuState, setMenuState] = React.useState(false);
@@ -42,14 +43,17 @@ export const HeroHeader = () => {
                 <Logo />
               </Link>
 
-              <button
-                onClick={() => setMenuState(!menuState)}
-                aria-label={menuState == true ? "Close Menu" : "Open Menu"}
-                className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden"
-              >
-                <Menu className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
-                <X className="in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
-              </button>
+              <div className="flex items-center gap-2">
+                <LanguageSwitcher className="lg:hidden" />
+                <button
+                  onClick={() => setMenuState(!menuState)}
+                  aria-label={menuState == true ? "Close Menu" : "Open Menu"}
+                  className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden"
+                >
+                  <Menu className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
+                  <X className="in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
+                </button>
+              </div>
             </div>
 
             <div className="absolute inset-0 m-auto hidden size-fit lg:block">
@@ -103,26 +107,12 @@ export const HeroHeader = () => {
                     <span>Partner with us</span>
                   </Link>
                 </Button>
-                <div
+                <LanguageSwitcher
                   className={cn(
-                    "relative group pb-2",
+                    "hidden lg:block",
                     isScrolled && "lg:fixed lg:right-6 lg:top-4"
                   )}
-                >
-                  <Button asChild variant="outline" size="sm">
-                    <Link href="#" onClick={() => setMenuState(false)}>
-                      <span>EN</span>
-                    </Link>
-                  </Button>
-                  <div className="bg-background absolute right-0 top-full z-10 hidden w-32 rounded-2xl border p-3 shadow-2xl shadow-zinc-300/20 group-hover:block">
-                    <button className="block w-full rounded-md px-2 py-1 text-left text-sm hover:bg-accent hover:text-accent-foreground">
-                      English
-                    </button>
-                    <button className="mt-1 block w-full rounded-md px-2 py-1 text-left text-sm hover:bg-accent hover:text-accent-foreground">
-                      Русский
-                    </button>
-                  </div>
-                </div>
+                />
                 {/* <Button
                   asChild
                   size="sm"
