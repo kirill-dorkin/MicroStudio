@@ -142,8 +142,8 @@ export default function HeroSection() {
                       className="rounded-xl px-5 text-base"
                     >
                       <Link
-                        href="https://cal.com/microstudio/30min"
-                        target="_black"
+                        href="https://t.me/microstudio_official"
+                        target="_blank"
                       >
                         <span className="text-nowrap">Talk to us</span>
                       </Link>
@@ -156,7 +156,7 @@ export default function HeroSection() {
                     variant="ghost"
                     className="h-10.5 rounded-xl px-5"
                   >
-                    <Link href="/full-version">
+                    <Link href="#portfolio">
                       <span className="text-nowrap">See our work</span>
                     </Link>
                   </Button>
