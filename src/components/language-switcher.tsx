@@ -2,6 +2,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useTranslation } from "react-i18next";
 
 interface LanguageSwitcherProps {
   className?: string;
@@ -9,9 +10,9 @@ interface LanguageSwitcherProps {
 }
 
 const LANGUAGES = [
-  { code: "EN", label: "English" },
-  { code: "RU", label: "Русский" },
-  { code: "ES", label: "Español" },
+  { code: "en", label: "English" },
+  { code: "ru", label: "Русский" },
+  { code: "es", label: "Español" },
 ];
 
 export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
@@ -19,7 +20,7 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
   align = "right",
 }) => {
   const [open, setOpen] = React.useState(false);
-  const [language, setLanguage] = React.useState("EN");
+  const { i18n } = useTranslation();
   const ref = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
@@ -33,14 +34,19 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
   }, []);
 
   const selectLanguage = (code: string) => {
-    setLanguage(code);
+    i18n.changeLanguage(code);
     setOpen(false);
   };
 
   return (
     <div ref={ref} className={cn("relative", className)}>
-      <Button variant="outline" size="sm" onClick={() => setOpen(!open)}>
-        <span>{language}</span>
+      <Button
+        variant="outline"
+        size="sm"
+        className="cursor-pointer"
+        onClick={() => setOpen(!open)}
+      >
+        <span>{i18n.language.slice(0, 2).toUpperCase()}</span>
       </Button>
       {open && (
         <div
@@ -52,7 +58,7 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
           {LANGUAGES.map((lang) => (
             <button
               key={lang.code}
-              className="block w-full rounded-md px-2 py-2 text-left text-base hover:bg-accent hover:text-accent-foreground sm:py-1 sm:text-sm"
+              className="block w-full rounded-md px-2 py-2 text-left text-base hover:bg-accent hover:text-accent-foreground sm:py-1 sm:text-sm cursor-pointer"
               onClick={() => selectLanguage(lang.code)}
             >
               {lang.label}

@@ -1,7 +1,9 @@
+"use client";
 import React from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
 
 import { TextEffect } from "@/components/motion-primitives/text-effect";
 import { AnimatedGroup } from "@/components/motion-primitives/animated-group";
@@ -27,8 +29,9 @@ const transitionVariants = {
   },
 };
 
-export default function HeroSection() {
-  return (
+  export default function HeroSection() {
+    const { t } = useTranslation();
+    return (
     <>
       <div className="overflow-hidden min-h-screen">
         <section>
@@ -99,24 +102,24 @@ export default function HeroSection() {
                   </Link>
                 </AnimatedGroup> */}
 
-                <TextEffect
-                  preset="fade-in-blur"
-                  speedSegment={0.3}
-                  as="h1"
-                  className="mt-8 text-balance text-5xl md:text-7xl lg:mt-16 xl:text-[5.25rem] font-semibold"
-                >
-                  Design With Intent, Engineering With Precision.
-                </TextEffect>
-                <TextEffect
-                  per="line"
-                  preset="fade-in-blur"
-                  speedSegment={0.3}
-                  delay={0.5}
-                  as="p"
-                  className="mx-auto mt-8 max-w-2xl text-balance text-lg"
-                >
-                  Custom websites and web apps on modern stacks-fast delivery, strong reliability, real ROI.
-                </TextEffect>
+                  <TextEffect
+                    preset="fade-in-blur"
+                    speedSegment={0.3}
+                    as="h1"
+                    className="mt-8 text-balance text-5xl md:text-7xl lg:mt-16 xl:text-[5.25rem] font-semibold"
+                  >
+                    {t("hero.title")}
+                  </TextEffect>
+                  <TextEffect
+                    per="line"
+                    preset="fade-in-blur"
+                    speedSegment={0.3}
+                    delay={0.5}
+                    as="p"
+                    className="mx-auto mt-8 max-w-2xl text-balance text-lg"
+                  >
+                    {t("hero.subtitle")}
+                  </TextEffect>
 
                 <AnimatedGroup
                   variants={{ 
