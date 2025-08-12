@@ -4,25 +4,25 @@ import Image from "next/image";
 
 const ourPrinciples = [
   {
-    title: "Creativity with Purpose",
+    title: "Design × Engineering",
     description:
-      "Our designs aren’t just pretty; they’re built to solve problems and make an impact.",
+      "Clean design and robust code working together to deliver outcomes.",
   },
   {
-    title: "Collaboration is Key",
+    title: "Custom Web Experiences",
     description:
-      "We work with you, not just for you. Great ideas come from teamwork.",
+      "From animated marketing pages to complex product UIs.",
   },
 
   {
-    title: "Honest & Transparent",
+    title: "Measurable Impact",
     description:
-      "No confusing jargon or hidden fees. Just clear communication and real results.",
+      "Faster load times, higher conversion, and reliable performance.",
   },
   {
-    title: "Details Matter",
+    title: "Distributed & Bilingual",
     description:
-      "The little things make a big difference. We sweat the small stuff, so you don’t have to.",
+      "Fully remote team, RU/EN, operating worldwide.",
   },
 ];
 
