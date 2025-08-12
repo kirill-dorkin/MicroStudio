@@ -34,7 +34,7 @@ const transitionVariants = {
     return (
     <>
       <div className="overflow-hidden min-h-screen">
-        <section>
+        <section id="home">
           <div className="relative pt-24 md:pt-36">
             <AnimatedGroup
               variants={{
