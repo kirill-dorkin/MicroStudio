@@ -100,10 +100,10 @@ export const HeroHeader = () => {
                   className={cn(isScrolled && "lg:hidden")}
                 >
                   <Link href="/full-version" onClick={() => setMenuState(false)}>
-                    <span>Full Version</span>
+                    <span>Partner with us</span>
                   </Link>
                 </Button>
-                <Button
+                {/* <Button
                   asChild
                   size="sm"
                   className={cn(isScrolled ? "lg:inline-flex" : "hidden")}
@@ -111,7 +111,7 @@ export const HeroHeader = () => {
                   <Link href="/full-version" onClick={() => setMenuState(false)}>
                     <span>Join waitlist</span>
                   </Link>
-                </Button>
+                </Button> */}
               </div>
             </div>
           </div>

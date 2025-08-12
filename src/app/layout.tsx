@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://microstudio.com"),
   title: {
-    default: "MicroStudio – Next.js Template",
+    default: "MicroStudio",
     template: "%s | MicroStudio",
   },
   description:
