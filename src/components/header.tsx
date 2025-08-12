@@ -103,6 +103,26 @@ export const HeroHeader = () => {
                     <span>Partner with us</span>
                   </Link>
                 </Button>
+                <div className="relative group">
+                  <Button
+                    asChild
+                    variant="outline"
+                    size="sm"
+                    className={cn(isScrolled && "lg:fixed lg:right-6 lg:top-4")}
+                  >
+                    <Link href="#" onClick={() => setMenuState(false)}>
+                      <span>EN</span>
+                    </Link>
+                  </Button>
+                  <div className="bg-background absolute right-0 top-full z-10 mt-2 hidden w-32 rounded-2xl border p-3 shadow-2xl shadow-zinc-300/20 group-hover:block">
+                    <button className="block w-full rounded-md px-2 py-1 text-left text-sm hover:bg-accent hover:text-accent-foreground">
+                      English
+                    </button>
+                    <button className="mt-1 block w-full rounded-md px-2 py-1 text-left text-sm hover:bg-accent hover:text-accent-foreground">
+                      Русский
+                    </button>
+                  </div>
+                </div>
                 {/* <Button
                   asChild
                   size="sm"
