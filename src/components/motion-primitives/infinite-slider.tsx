@@ -3,6 +3,7 @@ import { cn } from '@/lib/utils';
 import { useMotionValue, animate, motion } from 'motion/react';
 import { useState, useEffect } from 'react';
 import useMeasure from 'react-use-measure';
+import useReducedMotion from '@/hooks/useReducedMotion';
 
 export type InfiniteSliderProps = {
   children: React.ReactNode;
@@ -28,8 +29,10 @@ export function InfiniteSlider({
   const translation = useMotionValue(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [key, setKey] = useState(0);
+  const reduceMotion = useReducedMotion();
 
   useEffect(() => {
+    if (reduceMotion) return;
     let controls;
     const size = direction === 'horizontal' ? width : height;
     const contentSize = size + gap;
@@ -75,6 +78,7 @@ export function InfiniteSlider({
     isTransitioning,
     direction,
     reverse,
+    reduceMotion,
   ]);
 
   const hoverProps = speedOnHover
@@ -89,6 +93,10 @@ export function InfiniteSlider({
         },
       }
     : {};
+
+  if (reduceMotion) {
+    return <div className={cn('overflow-hidden', className)}>{children}</div>;
+  }
 
   return (
     <div className={cn('overflow-hidden', className)}>

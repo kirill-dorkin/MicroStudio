@@ -7,6 +7,7 @@ import {
   Transition,
   UseInViewOptions,
 } from 'motion/react';
+import useReducedMotion from '@/hooks/useReducedMotion';
 
 export type InViewProps = {
   children: ReactNode;
@@ -31,10 +32,15 @@ export function InView({
   viewOptions,
   as = 'div',
 }: InViewProps) {
+  const reduceMotion = useReducedMotion();
   const ref = useRef(null);
   const isInView = useInView(ref, viewOptions);
-
   const MotionComponent = motion[as as keyof typeof motion] as typeof as;
+
+  if (reduceMotion) {
+    const Component = as as React.ElementType;
+    return <Component>{children}</Component>;
+  }
 
   return (
     <MotionComponent
