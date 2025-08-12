@@ -1,4 +1,4 @@
-# Lume Studio - Next.js Template
+# MicroStudio - Next.js Template
 
 This project is a Next.js template built with TypeScript, designed for creating stunning websites with smooth animations and modern UI components.
 
@@ -44,4 +44,4 @@ MIT
 
 ## Full version
 
-For the full version, go to https://lume.kohi.studio/full-version
+For the full version, go to https://microstudio.com/full-version

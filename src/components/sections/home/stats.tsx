@@ -14,7 +14,7 @@ export default function StatsSection() {
           </ScrollView>
           <ScrollView delay={0.2}>
             <p>
-              At Lume Studio, we don’t just make things look good — we create
+              At MicroStudio, we don’t just make things look good — we create
               thoughtful design experiences that help businesses grow, connect
               with their audience, and stand out in a crowded digital world.
             </p>

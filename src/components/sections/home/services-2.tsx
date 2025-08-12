@@ -18,7 +18,7 @@ export default function ServicesSection2() {
           </ScrollView>
           <ScrollView delay={0.2}>
             <p>
-              At Lume Studio, we create designs that are more than just visually
+              At MicroStudio, we create designs that are more than just visually
               appealing. They&apos;re built to solve problems, connect with
               audience, and drive results. <br /> Whether you’re starting fresh
               or refining your existing identity, <br /> we’ve got you covered.

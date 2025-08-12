@@ -115,7 +115,7 @@ export default function HeroSection() {
                   as="p"
                   className="mx-auto mt-8 max-w-2xl text-balance text-lg"
                 >
-                  At Lume Studio, we blend creativity and strategy to craft
+                  At MicroStudio, we blend creativity and strategy to craft
                   stunning websites, striking visuals, and unforgettable brand
                   experiences that set you apart.
                 </TextEffect>
@@ -144,7 +144,7 @@ export default function HeroSection() {
                       className="rounded-xl px-5 text-base"
                     >
                       <Link
-                        href="https://github.com/haramishra/lume-studio-next"
+                        href="https://github.com/microstudio/microstudio-template"
                         target="_black"
                       >
                         <svg
