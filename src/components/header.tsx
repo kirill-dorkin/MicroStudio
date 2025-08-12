@@ -89,7 +89,7 @@ export const HeroHeader = () => {
                   ))}
                 </ul>
               </div>
-              <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
+              <div className="flex w-full flex-col space-y-3 sm:flex-row sm:items-center sm:gap-3 sm:space-y-0 md:w-fit">
                 {/* <Button
                   asChild
                   variant="outline"
@@ -109,12 +109,7 @@ export const HeroHeader = () => {
                     <span>{t("header.cta")}</span>
                   </Link>
                 </Button>
-                <LanguageSwitcher
-                  className={cn(
-                    "hidden lg:block",
-                    isScrolled && "lg:absolute lg:right-5 lg:top-4"
-                  )}
-                />
+                <LanguageSwitcher className="hidden lg:block" />
                 {/* <Button
                   asChild
                   size="sm"
