@@ -75,6 +75,7 @@ export const HeroHeader = () => {
                       <Link
                         href={item.href}
                         className="text-muted-foreground hover:text-accent-foreground block duration-150"
+                        onClick={() => setMenuState(false)}
                       >
                         <span>{item.name}</span>
                       </Link>
@@ -98,7 +99,7 @@ export const HeroHeader = () => {
                   size="sm"
                   className={cn(isScrolled && "lg:hidden")}
                 >
-                  <Link href="/full-version">
+                  <Link href="/full-version" onClick={() => setMenuState(false)}>
                     <span>Full Version</span>
                   </Link>
                 </Button>
@@ -107,7 +108,7 @@ export const HeroHeader = () => {
                   size="sm"
                   className={cn(isScrolled ? "lg:inline-flex" : "hidden")}
                 >
-                  <Link href="/full-version">
+                  <Link href="/full-version" onClick={() => setMenuState(false)}>
                     <span>Join waitlist</span>
                   </Link>
                 </Button>
