@@ -1,11 +1,12 @@
 "use client";
+import { memo } from "react";
 import { Logo } from "@/components/logo";
 import Link from "next/link";
 import { motion } from "motion/react";
 import { ScrollView } from "./scroll-view";
 import { FOOTER_LINKS } from "@/content/footer";
 
-export default function FooterSection() {
+function FooterSection() {
   return (
     <footer className="py-16 md:py-32">
       <div className="mx-auto max-w-5xl px-6">
@@ -182,3 +183,5 @@ export default function FooterSection() {
     </footer>
   );
 }
+
+export default memo(FooterSection);
