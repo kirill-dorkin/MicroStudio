@@ -148,7 +148,7 @@ const transitionVariants = {
                         href="https://t.me/microstudio_official"
                         target="_blank"
                       >
-                        <span className="text-nowrap">Talk to us</span>
+                        <span className="text-nowrap">{t('hero.cta.contact')}</span>
                       </Link>
                     </Button>
                   </div>
@@ -160,7 +160,7 @@ const transitionVariants = {
                     className="h-10.5 rounded-xl px-5"
                   >
                     <Link href="#portfolio">
-                      <span className="text-nowrap">See our work</span>
+                      <span className="text-nowrap">{t('hero.cta.work')}</span>
                     </Link>
                   </Button>
                 </AnimatedGroup>
