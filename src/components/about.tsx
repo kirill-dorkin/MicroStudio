@@ -1,56 +1,32 @@
-import { Circle, Cpu, Lock, Sparkles, Zap } from "lucide-react";
+import { Circle } from "lucide-react";
 import { ScrollView } from "./scroll-view";
 import Image from "next/image";
-
-const ourPrinciples = [
-  {
-    title: "Design × Engineering",
-    description:
-      "Clean design and robust code working together to deliver outcomes.",
-  },
-  {
-    title: "Custom Web Experiences",
-    description:
-      "From animated marketing pages to complex product UIs.",
-  },
-
-  {
-    title: "Measurable Impact",
-    description:
-      "Faster load times, higher conversion, and reliable performance.",
-  },
-  {
-    title: "Distributed & Bilingual",
-    description:
-      "Fully remote team, RU/EN, operating worldwide.",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 export default function ContentSection() {
+  const { t } = useTranslation();
+  const ourPrinciples = t("about.principles", {
+    returnObjects: true,
+  }) as { title: string; description: string }[];
+
   return (
     <section className="py-16 md:py-32" id="about">
       <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-12">
         <div className="mx-auto max-w-xl space-y-6 text-center md:space-y-12">
           <ScrollView>
             <h2 className="text-balance text-4xl font-medium lg:text-5xl">
-              About Us
+              {t("about.title")}
             </h2>
           </ScrollView>
           <ScrollView>
-            <p>
-              What began as a love for clean design became a studio where design 
-              and code work together to deliver outcomes. We craft custom sites 
-              and web apps, from animated marketing pages to complex product UIs, 
-              with measurable gains in speed, conversion, and reliability. Fully 
-              remote, bilingual (RU/EN), global.
-            </p>
+            <p>{t("about.description")}</p>
           </ScrollView>
         </div>
         <ScrollView>
           <Image
             className="rounded-(--radius) grayscale-75 object-cover aspect-[16/9] w-full"
             src="/images/office.jpeg"
-            alt="team image"
+            alt={t("about.imageAlt")}
             height="480"
             width="720"
             priority
