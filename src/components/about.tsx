@@ -31,6 +31,7 @@ export default function ContentSection() {
             alt={t("about.imageAlt")}
             height={480}
             width={720}
+            sizes="100vw"
             priority
           />
         </ScrollView>
