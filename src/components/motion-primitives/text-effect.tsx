@@ -175,9 +175,9 @@ const createVariantsWithTransition = (
   baseVariants: Variants,
   transition?: Transition & { exit?: Transition }
 ): Variants => {
-  if (!transition) return baseVariants;
+  const { exit: exitTransition, ...mainTransition } = transition ?? {};
 
-  const { exit: _, ...mainTransition } = transition;
+  const defaultTransition: Transition = { type: 'tween' };
 
   return {
     ...baseVariants,
@@ -187,6 +187,7 @@ const createVariantsWithTransition = (
         ...(hasTransition(baseVariants.visible)
           ? baseVariants.visible.transition
           : {}),
+        ...defaultTransition,
         ...mainTransition,
       },
     },
@@ -196,7 +197,9 @@ const createVariantsWithTransition = (
         ...(hasTransition(baseVariants.exit)
           ? baseVariants.exit.transition
           : {}),
+        ...defaultTransition,
         ...mainTransition,
+        ...exitTransition,
         staggerDirection: -1,
       },
     },

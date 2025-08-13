@@ -27,11 +27,12 @@ export const ScrollView = memo(function ScrollView({
             delay: delay,
             staggerChildren: stagger ? 0.09 : 0,
             duration: 0.5,
+            type: "tween",
           },
         },
       }}
       viewOptions={{ margin: viewMargin }}
-      transition={{ duration: 0.3, ease: "easeInOut" }}
+      transition={{ duration: 0.3, ease: "easeInOut", type: "tween" }}
     >
       {children}
     </InView>
@@ -55,6 +56,7 @@ export const ScrollViewStaggerWrapper = memo(function ScrollViewStaggerWrapper({
           filter: "blur(0px)",
         },
       }}
+      transition={{ type: "tween" }}
       className={className}
     >
       {children}
