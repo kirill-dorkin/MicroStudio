@@ -22,6 +22,13 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  experimental: {
+    modularizeImports: {
+      "lucide-react": {
+        transform: "lucide-react/dist/esm/icons/{{kebabCase member}}",
+      },
+    },
+  },
   typescript: {
     ignoreBuildErrors: true,
   },

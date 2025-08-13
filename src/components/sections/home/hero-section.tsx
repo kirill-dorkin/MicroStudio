@@ -7,7 +7,12 @@ import { useTranslation } from "react-i18next";
 
 import { TextEffect } from "@/components/motion-primitives/text-effect";
 import { AnimatedGroup } from "@/components/motion-primitives/animated-group";
-import LogoCloud from "@/components/sections/home/logo-cloud";
+import dynamic from "next/dynamic";
+
+const LogoCloud = dynamic(
+  () => import("@/components/sections/home/logo-cloud"),
+  { ssr: true }
+);
 
 const transitionVariants = {
   item: {
