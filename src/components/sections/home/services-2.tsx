@@ -92,6 +92,7 @@ export default function ServicesSection2() {
                             transition: {
                               delay: 0.01,
                               duration: 0.5,
+                              type: "tween",
                             },
                           },
                         }}
@@ -99,7 +100,7 @@ export default function ServicesSection2() {
                           margin: "0px 0px -250px 0px",
                           once: true,
                         }}
-                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        transition={{ duration: 0.3, ease: "easeInOut", type: "tween" }}
                       >
                         <Link href={service.url}>
                           <Image
