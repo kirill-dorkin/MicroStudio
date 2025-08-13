@@ -1,3 +1,5 @@
+"use client";
+
 import { Circle } from "lucide-react";
 import { ScrollView } from "./scroll-view";
 import Image from "next/image";
