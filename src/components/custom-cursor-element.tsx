@@ -1,9 +1,9 @@
 "use client";
-import { useRef, useState } from "react";
+import { memo, useCallback, useRef, useState } from "react";
 import { Cursor } from "@/components/motion-primitives/cursor";
 import { AnimatePresence, motion } from "motion/react";
 
-export function CustomCursorElement({
+export const CustomCursorElement = memo(function CustomCursorElement({
   children,
   cursor,
   className = "",
@@ -15,14 +15,14 @@ export function CustomCursorElement({
   const [isHovering, setIsHovering] = useState(false);
   const targetRef = useRef<HTMLDivElement>(null);
 
-  const handlePositionChange = (x: number, y: number) => {
+  const handlePositionChange = useCallback((x: number, y: number) => {
     if (targetRef.current) {
       const rect = targetRef.current.getBoundingClientRect();
       const isInside =
         x >= rect.left && x <= rect.right && y >= rect.top && y <= rect.bottom;
       setIsHovering(isInside);
     }
-  };
+  }, []);
 
   return (
     <div className={className}>
@@ -66,4 +66,4 @@ export function CustomCursorElement({
       <div ref={targetRef}>{children}</div>
     </div>
   );
-}
+});

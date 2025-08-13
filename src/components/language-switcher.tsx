@@ -15,7 +15,7 @@ const LANGUAGES = [
   { code: "es", label: "Español" },
 ];
 
-export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
+const LanguageSwitcherComponent: React.FC<LanguageSwitcherProps> = ({
   className,
   align = "right",
 }) => {
@@ -33,10 +33,17 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
     return () => document.removeEventListener("click", handler);
   }, []);
 
-  const selectLanguage = (code: string) => {
-    i18n.changeLanguage(code);
-    setOpen(false);
-  };
+  const toggle = React.useCallback(() => {
+    setOpen((prev) => !prev);
+  }, []);
+
+  const selectLanguage = React.useCallback(
+    (code: string) => {
+      i18n.changeLanguage(code);
+      setOpen(false);
+    },
+    [i18n]
+  );
 
   return (
     <div ref={ref} className={cn("relative", className)}>
@@ -44,7 +51,7 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
         variant="outline"
         size="sm"
         className="cursor-pointer"
-        onClick={() => setOpen(!open)}
+        onClick={toggle}
       >
         <span>{i18n.language.slice(0, 2).toUpperCase()}</span>
       </Button>
@@ -69,3 +76,6 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
     </div>
   );
 };
+
+export const LanguageSwitcher = React.memo(LanguageSwitcherComponent);
+LanguageSwitcher.displayName = "LanguageSwitcher";
