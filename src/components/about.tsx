@@ -29,8 +29,8 @@ export default function ContentSection() {
             className="rounded-(--radius) grayscale-75 object-cover aspect-[16/9] w-full"
             src="/images/office.jpeg"
             alt={t("about.imageAlt")}
-            height="480"
-            width="720"
+            height={480}
+            width={720}
             priority
           />
         </ScrollView>
