@@ -106,8 +106,8 @@ export default function ServicesSection2() {
                           <Image
                             src={service.img}
                             alt={service.name}
-                            height="480"
-                            width="720"
+                            height={480}
+                            width={720}
                             loading="lazy"
                             className=" object-cover object-top  transition-all duration-500 w-full  aspect-[16/9]"
                           />

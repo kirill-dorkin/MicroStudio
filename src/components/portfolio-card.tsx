@@ -22,8 +22,8 @@ export default function PortfolioCard({
             <a href={card.url} target="_blank" rel="noreferrer">
               <Image
                 className=" w-full grayscale-25 hover:grayscale-0 rounded-md object-cover object-top  transition-all duration-500  "
-                height="480"
-                width="720"
+                height={480}
+                width={720}
                 src={card.img}
                 alt={card.name}
               />
