@@ -1,9 +1,10 @@
 "use client";
 
 import { UseInViewOptions, motion } from "motion/react";
+import { memo } from "react";
 import { InView } from "./motion-primitives/in-view";
 
-export function ScrollView({
+export const ScrollView = memo(function ScrollView({
   children,
   stagger = false,
   delay = 0,
@@ -35,9 +36,9 @@ export function ScrollView({
       {children}
     </InView>
   );
-}
+});
 
-export function ScrollViewStaggerWrapper({
+export const ScrollViewStaggerWrapper = memo(function ScrollViewStaggerWrapper({
   children,
   className,
 }: {
@@ -59,4 +60,4 @@ export function ScrollViewStaggerWrapper({
       {children}
     </motion.div>
   );
-}
+});
