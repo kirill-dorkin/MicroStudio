@@ -46,6 +46,12 @@ const resources = {
           },
         ],
       },
+      services: {
+        title: 'Design That Works for You',
+        subtitle:
+          "At MicroStudio, we create designs that are more than just visually appealing. They're built to solve problems, connect with audience, and drive results. <br /> Whether you're starting fresh or refining your existing identity, <br /> we've got you covered.",
+        view: 'View',
+      },
     },
   },
   ru: {
@@ -91,6 +97,12 @@ const resources = {
           },
         ],
       },
+      services: {
+        title: 'Дизайн, который работает на вас',
+        subtitle:
+          'В MicroStudio мы создаём дизайн, который не просто радует глаз. Он решает задачи, помогает находить отклик у аудитории и приносит результат. <br /> Начинаете с нуля или обновляете существующую айдентику — <br /> мы вас поддержим.',
+        view: 'Смотреть',
+      },
     },
   },
   es: {
@@ -135,6 +147,12 @@ const resources = {
             description: 'Equipo totalmente remoto, RU/EN, operando en todo el mundo.',
           },
         ],
+      },
+      services: {
+        title: 'Diseño que funciona para ti',
+        subtitle:
+          'En MicroStudio creamos diseños que van más allá de lo visual. Están hechos para resolver problemas, conectar con tu audiencia y generar resultados. <br /> Ya sea que empieces de cero o quieras pulir tu identidad actual, <br /> estamos contigo.',
+        view: 'Ver',
       },
     },
   },
