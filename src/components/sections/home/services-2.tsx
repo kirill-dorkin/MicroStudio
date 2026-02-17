@@ -3,31 +3,33 @@ import { InView } from "@/components/motion-primitives/in-view";
 import { ScrollView, ScrollViewStaggerWrapper } from "@/components/scroll-view";
 import { Badge } from "@/components/ui/badge";
 import { SERVICES_LIST } from "@/content/services";
+import { useTranslation } from "react-i18next";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function ServicesSection2() {
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language.slice(0, 2) as "en" | "ru" | "es";
+  const services = SERVICES_LIST[lang];
+
   return (
     <section className="py-16 md:py-32" id="services">
       <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16">
         <div className="relative z-10 mx-auto max-w-xl space-y-6 text-center">
           <ScrollView>
             <h2 className="text-4xl font-medium lg:text-5xl">
-              Design That Works for You
+              {t("services.title")}
             </h2>
           </ScrollView>
           <ScrollView delay={0.2}>
-            <p>
-              At MicroStudio, we create designs that are more than just visually
-              appealing. They&apos;re built to solve problems, connect with
-              audience, and drive results. <br /> Whether you’re starting fresh
-              or refining your existing identity, <br /> we’ve got you covered.
-            </p>
+            <p
+              dangerouslySetInnerHTML={{ __html: t("services.subtitle") }}
+            />
           </ScrollView>
         </div>
         <div className="mt-12 md:mt-24">
           <div className="space-y-10">
-            {SERVICES_LIST.map((service, index) => (
+            {services.map((service) => (
               <div
                 key={service.name}
                 className="group overflow-hidden border-b py-10"
@@ -70,7 +72,7 @@ export default function ServicesSection2() {
                     <CustomCursorElement
                       cursor={
                         <div className="text-zinc-950 text-lg font-medium">
-                          View
+                          {t("services.view")}
                         </div>
                       }
                     >
