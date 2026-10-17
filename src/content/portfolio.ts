@@ -1,44 +1,47 @@
-export const PORTFOLIO_CONTENT = [
+export type PortfolioKey =
+  | "bestelectronics"
+  | "coffee"
+  | "school"
+  | "flowers"
+  | "cleaning";
+
+export type PortfolioItem = {
+  key: PortfolioKey;
+  status: "real" | "demo";
+  /** Preview per language; real projects keep their own site language. */
+  img: string | { ru: string; en: string };
+  href: string;
+};
+
+export const PORTFOLIO_CONTENT: PortfolioItem[] = [
   {
-    name: "GreenScape Landscaping",
-    description:
-      "Modern landing page for a landscaping company featuring service showcases, before/after galleries, and instant quote requests.",
-    img: "/images/portfolio/eco.jpg",
-    url: "#",
+    key: "bestelectronics",
+    status: "real",
+    img: "/images/portfolio/bestelectronics.webp",
+    href: "https://be-lending.vercel.app/",
   },
   {
-    name: "Starlight Prom Nights",
-    description:
-      "Vibrant promotional page for high school prom parties with ticket booking, photo galleries, and theme selection.",
-    img: "/images/portfolio/event.jpg",
-    url: "#",
+    key: "coffee",
+    status: "demo",
+    img: { ru: "/images/portfolio/coffee-ru.webp", en: "/images/portfolio/coffee-en.webp" },
+    href: "/demo/coffee",
   },
   {
-    name: "Prestige College of Arts",
-    description:
-      "Elegant academic landing page with program highlights, virtual campus tours, and application portals.",
-    img: "/images/portfolio/art.jpg",
-    url: "#",
+    key: "school",
+    status: "demo",
+    img: { ru: "/images/portfolio/school-ru.webp", en: "/images/portfolio/school-en.webp" },
+    href: "/demo/school",
   },
   {
-    name: "CycleSpot Rentals",
-    description:
-      "Bike rental platform with location-based availability, pricing calculators, and secure online bookings.",
-    img: "/images/portfolio/bike.jpg",
-    url: "#",
+    key: "flowers",
+    status: "demo",
+    img: { ru: "/images/portfolio/flowers-ru.webp", en: "/images/portfolio/flowers-en.webp" },
+    href: "/demo/flowers",
   },
   {
-    name: "Bella Cucina Restaurant",
-    description:
-      "Appetizing restaurant landing page with menu displays, reservation system, and chef's specials highlights.",
-    img: "/images/portfolio/resturant.jpg",
-    url: "#",
-  },
-  {
-    name: "SereneMind Meditation",
-    description:
-      "Calming meditation app interface with guided session timers, progress tracking, and relaxation music integration.",
-    img: "/images/portfolio/meditation.jpg",
-    url: "#",
+    key: "cleaning",
+    status: "demo",
+    img: { ru: "/images/portfolio/cleaning-ru.webp", en: "/images/portfolio/cleaning-en.webp" },
+    href: "/demo/cleaning",
   },
 ];

@@ -1,47 +1,34 @@
-# MicroStudio - Next.js Template
+# MicroStudio
 
-This project is a Next.js template built with TypeScript, designed for creating stunning websites with smooth animations and modern UI components.
+Сайт студии MicroStudio: разработка и доработка сайтов, запуск рекламы и поддержка проектов.
 
-## Getting Started
+Стек: Next.js 15 (App Router), React 19, TypeScript, Tailwind CSS 4, Motion.
 
-1.  **Install dependencies:**
+## Запуск
 
-    ```bash
-    pnpm install
-    ```
+```bash
+pnpm install --frozen-lockfile
+pnpm dev
+```
 
-2.  **Run the development server:**
+Проверки перед публикацией:
 
-    ```bash
-    pnpm dev
-    ```
+```bash
+pnpm typecheck && pnpm lint && pnpm build
+```
 
-    Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Где что лежит
 
-## Deployment
+- `src/locales/ru.ts`, `src/locales/en.ts` — все тексты сайта. Английский словарь типизирован по русскому, поэтому пропущенный ключ не даст собрать проект.
+- `src/lib/contacts.ts` — телефон, WhatsApp, Instagram и адрес сайта.
+- `src/content/portfolio.ts` — карточки работ (реальные проекты и демо-концепты).
+- `src/content/demos.ts`, `src/components/demo/demo-landing.tsx` — демо-концепты по адресу `/demo/<slug>`.
+- `src/content/tech-logos.ts` — знаки технологий из [Simple Icons](https://simpleicons.org) (CC0).
 
-### Cloudflare Pages
+## Язык
 
-If you intend to deploy this project using Cloudflare Pages, please use the `cf-pages` branch. This branch contains configurations optimized for Cloudflare Pages deployment.
+Язык по умолчанию — русский. Выбор сохраняется в cookie `lang` (и в localStorage), сервер читает cookie и сразу отдаёт страницу на нужном языке — без скачка и ошибок гидратации.
 
-## Key Components
+## Адрес сайта
 
-### ScrollView Component [`src/components/scroll-view.tsx`](src/components/scroll-view.tsx)
-
-The `ScrollView` component is a utility component that triggers animations when an element becomes visible in the viewport. It's designed to enhance user experience by adding engaging visual effects as users scroll through the page.
-
-## Technologies Used
-
-- [Next.js](https://nextjs.org/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [pnpm](https://pnpm.io/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Motion.dev](https://motion.dev/)
-
-## License
-
-MIT
-
-## Full version
-
-For the full version, go to https://microstudio.com/full-version
+Метаданные, `robots.txt` и `sitemap.xml` используют `NEXT_PUBLIC_SITE_URL`, а без неё — production-домен Vercel (`VERCEL_PROJECT_PRODUCTION_URL`). После подключения собственного домена задайте `NEXT_PUBLIC_SITE_URL` в настройках проекта Vercel.

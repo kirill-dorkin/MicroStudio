@@ -1,13 +1,19 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
-import { HeroHeader } from "@/components/header";
-import { I18nProvider } from "@/components/i18n-provider";
+import { Providers } from "@/components/providers";
+import { SkipLink } from "@/components/skip-link";
+import { getLanguage } from "@/lib/i18n/server";
+import { dictionaries } from "@/lib/i18n/dictionaries";
+import { LANGUAGES, OG_LOCALES } from "@/lib/i18n/config";
+import { SITE_URL } from "@/lib/contacts";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
+  // Geist has no Cyrillic glyphs: without this the browser would render
+  // Russian text with the Arial-based fallback instead of Inter below.
+  adjustFontFallback: false,
 });
 
 const geistMono = Geist_Mono({
@@ -15,76 +21,75 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://microstudio.com"),
-  title: {
-    default: "MicroStudio",
-    template: "%s | MicroStudio",
-  },
-  description:
-    "MicroStudio is a modern Next.js and TypeScript template featuring Tailwind CSS and motion animations for building high-performance websites.",
-  keywords: [
-    "MicroStudio",
-    "Next.js template",
-    "TypeScript",
-    "Tailwind CSS",
-    "Motion animations",
+// Cyrillic companion for Geist, closest in proportions and rhythm.
+const interCyrillic = Inter({
+  variable: "--font-cyrillic",
+  subsets: ["cyrillic"],
+});
+
+export async function generateMetadata(): Promise<Metadata> {
+  const lang = await getLanguage();
+  const t = dictionaries[lang].meta;
+  const ogImage = `/og-${lang}.jpg`;
+
+  return {
+    metadataBase: new URL(SITE_URL),
+    title: {
+      default: t.title,
+      template: "%s | MicroStudio",
+    },
+    description: t.description,
+    applicationName: "MicroStudio",
+    alternates: { canonical: "/" },
+    openGraph: {
+      title: t.title,
+      description: t.description,
+      url: "/",
+      siteName: "MicroStudio",
+      images: [{ url: ogImage, width: 1200, height: 630, alt: t.ogAlt }],
+      locale: OG_LOCALES[lang],
+      alternateLocale: LANGUAGES.filter((l) => l !== lang).map((l) => OG_LOCALES[l]),
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t.title,
+      description: t.description,
+      images: [ogImage],
+    },
+    robots: { index: true, follow: true },
+  };
+}
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
   ],
-  openGraph: {
-    title: "MicroStudio – Next.js Template",
-    description:
-      "Build stunning, high-performance websites with MicroStudio, a modern Next.js and TypeScript template.",
-    url: "https://microstudio.com",
-    siteName: "MicroStudio",
-    images: [
-      {
-        url: "/images/abstract-1.png",
-        width: 1200,
-        height: 630,
-        alt: "MicroStudio preview",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "MicroStudio – Next.js Template",
-    description:
-      "Build stunning, high-performance websites with MicroStudio, a modern Next.js and TypeScript template.",
-    images: ["/images/abstract-1.png"],
-    creator: "@microstudio",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-  icons: {
-    icon: "/favicon.ico",
-  },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const lang = await getLanguage();
+
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={lang} suppressHydrationWarning>
+      <head>
+        <noscript>
+          {/* Reveal animations need JS; without it show the content as is. */}
+          <style>{`[style*="opacity:0"]{opacity:1!important;filter:none!important;transform:none!important}`}</style>
+        </noscript>
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${interCyrillic.variable} antialiased`}
       >
-        <I18nProvider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <HeroHeader />
-            {children}
-          </ThemeProvider>
-        </I18nProvider>
+        <Providers initialLanguage={lang}>
+          <SkipLink />
+          {children}
+        </Providers>
       </body>
     </html>
   );

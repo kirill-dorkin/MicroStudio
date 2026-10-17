@@ -31,7 +31,7 @@ export const ScrollView = memo(function ScrollView({
           },
         },
       }}
-      viewOptions={{ margin: viewMargin }}
+      viewOptions={{ margin: viewMargin, once: true }}
       transition={{ duration: 0.3, ease: "easeInOut", type: "tween" }}
     >
       {children}
