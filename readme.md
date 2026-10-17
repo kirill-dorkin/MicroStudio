@@ -1,47 +1,34 @@
-# MicroStudio - Next.js Template
+# MicroStudio
 
-This project is a Next.js template built with TypeScript, designed for creating stunning websites with smooth animations and modern UI components.
+Сайт студии разработки и рекламы в Кыргызстане. Next.js 15, React 19, TypeScript и Tailwind CSS.
 
-## Getting Started
+## Запуск
 
-1.  **Install dependencies:**
+```sh
+pnpm install --frozen-lockfile
+pnpm dev
+```
 
-    ```bash
-    pnpm install
-    ```
+## Проверка
 
-2.  **Run the development server:**
+```sh
+pnpm lint
+pnpm typecheck
+pnpm build
+```
 
-    ```bash
-    pnpm dev
-    ```
+## Содержание
 
-    Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- `src/content/studio.ts` — телефон, Instagram, направления услуг и сообщения WhatsApp.
+- `src/components/sections/home/` — разделы главной страницы.
+- `src/components/contact.tsx` — выбор услуги и составление сообщения для WhatsApp. Сообщение отправляет сам посетитель.
+- `src/app/studio.css` — оформление студии, адаптивность и обе цветовые темы.
+- `src/app/layout.tsx` — русскоязычные метаданные.
 
-## Deployment
+Главная использует существующий знак студии и графику репозитория. На мобильных устройствах, при экономии трафика и запросе уменьшения движения фоновое видео не загружается. Видеофон останавливается вне экрана и в неактивной вкладке.
 
-### Cloudflare Pages
+В портфолио опубликован реальный пример BestElectronics. Визуал на странице является оформленной презентацией проекта, ссылка ведёт на сам сайт. Шаблонные отзывы, цифры и демонстрационные проекты не отображаются.
 
-If you intend to deploy this project using Cloudflare Pages, please use the `cf-pages` branch. This branch contains configurations optimized for Cloudflare Pages deployment.
+Стоимость 1500 сом относится к базовой странице на готовой основе. Состав согласуется отдельно; домен, реклама и дополнительные функции в эту цену не входят.
 
-## Key Components
-
-### ScrollView Component [`src/components/scroll-view.tsx`](src/components/scroll-view.tsx)
-
-The `ScrollView` component is a utility component that triggers animations when an element becomes visible in the viewport. It's designed to enhance user experience by adding engaging visual effects as users scroll through the page.
-
-## Technologies Used
-
-- [Next.js](https://nextjs.org/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [pnpm](https://pnpm.io/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Motion.dev](https://motion.dev/)
-
-## License
-
-MIT
-
-## Full version
-
-For the full version, go to https://microstudio.com/full-version
+`/full-version` перенаправляет к контактам вместо прежнего списка ожидания шаблона. Для Vercel выберите preset Next.js; отдельные секреты для формы не нужны.
