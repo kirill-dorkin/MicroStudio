@@ -1,90 +1,51 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import "./studio.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { HeroHeader } from "@/components/header";
-import { I18nProvider } from "@/components/i18n-provider";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://microstudio.com"),
   title: {
-    default: "MicroStudio",
+    default: "MicroStudio — сайты и реклама для бизнеса",
     template: "%s | MicroStudio",
   },
   description:
-    "MicroStudio is a modern Next.js and TypeScript template featuring Tailwind CSS and motion animations for building high-performance websites.",
-  keywords: [
-    "MicroStudio",
-    "Next.js template",
-    "TypeScript",
-    "Tailwind CSS",
-    "Motion animations",
-  ],
+    "Создаём сайты, дорабатываем существующие и настраиваем рекламу. Базовый одностраничный сайт за 1500 сом. MicroStudio, Кыргызстан.",
   openGraph: {
-    title: "MicroStudio – Next.js Template",
+    title: "MicroStudio — ваш бизнес в лучшем виде",
     description:
-      "Build stunning, high-performance websites with MicroStudio, a modern Next.js and TypeScript template.",
-    url: "https://microstudio.com",
+      "Сайты, доработка и реклама под задачи вашего бизнеса. Начните с разговора.",
     siteName: "MicroStudio",
-    images: [
-      {
-        url: "/images/abstract-1.png",
-        width: 1200,
-        height: 630,
-        alt: "MicroStudio preview",
-      },
-    ],
-    locale: "en_US",
+    locale: "ru_RU",
     type: "website",
   },
   twitter: {
-    card: "summary_large_image",
-    title: "MicroStudio – Next.js Template",
-    description:
-      "Build stunning, high-performance websites with MicroStudio, a modern Next.js and TypeScript template.",
-    images: ["/images/abstract-1.png"],
-    creator: "@microstudio",
+    card: "summary",
+    title: "MicroStudio — сайты и реклама",
+    description: "Сайты, доработка и реклама для бизнеса в Кыргызстане.",
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
-  icons: {
-    icon: "/favicon.ico",
-  },
+  robots: { index: true, follow: true },
+  icons: { icon: "/icon.svg" },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <I18nProvider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <HeroHeader />
-            {children}
-          </ThemeProvider>
-        </I18nProvider>
+    <html lang="ru" suppressHydrationWarning>
+      <body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <a href="#main-content" className="skip-link">
+            К содержанию
+          </a>
+          <HeroHeader />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

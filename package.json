@@ -1,25 +1,25 @@
 {
   "name": "microstudio",
   "version": "0.1.0",
-  "description": "A MicroStudio design agency template built with Next.js.",
+  "description": "MicroStudio — сайты и реклама для бизнеса в Кыргызстане.",
   "keywords": [
     "microstudio",
-    "nextjs",
-    "template",
-    "free nextjs template"
+    "web studio",
+    "kyrgyzstan"
   ],
   "author": "MicroStudio",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/microstudio/microstudio-template"
+    "url": "https://github.com/kirill-dorkin/MicroStudio"
   },
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.3",
