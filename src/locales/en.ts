@@ -5,7 +5,7 @@ const en: typeof ru = {
     title: "MicroStudio — websites and ad campaigns for business",
     description:
       "We build websites for businesses, improve existing ones and help launch ads. One-page website from 1500 KGS.",
-    ogAlt: "MicroStudio — websites that represent your business",
+    ogAlt: "MicroStudio — websites for your business",
     demoTitle: "Demo concept",
   },
   common: {
@@ -27,7 +27,7 @@ const en: typeof ru = {
     language: "Site language",
   },
   hero: {
-    title: "Websites that represent your business.",
+    title: "Websites for your business.",
     subtitle:
       "We build new websites, improve existing ones and help launch ads — with a solution that fits your task.",
     cta: {
@@ -42,7 +42,7 @@ const en: typeof ru = {
     title: "About the studio",
     description:
       "MicroStudio makes websites for businesses: we build new ones, fix up existing ones and help launch ads. We start with the task — who your customers are and what they need to see — and pick the format, from a single page to a site with several sections.",
-    imageAlt: "MicroStudio abstract artwork",
+    imageAlt: "Website screens from the MicroStudio portfolio",
     principles: [
       {
         title: "Clear from the first screen",
@@ -70,6 +70,13 @@ const en: typeof ru = {
     discuss: "Discuss your task",
     audienceLabel: "Who it’s for",
     discussLabel: "What we can discuss",
+    visual: {
+      before: "Before",
+      after: "After",
+      sponsored: "Sponsored",
+      adCta: "Message",
+      updates: ["Prices updated", "New section added", "Form fixed"],
+    },
     items: [
       {
         id: "new",
@@ -177,13 +184,6 @@ const en: typeof ru = {
           "A demo concept for a flower shop: a showcase of bouquets with prices and delivery orders in a couple of taps.",
         alt: "Demo concept of the Flora flower studio website",
       },
-      cleaning: {
-        name: "Clean Home cleaning",
-        sector: "Home services",
-        description:
-          "A demo concept for a cleaning company: a clear list of services, how cleaning works and a quote based on photos.",
-        alt: "Demo concept of the Clean Home cleaning company website",
-      },
     },
   },
   process: {
@@ -285,6 +285,7 @@ const en: typeof ru = {
   },
   demo: {
     banner: "MicroStudio demo concept. The business, prices and contacts are fictional.",
+    bannerShort: "Demo concept · fictional data",
     back: "Back to work",
     ctaTitle: "Want a website like this for your business?",
     ctaText:
@@ -307,6 +308,16 @@ const en: typeof ru = {
           { title: "Flat white", text: "Rich and smooth", meta: "200 KGS" },
           { title: "Syrniki", text: "With sour cream and berry sauce", meta: "280 KGS" },
         ],
+        widget: {
+          title: "Book a table",
+          rows: [
+            { label: "Date", value: "Today" },
+            { label: "Guests", value: "2" },
+          ],
+          optionsLabel: "Time",
+          options: ["18:00", "19:00", "20:00"],
+          button: "Book now",
+        },
         stepsTitle: "How to order",
         steps: ["Pick items from the menu", "Tap “Book a table” or “Takeaway”", "Confirm the order on WhatsApp"],
       },
@@ -324,6 +335,16 @@ const en: typeof ru = {
           { title: "IELTS preparation", text: "Strategies and practice tests", meta: "3 months" },
           { title: "English for kids", text: "Playful format, ages 7–12", meta: "Groups" },
         ],
+        widget: {
+          title: "Trial lesson",
+          rows: [
+            { label: "Course", value: "Conversational" },
+            { label: "Format", value: "Online" },
+          ],
+          optionsLabel: "Time",
+          options: ["Mon 18:30", "Wed 19:00", "Sat 11:00"],
+          button: "Sign up for free",
+        },
         stepsTitle: "How to start",
         steps: ["Request a trial lesson", "Take a short placement test", "Choose a group and a convenient time"],
       },
@@ -341,25 +362,18 @@ const en: typeof ru = {
           { title: "Sunny", text: "Tulips and stock flowers", meta: "2,400 KGS" },
           { title: "Signature", text: "Made to your description", meta: "from 3,000 KGS" },
         ],
+        widget: {
+          title: "“Tenderness” bouquet",
+          rows: [
+            { label: "Delivery", value: "Today by 20:00" },
+            { label: "Card", value: "Free" },
+          ],
+          optionsLabel: "Size",
+          options: ["S", "M", "L"],
+          button: "Order · 2,900 KGS",
+        },
         stepsTitle: "How to order",
         steps: ["Choose a bouquet from the showcase", "Add the delivery address and time", "Get a photo of the bouquet before dispatch"],
-      },
-      cleaning: {
-        name: "Clean Home",
-        kind: "Cleaning service",
-        title: "Apartment and office cleaning, hassle-free",
-        text: "We bring our own equipment and supplies. Send photos of the space and we’ll quote the price in advance.",
-        primary: "Get a quote",
-        secondary: "Services",
-        chips: ["Own equipment", "Quote by photo", "Weekend cleaning"],
-        menuTitle: "Services",
-        menu: [
-          { title: "Regular cleaning", text: "Dust, floors, kitchen and bathroom", meta: "from 2,500 KGS" },
-          { title: "Deep cleaning", text: "All surfaces, windows inside", meta: "from 6,000 KGS" },
-          { title: "After renovation", text: "Removing construction dust", meta: "by photo" },
-        ],
-        stepsTitle: "How cleaning works",
-        steps: ["Send photos and the address", "Agree on the price and time", "We clean, you check the result"],
       },
     },
   },

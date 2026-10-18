@@ -39,7 +39,7 @@ export default function FaqSection() {
                   <dt
                     className={cn(
                       "font-medium",
-                      index === 0 ? "text-2xl" : index === 1 ? "text-xl" : "text-lg"
+                      index === 0 ? "text-2xl lg:text-3xl" : index === 1 ? "text-xl" : "text-lg"
                     )}
                   >
                     {item.q}
@@ -47,14 +47,24 @@ export default function FaqSection() {
                   <dd
                     className={cn(
                       "text-muted-foreground",
-                      index === 0 && "text-lg"
+                      index === 0 && "flex flex-1 flex-col text-lg lg:text-xl"
                     )}
                   >
                     {item.a}
                     {index === 0 && (
+                      <span className="mt-8 block lg:mt-auto" aria-hidden>
+                        <span className="text-muted-foreground block text-sm">
+                          {t.offer.title}
+                        </span>
+                        <span className="text-foreground block text-5xl font-semibold tracking-tight">
+                          {t.offer.price}
+                        </span>
+                      </span>
+                    )}
+                    {index === 0 && (
                       <Link
                         href="#offer"
-                        className="text-foreground mt-6 flex w-fit items-center gap-2 rounded-sm text-base font-medium underline-offset-4 hover:underline lg:mt-10"
+                        className="text-foreground mt-6 flex w-fit items-center gap-2 rounded-sm text-base font-medium underline-offset-4 hover:underline"
                       >
                         {t.faq.offerLink}
                         <ArrowRight className="size-4" aria-hidden />

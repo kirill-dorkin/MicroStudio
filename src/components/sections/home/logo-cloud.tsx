@@ -9,15 +9,15 @@ export default function LogoCloud() {
     <section className="overflow-hidden py-16" aria-labelledby="tech-title">
       <div className="group relative m-auto max-w-7xl px-6">
         <div className="flex flex-col items-center gap-2 md:flex-row md:gap-0">
-          <div className="md:max-w-44 md:border-r md:pr-6">
+          <div className="md:max-w-56 md:shrink-0 md:border-r md:pr-6">
             <p
               id="tech-title"
-              className="text-muted-foreground text-center text-sm md:text-end"
+              className="text-muted-foreground text-balance text-center text-sm md:text-end"
             >
               {t.tech.title}
             </p>
           </div>
-          <div className="relative w-full py-6 md:w-[calc(100%-11rem)]">
+          <div className="relative w-full py-6 md:w-[calc(100%-14rem)]">
             <ul className="sr-only">
               {TECH_LOGOS.map((logo) => (
                 <li key={logo.name}>{logo.name}</li>

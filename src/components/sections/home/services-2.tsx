@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { useLanguage } from "@/components/language-provider";
 import { selectService, type ServiceId } from "@/lib/service-select";
 import OfferCard from "./offer-card";
+import { ServiceVisual } from "./service-visual";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -128,7 +129,7 @@ export default function ServicesSection2() {
                           tabIndex={-1}
                           aria-hidden
                           onClick={() => selectService(service.id as ServiceId)}
-                          className="block"
+                          className="@container relative block"
                         >
                           <Image
                             src={service.img}
@@ -138,6 +139,9 @@ export default function ServicesSection2() {
                             sizes="(min-width: 1024px) 580px, 100vw"
                             className="object-cover object-top transition-all duration-500 w-full aspect-[16/9]"
                           />
+                          <div className="absolute inset-0 flex items-center justify-center transition-transform duration-500 group-hover:scale-[1.02] motion-reduce:transform-none">
+                            <ServiceVisual id={service.id} />
+                          </div>
                         </Link>
                       </InView>
                     </CustomCursorElement>

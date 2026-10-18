@@ -7,7 +7,6 @@ import {
   Coffee,
   Flower2,
   GraduationCap,
-  Sparkles,
   type LucideIcon,
 } from "lucide-react";
 import { Logo } from "@/components/logo";
@@ -21,7 +20,6 @@ const ICONS: Record<DemoSlug, LucideIcon> = {
   coffee: Coffee,
   school: GraduationCap,
   flowers: Flower2,
-  cleaning: Sparkles,
 };
 
 export function DemoLanding({ slug }: { slug: DemoSlug }) {
@@ -29,6 +27,7 @@ export function DemoLanding({ slug }: { slug: DemoSlug }) {
   const demo = t.demo.items[slug];
   const theme = DEMO_THEMES[slug];
   const Icon = ICONS[slug];
+  const widget = demo.widget;
   const contactUrl = whatsappLink(t.demo.ctaMessage.replace("{name}", demo.name));
 
   React.useEffect(() => {
@@ -56,7 +55,10 @@ export function DemoLanding({ slug }: { slug: DemoSlug }) {
             <ArrowLeft className="size-4" aria-hidden />
             {t.demo.back}
           </Link>
-          <p className="text-zinc-300">{t.demo.banner}</p>
+          <p className="text-zinc-300">
+            <span className="sm:hidden">{t.demo.bannerShort}</span>
+            <span className="hidden sm:inline">{t.demo.banner}</span>
+          </p>
           <LanguageSwitcher className="text-zinc-950" />
         </div>
       </div>
@@ -122,21 +124,50 @@ export function DemoLanding({ slug }: { slug: DemoSlug }) {
           </div>
 
           <div aria-hidden className="relative mx-auto w-full max-w-md">
-            <div className="relative aspect-square overflow-hidden rounded-[2.5rem] bg-linear-to-br from-(--demo-accent) to-(--demo-accent-2)">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] bg-linear-to-br from-(--demo-accent) to-(--demo-accent-2) sm:aspect-square">
               <div className="absolute -left-16 -top-16 size-64 rounded-full bg-white/15" />
               <div className="absolute -bottom-20 -right-10 size-72 rounded-full bg-black/10" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="flex size-40 items-center justify-center rounded-full bg-white/95 shadow-2xl">
-                  <Icon className="size-20 text-(--demo-accent)" strokeWidth={1.25} />
+              <Icon
+                className="absolute right-8 top-8 size-28 text-white/35"
+                strokeWidth={1}
+              />
+              <div className="absolute inset-x-5 bottom-5 rounded-3xl bg-white p-5 shadow-2xl sm:inset-x-8 sm:bottom-8">
+                <div className="flex items-center justify-between gap-3">
+                  <span className="font-semibold">{widget.title}</span>
+                  <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-(--demo-soft)">
+                    <Icon className="size-4 text-(--demo-accent)" />
+                  </span>
+                </div>
+                <div className="mt-4 grid grid-cols-2 gap-2 text-sm">
+                  {widget.rows.map((row) => (
+                    <div key={row.label} className="rounded-xl bg-(--demo-soft)/70 px-3 py-2">
+                      <span className="block text-xs opacity-60">{row.label}</span>
+                      <span className="block truncate font-medium">{row.value}</span>
+                    </div>
+                  ))}
+                </div>
+                <span className="mt-4 block text-xs opacity-60">{widget.optionsLabel}</span>
+                <div className="mt-2 flex gap-2">
+                  {widget.options.map((option, index) => (
+                    <span
+                      key={option}
+                      className={
+                        index === 1
+                          ? "flex-1 rounded-full bg-(--demo-accent) py-1.5 text-center text-xs font-medium text-white"
+                          : "flex-1 rounded-full border border-black/10 py-1.5 text-center text-xs font-medium"
+                      }
+                    >
+                      {option}
+                    </span>
+                  ))}
+                </div>
+                <span className="mt-4 block rounded-full bg-zinc-950 py-3 text-center text-sm font-medium text-white">
+                  {widget.button}
                 </span>
               </div>
             </div>
-            <div className="absolute -left-4 top-10 rounded-2xl bg-white px-4 py-3 text-sm font-medium shadow-xl sm:-left-10">
+            <div className="absolute -left-3 top-8 rounded-2xl bg-white px-4 py-3 text-sm font-medium shadow-xl sm:-left-10">
               {demo.chips[0]}
-            </div>
-            <div className="absolute -right-2 bottom-12 rounded-2xl bg-white px-4 py-3 shadow-xl sm:-right-8">
-              <span className="block text-xs opacity-60">{demo.menu[0].title}</span>
-              <span className="block text-base font-semibold">{demo.menu[0].meta}</span>
             </div>
           </div>
         </section>

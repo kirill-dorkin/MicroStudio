@@ -2,8 +2,7 @@ export type PortfolioKey =
   | "bestelectronics"
   | "coffee"
   | "school"
-  | "flowers"
-  | "cleaning";
+  | "flowers";
 
 export type PortfolioItem = {
   key: PortfolioKey;
@@ -38,10 +37,5 @@ export const PORTFOLIO_CONTENT: PortfolioItem[] = [
     img: { ru: "/images/portfolio/flowers-ru.webp", en: "/images/portfolio/flowers-en.webp" },
     href: "/demo/flowers",
   },
-  {
-    key: "cleaning",
-    status: "demo",
-    img: { ru: "/images/portfolio/cleaning-ru.webp", en: "/images/portfolio/cleaning-en.webp" },
-    href: "/demo/cleaning",
-  },
+
 ];
