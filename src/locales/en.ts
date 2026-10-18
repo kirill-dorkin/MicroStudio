@@ -70,13 +70,6 @@ const en: typeof ru = {
     discuss: "Discuss your task",
     audienceLabel: "Who it’s for",
     discussLabel: "What we can discuss",
-    visual: {
-      before: "Before",
-      after: "After",
-      sponsored: "Sponsored",
-      adCta: "Message",
-      updates: ["Prices updated", "New section added", "Form fixed"],
-    },
     items: [
       {
         id: "new",
@@ -354,7 +347,7 @@ const en: typeof ru = {
         menu: [
           { title: "Cappuccino", text: "Double espresso and milk", meta: "180 KGS" },
           { title: "Flat white", text: "Rich and smooth", meta: "200 KGS" },
-          { title: "Syrniki", text: "With sour cream and berry sauce", meta: "280 KGS" },
+          { title: "Croissant", text: "Fresh pastry every morning", meta: "150 KGS" },
         ],
         widget: {
           title: "Book a table",
@@ -413,7 +406,7 @@ const en: typeof ru = {
         widget: {
           title: "“Tenderness” bouquet",
           rows: [
-            { label: "Delivery", value: "Today by 20:00" },
+            { label: "Delivery", value: "Today" },
             { label: "Card", value: "Free" },
           ],
           optionsLabel: "Size",
