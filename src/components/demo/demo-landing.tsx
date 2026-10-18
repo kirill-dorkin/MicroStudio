@@ -5,6 +5,8 @@ import {
   ArrowLeft,
   ArrowRight,
   Coffee,
+  Dumbbell,
+  Sparkles,
   Flower2,
   GraduationCap,
   type LucideIcon,
@@ -20,6 +22,8 @@ const ICONS: Record<DemoSlug, LucideIcon> = {
   coffee: Coffee,
   school: GraduationCap,
   flowers: Flower2,
+  cleaning: Sparkles,
+  fitness: Dumbbell,
 };
 
 export function DemoLanding({ slug }: { slug: DemoSlug }) {
@@ -31,7 +35,7 @@ export function DemoLanding({ slug }: { slug: DemoSlug }) {
   const contactUrl = whatsappLink(t.demo.ctaMessage.replace("{name}", demo.name));
 
   React.useEffect(() => {
-    document.title = `${demo.kind} «${demo.name}» — ${t.meta.demoTitle} | MicroStudio`;
+    document.title = `${demo.kind} «${demo.name}» — ${t.meta.demoTitle}`;
   }, [demo.kind, demo.name, t.meta.demoTitle]);
 
   const style = {
@@ -232,7 +236,7 @@ export function DemoLanding({ slug }: { slug: DemoSlug }) {
 
       <footer className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 border-t border-current/10 px-6 py-8 text-sm opacity-80">
         <span>
-          © {demo.name} · {t.meta.demoTitle}
+          © {demo.name} · {t.demo.disclaimer}
         </span>
         <Link href="/" className="inline-flex items-center gap-2 rounded-sm hover:underline">
           <Logo className="size-4" />

@@ -6,7 +6,7 @@ const en: typeof ru = {
     description:
       "We build websites for businesses, improve existing ones and help launch ads. One-page website from 1500 KGS.",
     ogAlt: "MicroStudio — websites for your business",
-    demoTitle: "Demo concept",
+    demoTitle: "MicroStudio portfolio",
   },
   common: {
     skipToContent: "Skip to content",
@@ -141,24 +141,18 @@ const en: typeof ru = {
   portfolio: {
     title: "Work",
     subtitle:
-      "A real project and demo concepts showing how a website could look for a repair service, café, school or shop.",
-    status: {
-      real: "Real project",
-      demo: "Demo concept",
-    },
+      "Websites for cafés, services, schools and shops. Open any of them and see it live.",
     action: {
       site: "Open website",
-      demo: "Open demo",
     },
     cursor: {
-      site: "Visit",
-      demo: "Demo",
+      site: "Open",
     },
     cta: "Discuss your project",
     items: {
       bestelectronics: {
         name: "BestElectronics",
-        sector: "Repair service centre · site in Russian",
+        sector: "Repair centre · site in Russian",
         description:
           "A website for a repair centre: visitors pick what’s broken and call or message on WhatsApp right away. Address, map and reviews on one page.",
         alt: "Home screen of the BestElectronics repair centre website",
@@ -167,22 +161,36 @@ const en: typeof ru = {
         name: "Zerno coffee shop",
         sector: "Cafés and restaurants",
         description:
-          "A demo concept for a coffee shop: menu with prices, opening hours and quick table booking or takeaway orders.",
-        alt: "Demo concept of the Zerno coffee shop website",
+          "A coffee shop website: menu with prices, opening hours and table booking in a couple of taps.",
+        alt: "Home screen of the Zerno coffee shop website",
       },
       school: {
         name: "Shag learning centre",
         sector: "Education",
         description:
-          "A demo concept for a language school: courses, lesson formats and sign-up for a trial lesson without calls or waiting.",
-        alt: "Demo concept of the Shag learning centre website",
+          "A language school website: courses, lesson formats and sign-up for a free trial lesson.",
+        alt: "Home screen of the Shag learning centre website",
       },
       flowers: {
         name: "Flora flower studio",
         sector: "Flowers and gifts",
         description:
-          "A demo concept for a flower shop: a showcase of bouquets with prices and delivery orders in a couple of taps.",
-        alt: "Demo concept of the Flora flower studio website",
+          "A bouquet showcase with prices and same-day delivery orders — no calls or long chats.",
+        alt: "Home screen of the Flora flower studio website",
+      },
+      cleaning: {
+        name: "Clean Home cleaning",
+        sector: "Home services",
+        description:
+          "A cleaning service website: clear services and prices, and a quote based on photos of the space.",
+        alt: "Home screen of the Clean Home cleaning service website",
+      },
+      fitness: {
+        name: "Puls studio",
+        sector: "Sport and wellbeing",
+        description:
+          "A fitness studio website: group class schedule and sign-up for a free first session.",
+        alt: "Home screen of the Puls fitness studio website",
       },
     },
   },
@@ -207,10 +215,47 @@ const en: typeof ru = {
       },
     ],
   },
+  stats: {
+    title: "The studio in numbers",
+    subtitle:
+      "A small team that takes projects all the way to launch and stays in touch afterwards.",
+    items: [
+      { value: "48+", label: "websites launched" },
+      { value: "7 days", label: "average time for a one-page site" },
+      { value: "4.9", label: "average client rating" },
+    ],
+  },
+  testimonials: {
+    title: "What clients say",
+    subtitle: "Business owners on how the work went and what changed after launch.",
+    items: [
+      {
+        quote:
+          "Guests used to ask for our menu and opening hours in DMs ten times a day. Now we just send a link to the site, and people book tables themselves. Done quickly and explained in plain words.",
+        name: "Aigerim",
+        role: "Owner, Zerno coffee shop",
+      },
+      {
+        quote:
+          "The site turned out simple and clear: parents find the schedule right away and book a trial lesson.",
+        name: "Timur",
+        role: "Director, Shag learning centre",
+      },
+      {
+        quote: "Delivery orders now come straight through the website. Convenient for us and for customers.",
+        name: "Madina",
+        role: "Florist, Flora flower studio",
+      },
+      {
+        quote: "They fixed up our old website and launched ads. Straight to the point, no fluff.",
+        name: "Ruslan",
+        role: "Clean Home cleaning",
+      },
+    ],
+  },
   faq: {
     title: "FAQ",
     subtitle: "Briefly about pricing, preparation and how we work.",
-    offerLink: "What’s in the 1500 KGS website",
     items: [
       {
         q: "How much does a website cost?",
@@ -282,17 +327,20 @@ const en: typeof ru = {
   footer: {
     rights: "MicroStudio",
     social: "MicroStudio on social media and messengers",
+    disclaimer:
+      "Demo website. Projects (except BestElectronics), reviews, numbers and clients are fictional and shown as an example. The contact details are real.",
   },
   demo: {
-    banner: "MicroStudio demo concept. The business, prices and contacts are fictional.",
-    bannerShort: "Demo concept · fictional data",
+    banner: "A project from the MicroStudio portfolio",
+    bannerShort: "MicroStudio portfolio",
     back: "Back to work",
     ctaTitle: "Want a website like this for your business?",
     ctaText:
-      "This is a format demo. On a real website the buttons lead to your business’s WhatsApp, phone or form. Message us and we’ll discuss your version.",
+      "We’ll make a similar site with your services, prices and contacts. Message us to discuss the task and timing.",
     ctaButton: "Discuss a similar website",
-    ctaMessage: "Hello! I liked the “{name}” demo on the MicroStudio website. I’d like to discuss a similar site.",
-    madeBy: "Demo concept by MicroStudio",
+    ctaMessage: "Hello! I liked the “{name}” website in the MicroStudio portfolio. I’d like to discuss a similar one.",
+    madeBy: "Website by MicroStudio",
+    disclaimer: "Demo project: the business, prices and contacts are fictional.",
     items: {
       coffee: {
         name: "Zerno",
@@ -374,6 +422,60 @@ const en: typeof ru = {
         },
         stepsTitle: "How to order",
         steps: ["Choose a bouquet from the showcase", "Add the delivery address and time", "Get a photo of the bouquet before dispatch"],
+      },
+      cleaning: {
+        name: "Clean Home",
+        kind: "Cleaning service",
+        title: "Apartment and office cleaning, hassle-free",
+        text: "We bring our own equipment and supplies. Send photos of the space and we’ll quote the price in advance.",
+        primary: "Get a quote",
+        secondary: "Services",
+        chips: ["Own equipment", "Quote by photo", "Weekend cleaning"],
+        menuTitle: "Services",
+        menu: [
+          { title: "Regular cleaning", text: "Dust, floors, kitchen and bathroom", meta: "from 2,500 KGS" },
+          { title: "Deep cleaning", text: "All surfaces, windows inside", meta: "from 6,000 KGS" },
+          { title: "After renovation", text: "Removing construction dust", meta: "by photo" },
+        ],
+        widget: {
+          title: "Cleaning quote",
+          rows: [
+            { label: "Area", value: "60 m²" },
+            { label: "Type", value: "Deep clean" },
+          ],
+          optionsLabel: "Day",
+          options: ["Fri", "Sat", "Sun"],
+          button: "Quote by photo",
+        },
+        stepsTitle: "How cleaning works",
+        steps: ["Send photos and the address", "Agree on the price and time", "We clean, you check the result"],
+      },
+      fitness: {
+        name: "Puls",
+        kind: "Fitness studio",
+        title: "Workouts you’ll want to come back to",
+        text: "Small groups, attentive coaches and a convenient schedule. Your first session is free.",
+        primary: "Book a session",
+        secondary: "Schedule",
+        chips: ["Groups of up to 10", "First session free", "Morning and evening"],
+        menuTitle: "Schedule",
+        menu: [
+          { title: "Functional training", text: "Strength and endurance", meta: "Mon, Wed, Fri · 19:00" },
+          { title: "Yoga", text: "Flexibility and recovery", meta: "Tue, Thu · 08:00" },
+          { title: "Pilates", text: "Core and posture", meta: "Sat · 11:00" },
+        ],
+        widget: {
+          title: "Book a class",
+          rows: [
+            { label: "Class", value: "Yoga" },
+            { label: "Coach", value: "Alina" },
+          ],
+          optionsLabel: "Time",
+          options: ["Tue 08:00", "Thu 08:00", "Sat 10:00"],
+          button: "Book",
+        },
+        stepsTitle: "How to start",
+        steps: ["Pick a class from the schedule", "Book your free session", "Come in — mats and towels provided"],
       },
     },
   },

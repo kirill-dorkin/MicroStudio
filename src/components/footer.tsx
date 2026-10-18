@@ -98,6 +98,9 @@ function FooterSection() {
               {CONTACTS.phoneDisplay}
             </a>
           </p>
+          <p className="text-muted-foreground/80 mx-auto mt-6 max-w-xl text-pretty text-center text-xs">
+            {t.footer.disclaimer}
+          </p>
         </ScrollView>
       </div>
     </footer>

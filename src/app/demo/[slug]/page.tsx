@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const t = dictionaries[await getLanguage()];
   const demo = t.demo.items[slug];
   return {
-    title: `${demo.kind} «${demo.name}» — ${t.meta.demoTitle}`,
+    title: { absolute: `${demo.kind} «${demo.name}» — ${t.meta.demoTitle}` },
     description: t.portfolio.items[slug].description,
     alternates: { canonical: `/demo/${slug}` },
     // Demo concepts are examples, not real businesses.

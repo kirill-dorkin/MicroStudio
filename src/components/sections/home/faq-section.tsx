@@ -1,80 +1,44 @@
 "use client";
 
-import { Card } from "@/components/ui/card";
+import { Plus } from "lucide-react";
 import { ScrollView } from "@/components/scroll-view";
 import { useLanguage } from "@/components/language-provider";
-import { cn } from "@/lib/utils";
-import { ArrowRight } from "lucide-react";
-import Link from "next/link";
-
-// Same bento rhythm as the original testimonials grid:
-// one tall card, one wide card and two small ones.
-const LAYOUT = [
-  "sm:col-span-2 lg:row-span-2 sm:p-6",
-  "md:col-span-2",
-  "",
-  "",
-];
 
 export default function FaqSection() {
   const { t } = useLanguage();
   return (
-    <section className="py-16 md:py-32" id="faq" aria-labelledby="faq-title">
-      <div className="mx-auto max-w-6xl space-y-8 px-6 md:space-y-16">
-        <div className="relative z-10 mx-auto max-w-xl space-y-6 text-center md:space-y-12">
+    <section className="py-16 md:py-24" id="faq" aria-labelledby="faq-title">
+      <div className="mx-auto grid max-w-5xl gap-10 px-6 md:grid-cols-5 md:gap-12">
+        <div className="md:col-span-2">
           <ScrollView>
-            <h2 id="faq-title" className="text-4xl font-medium lg:text-5xl">
+            <h2 id="faq-title" className="text-balance text-4xl font-medium">
               {t.faq.title}
             </h2>
           </ScrollView>
-          <ScrollView delay={0.2}>
-            <p className="text-pretty">{t.faq.subtitle}</p>
+          <ScrollView delay={0.1}>
+            <p className="text-muted-foreground mt-4 text-pretty">
+              {t.faq.subtitle}
+            </p>
           </ScrollView>
         </div>
-
-        <ScrollView delay={0.3}>
-          <dl className="grid gap-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-rows-2">
-            {t.faq.items.map((item, index) => (
-              <Card key={item.q} className={cn("h-full gap-4 px-6", LAYOUT[index])}>
-                  <dt
-                    className={cn(
-                      "font-medium",
-                      index === 0 ? "text-2xl lg:text-3xl" : index === 1 ? "text-xl" : "text-lg"
-                    )}
-                  >
+        <div className="md:col-span-3">
+          <ScrollView delay={0.15}>
+            <div className="divide-y border-y">
+              {t.faq.items.map((item, index) => (
+                <details key={item.q} className="group py-2" open={index === 0}>
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-6 rounded-sm py-3 text-lg font-medium [&::-webkit-details-marker]:hidden">
                     {item.q}
-                  </dt>
-                  <dd
-                    className={cn(
-                      "text-muted-foreground",
-                      index === 0 && "flex flex-1 flex-col text-lg lg:text-xl"
-                    )}
-                  >
-                    {item.a}
-                    {index === 0 && (
-                      <span className="mt-8 block lg:mt-auto" aria-hidden>
-                        <span className="text-muted-foreground block text-sm">
-                          {t.offer.title}
-                        </span>
-                        <span className="text-foreground block text-5xl font-semibold tracking-tight">
-                          {t.offer.price}
-                        </span>
-                      </span>
-                    )}
-                    {index === 0 && (
-                      <Link
-                        href="#offer"
-                        className="text-foreground mt-6 flex w-fit items-center gap-2 rounded-sm text-base font-medium underline-offset-4 hover:underline"
-                      >
-                        {t.faq.offerLink}
-                        <ArrowRight className="size-4" aria-hidden />
-                      </Link>
-                    )}
-                  </dd>
-              </Card>
-            ))}
-          </dl>
-        </ScrollView>
+                    <Plus
+                      aria-hidden
+                      className="size-5 shrink-0 transition-transform duration-200 group-open:rotate-45"
+                    />
+                  </summary>
+                  <p className="text-muted-foreground pb-4 pr-10">{item.a}</p>
+                </details>
+              ))}
+            </div>
+          </ScrollView>
+        </div>
       </div>
     </section>
   );

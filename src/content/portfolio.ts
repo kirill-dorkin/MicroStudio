@@ -2,40 +2,35 @@ export type PortfolioKey =
   | "bestelectronics"
   | "coffee"
   | "school"
-  | "flowers";
+  | "flowers"
+  | "cleaning"
+  | "fitness";
 
 export type PortfolioItem = {
   key: PortfolioKey;
-  status: "real" | "demo";
-  /** Preview per language; real projects keep their own site language. */
+  /** Preview per language; external sites keep their own language. */
   img: string | { ru: string; en: string };
   href: string;
 };
 
+const project = (key: Exclude<PortfolioKey, "bestelectronics">): PortfolioItem => ({
+  key,
+  img: {
+    ru: `/images/portfolio/${key}-ru.webp`,
+    en: `/images/portfolio/${key}-en.webp`,
+  },
+  href: `/demo/${key}`,
+});
+
 export const PORTFOLIO_CONTENT: PortfolioItem[] = [
   {
     key: "bestelectronics",
-    status: "real",
     img: "/images/portfolio/bestelectronics.webp",
     href: "https://be-lending.vercel.app/",
   },
-  {
-    key: "coffee",
-    status: "demo",
-    img: { ru: "/images/portfolio/coffee-ru.webp", en: "/images/portfolio/coffee-en.webp" },
-    href: "/demo/coffee",
-  },
-  {
-    key: "school",
-    status: "demo",
-    img: { ru: "/images/portfolio/school-ru.webp", en: "/images/portfolio/school-en.webp" },
-    href: "/demo/school",
-  },
-  {
-    key: "flowers",
-    status: "demo",
-    img: { ru: "/images/portfolio/flowers-ru.webp", en: "/images/portfolio/flowers-en.webp" },
-    href: "/demo/flowers",
-  },
-
+  project("coffee"),
+  project("school"),
+  project("flowers"),
+  project("cleaning"),
+  project("fitness"),
 ];
