@@ -7,25 +7,39 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import { NAV_LINKS } from "@/content/nav";
 import { LanguageSwitcher } from "./language-switcher";
-import { useTranslation } from "react-i18next";
+import { useLanguage } from "./language-provider";
 
 export const HeroHeader = () => {
   const [menuState, setMenuState] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
-  const { t } = useTranslation();
+  const { t } = useLanguage();
+  const menuId = React.useId();
 
   React.useEffect(() => {
     const handleScroll = () => {
       const scrolled = window.scrollY > 50;
       setIsScrolled((prev) => (prev !== scrolled ? scrolled : prev));
     };
+    handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  React.useEffect(() => {
+    if (!menuState) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMenuState(false);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [menuState]);
+
+  const closeMenu = () => setMenuState(false);
+
   return (
     <header>
       <nav
-        data-state={menuState && "active"}
+        data-state={menuState ? "active" : undefined}
         className="fixed z-20 w-full px-2"
       >
         <div
@@ -38,9 +52,10 @@ export const HeroHeader = () => {
           <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
             <div className="flex w-full justify-between lg:w-auto">
               <Link
-                href="/"
-                aria-label="home"
-                className="flex items-center space-x-2"
+                href="/#home"
+                aria-label={t.header.homeLabel}
+                className="flex items-center space-x-2 rounded-md"
+                onClick={closeMenu}
               >
                 <Logo />
               </Link>
@@ -48,9 +63,12 @@ export const HeroHeader = () => {
               <div className="flex items-center gap-2">
                 <LanguageSwitcher className="lg:hidden" />
                 <button
+                  type="button"
                   onClick={() => setMenuState(!menuState)}
-                  aria-label={menuState == true ? "Close Menu" : "Open Menu"}
-                  className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden"
+                  aria-label={menuState ? t.header.closeMenu : t.header.openMenu}
+                  aria-expanded={menuState}
+                  aria-controls={menuId}
+                  className="relative z-20 -m-2.5 -mr-4 block cursor-pointer rounded-md p-2.5 lg:hidden"
                 >
                   <Menu className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
                   <X className="in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
@@ -64,61 +82,41 @@ export const HeroHeader = () => {
                   <li key={item.key}>
                     <Link
                       href={item.href}
-                      className=" hover:text-accent-foreground block duration-150"
+                      className="hover:text-accent-foreground block rounded-sm duration-150"
                     >
-                      <span>{t(`header.nav.${item.key}`)}</span>
+                      <span>{t.header.nav[item.key]}</span>
                     </Link>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="bg-background in-data-[state=active]:block lg:in-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
+            <div
+              id={menuId}
+              className="bg-background in-data-[state=active]:block lg:in-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent"
+            >
               <div className="lg:hidden">
                 <ul className="space-y-6 text-base">
                   {NAV_LINKS.map((item) => (
                     <li key={item.key}>
                       <Link
                         href={item.href}
-                        className="text-muted-foreground hover:text-accent-foreground block duration-150"
-                        onClick={() => setMenuState(false)}
+                        className="text-muted-foreground hover:text-accent-foreground block rounded-sm duration-150"
+                        onClick={closeMenu}
                       >
-                        <span>{t(`header.nav.${item.key}`)}</span>
+                        <span>{t.header.nav[item.key]}</span>
                       </Link>
                     </li>
                   ))}
                 </ul>
               </div>
               <div className="flex w-full flex-col space-y-3 sm:flex-row sm:items-center sm:gap-3 sm:space-y-0 md:w-fit">
-                {/* <Button
-                  asChild
-                  variant="outline"
-                  size="sm"
-                  className={cn(isScrolled && "lg:hidden")}
-                >
-                  <Link href="#">
-                    <span>Login</span>
-                  </Link>
-                </Button> */}
-                <Button
-                  asChild
-                  size="sm"
-                  className={cn(isScrolled && "lg:hidden")}
-                >
-                  <Link href="/full-version" onClick={() => setMenuState(false)}>
-                    <span>{t("header.cta")}</span>
+                <Button asChild size="sm">
+                  <Link href="/#contact" onClick={closeMenu}>
+                    <span>{t.header.cta}</span>
                   </Link>
                 </Button>
                 <LanguageSwitcher className="hidden lg:block" />
-                {/* <Button
-                  asChild
-                  size="sm"
-                  className={cn(isScrolled ? "lg:inline-flex" : "hidden")}
-                >
-                  <Link href="/full-version" onClick={() => setMenuState(false)}>
-                    <span>Join waitlist</span>
-                  </Link>
-                </Button> */}
               </div>
             </div>
           </div>

@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useTranslation } from "react-i18next";
+import { useLanguage } from "@/components/language-provider";
+import useReducedMotion from "@/hooks/useReducedMotion";
 
 import { TextEffect } from "@/components/motion-primitives/text-effect";
 import { AnimatedGroup } from "@/components/motion-primitives/animated-group";
@@ -28,15 +28,59 @@ const transitionVariants = {
       transition: {
         type: "spring",
         bounce: 0.3,
-        duration: 1.5,
+        duration: 1.2,
       },
     },
   },
 };
 
-  export default function HeroSection() {
-    const { t } = useTranslation();
+/**
+ * Decorative background video. The poster is rendered on the server; the
+ * video itself is attached only after mount and skipped entirely when the
+ * visitor prefers reduced motion, saves data or is on a weak device.
+ */
+function HeroVideo() {
+  const reduce = useReducedMotion();
+  const [canPlay, setCanPlay] = React.useState(false);
+
+  React.useEffect(() => {
+    const nav = navigator as Navigator & { deviceMemory?: number };
+    const weakDevice =
+      (nav.hardwareConcurrency !== undefined && nav.hardwareConcurrency <= 2) ||
+      (nav.deviceMemory !== undefined && nav.deviceMemory <= 2);
+    setCanPlay(!weakDevice);
+  }, []);
+
+  const className =
+    "size-full -scale-x-100 object-cover opacity-50 invert-0 dark:opacity-35 dark:invert";
+
+  if (reduce || !canPlay) {
     return (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img src="/hero-poster.webp" alt="" aria-hidden className={className} />
+    );
+  }
+
+  return (
+    <video
+      autoPlay
+      loop
+      muted
+      playsInline
+      preload="auto"
+      poster="/hero-poster.webp"
+      aria-hidden
+      tabIndex={-1}
+      className={className}
+    >
+      <source src="/hero-light.mp4" type="video/mp4" />
+    </video>
+  );
+}
+
+export default function HeroSection() {
+  const { t, lang } = useLanguage();
+  return (
     <>
       <div className="overflow-hidden min-h-screen">
         <section id="home">
@@ -46,7 +90,7 @@ const transitionVariants = {
                 container: {
                   visible: {
                     transition: {
-                      delayChildren: 1,
+                      delayChildren: 0.3,
                     },
                   },
                 },
@@ -69,70 +113,41 @@ const transitionVariants = {
               className="absolute inset-0 -z-20"
             >
               <div className="h-screen xl:h-auto absolute inset-2 -z-10 overflow-hidden rounded-3xl border border-black/10 lg:aspect-video lg:rounded-[3rem] dark:border-white/5">
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  preload="auto"
-                  className="size-full -scale-x-100 object-cover opacity-50 invert-0 dark:opacity-35 dark:invert "
-                >
-                  <source src="/hero-light.mp4" type="video/mp4" />
-                </video>
+                <HeroVideo />
               </div>
             </AnimatedGroup>
 
             <div className="absolute inset-0 -z-10 size-full "></div>
             <div className="mx-auto max-w-7xl px-6">
               <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
-                {/* <AnimatedGroup variants={transitionVariants}>
-                  <Link
-                    href="#link"
-                    className="hover:bg-background dark:hover:border-t-border bg-muted group mx-auto flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-zinc-950/5 transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950"
-                  >
-                    <span className="text-foreground text-sm">
-                      Introducing Support for AI Models
-                    </span>
-                    <span className="dark:border-background block h-4 w-0.5 border-l bg-white dark:bg-zinc-700"></span>
-
-                    <div className="bg-background group-hover:bg-muted size-6 overflow-hidden rounded-full duration-500">
-                      <div className="flex w-12 -translate-x-1/2 duration-500 ease-in-out group-hover:translate-x-0">
-                        <span className="flex size-6">
-                          <ArrowRight className="m-auto size-3" />
-                        </span>
-                        <span className="flex size-6">
-                          <ArrowRight className="m-auto size-3" />
-                        </span>
-                      </div>
-                    </div>
-                  </Link>
-                </AnimatedGroup> */}
-
-                  <TextEffect
-                    preset="fade-in-blur"
-                    speedSegment={0.3}
-                    as="h1"
-                    className="mt-8 text-balance text-5xl md:text-7xl lg:mt-16 xl:text-[5.25rem] font-semibold"
-                  >
-                    {t("hero.title")}
-                  </TextEffect>
-                  <TextEffect
-                    per="line"
-                    preset="fade-in-blur"
-                    speedSegment={0.3}
-                    delay={0.5}
-                    as="p"
-                    className="mx-auto mt-8 max-w-2xl text-balance text-lg"
-                  >
-                    {t("hero.subtitle")}
-                  </TextEffect>
+                <TextEffect
+                  key={`title-${lang}`}
+                  preset="fade-in-blur"
+                  speedSegment={0.3}
+                  as="h1"
+                  className="mx-auto mt-8 max-w-5xl text-balance text-[2.75rem] leading-[1.1] sm:text-5xl md:text-7xl lg:mt-16 xl:text-[5.25rem] font-semibold"
+                >
+                  {t.hero.title}
+                </TextEffect>
+                <TextEffect
+                  key={`subtitle-${lang}`}
+                  per="line"
+                  preset="fade-in-blur"
+                  speedSegment={0.3}
+                  delay={0.3}
+                  as="p"
+                  className="mx-auto mt-8 max-w-2xl text-balance text-lg"
+                >
+                  {t.hero.subtitle}
+                </TextEffect>
 
                 <AnimatedGroup
-                  variants={{ 
+                  variants={{
                     container: {
                       visible: {
                         transition: {
                           staggerChildren: 0.05,
-                          delayChildren: 0.75,
+                          delayChildren: 0.4,
                         },
                       },
                     },
@@ -149,11 +164,8 @@ const transitionVariants = {
                       size="lg"
                       className="rounded-xl px-5 text-base"
                     >
-                      <Link
-                        href="https://t.me/microstudio_official"
-                        target="_blank"
-                      >
-                        <span className="text-nowrap">{t('hero.cta.contact')}</span>
+                      <Link href="#contact">
+                        <span className="text-nowrap">{t.hero.cta.contact}</span>
                       </Link>
                     </Button>
                   </div>
@@ -165,7 +177,7 @@ const transitionVariants = {
                     className="h-10.5 rounded-xl px-5"
                   >
                     <Link href="#portfolio">
-                      <span className="text-nowrap">{t('hero.cta.work')}</span>
+                      <span className="text-nowrap">{t.hero.cta.work}</span>
                     </Link>
                   </Button>
                 </AnimatedGroup>
@@ -178,14 +190,14 @@ const transitionVariants = {
                 visible: {
                   transition: {
                     staggerChildren: 0.05,
-                    delayChildren: 0.85,
+                    delayChildren: 0.6,
                   },
                 },
               },
               ...transitionVariants,
             }}
           >
-            <div className="relative -mr-56 mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20">
+            <div className="relative mt-8 overflow-hidden px-2 sm:mt-12 md:mt-20">
               <LogoCloud />
             </div>
           </AnimatedGroup>

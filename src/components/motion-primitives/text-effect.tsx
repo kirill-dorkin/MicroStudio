@@ -121,11 +121,7 @@ const AnimationComponent: React.FC<{
         {segment}
       </motion.span>
     ) : per === 'word' ? (
-      <motion.span
-        aria-hidden='true'
-        variants={variants}
-        className='inline-block whitespace-pre'
-      >
+      <motion.span variants={variants} className='inline-block whitespace-pre'>
         {segment}
       </motion.span>
     ) : (
@@ -277,7 +273,7 @@ export function TextEffect({
           onAnimationStart={onAnimationStart}
           style={style}
         >
-          {per !== 'line' ? <span className='sr-only'>{children}</span> : null}
+          {per === 'char' ? <span className='sr-only'>{children}</span> : null}
           {segments.map((segment, index) => (
             <AnimationComponent
               key={`${per}-${index}-${segment}`}

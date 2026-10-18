@@ -1,44 +1,36 @@
-export const PORTFOLIO_CONTENT = [
-  {
-    name: "GreenScape Landscaping",
-    description:
-      "Modern landing page for a landscaping company featuring service showcases, before/after galleries, and instant quote requests.",
-    img: "/images/portfolio/eco.jpg",
-    url: "#",
+export type PortfolioKey =
+  | "bestelectronics"
+  | "coffee"
+  | "school"
+  | "flowers"
+  | "cleaning"
+  | "fitness";
+
+export type PortfolioItem = {
+  key: PortfolioKey;
+  /** Preview per language; external sites keep their own language. */
+  img: string | { ru: string; en: string };
+  href: string;
+};
+
+const project = (key: Exclude<PortfolioKey, "bestelectronics">): PortfolioItem => ({
+  key,
+  img: {
+    ru: `/images/portfolio/${key}-ru.webp`,
+    en: `/images/portfolio/${key}-en.webp`,
   },
+  href: `/demo/${key}`,
+});
+
+export const PORTFOLIO_CONTENT: PortfolioItem[] = [
   {
-    name: "Starlight Prom Nights",
-    description:
-      "Vibrant promotional page for high school prom parties with ticket booking, photo galleries, and theme selection.",
-    img: "/images/portfolio/event.jpg",
-    url: "#",
+    key: "bestelectronics",
+    img: "/images/portfolio/bestelectronics.webp",
+    href: "https://be-lending.vercel.app/",
   },
-  {
-    name: "Prestige College of Arts",
-    description:
-      "Elegant academic landing page with program highlights, virtual campus tours, and application portals.",
-    img: "/images/portfolio/art.jpg",
-    url: "#",
-  },
-  {
-    name: "CycleSpot Rentals",
-    description:
-      "Bike rental platform with location-based availability, pricing calculators, and secure online bookings.",
-    img: "/images/portfolio/bike.jpg",
-    url: "#",
-  },
-  {
-    name: "Bella Cucina Restaurant",
-    description:
-      "Appetizing restaurant landing page with menu displays, reservation system, and chef's specials highlights.",
-    img: "/images/portfolio/resturant.jpg",
-    url: "#",
-  },
-  {
-    name: "SereneMind Meditation",
-    description:
-      "Calming meditation app interface with guided session timers, progress tracking, and relaxation music integration.",
-    img: "/images/portfolio/meditation.jpg",
-    url: "#",
-  },
+  project("coffee"),
+  project("school"),
+  project("flowers"),
+  project("cleaning"),
+  project("fitness"),
 ];
