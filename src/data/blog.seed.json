@@ -1,0 +1,41 @@
+[
+  {
+    "slug": "kakoy-sayt-nuzhen-biznesu",
+    "ruFile": "content/blog/kakoy-sayt-nuzhen-biznesu.md",
+    "enSlug": "which-website-for-your-business",
+    "enFile": "content/blog/which-website-for-your-business.md",
+    "titleRu": "Какой сайт нужен вашему бизнесу: лендинг, корпоративный или магазин",
+    "titleEn": "Which Website Does Your Business Actually Need?",
+    "descriptionRu": "Объясняем, когда достаточно одной страницы, а когда нужен сайт компании или интернет-магазин.",
+    "descriptionEn": "How to choose a landing page, company website or online store for your business.",
+    "category": "websites",
+    "author": "MicroStudio",
+    "date": "2026-10-19"
+  },
+  {
+    "slug": "kak-podgotovitsya-k-razrabotke",
+    "ruFile": "content/blog/kak-podgotovitsya-k-razrabotke.md",
+    "enSlug": "getting-ready-for-a-website",
+    "enFile": "content/blog/getting-ready-for-a-website.md",
+    "titleRu": "Что подготовить перед заказом сайта",
+    "titleEn": "How to Prepare for a Website Project",
+    "descriptionRu": "Список основных материалов, которые помогут грамотно начать разработку сайта для бизнеса.",
+    "descriptionEn": "A practical checklist of content and decisions to prepare before building a website.",
+    "category": "planning",
+    "author": "MicroStudio",
+    "date": "2026-10-19"
+  },
+  {
+    "slug": "sayt-i-reklama-posle-klika",
+    "ruFile": "content/blog/sayt-i-reklama-posle-klika.md",
+    "enSlug": "what-happens-after-an-ad-click",
+    "enFile": "content/blog/what-happens-after-an-ad-click.md",
+    "titleRu": "Реклама привела человека на сайт. Что дальше?",
+    "titleEn": "What Should Happen After Someone Clicks Your Ad?",
+    "descriptionRu": "Как связать рекламу с полезной посадочной страницей и удобным обращением в компанию.",
+    "descriptionEn": "How to connect a campaign to a useful landing page and contact flow.",
+    "category": "advertising",
+    "author": "MicroStudio",
+    "date": "2026-10-19"
+  }
+]

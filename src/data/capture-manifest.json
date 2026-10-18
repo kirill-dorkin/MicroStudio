@@ -1,0 +1,205 @@
+{
+  "fashion-store": {
+    "source": "https://ecommerce-template-mpc.vercel.app/",
+    "url": "https://ecommerce-template-mpc.vercel.app/",
+    "capturedAt": "2026-10-18T21:16:11.365Z",
+    "status": "ok",
+    "browser": "Google Chrome (Playwright, channel chrome)",
+    "viewports": {
+      "desktop": "1440x900@2x",
+      "mobile": "390x844@2x"
+    },
+    "files": {
+      "fashion-store.webp": {
+        "sha256": "b843366d253b9c3e1dbd7e9c7123d5fb6f6beb0280df9d4777c7f52463d5d737",
+        "bytes": 69760
+      },
+      "fashion-store-detail.webp": {
+        "sha256": "9b2abafb36b10bd4a037ab32166aa3713ef7a219a1046e5c6b72eeac70fe8abb",
+        "bytes": 46612
+      },
+      "fashion-store-mobile.webp": {
+        "sha256": "ef09d98ecb2d3ce8dc0e3ea576da42024bae04c9881e0cca843872dcab0f91a8",
+        "bytes": 47050
+      },
+      "fashion-store-og.jpg": {
+        "sha256": "41b09c3b3e54c16c914a783ceb1258fa0ef0c1586d48dd5962bfe3ab56b6360f",
+        "bytes": 47304
+      }
+    }
+  },
+  "restaurant-tablefork": {
+    "source": "https://pixelandoak-tablefork.pages.dev/",
+    "url": "https://pixelandoak-tablefork.pages.dev/",
+    "capturedAt": "2026-10-18T21:16:30.078Z",
+    "status": "ok",
+    "browser": "Google Chrome (Playwright, channel chrome)",
+    "viewports": {
+      "desktop": "1440x900@2x",
+      "mobile": "390x844@2x"
+    },
+    "files": {
+      "restaurant-tablefork.webp": {
+        "sha256": "f5d0422e322ad85935f8ae0627f72d4ecf67427da91087c31887c5db6625984c",
+        "bytes": 61250
+      },
+      "restaurant-tablefork-detail.webp": {
+        "sha256": "33e3ab14d2a6016d3af1d7db4aa7240629a49a63fd763fe520bcd31156487386",
+        "bytes": 79378
+      },
+      "restaurant-tablefork-mobile.webp": {
+        "sha256": "14fa6d15f9a2c36612abbd6c39d5c39b757ba4421bf1e670587416edcab3693d",
+        "bytes": 53346
+      },
+      "restaurant-tablefork-og.jpg": {
+        "sha256": "36d3574c925f4a19ff60975f0555b55d9832a1d61fd5b90614b2e307940b02a1",
+        "bytes": 45079
+      }
+    }
+  },
+  "photo-lumen": {
+    "source": "https://pixelandoak-lumen.pages.dev/",
+    "url": "https://pixelandoak-lumen.pages.dev/",
+    "capturedAt": "2026-10-18T21:16:46.451Z",
+    "status": "ok",
+    "browser": "Google Chrome (Playwright, channel chrome)",
+    "viewports": {
+      "desktop": "1440x900@2x",
+      "mobile": "390x844@2x"
+    },
+    "files": {
+      "photo-lumen.webp": {
+        "sha256": "dd9b795ffad74bcef88f514d6f11e961b6d4d53411a41848378b6fe7d0a98514",
+        "bytes": 56546
+      },
+      "photo-lumen-detail.webp": {
+        "sha256": "3831d23ee4e36e8369921a9293d32c15e0c07d72de6f42f4826e6f49649c1e2e",
+        "bytes": 38838
+      },
+      "photo-lumen-mobile.webp": {
+        "sha256": "b2803bc781fc5f82014971887843536bb7819dfdce512c353b7f34e6c81f94f8",
+        "bytes": 48990
+      },
+      "photo-lumen-og.jpg": {
+        "sha256": "d5687043bbcb41da5fd530ba0caee3f0ebb0744d3f00921036533529248b0259",
+        "bytes": 47950
+      }
+    }
+  },
+  "saas-launchpad": {
+    "source": "https://pixelandoak-launchpad.pages.dev/",
+    "url": "https://pixelandoak-launchpad.pages.dev/",
+    "capturedAt": "2026-10-18T21:17:02.178Z",
+    "status": "ok",
+    "browser": "Google Chrome (Playwright, channel chrome)",
+    "viewports": {
+      "desktop": "1440x900@2x",
+      "mobile": "390x844@2x"
+    },
+    "files": {
+      "saas-launchpad.webp": {
+        "sha256": "e5c6951d3d041cb58e22fc562822447f224640f6d981ca22c37d2914ce6e6998",
+        "bytes": 55800
+      },
+      "saas-launchpad-detail.webp": {
+        "sha256": "52d15022c3bca769fcb59b4ec789414a1d5ddc3ffe24d9f4ff233f42bbec56a5",
+        "bytes": 60140
+      },
+      "saas-launchpad-mobile.webp": {
+        "sha256": "1d6653fa6a587e505edba8a4acfce9a04612a2e1fcede362acd0c9e52bcad3aa",
+        "bytes": 47894
+      },
+      "saas-launchpad-og.jpg": {
+        "sha256": "d2a15ddaa2dee143161f22263d37cedee852a596b0f00e7a8c757406b5247eea",
+        "bytes": 42350
+      }
+    }
+  },
+  "dashboard-pulse": {
+    "source": "https://pixelandoak-pulse.pages.dev/",
+    "url": "https://pixelandoak-pulse.pages.dev/",
+    "capturedAt": "2026-10-18T21:17:14.499Z",
+    "status": "ok",
+    "browser": "Google Chrome (Playwright, channel chrome)",
+    "viewports": {
+      "desktop": "1440x900@2x",
+      "mobile": "390x844@2x"
+    },
+    "files": {
+      "dashboard-pulse.webp": {
+        "sha256": "1da23566d497a6c5ffb2d9bb930df5c7373f0333d2a013dc3b868e0dc452f4b5",
+        "bytes": 65664
+      },
+      "dashboard-pulse-detail.webp": {
+        "sha256": "24c9ca2bc71399b002e83f61b22ef08fa8ef6f80d4022dee5cabd6685cb84657",
+        "bytes": 63670
+      },
+      "dashboard-pulse-mobile.webp": {
+        "sha256": "fa97e4a2c15b5aa358d9760e7139d8ee40034c5eee9dcbc9d7aa6c31be4783bc",
+        "bytes": 33142
+      },
+      "dashboard-pulse-og.jpg": {
+        "sha256": "a490eb1fb89ec302c507d8624ae06b3decb2dcfde07a2c6e4fcb7060aeb4840e",
+        "bytes": 47660
+      }
+    }
+  },
+  "startup-ignite": {
+    "source": "https://pixelandoak-ignite.pages.dev/",
+    "url": "https://pixelandoak-ignite.pages.dev/",
+    "capturedAt": "2026-10-18T21:17:28.995Z",
+    "status": "ok",
+    "browser": "Google Chrome (Playwright, channel chrome)",
+    "viewports": {
+      "desktop": "1440x900@2x",
+      "mobile": "390x844@2x"
+    },
+    "files": {
+      "startup-ignite.webp": {
+        "sha256": "91d13b86b8d36125fbd70a8f54183c1f25a296e1951f0d4c0ddb41fcbea1e3a8",
+        "bytes": 63020
+      },
+      "startup-ignite-detail.webp": {
+        "sha256": "3369a6149413a3e42f05bb4670dd700684cfae7a82edb17c7577cc59e46d171d",
+        "bytes": 80760
+      },
+      "startup-ignite-mobile.webp": {
+        "sha256": "9c0308c4ca8017fbf4eaf89b30ce7ec9992452b659a5928128abd2dfb1f7d81e",
+        "bytes": 53994
+      },
+      "startup-ignite-og.jpg": {
+        "sha256": "233014cdd818047c3f6d7b6214215438bee79695b74ce415cefbaae75a16600b",
+        "bytes": 50708
+      }
+    }
+  },
+  "blog-nova": {
+    "source": "https://pixelandoak-nova.pages.dev/",
+    "url": "https://pixelandoak-nova.pages.dev/",
+    "capturedAt": "2026-10-18T21:17:40.195Z",
+    "status": "ok",
+    "browser": "Google Chrome (Playwright, channel chrome)",
+    "viewports": {
+      "desktop": "1440x900@2x",
+      "mobile": "390x844@2x"
+    },
+    "files": {
+      "blog-nova.webp": {
+        "sha256": "898c222d04fc044ec37db714a9af028448437d871924d0a1ebec29bf503751c5",
+        "bytes": 83528
+      },
+      "blog-nova-detail.webp": {
+        "sha256": "5e79a8a858d198e6a2ad157bc51006ac921de5d4637ade010932bfd9ddb0af06",
+        "bytes": 81088
+      },
+      "blog-nova-mobile.webp": {
+        "sha256": "8ef87286b0e9bfc1156d62a3dff708d145712ee171708af4dd3d6ef8084293c1",
+        "bytes": 61952
+      },
+      "blog-nova-og.jpg": {
+        "sha256": "97a12793a0cfaeaceebe3d7f3a1c90fedfca1c5052fcb7e1c42663976fe8ea78",
+        "bytes": 42269
+      }
+    }
+  }
+}

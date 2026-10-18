@@ -1,0 +1,366 @@
+[
+  {
+    "id": "commerce-fashion",
+    "slug": "fashion-store",
+    "title": "Storefront — интернет-магазин одежды",
+    "shortTitle": "Интернет-магазин",
+    "category": "ecommerce",
+    "kind": "open-source-demo",
+    "author": "MarcosCamara01",
+    "source": "https://github.com/MarcosCamara01/ecommerce-template",
+    "demo": "https://ecommerce-template-mpc.vercel.app/",
+    "license": "MIT",
+    "licenseUrl": "https://github.com/MarcosCamara01/ecommerce-template/blob/master/LICENSE",
+    "tech": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "descriptionRu": "Демонстрация интернет-магазина: каталог, карточки товаров, варианты и корзина. Дизайн и взаимодействия можно изучить в живом примере.",
+    "descriptionEn": "Open-source fashion storefront demo with product pages, variants and shopping cart.",
+    "featureRu": [
+      "Каталог и категории",
+      "Карточки товара",
+      "Корзина и избранное"
+    ],
+    "screenshotPath": "/portfolio/fashion-store.webp",
+    "captureRoute": "/",
+    "screenshotPriority": 1,
+    "titleEn": "Storefront — fashion online store",
+    "shortTitleEn": "Online store",
+    "sectorRu": "Одежда и аксессуары",
+    "sectorEn": "Fashion retail",
+    "copyright": "Copyright (c) 2024 Marcos Penelas Cámara",
+    "featureEn": [
+      "Catalogue and categories",
+      "Product pages",
+      "Cart and wishlist"
+    ],
+    "overviewRu": "Витрина построена вокруг крупной типографики и фотографий товара. Уже на первом экране можно выбрать размер и добавить вещь в корзину, а ниже каталог разбит на понятные категории с количеством моделей.",
+    "overviewEn": "The storefront leans on bold typography and large product photography. The first screen already lets you pick a size and add an item to the bag, and the catalogue below is split into clear categories with a style count for each.",
+    "lookForRu": [
+      "Как товар, цена и кнопка покупки собраны на первом экране",
+      "Переключение фотографий товара и выбор размера",
+      "Навигацию по категориям и счётчики моделей",
+      "Как витрина перестраивается на телефоне"
+    ],
+    "lookForEn": [
+      "How the product, price and buy button share the first screen",
+      "Switching product photos and choosing a size",
+      "Category navigation with style counts",
+      "How the storefront adapts on a phone"
+    ]
+  },
+  {
+    "id": "restaurant-tablefork",
+    "slug": "restaurant-tablefork",
+    "title": "Table & Fork — сайт ресторана",
+    "shortTitle": "Ресторан",
+    "category": "business",
+    "kind": "open-source-demo",
+    "author": "Pixel & Oak / haider484991",
+    "source": "https://github.com/haider484991/tablefork-nextjs-restaurant-template",
+    "demo": "https://pixelandoak-tablefork.pages.dev/",
+    "license": "MIT",
+    "licenseUrl": "https://github.com/haider484991/tablefork-nextjs-restaurant-template/blob/main/LICENSE",
+    "tech": [
+      "Next.js",
+      "Tailwind CSS",
+      "TypeScript"
+    ],
+    "descriptionRu": "Пример сайта ресторана с меню, графиком работы и интерфейсом бронирования. Бронирования в демонстрации не считаются настоящими заказами.",
+    "descriptionEn": "Restaurant website demo with an HTML menu, opening hours and reservation UI.",
+    "featureRu": [
+      "Меню без PDF",
+      "Время работы",
+      "Форма бронирования — демо"
+    ],
+    "screenshotPath": "/portfolio/restaurant-tablefork.webp",
+    "captureRoute": "/",
+    "screenshotPriority": 2,
+    "titleEn": "Table & Fork — restaurant website",
+    "shortTitleEn": "Restaurant",
+    "sectorRu": "Ресторан и кафе",
+    "sectorEn": "Restaurant",
+    "copyright": "Copyright (c) 2026 Pixel & Oak",
+    "featureEn": [
+      "Menu in HTML, not PDF",
+      "Opening hours",
+      "Reservation form — demo"
+    ],
+    "overviewRu": "Тёплый первый экран сразу отвечает на главные вопросы гостя: где находится ресторан, открыт ли он сейчас и как забронировать стол. Меню свёрстано текстом с ценами и пометками о составе, поэтому его удобно читать с телефона.",
+    "overviewEn": "A warm first screen answers a guest’s main questions straight away: where the restaurant is, whether it is open and how to book a table. The menu is real text with prices and dietary notes, so it reads comfortably on a phone.",
+    "lookForRu": [
+      "Кнопки «забронировать» и «меню» на первом экране",
+      "Адрес, часы и телефон в одной строке",
+      "Меню с ценами и пометками вместо PDF-файла",
+      "Мобильную версию с крупными кнопками"
+    ],
+    "lookForEn": [
+      "Reserve and menu buttons on the first screen",
+      "Address, hours and phone in a single strip",
+      "A priced, tagged menu instead of a PDF",
+      "The mobile layout with large tap targets"
+    ]
+  },
+  {
+    "id": "photo-lumen",
+    "slug": "photo-lumen",
+    "title": "Lumen — сайт фотографа",
+    "shortTitle": "Фотопортфолио",
+    "category": "portfolio",
+    "kind": "open-source-demo",
+    "author": "Pixel & Oak / haider484991",
+    "source": "https://github.com/haider484991/lumen-nextjs-photography-template",
+    "demo": "https://pixelandoak-lumen.pages.dev/",
+    "license": "MIT",
+    "licenseUrl": "https://github.com/haider484991/lumen-nextjs-photography-template/blob/main/LICENSE",
+    "tech": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "descriptionRu": "Редакционный сайт фотографа с портфолио, фильтрацией галереи и презентацией пакетов услуг.",
+    "descriptionEn": "Photographer portfolio demo with a gallery, filtering and service packages.",
+    "featureRu": [
+      "Фотогалерея",
+      "Фильтры проектов",
+      "Адаптивная подача"
+    ],
+    "screenshotPath": "/portfolio/photo-lumen.webp",
+    "captureRoute": "/",
+    "screenshotPriority": 3,
+    "titleEn": "Lumen — photographer website",
+    "shortTitleEn": "Photo portfolio",
+    "sectorRu": "Фотограф, творческие услуги",
+    "sectorEn": "Photography",
+    "copyright": "Copyright (c) 2026 Pixel & Oak",
+    "featureEn": [
+      "Photo gallery",
+      "Project filters",
+      "Responsive presentation"
+    ],
+    "overviewRu": "Редакционная подача с выразительной антиквой и большим количеством воздуха. Галерея работ фильтруется по жанрам съёмки, а в меню есть отдельные разделы с пакетами услуг и клиентскими галереями. В демо вместо фотографий стоят цветовые заглушки — их заменяют собственными снимками.",
+    "overviewEn": "An editorial layout with an expressive serif and generous whitespace. The work gallery filters by type of shoot, and the navigation has dedicated pages for pricing packages and client galleries. The demo uses colour tiles in place of photos, ready to be replaced with real work.",
+    "lookForRu": [
+      "Типографику и ритм первого экрана",
+      "Фильтр галереи по жанрам",
+      "Разделы с ценами и клиентскими галереями",
+      "Аккуратную мобильную версию"
+    ],
+    "lookForEn": [
+      "Typography and rhythm of the first screen",
+      "Gallery filters by genre",
+      "Pricing and client gallery sections",
+      "A tidy mobile layout"
+    ]
+  },
+  {
+    "id": "saas-launchpad",
+    "slug": "saas-launchpad",
+    "title": "LaunchPad — презентация SaaS",
+    "shortTitle": "SaaS-продукт",
+    "category": "landing",
+    "kind": "open-source-demo",
+    "author": "Pixel & Oak / haider484991",
+    "source": "https://github.com/haider484991/launchpad-nextjs-saas-template",
+    "demo": "https://pixelandoak-launchpad.pages.dev/",
+    "license": "MIT",
+    "licenseUrl": "https://github.com/haider484991/launchpad-nextjs-saas-template/blob/main/LICENSE",
+    "tech": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "descriptionRu": "Лендинг программного продукта: преимущества, тарифные блоки, ответы на вопросы и наглядная подача интерфейса.",
+    "descriptionEn": "SaaS landing page demo with features, pricing blocks and FAQ.",
+    "featureRu": [
+      "Структура продукта",
+      "Тарифные карточки",
+      "FAQ"
+    ],
+    "screenshotPath": "/portfolio/saas-launchpad.webp",
+    "captureRoute": "/",
+    "screenshotPriority": 4,
+    "titleEn": "LaunchPad — SaaS presentation",
+    "shortTitleEn": "SaaS product",
+    "sectorRu": "Программный продукт",
+    "sectorEn": "Software product",
+    "copyright": "Copyright (c) 2026 Pixel & Oak",
+    "featureEn": [
+      "Product structure",
+      "Pricing cards",
+      "FAQ"
+    ],
+    "overviewRu": "Классическая страница продукта: короткое обещание, две кнопки и мягкий градиент. Дальше — блоки возможностей с иллюстрациями интерфейса, тарифы и ответы на вопросы. Хороший пример того, как объяснить сложный продукт за несколько экранов.",
+    "overviewEn": "A classic product page: a short promise, two buttons and a soft gradient. It continues with feature blocks illustrated by interface previews, pricing tiers and an FAQ — a good example of explaining a complex product in a few screens.",
+    "lookForRu": [
+      "Как заголовок и две кнопки делят первый экран",
+      "Блоки возможностей с превью интерфейса",
+      "Тарифные карточки",
+      "Раздел вопросов и ответов"
+    ],
+    "lookForEn": [
+      "How the headline and two buttons share the first screen",
+      "Feature blocks with interface previews",
+      "Pricing cards",
+      "The FAQ section"
+    ]
+  },
+  {
+    "id": "dashboard-pulse",
+    "slug": "dashboard-pulse",
+    "title": "Pulse — аналитическая панель",
+    "shortTitle": "Dashboard",
+    "category": "webapp",
+    "kind": "open-source-demo",
+    "author": "Pixel & Oak / haider484991",
+    "source": "https://github.com/haider484991/pulse-nextjs-dashboard-template",
+    "demo": "https://pixelandoak-pulse.pages.dev/",
+    "license": "MIT",
+    "licenseUrl": "https://github.com/haider484991/pulse-nextjs-dashboard-template/blob/main/LICENSE",
+    "tech": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "descriptionRu": "Демо-панель с диаграммами, таблицами и фильтрацией данных. Все отображаемые показатели — иллюстративные.",
+    "descriptionEn": "Analytics dashboard demo featuring charts, tables and filtering. Figures are illustrative.",
+    "featureRu": [
+      "Диаграммы",
+      "Таблицы клиентов",
+      "Фильтрация"
+    ],
+    "screenshotPath": "/portfolio/dashboard-pulse.webp",
+    "captureRoute": "/",
+    "screenshotPriority": 5,
+    "titleEn": "Pulse — analytics dashboard",
+    "shortTitleEn": "Dashboard",
+    "sectorRu": "Веб-приложение, внутренние инструменты",
+    "sectorEn": "Web app / internal tools",
+    "copyright": "Copyright (c) 2026 Pixel & Oak",
+    "featureEn": [
+      "Charts",
+      "Customer tables",
+      "Filtering"
+    ],
+    "overviewRu": "Пример интерфейса веб-приложения: ключевые показатели в карточках, графики доходов и расходов, распределение по каналам и таблица клиентов с поиском и статусами. Все цифры в демо выдуманы автором шаблона и нужны только для иллюстрации.",
+    "overviewEn": "An example of a web application interface: key metrics as cards, revenue and expense charts, a channel breakdown and a customer table with search and status badges. All figures in the demo are illustrative values from the template author.",
+    "lookForRu": [
+      "Сетку карточек с показателями",
+      "Графики и легенды",
+      "Таблицу клиентов с поиском и статусами",
+      "Как плотный интерфейс складывается на телефоне"
+    ],
+    "lookForEn": [
+      "The grid of metric cards",
+      "Charts and legends",
+      "The customer table with search and status badges",
+      "How a dense interface stacks on a phone"
+    ]
+  },
+  {
+    "id": "startup-ignite",
+    "slug": "startup-ignite",
+    "title": "Ignite — сайт стартапа",
+    "shortTitle": "Стартап",
+    "category": "landing",
+    "kind": "open-source-demo",
+    "author": "Pixel & Oak / haider484991",
+    "source": "https://github.com/haider484991/ignite-nextjs-startup-template",
+    "demo": "https://pixelandoak-ignite.pages.dev/",
+    "license": "MIT",
+    "licenseUrl": "https://github.com/haider484991/ignite-nextjs-startup-template/blob/main/LICENSE",
+    "tech": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "descriptionRu": "Пример лендинга для запуска IT-продукта с преимуществами, тарифами и отдельными сценариями для потенциальных пользователей.",
+    "descriptionEn": "Startup landing page demo with product benefits, plans and conversion flows.",
+    "featureRu": [
+      "Первый экран",
+      "Продуктовые сценарии",
+      "Тарифы"
+    ],
+    "screenshotPath": "/portfolio/startup-ignite.webp",
+    "captureRoute": "/",
+    "screenshotPriority": 6,
+    "titleEn": "Ignite — startup website",
+    "shortTitleEn": "Startup",
+    "sectorRu": "Стартап, финансовый сервис",
+    "sectorEn": "Startup / fintech",
+    "copyright": "Copyright (c) 2026 Pixel & Oak",
+    "featureEn": [
+      "Hero screen",
+      "Product scenarios",
+      "Pricing"
+    ],
+    "overviewRu": "Лендинг сервиса для бухгалтерии в контрастной тёмно-оранжевой гамме. Первый экран с призывом к действию, сетка из шести сценариев продукта, тарифы, раздел для инвесторов и вопросы. Цифры на первом экране — часть демо-шаблона, а не реальные показатели.",
+    "overviewEn": "A landing page for a bookkeeping product in a contrasting dark-and-orange palette: a hero with a call to action, a grid of six product scenarios, pricing, an investors section and FAQ. The figures in the hero are template sample content, not real results.",
+    "lookForRu": [
+      "Контрастный первый экран с одной главной кнопкой",
+      "Сетку сценариев с короткими описаниями",
+      "Тарифы и блок для инвесторов",
+      "Мобильную версию первого экрана"
+    ],
+    "lookForEn": [
+      "A high-contrast hero with one primary action",
+      "The grid of short product scenarios",
+      "Pricing and an investors section",
+      "The mobile hero"
+    ]
+  },
+  {
+    "id": "blog-nova",
+    "slug": "blog-nova",
+    "title": "Nova — контентный сайт",
+    "shortTitle": "Блог и медиа",
+    "category": "content",
+    "kind": "open-source-demo",
+    "author": "Pixel & Oak / haider484991",
+    "source": "https://github.com/haider484991/nova-nextjs-blog-template",
+    "demo": "https://pixelandoak-nova.pages.dev/",
+    "license": "MIT",
+    "licenseUrl": "https://github.com/haider484991/nova-nextjs-blog-template/blob/main/LICENSE",
+    "tech": [
+      "Next.js",
+      "Markdown",
+      "TypeScript"
+    ],
+    "descriptionRu": "Пример быстрого контентного сайта с публикациями, структурой статей и поисковой оптимизацией.",
+    "descriptionEn": "Content website demo with Markdown posts, article structure and SEO fundamentals.",
+    "featureRu": [
+      "Статьи",
+      "Теги",
+      "Структура контента"
+    ],
+    "screenshotPath": "/portfolio/blog-nova.webp",
+    "captureRoute": "/",
+    "screenshotPriority": 7,
+    "titleEn": "Nova — content website",
+    "shortTitleEn": "Blog & media",
+    "sectorRu": "Блог, медиа, экспертный контент",
+    "sectorEn": "Blog / media",
+    "copyright": "Copyright (c) 2026 Pixel & Oak",
+    "featureEn": [
+      "Articles",
+      "Tags",
+      "Content structure"
+    ],
+    "overviewRu": "Лёгкий блог, где главное — текст. Список статей с датами и короткими анонсами, подписка на рассылку, теги и аккуратная страница статьи. Статьи пишутся в Markdown, поэтому публиковать новые материалы просто.",
+    "overviewEn": "A lightweight blog where the writing comes first: a list of articles with dates and short summaries, a newsletter sign-up, tags and a clean article page. Posts are written in Markdown, which keeps publishing simple.",
+    "lookForRu": [
+      "Список статей с датами и анонсами",
+      "Блок подписки на рассылку",
+      "Страницу статьи и навигацию по тегам",
+      "Читаемость текста на телефоне"
+    ],
+    "lookForEn": [
+      "The article list with dates and summaries",
+      "The newsletter sign-up",
+      "Article pages and tag navigation",
+      "Readability on a phone"
+    ]
+  }
+]
