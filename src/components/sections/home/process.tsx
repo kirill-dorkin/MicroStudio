@@ -11,7 +11,7 @@ export function Process({ locale }: { locale: Locale }) {
         <ol className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-line bg-line md:grid-cols-2 lg:mt-20 lg:grid-cols-4">
           {t.steps.map((step, i) => (
             <li key={step.title} className="relative flex min-h-64 flex-col bg-bg p-7 lg:min-h-80 lg:p-8" data-reveal>
-              <span className="font-display text-[3.5rem] font-extrabold leading-none tracking-[-0.05em] text-elevated [-webkit-text-stroke:1px_var(--color-line-strong)]">
+              <span className="font-display text-[3.5rem] font-extrabold leading-none tracking-[-0.05em] text-[#69716f]">
                 0{i + 1}
               </span>
               <h3 className="h3 mt-auto pt-10">{step.title}</h3>

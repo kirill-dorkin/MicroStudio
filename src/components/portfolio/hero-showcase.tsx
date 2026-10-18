@@ -64,7 +64,7 @@ export function HeroShowcase({ slides, labels }: Props) {
                   <span className="size-2 rounded-full bg-white/15" />
                   <span className="size-2 rounded-full bg-white/15" />
                   <span className="size-2 rounded-full bg-white/15" />
-                  <span className="mx-auto truncate text-[0.65rem] text-subtle">{slide.host}</span>
+                  <span className="mx-auto truncate text-[0.7rem] text-muted">{slide.host}</span>
                 </div>
                 <div className="relative aspect-[16/10] bg-[#f3f3f1]">
                   <Image

@@ -108,7 +108,7 @@ export function HeaderClient({ locale, homeHref, items, cta, labels, footerNote 
       href={switchHref}
       hrefLang={otherLocale}
       lang={otherLocale}
-      aria-label={labels.switchTo}
+      aria-label={`${otherLocale.toUpperCase()} — ${labels.switchTo}`}
       className={cn(
         "inline-flex h-10 min-w-11 items-center justify-center rounded-full border border-line px-3 text-[0.8rem] font-semibold uppercase tracking-wider text-muted transition-colors hover:border-line-strong hover:text-text",
         className,

@@ -208,7 +208,7 @@ export function ContactBrief({ locale, t, newTabLabel, instagramUrl, whatsapp, i
                   {c === "whatsapp" ? <WhatsappIcon className="size-4" /> : <InstagramIcon className="size-4" />}
                   {c === "whatsapp" ? t.whatsapp : t.instagram}
                 </span>
-                <span className="text-sm text-subtle">{t.channelHint[c]}</span>
+                <span className="text-sm text-muted">{t.channelHint[c]}</span>
               </label>
             ))}
           </div>

@@ -348,18 +348,18 @@
       "Tags",
       "Content structure"
     ],
-    "overviewRu": "Лёгкий блог, где главное — текст. Список статей с датами и короткими анонсами, подписка на рассылку, теги и аккуратная страница статьи. Статьи пишутся в Markdown, поэтому публиковать новые материалы просто.",
-    "overviewEn": "A lightweight blog where the writing comes first: a list of articles with dates and short summaries, a newsletter sign-up, tags and a clean article page. Posts are written in Markdown, which keeps publishing simple.",
+    "overviewRu": "Лёгкий блог, где главное — текст. На главной — свежие статьи с датами и анонсами и подписка на рассылку, в разделе статей — фильтр по темам и RSS-лента. Статьи пишутся в Markdown, поэтому публиковать новые материалы просто.",
+    "overviewEn": "A lightweight blog where the writing comes first. The home page lists recent articles with dates and summaries plus a newsletter sign-up; the articles section adds a topic filter and an RSS feed. Posts are written in Markdown, which keeps publishing simple.",
     "lookForRu": [
       "Список статей с датами и анонсами",
       "Блок подписки на рассылку",
-      "Страницу статьи и навигацию по тегам",
+      "Фильтр статей по темам",
       "Читаемость текста на телефоне"
     ],
     "lookForEn": [
       "The article list with dates and summaries",
       "The newsletter sign-up",
-      "Article pages and tag navigation",
+      "Filtering articles by topic",
       "Readability on a phone"
     ]
   }

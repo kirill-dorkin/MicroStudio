@@ -94,7 +94,7 @@ export default async function ArticlePage({ params }: Props) {
                 href={href(locale, `/services/${service.slug}`)}
                 className="mt-5 inline-flex min-h-11 items-center gap-2 font-semibold text-lime hover:underline"
               >
-                {t.common.more}
+                {t.servicesPreview.more}
                 <ArrowRight className="size-4" aria-hidden="true" />
               </Link>
             </div>

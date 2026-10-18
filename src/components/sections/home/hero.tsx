@@ -32,7 +32,7 @@ export function Hero({ locale }: { locale: Locale }) {
         className="pointer-events-none absolute inset-0 opacity-[0.35] [background-image:linear-gradient(to_right,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.04)_1px,transparent_1px)] [background-size:80px_80px] [mask-image:radial-gradient(ellipse_at_top,black_20%,transparent_70%)]"
       />
       <div className="container-page relative grid grid-cols-[minmax(0,1fr)] items-center gap-14 pb-20 lg:grid-cols-[minmax(0,1.02fr)_minmax(0,1fr)] lg:gap-16 lg:pb-28">
-        <div className="animate-fade-up">
+        <div>
           <p className="eyebrow mb-6">{t.hero.kicker}</p>
           <h1 id="hero-title" className="h1 max-w-[14ch]">
             {t.hero.title}

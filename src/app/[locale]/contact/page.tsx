@@ -85,7 +85,7 @@ export default async function ContactPage({ params, searchParams }: Props) {
       </section>
 
       <section aria-labelledby="brief-title" className="container-page pb-20 lg:pb-28">
-        <div className="rounded-[28px] border border-line p-5 sm:p-8 lg:p-12">
+        <div className="sm:rounded-[28px] sm:border sm:border-line sm:p-8 lg:p-12">
           <h2 id="brief-title" className="h3">
             {c.formTitle}
           </h2>

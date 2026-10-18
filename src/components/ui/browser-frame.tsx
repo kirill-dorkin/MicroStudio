@@ -27,7 +27,7 @@ export function BrowserFrame({
           <span className="size-2.5 rounded-full bg-white/15" />
         </span>
         {host && !compact && (
-          <span className="mx-auto max-w-[60%] truncate rounded-md bg-white/[0.05] px-3 py-0.5 text-[0.7rem] text-subtle">
+          <span className="mx-auto max-w-[60%] truncate rounded-md bg-white/[0.05] px-3 py-0.5 text-[0.72rem] text-muted">
             {host}
           </span>
         )}

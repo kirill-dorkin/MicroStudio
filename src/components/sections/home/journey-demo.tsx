@@ -94,7 +94,7 @@ export function JourneyDemo({ t, contactHref, demoTitle = t.phoneContact }: Prop
       {/* Phone mock-up */}
       <div className="mx-auto w-full max-w-[360px]" aria-label={demoTitle} role="region">
         <div className="rounded-[2.4rem] border border-line-strong bg-elevated p-2.5 shadow-[0_40px_100px_-40px_rgba(0,0,0,0.9)]">
-          <div className="flex h-[440px] flex-col overflow-hidden rounded-[1.9rem] bg-[#101315]">
+          <div className="flex h-[360px] flex-col overflow-hidden rounded-[1.9rem] sm:h-[440px] bg-[#101315]">
             <div className="flex items-center gap-3 border-b border-white/[0.06] px-5 pb-3 pt-5">
               <span className="inline-flex size-9 items-center justify-center rounded-full bg-lime font-display text-sm font-bold text-bg" aria-hidden="true">
                 {demoTitle.slice(0, 1)}
