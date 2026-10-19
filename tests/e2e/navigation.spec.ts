@@ -28,16 +28,16 @@ test.describe("routing and locales", () => {
     await page.getByRole("link", { name: /Switch to English/ }).first().click();
     await expect(page).toHaveURL(/\/en\/contact\?service=special/);
     await expect(page.getByRole("radio", { name: /One-page website for 1,500/ })).toBeChecked();
-    await page.goto("/en/contact?project=oreh-len");
+    await page.goto("/en/contact?project=marby-realty");
     await page.getByRole("link", { name: /Перейти на русский/ }).first().click();
-    await expect(page).toHaveURL(/\/ru\/contact\?project=oreh-len/);
-    await expect(page.locator("output")).toContainText("Орех и Лён — магазин мебели");
+    await expect(page).toHaveURL(/\/ru\/contact\?project=marby-realty/);
+    await expect(page.locator("output")).toContainText("Marby — агентство недвижимости");
   });
 
   test("4. language switch keeps the equivalent page", async ({ page }) => {
-    await page.goto("/ru/work/oreh-len");
+    await page.goto("/ru/work/marby-realty");
     await page.getByRole("link", { name: "Switch to English" }).first().click();
-    await expect(page).toHaveURL(/\/en\/work\/oreh-len$/);
+    await expect(page).toHaveURL(/\/en\/work\/marby-realty$/);
     await page.goto("/ru/blog/kakoy-sayt-nuzhen-biznesu");
     await page.getByRole("link", { name: "Switch to English" }).first().click();
     await expect(page).toHaveURL(/\/en\/blog\/which-website-for-your-business$/);

@@ -46,7 +46,7 @@ test("11–16. search, filters, sort and reset keep state in the URL and history
   await expect(cards(page)).toHaveCount(Math.min(12, demos));
 
   // Search runs over the registry; an impossible query shows the empty state.
-  await page.getByLabel("Поиск по проектам").fill("мебель");
+  await page.getByLabel("Поиск по проектам").fill("ресторан");
   await expect(page).toHaveURL(/q=/);
   await expect(cards(page)).toHaveCount(1);
   await page.getByLabel("Поиск по проектам").fill("несуществующее слово");

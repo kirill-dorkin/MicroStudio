@@ -1,92 +1,95 @@
 [
   {
-    "slug": "oreh-len",
+    "slug": "saima-hotel",
     "workType": "demo",
-    "format": "shop",
-    "industry": "commerce",
+    "format": "landing",
+    "industry": "food-travel-realty",
     "niche": {
-      "ru": "Мебель",
-      "en": "Furniture"
+      "ru": "Отель",
+      "en": "Hotel"
     },
     "title": {
-      "ru": "Орех и Лён — магазин мебели",
-      "en": "Oreh & Len — furniture store"
+      "ru": "Saima — бутик-отель в Бишкеке",
+      "en": "Saima — boutique hotel in Bishkek"
     },
     "summary": {
-      "ru": "Магазин мебели и текстиля: 16 товаров, поиск и фильтры, карточки с выбором цвета, корзина и оформление.",
-      "en": "Furniture and textiles store: 16 products, search and filters, colour options, cart and checkout."
+      "ru": "Одностраничный сайт бутик-отеля: бронирование в первом экране, местное время и погода, фотогалерея номеров, светлая и тёмная тема.",
+      "en": "A one-page boutique hotel site: booking bar in the first screen, local time and weather, room gallery, light and dark themes."
     },
     "problem": {
-      "ru": "Мебель выбирают, сравнивая материалы, размеры и цвета. Магазин помогает быстро сузить выбор, увидеть товар в нужном цвете и оформить заказ с доставкой и сборкой.",
-      "en": "Furniture is chosen by comparing materials, sizes and colours. The store narrows the choice quickly, shows the product in the chosen colour and handles an order with delivery and assembly."
+      "ru": "Небольшому отелю нужен сайт, который сразу выглядит дорого, отвечает на практичные вопросы гостя (как добраться, когда заезд, какая погода) и ведёт к прямому бронированию без комиссии агрегаторов.",
+      "en": "A small hotel needs a site that looks premium at once, answers practical guest questions (getting there, check-in, weather) and leads to direct booking without platform fees."
     },
     "scenario": {
-      "ru": "Каталог → поиск и фильтры → карточка товара, выбор цвета и количества → корзина (изменить, удалить) → оформление с проверкой полей → демо-заказ → сброс.",
-      "en": "Catalogue → search and filters → product with colour and quantity → cart (change, remove) → validated checkout → demo order → reset."
+      "ru": "Первый экран → выбрать даты заезда и выезда в календаре → указать гостей и питомца → «Проверить даты» показывает итог поиска; ниже — часы и погода Бишкека, номера, преимущества прямой брони.",
+      "en": "First screen → pick check-in and check-out in the calendar → set guests and a pet → Check dates shows the search summary; below — Bishkek time and weather, rooms and direct-booking benefits."
     },
     "features": [
       {
-        "ru": "Поиск, фильтры по категории, цене, цвету и наличию, сортировка — всё в URL",
-        "en": "Search, filters by category, price, colour and stock, sorting — all in the URL",
+        "ru": "Календарь дат и выбор гостей в панели бронирования",
+        "en": "Date calendar and guest picker in the booking bar",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Живые часы и погода Бишкека (Open-Meteo)",
+        "en": "Live Bishkek clock and weather (Open-Meteo)",
         "kind": "production-ready"
       },
       {
-        "ru": "Корзина с количеством, удалением и бесплатной доставкой от порога",
-        "en": "Cart with quantities, removal and a free-delivery threshold",
-        "kind": "demo-logic"
+        "ru": "Светлая и тёмная тема",
+        "en": "Light and dark themes",
+        "kind": "production-ready"
       },
       {
-        "ru": "Оформление: контакты, способ доставки, дата, оплата при получении",
-        "en": "Checkout: contacts, delivery method, date, pay on delivery",
-        "kind": "demo-logic"
-      },
-      {
-        "ru": "Онлайн-оплата и передача заказа в 1С/CRM",
-        "en": "Online payment and passing orders to 1C/CRM",
+        "ru": "Подключение системы бронирования отеля",
+        "en": "Hotel booking engine integration",
         "kind": "missing-integration"
       }
     ],
     "limits": {
-      "ru": "Товары и цены вымышлены, иллюстрации вместо фотографий. Корзина и заказ хранятся только в браузере, оплата не проводится.",
-      "en": "Products and prices are fictional; illustrations instead of photos. Cart and order live only in the browser; no payment is taken."
+      "ru": "Отель вымышлен; кнопка проверки дат показывает итог поиска, бронь не создаётся.",
+      "en": "The hotel is fictional; the date check shows a search summary and no booking is made."
     },
     "studio": {
       "ru": [
-        "Каталог из 16 товаров в 6 категориях с единой системой цен, размеров и материалов",
-        "Серия из 36 иллюстраций товаров во всех цветах, сгенерированная скриптом",
-        "Фильтры и сортировка с состоянием в URL, «Показать ещё» и понятным пустым результатом",
-        "Карточка товара с выбором цвета, количеством и сроками изготовления",
-        "Корзина и оформление с проверкой полей и честным демо-подтверждением",
-        "Тёплая визуальная система: Playfair Display + Manrope, терракота и олива"
+        "Нашли и отобрали тему Solenne (MIT) по качеству исходного дизайна",
+        "Перенесли отель в Бишкек: часы, погода, расстояния до Ала-Тоо, Ошского базара и Манаса",
+        "Перевели тексты на русский, склонения в календаре и выборе гостей",
+        "Заменили отзывы с выдуманными именами на сценарии поездки без цитат",
+        "Добавили запасной вариант, когда прогноз погоды не загрузился; noindex и указание автора темы"
       ],
       "en": [
-        "16-product catalogue in 6 categories with consistent prices, sizes and materials",
-        "36 script-generated product illustrations covering every colour",
-        "Filters and sorting kept in the URL, Load more and a clear empty state",
-        "Product page with colour choice, quantity and lead times",
-        "Cart and validated checkout with an honest demo confirmation",
-        "Warm visual system: Playfair Display + Manrope, terracotta and olive"
+        "Found and selected the Solenne theme (MIT) for its original design quality",
+        "Moved the hotel to Bishkek: clock, weather, distances to Ala-Too, Osh Bazaar and Manas",
+        "Translated the copy to Russian, with proper plurals in the calendar and guest picker",
+        "Replaced reviews with invented names by trip scenarios without quotes",
+        "Added a fallback when the weather fails to load; noindex and theme credit"
       ]
     },
     "provenance": {
-      "type": "original",
-      "ru": "Собственная разработка MicroStudio. Шрифты Playfair Display и Manrope — SIL OFL 1.1; иллюстрации товаров генерирует tools/art.mjs.",
-      "en": "Built from scratch by MicroStudio. Playfair Display and Manrope fonts are SIL OFL 1.1; product art is generated by tools/art.mjs.",
+      "type": "derived",
+      "ru": "Адаптация открытой темы Solenne (Sven Esser, MIT). Дизайн, вёрстка и компоненты — исходные; фото — Unsplash.",
+      "en": "An adaptation of the open-source Solenne theme (Sven Esser, MIT). Design, layout and components are original to the theme; photos are from Unsplash.",
       "assets": [
         {
-          "name": "Playfair Display",
-          "license": "OFL-1.1",
-          "source": "https://github.com/clauseggers/Playfair"
-        },
-        {
-          "name": "Manrope",
-          "license": "OFL-1.1",
-          "source": "https://github.com/sharanda/manrope"
+          "name": "Unsplash photos",
+          "license": "Unsplash License",
+          "source": "https://unsplash.com/license"
         }
-      ]
+      ],
+      "upstream": {
+        "name": "Solenne",
+        "url": "https://github.com/Sv3nskie/astro-theme-solenne",
+        "sha": "f7d0b69373249d55d5cc8dfff5fb118db27eb3ea",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Sv3nskie/astro-theme-solenne/blob/f7d0b69373249d55d5cc8dfff5fb118db27eb3ea/LICENSE",
+        "authors": "Sven Esser (sv3n.dev)",
+        "demo": "https://sv3nskie.github.io/astro-theme-solenne/",
+        "fork": "https://github.com/kirill-dorkin/ms-saima-hotel"
+      }
     },
     "client": null,
-    "demoUrl": "https://ms-oreh-len.vercel.app",
+    "demoUrl": "https://ms-saima-hotel.vercel.app",
     "hosting": "showcase",
     "publishedAt": "2026-10-19",
     "verifiedAt": "2026-10-19",
@@ -95,137 +98,119 @@
     "mobileFirst": false,
     "images": {
       "desktop": {
-        "src": "/portfolio/oreh-len/desktop.webp",
+        "src": "/portfolio/saima-hotel/desktop.webp",
         "width": 1440,
         "height": 900
       },
       "mobile": {
-        "src": "/portfolio/oreh-len/mobile.webp",
+        "src": "/portfolio/saima-hotel/mobile.webp",
         "width": 780,
         "height": 1688
       },
       "gallery": [
         {
-          "src": "/portfolio/oreh-len/catalog.webp",
+          "src": "/portfolio/saima-hotel/rooms.webp",
           "width": 1440,
           "height": 900,
           "viewport": "desktop",
           "alt": {
-            "ru": "Каталог с фильтрами и активными чипами",
-            "en": "Catalogue with filters and active chips"
+            "ru": "Галерея номеров",
+            "en": "Room gallery"
           }
         },
         {
-          "src": "/portfolio/oreh-len/product.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Карточка дивана с выбором цвета",
-            "en": "Sofa page with colour options"
-          }
-        },
-        {
-          "src": "/portfolio/oreh-len/cart.webp",
+          "src": "/portfolio/saima-hotel/rooms-mobile.webp",
           "width": 780,
           "height": 1688,
           "viewport": "mobile",
           "alt": {
-            "ru": "Добавление в корзину на телефоне",
-            "en": "Adding to cart on a phone"
+            "ru": "Номера на телефоне",
+            "en": "Rooms on a phone"
           }
         }
       ]
     }
   },
   {
-    "slug": "arna-crm",
+    "slug": "ochok-restaurant",
     "workType": "demo",
-    "format": "app",
-    "industry": "products",
+    "format": "landing",
+    "industry": "food-travel-realty",
     "niche": {
-      "ru": "CRM",
-      "en": "CRM"
+      "ru": "Ресторан",
+      "en": "Restaurant"
     },
     "title": {
-      "ru": "Арна CRM — сделки и клиенты",
-      "en": "Arna CRM — deals and clients"
+      "ru": "Очок — ресторан у огня",
+      "en": "Ochok — fire-led tasting counter"
     },
     "summary": {
-      "ru": "CRM отдела продаж: вход в один клик, воронка с перетаскиванием, фильтры, карточка сделки, задачи и отчёт.",
-      "en": "Sales CRM: one-click demo login, drag-and-drop pipeline, filters, deal page, tasks and a report."
+      "ru": "Атмосферный сайт дегустационного ресторана: сет из шести подач с сопровождением, история шефа, интерьер и форма брони.",
+      "en": "An atmospheric site for a tasting-counter restaurant: a six-course set with pairings, the chef's story, the room and a reservation form."
     },
     "problem": {
-      "ru": "Небольшому отделу продаж нужно видеть все сделки в одном месте, не терять следующие шаги и понимать прогноз. Кабинет показывает воронку, задачи на сегодня и отчёт без настройки сложной CRM.",
-      "en": "A small sales team needs every deal in one place, no forgotten next steps and a forecast. The workspace shows the pipeline, today's tasks and a report without configuring a heavy CRM."
+      "ru": "Ресторану высокого уровня сайт нужен не как меню-прайс, а как приглашение: передать настроение, объяснить формат сета и аккуратно привести к брони.",
+      "en": "A fine-dining restaurant needs a site that works as an invitation rather than a price list: convey the mood, explain the set format and lead gently to a booking."
     },
     "scenario": {
-      "ru": "Войти в демо → отфильтровать сделки → перетащить в другой этап → открыть сделку, изменить сумму и следующий шаг → создать новую сделку → отметить задачу → сбросить демо.",
-      "en": "Enter the demo → filter deals → drag to another stage → open a deal, edit amount and next step → create a deal → complete a task → reset."
+      "ru": "Первый экран с огнём → идея ресторана → сет из шести подач с винным сопровождением → шеф и его путь → зал → форма брони: дата, гости, посадка, повод → «Демо-запрос создан».",
+      "en": "A fire-lit first screen → the concept → a six-course set with pairings → the chef and his path → the room → reservation form: date, guests, seating, occasion → demo request created."
     },
     "features": [
       {
-        "ru": "Воронка из 6 этапов с перетаскиванием и таблица с сортировкой",
-        "en": "6-stage pipeline with drag-and-drop and a sortable table",
-        "kind": "production-ready"
-      },
-      {
-        "ru": "Фильтры по менеджеру, источнику, сумме и поиску с состоянием в адресе",
-        "en": "Filters by manager, source, amount and search kept in the URL",
-        "kind": "production-ready"
-      },
-      {
-        "ru": "Карточка сделки: этап, сумма, следующий шаг, история заметок",
-        "en": "Deal page: stage, amount, next step, notes history",
+        "ru": "Форма брони с проверкой полей",
+        "en": "Reservation form with field validation",
         "kind": "demo-logic"
       },
       {
-        "ru": "Задачи и отчёт с прогнозом по вероятности этапов",
-        "en": "Tasks and a report with a stage-probability forecast",
-        "kind": "demo-logic"
+        "ru": "Мобильное меню без JavaScript, плавное появление секций с учётом reduced motion",
+        "en": "JS-free mobile menu, section reveal that respects reduced motion",
+        "kind": "production-ready"
       },
       {
-        "ru": "Серверная база, роли и вход по паролю",
-        "en": "Server database, roles and password login",
+        "ru": "Отправка брони в систему ресторана",
+        "en": "Sending bookings to the restaurant's system",
         "kind": "missing-integration"
       }
     ],
     "limits": {
-      "ru": "Вход без пароля, данные — 36 вымышленных сделок в localStorage вашего браузера; «Сбросить демо» возвращает исходное состояние.",
-      "en": "Passwordless demo login; data is 36 fictional deals in your browser's localStorage; Reset demo restores the seed."
+      "ru": "Ресторан и шеф вымышлены; форма не отправляет данные.",
+      "en": "The restaurant and chef are fictional; the form sends nothing."
     },
     "studio": {
       "ru": [
-        "Сценарий работы менеджера: от входящей заявки до выигранной сделки",
-        "Воронка с перетаскиванием и альтернативой для клавиатуры в карточке",
-        "Фильтры, сортировка и возврат к списку с сохранённым контекстом",
-        "Создание и редактирование сделки с проверкой полей и историей изменений",
-        "Отчёт: сумма по этапам, конверсия и прогноз",
-        "Мобильная версия: выезжающее меню и горизонтальная воронка"
+        "Нашли и отобрали тему Ombra (MIT) по качеству исходного дизайна",
+        "Перенесли ресторан в Бишкек: местные продукты в сете, цены в сомах, перевод на русский",
+        "Убрали значок Michelin и стажировки в реальных ресторанах — у вымышленного ресторана нет настоящих наград",
+        "Форма брони показывает «Демо-запрос создан» вместо отправки на почту-заглушку",
+        "Подключили кириллические начертания шрифтов, noindex и указание автора темы"
       ],
       "en": [
-        "A manager's workflow from an inbound lead to a won deal",
-        "Drag-and-drop pipeline with a keyboard alternative on the deal page",
-        "Filters, sorting and returning to the list with context preserved",
-        "Validated deal creation and editing with a change history",
-        "Report: amount by stage, conversion and forecast",
-        "Mobile layout: slide-in navigation and a horizontal pipeline"
+        "Found and selected the Ombra theme (MIT) for its original design quality",
+        "Moved the restaurant to Bishkek: local produce in the set, prices in som, Russian copy",
+        "Removed the Michelin badge and stages at real restaurants — a fictional place has no real awards",
+        "The form shows a demo confirmation instead of mailing a placeholder address",
+        "Added Cyrillic font subsets, noindex and theme credit"
       ]
     },
     "provenance": {
-      "type": "original",
-      "ru": "Собственная разработка MicroStudio без внешней основы. Шрифт Inter — SIL OFL 1.1.",
-      "en": "Built from scratch by MicroStudio. Inter font is SIL OFL 1.1.",
-      "assets": [
-        {
-          "name": "Inter",
-          "license": "OFL-1.1",
-          "source": "https://github.com/rsms/inter"
-        }
-      ]
+      "type": "derived",
+      "ru": "Адаптация открытой темы Ombra (Andrei Alba, MIT). Дизайн, вёрстка, фото и анимации — исходные.",
+      "en": "An adaptation of the open-source Ombra theme (Andrei Alba, MIT). Design, layout, photos and animations are original to the theme.",
+      "assets": [],
+      "upstream": {
+        "name": "Ombra",
+        "url": "https://github.com/xocothemes/ombra",
+        "sha": "3d005a7eef5b9fd624e6af2861e1a32fb8997599",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/xocothemes/ombra/blob/3d005a7eef5b9fd624e6af2861e1a32fb8997599/LICENSE",
+        "authors": "Andrei Alba",
+        "demo": "https://ombra-lemon.vercel.app",
+        "fork": "https://github.com/kirill-dorkin/ms-ochok-restaurant"
+      }
     },
     "client": null,
-    "demoUrl": "https://ms-arna-crm.vercel.app",
+    "demoUrl": "https://ms-ochok-restaurant.vercel.app",
     "hosting": "showcase",
     "publishedAt": "2026-10-19",
     "verifiedAt": "2026-10-19",
@@ -234,456 +219,411 @@
     "mobileFirst": false,
     "images": {
       "desktop": {
-        "src": "/portfolio/arna-crm/board.webp",
+        "src": "/portfolio/ochok-restaurant/desktop.webp",
         "width": 1440,
         "height": 900
       },
       "mobile": {
-        "src": "/portfolio/arna-crm/mobile.webp",
+        "src": "/portfolio/ochok-restaurant/mobile.webp",
         "width": 780,
         "height": 1688
       },
       "gallery": [
         {
-          "src": "/portfolio/arna-crm/desktop.webp",
+          "src": "/portfolio/ochok-restaurant/menu.webp",
           "width": 1440,
           "height": 900,
           "viewport": "desktop",
           "alt": {
-            "ru": "Арна CRM — сделки и клиенты",
-            "en": "Arna CRM — deals and clients"
+            "ru": "Сет из шести подач",
+            "en": "Six-course set"
           }
         },
         {
-          "src": "/portfolio/arna-crm/deal.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Карточка сделки с историей",
-            "en": "Deal page with history"
-          }
-        },
-        {
-          "src": "/portfolio/arna-crm/report.webp",
+          "src": "/portfolio/ochok-restaurant/reserve.webp",
           "width": 780,
           "height": 1688,
           "viewport": "mobile",
           "alt": {
-            "ru": "Отчёт на телефоне",
-            "en": "Report on a phone"
+            "ru": "Форма брони на телефоне",
+            "en": "Reservation form on a phone"
           }
         }
       ]
     }
   },
   {
-    "slug": "tash-stroy",
+    "slug": "maison-archive",
     "workType": "demo",
-    "format": "corporate",
-    "industry": "b2b",
+    "format": "shop",
+    "industry": "commerce",
     "niche": {
-      "ru": "Строительство",
-      "en": "Construction"
+      "ru": "Магазин премиальных товаров",
+      "en": "Premium goods store"
     },
     "title": {
-      "ru": "Таш Строй — строительная компания",
-      "en": "Tash Stroy — construction company"
+      "ru": "Maison — магазин редких вещей",
+      "en": "Maison — rare pieces store"
     },
     "summary": {
-      "ru": "Корпоративный сайт генподрядчика: услуги с деталями, объекты с фильтром и расчёт ориентира сметы.",
-      "en": "Corporate site for a general contractor: detailed services, filterable projects and an estimate calculator."
+      "ru": "Интернет-магазин в «печатной» эстетике: три дома с каталогами, фильтры по мастеру, материалу, эпохе и цене, избранное, корзина, кабинет покупателя и смена валюты.",
+      "en": "An online store with a printed-archive aesthetic: three houses with catalogues, filters by maker, material, era and price, wishlist, bag, customer cabinet and currency switch."
     },
     "problem": {
-      "ru": "Заказчику стройки нужно убедиться, что подрядчик справится с объектом его типа, и понять порядок бюджета. Сайт раскладывает услуги по направлениям, показывает объекты и даёт ориентир сметы без звонка.",
-      "en": "A client needs to see that a contractor can handle their type of building and get a sense of budget. The site splits services by direction, shows projects and gives a ballpark estimate without a call."
+      "ru": "Магазин штучных дорогих вещей должен продавать атмосферой и подробностями, а не баннерами: строгая типографика, полные карточки, удобный каталог и спокойный путь к запросу.",
+      "en": "A store for unique high-end pieces sells through atmosphere and detail rather than banners: strict typography, full product records, a convenient catalogue and a calm path to an enquiry."
     },
     "scenario": {
-      "ru": "Главная → услуга «Монолит» → «Рассчитать» → ориентир сметы по типу и площади → демо-запрос → сброс.",
-      "en": "Home → Monolith service → Estimate → ballpark by building type and area → demo request → reset."
+      "ru": "Каталог часов → фильтр по мастеру и материалу, сортировка по цене, вид списком → карточка предмета → в избранное и в корзину → переключение на другой дом (ателье, антиквариат) → поиск ⌘K → кабинет покупателя.",
+      "en": "Watch catalogue → filter by maker and material, sort by price, list view → item record → wishlist and bag → switch to another house (tailoring, antiques) → ⌘K search → customer cabinet."
     },
     "features": [
       {
-        "ru": "9 связанных страниц с хлебными крошками",
-        "en": "9 linked pages with breadcrumbs",
+        "ru": "Каталог из 36 предметов в трёх домах с фасетными фильтрами",
+        "en": "A 36-piece catalogue across three houses with faceted filters",
         "kind": "production-ready"
       },
       {
-        "ru": "Фильтр объектов с состоянием в URL",
-        "en": "Project filter with URL state",
-        "kind": "production-ready"
-      },
-      {
-        "ru": "Ориентир сметы по услуге, типу и площади",
-        "en": "Ballpark estimate by service, type and area",
+        "ru": "Избранное, корзина и смена валюты с сохранением в браузере",
+        "en": "Wishlist, bag and currency switch persisted in the browser",
         "kind": "demo-logic"
       },
       {
-        "ru": "Передача запроса в CRM отдела продаж",
-        "en": "Sending the request to a sales CRM",
+        "ru": "Подключение Shopify Storefront API двумя переменными окружения",
+        "en": "Shopify Storefront API via two environment variables",
         "kind": "missing-integration"
       }
     ],
     "limits": {
-      "ru": "Компания, объекты и ставки вымышлены; запрос хранится только в браузере.",
-      "en": "Company, projects and rates are fictional; the request is stored only in the browser."
+      "ru": "Дома, мастера и предметы вымышлены; покупка не проводится, кабинет — демонстрационный.",
+      "en": "Houses, makers and pieces are fictional; no purchase is made and the cabinet is a demo."
     },
     "studio": {
       "ru": [
-        "Структура корпоративного сайта: 4 услуги с отдельными страницами, объекты, компания, контакты",
-        "Строгая визуальная система: Oswald + Inter, сигнальный оранжевый, сетка-чертёж",
-        "Серия технических иллюстраций объектов, сгенерированных скриптом",
-        "Калькулятор ориентира сметы с диапазоном и пояснением",
-        "Фильтр объектов с историей браузера и пустым состоянием",
-        "Мобильное меню, таблицы и формы, удобные с телефона"
+        "Нашли и отобрали тему Maison (MIT) за полноценный каталог и редакционную типографику",
+        "Убрали выдуманный «рейтинг покупателей» из карточек, фильтров, сортировки и разметки",
+        "Переименовали мастеров, чьи названия напоминали реальные часовые марки",
+        "Исправили доступность: контраст бледного текста до WCAG AA, подписи полей цены, сортировки и поиска",
+        "Заменили пустые ссылки на github.com и instagram.com ссылками на проект и исходную тему",
+        "Добавили пометку о демо в подвале и noindex"
       ],
       "en": [
-        "Corporate structure: 4 services with their own pages, projects, company, contacts",
-        "Strict visual system: Oswald + Inter, signal orange, blueprint grid",
-        "A series of script-generated technical drawings of buildings",
-        "Ballpark estimate calculator with a range and explanation",
-        "Project filter with browser history and an empty state",
-        "Mobile menu, tables and forms that work on a phone"
+        "Found and selected the Maison theme (MIT) for its full catalogue and editorial typography",
+        "Removed the invented customer rating from cards, filters, sorting and structured data",
+        "Renamed makers whose names resembled real watch brands",
+        "Fixed accessibility: AA contrast for faint text, labels for price inputs, sorting and search",
+        "Replaced dead links to github.com and instagram.com with the project and theme pages",
+        "Added a demo note in the footer and noindex"
       ]
     },
     "provenance": {
-      "type": "original",
-      "ru": "Собственная разработка MicroStudio. Шрифты Oswald и Inter — SIL OFL 1.1; иллюстрации генерируются скриптом tools/illustrations.mjs.",
-      "en": "Built from scratch by MicroStudio. Oswald and Inter fonts are SIL OFL 1.1; illustrations are generated by tools/illustrations.mjs.",
-      "assets": [
-        {
-          "name": "Oswald",
-          "license": "OFL-1.1",
-          "source": "https://github.com/googlefonts/OswaldFont"
-        },
-        {
-          "name": "Inter",
-          "license": "OFL-1.1",
-          "source": "https://github.com/rsms/inter"
-        }
-      ]
+      "type": "derived",
+      "ru": "Адаптация открытой темы Maison (njxui, MIT). Дизайн, вёрстка, каталог и фото — исходные.",
+      "en": "An adaptation of the open-source Maison theme (njxui, MIT). Design, layout, catalogue and photos are original to the theme.",
+      "assets": [],
+      "upstream": {
+        "name": "Maison",
+        "url": "https://github.com/njbSaab/astro-njx-maison",
+        "sha": "02284b566f8974ebbde734532f263a868ffa791e",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/njbSaab/astro-njx-maison/blob/02284b566f8974ebbde734532f263a868ffa791e/LICENSE",
+        "authors": "njxui (njbSaab)",
+        "demo": "https://astro-njx-maison.pages.dev",
+        "fork": "https://github.com/kirill-dorkin/ms-maison-archive"
+      }
     },
     "client": null,
-    "demoUrl": "https://ms-tash-stroy.vercel.app",
+    "demoUrl": "https://ms-maison-archive.vercel.app",
     "hosting": "showcase",
     "publishedAt": "2026-10-19",
     "verifiedAt": "2026-10-19",
     "featuredRank": 3,
-    "language": "ru",
+    "language": "en",
     "mobileFirst": false,
     "images": {
       "desktop": {
-        "src": "/portfolio/tash-stroy/desktop.webp",
+        "src": "/portfolio/maison-archive/desktop.webp",
         "width": 1440,
         "height": 900
       },
       "mobile": {
-        "src": "/portfolio/tash-stroy/mobile.webp",
+        "src": "/portfolio/maison-archive/mobile.webp",
         "width": 780,
         "height": 1688
       },
       "gallery": [
         {
-          "src": "/portfolio/tash-stroy/service.webp",
+          "src": "/portfolio/maison-archive/product.webp",
           "width": 1440,
           "height": 900,
           "viewport": "desktop",
           "alt": {
-            "ru": "Страница услуги «Монолитные работы»",
-            "en": "Monolith service page"
+            "ru": "Карточка предмета",
+            "en": "Item record"
           }
         },
         {
-          "src": "/portfolio/tash-stroy/projects.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Объекты с фильтром по типу",
-            "en": "Projects with a type filter"
-          }
-        },
-        {
-          "src": "/portfolio/tash-stroy/estimate.webp",
+          "src": "/portfolio/maison-archive/catalog.webp",
           "width": 780,
           "height": 1688,
           "viewport": "mobile",
           "alt": {
-            "ru": "Расчёт ориентира сметы на телефоне",
-            "en": "Estimate calculator on a phone"
+            "ru": "Каталог на телефоне",
+            "en": "Catalogue on a phone"
           }
         }
       ]
     }
   },
   {
-    "slug": "svezho-cleaning",
+    "slug": "kerege-admin",
     "workType": "demo",
-    "format": "landing",
-    "industry": "local-services",
+    "format": "app",
+    "industry": "products",
     "niche": {
-      "ru": "Клининг",
-      "en": "Cleaning"
+      "ru": "Панель управления",
+      "en": "Admin dashboard"
     },
     "title": {
-      "ru": "Свежо — уборка квартир",
-      "en": "Svezho — home cleaning"
+      "ru": "Kerege Admin — панель управления",
+      "en": "Kerege Admin — admin dashboard"
     },
     "summary": {
-      "ru": "Лендинг клининга: состав уборки по комнатам, калькулятор цены и запись на свободное время.",
-      "en": "Cleaning service landing: room-by-room checklist, price calculator and booking a free slot."
+      "ru": "Веб-приложение для команды: дашборд с выручкой и продажами, задачи с фильтрами и массовыми действиями, пользователи, чаты, настройки, светлая и тёмная тема.",
+      "en": "A web app for a team: a dashboard with revenue and sales, tasks with filters and bulk actions, users, chats, settings, light and dark themes."
     },
     "problem": {
-      "ru": "Клиенту клининга важно заранее понять, что именно уберут и сколько это стоит. Лендинг отвечает на оба вопроса до звонка и сразу ведёт к записи на свободное время.",
-      "en": "Cleaning customers want to know exactly what gets cleaned and what it costs. The landing page answers both before any call and leads straight to booking a free slot."
+      "ru": "Бизнесу нужен внутренний кабинет, в котором удобно работать каждый день: быстрые таблицы, понятная навигация, поиск по ⌘K и аккуратный мобильный вид.",
+      "en": "A business needs an internal cabinet that is pleasant for daily work: fast tables, clear navigation, ⌘K search and a tidy mobile view."
     },
     "scenario": {
-      "ru": "Выбрать вид уборки → посчитать цену → выбрать день и время → заполнить контакты → демо-заявка → сброс.",
-      "en": "Pick a cleaning type → get a price → choose day and time → enter contacts → demo request → reset."
+      "ru": "Дашборд → задачи: поиск, фильтр по статусу и приоритету, выбор нескольких строк, сортировка → пользователи: приглашение и редактирование → чаты → настройки профиля и внешнего вида → тёмная тема.",
+      "en": "Dashboard → tasks: search, status and priority filters, multi-select, sorting → users: invite and edit → chats → profile and appearance settings → dark theme."
     },
     "features": [
       {
-        "ru": "Калькулятор с разбивкой цены и длительностью",
-        "en": "Price calculator with breakdown and duration",
-        "kind": "demo-logic"
-      },
-      {
-        "ru": "Чек-лист по комнатам для двух видов уборки",
-        "en": "Room checklist for two cleaning levels",
+        "ru": "Таблицы с фильтрами, сортировкой, пагинацией и выбором строк",
+        "en": "Tables with filters, sorting, pagination and row selection",
         "kind": "production-ready"
       },
       {
-        "ru": "Запись на свободный слот с проверкой полей",
-        "en": "Slot booking with field validation",
+        "ru": "Командное меню ⌘K, светлая/тёмная тема, сворачиваемое меню",
+        "en": "⌘K command menu, light/dark theme, collapsible sidebar",
+        "kind": "production-ready"
+      },
+      {
+        "ru": "Данные-примеры вместо API",
+        "en": "Sample data instead of an API",
         "kind": "demo-logic"
       },
       {
-        "ru": "Отправка заявки в WhatsApp/CRM",
-        "en": "Sending the request to WhatsApp/CRM",
+        "ru": "Авторизация и подключение к бэкенду",
+        "en": "Authentication and backend connection",
         "kind": "missing-integration"
       }
     ],
     "limits": {
-      "ru": "Расписание условное, заявка хранится только в браузере посетителя и никуда не отправляется.",
-      "en": "Availability is simulated; the request stays in the visitor's browser and is not sent anywhere."
+      "ru": "Данные — примеры, изменения не сохраняются на сервере; интерфейс на английском, как в исходнике.",
+      "en": "Data are samples and nothing is saved on a server; the interface is in English as in the original."
     },
     "studio": {
       "ru": [
-        "Позиционирование и структура лендинга под клининг",
-        "Иллюстрации и визуальная система (Unbounded + Onest, мятная палитра)",
-        "Калькулятор с понятной разбивкой и скидкой за регулярность",
-        "Интерактивный чек-лист по комнатам вместо «фото до/после»",
-        "Запись с выбором слота, валидацией телефона +996 и честным демо-состоянием",
-        "Мобильная навигация, фокус и доступность форм"
+        "Нашли и отобрали shadcn-admin (MIT) как одну из самых аккуратных открытых админ-панелей",
+        "Переименовали продукт и демо-пользователя, убрали личные данные автора из интерфейса",
+        "Заменили псевдолатынь в задачах (faker lorem) на понятные рабочие задачи",
+        "Убрали из меню раздел Clerk (без ключа он показывает инструкцию для разработчика) и заглушку Help Center",
+        "Настроили маршрутизацию SPA на Vercel и noindex",
+        "Проверили все разделы на 1440 и 390 px: без ошибок и горизонтальной прокрутки"
       ],
       "en": [
-        "Positioning and landing structure for a cleaning service",
-        "Illustrations and visual system (Unbounded + Onest, mint palette)",
-        "Calculator with a clear breakdown and a regular-cleaning discount",
-        "Interactive room checklist instead of before/after photos",
-        "Slot booking with +996 phone validation and an honest demo state",
-        "Mobile navigation, focus handling and accessible forms"
+        "Found and selected shadcn-admin (MIT) as one of the neatest open admin dashboards",
+        "Renamed the product and the demo user, removed the author's personal details from the UI",
+        "Replaced pseudo-Latin task titles (faker lorem) with readable work items",
+        "Removed the Clerk section (it shows developer instructions without a key) and the Help Center stub",
+        "Set up SPA routing on Vercel and noindex",
+        "Checked every section at 1440 and 390 px: no errors, no horizontal scroll"
       ]
     },
     "provenance": {
-      "type": "original",
-      "ru": "Собственная разработка MicroStudio без внешней основы. Шрифты Unbounded и Onest — SIL OFL 1.1, иллюстрации нарисованы в SVG.",
-      "en": "Built from scratch by MicroStudio. Fonts Unbounded and Onest are SIL OFL 1.1; illustrations are hand-made SVG.",
-      "assets": [
-        {
-          "name": "Unbounded",
-          "license": "OFL-1.1",
-          "source": "https://github.com/googlefonts/unbounded"
-        },
-        {
-          "name": "Onest",
-          "license": "OFL-1.1",
-          "source": "https://github.com/simpals/onest"
-        }
-      ]
+      "type": "derived",
+      "ru": "Адаптация открытого проекта shadcn-admin (Sat Naing, MIT). Интерфейс, компоненты и данные-примеры — исходные.",
+      "en": "An adaptation of the open-source shadcn-admin (Sat Naing, MIT). Interface, components and sample data are original to the project.",
+      "assets": [],
+      "upstream": {
+        "name": "shadcn-admin",
+        "url": "https://github.com/satnaing/shadcn-admin",
+        "sha": "e16c87f213a5ba5e45964e9b67c792105ec74d26",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/satnaing/shadcn-admin/blob/e16c87f213a5ba5e45964e9b67c792105ec74d26/LICENSE",
+        "authors": "Sat Naing",
+        "demo": "https://shadcn-admin.netlify.app",
+        "fork": "https://github.com/kirill-dorkin/ms-kerege-admin"
+      }
     },
     "client": null,
-    "demoUrl": "https://ms-svezho-cleaning.vercel.app",
+    "demoUrl": "https://ms-kerege-admin.vercel.app",
     "hosting": "showcase",
     "publishedAt": "2026-10-19",
     "verifiedAt": "2026-10-19",
     "featuredRank": 4,
-    "language": "ru",
+    "language": "en",
     "mobileFirst": false,
     "images": {
       "desktop": {
-        "src": "/portfolio/svezho-cleaning/desktop.webp",
+        "src": "/portfolio/kerege-admin/desktop.webp",
         "width": 1440,
         "height": 900
       },
       "mobile": {
-        "src": "/portfolio/svezho-cleaning/mobile.webp",
+        "src": "/portfolio/kerege-admin/mobile.webp",
         "width": 780,
         "height": 1688
       },
       "gallery": [
         {
-          "src": "/portfolio/svezho-cleaning/calc.webp",
+          "src": "/portfolio/kerege-admin/tasks.webp",
           "width": 1440,
           "height": 900,
           "viewport": "desktop",
           "alt": {
-            "ru": "Калькулятор стоимости с разбивкой",
-            "en": "Price calculator with breakdown"
+            "ru": "Задачи с фильтрами",
+            "en": "Tasks with filters"
           }
         },
         {
-          "src": "/portfolio/svezho-cleaning/rooms.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Чек-лист уборки по комнатам",
-            "en": "Room-by-room cleaning checklist"
-          }
-        },
-        {
-          "src": "/portfolio/svezho-cleaning/book.webp",
+          "src": "/portfolio/kerege-admin/users.webp",
           "width": 780,
           "height": 1688,
           "viewport": "mobile",
           "alt": {
-            "ru": "Выбор дня и времени на телефоне",
-            "en": "Choosing day and time on a phone"
+            "ru": "Пользователи на телефоне",
+            "en": "Users on a phone"
           }
         }
       ]
     }
   },
   {
-    "slug": "toolor-jazz",
+    "slug": "marby-realty",
     "workType": "demo",
-    "format": "special",
-    "industry": "creative",
+    "format": "corporate",
+    "industry": "food-travel-realty",
     "niche": {
-      "ru": "Культурное событие",
-      "en": "Cultural event"
+      "ru": "Недвижимость",
+      "en": "Real estate"
     },
     "title": {
-      "ru": "Тоолор Джаз — фестиваль",
-      "en": "Toolor Jazz — festival"
+      "ru": "Marby — агентство недвижимости",
+      "en": "Marby — boutique real estate brokerage"
     },
     "summary": {
-      "ru": "Сайт фестиваля: лайнап с фильтром, расписание трёх сцен с личным планом и пересечениями, демо-билеты.",
-      "en": "Festival site: filterable line-up, three-stage schedule with a personal plan and clash detection, demo tickets."
+      "ru": "Корпоративный сайт агентства недвижимости в редакционном стиле: видео в первом экране, услуги, каталог объектов с параметрами, страницы объектов, команда, блог и контакты.",
+      "en": "An editorial corporate site for a real estate brokerage: hero video, services, a property catalogue with specs, property pages, team, blog and contacts."
     },
     "problem": {
-      "ru": "Гостю фестиваля нужно понять, кого и когда слушать, и не пропустить пересекающиеся концерты. Сайт превращает программу трёх сцен в личный план и ведёт к покупке билета.",
-      "en": "Festival guests need to know who plays when and not miss overlapping sets. The site turns a three-stage programme into a personal plan and leads to a ticket."
+      "ru": "Агентству дорогой недвижимости нужен сайт, который сам по себе выглядит как обложка журнала: крупная типографика, большие фото, подробные карточки объектов и спокойный путь к консультации.",
+      "en": "A high-end brokerage needs a site that reads like a magazine cover: large type, big photography, detailed property records and a calm path to a consultation."
     },
     "scenario": {
-      "ru": "Отфильтровать лайнап → собрать план на два дня → увидеть пересечения → выбрать билеты → оформить демо-билет → сброс.",
-      "en": "Filter the line-up → build a two-day plan → see clashes → pick tickets → get a demo ticket → reset."
+      "ru": "Главная с видео → услуги для покупателей, продавцов и управления → избранные объекты → каталог с фильтром → страница объекта: галерея, площадь, спальни, цена, советник → блог → контакты и форма консультации.",
+      "en": "Home with video → services for buyers, sellers and management → featured listings → catalogue with a filter → property page: gallery, area, bedrooms, price, advisor → blog → contacts and consultation form."
     },
     "features": [
       {
-        "ru": "Личный план концертов с проверкой пересечений по времени",
-        "en": "Personal concert plan with time-clash detection",
+        "ru": "Каталог объектов с фильтром и страницами объектов из Markdown",
+        "en": "Property catalogue with a filter and pages generated from Markdown",
         "kind": "production-ready"
       },
       {
-        "ru": "Лайнап с жанровым фильтром и генеративными постерами",
-        "en": "Line-up with a genre filter and generative posters",
+        "ru": "Блог с категориями, команда, FAQ-аккордеоны",
+        "en": "Blog with categories, team, FAQ accordions",
         "kind": "production-ready"
       },
       {
-        "ru": "Выбор билетов и демо-билет с декоративным кодом",
-        "en": "Ticket selection and a demo ticket with a decorative code",
+        "ru": "Форма консультации без отправки",
+        "en": "Consultation form that sends nothing",
         "kind": "demo-logic"
       },
       {
-        "ru": "Продажа билетов и проверка на входе",
-        "en": "Ticket sales and gate scanning",
+        "ru": "Отправка заявок в CRM агентства",
+        "en": "Sending leads to the agency's CRM",
         "kind": "missing-integration"
       }
     ],
     "limits": {
-      "ru": "Фестиваль и артисты вымышлены; билет — демонстрационный, код не сканируется, оплаты нет.",
-      "en": "The festival and artists are fictional; the ticket is a demo with a non-scannable code; no payment."
+      "ru": "Агентство, команда, объекты и отзывы вымышлены; форма ничего не отправляет. Тексты на английском, как в исходнике.",
+      "en": "The agency, team, listings and testimonials are fictional; the form sends nothing. Copy is in English as in the original."
     },
     "studio": {
       "ru": [
-        "Айдентика фестиваля: плакатная типографика Sofia Sans Extra Condensed и ночная палитра",
-        "Иллюстрация гор на первом экране и генеративные постеры для каждого артиста",
-        "Расписание трёх сцен с вкладками дней и личным планом",
-        "Проверка пересечений концертов и подсказка про переходы между сценами",
-        "Выбор билетов, проверка полей и демо-билет",
-        "Схема площадки и FAQ для гостей"
+        "Нашли и отобрали тему Marby (MIT) за редакционную вёрстку и полноценные внутренние страницы",
+        "Отключили сглаженную прокрутку Lenis — страница прокручивается нативно",
+        "Рекламную кнопку магазина тем превратили в метку «Demo · MicroStudio»",
+        "Форма честно пишет, что ничего не отправлено; отзывы подписаны как примеры",
+        "Заменили пустые ссылки на соцсети ссылками на проект и исходную тему, добавили noindex"
       ],
       "en": [
-        "Festival identity: Sofia Sans Extra Condensed poster type and a night palette",
-        "Mountain hero illustration and generative posters for every artist",
-        "Three-stage schedule with day tabs and a personal plan",
-        "Clash detection with a hint about walking between stages",
-        "Ticket selection, validation and a demo ticket",
-        "Venue map and a guest FAQ"
+        "Found and selected the Marby theme (MIT) for its editorial layout and full inner pages",
+        "Turned off Lenis smooth scrolling — the page scrolls natively",
+        "Turned the theme-store promo button into a Demo · MicroStudio badge",
+        "The form says honestly that nothing was sent; testimonials are labelled as samples",
+        "Replaced placeholder social links with the project and theme pages, added noindex"
       ]
     },
     "provenance": {
-      "type": "original",
-      "ru": "Собственная разработка MicroStudio. Шрифты Sofia Sans и Sofia Sans Extra Condensed — SIL OFL 1.1; графика нарисована в SVG.",
-      "en": "Built from scratch by MicroStudio. Sofia Sans fonts are SIL OFL 1.1; graphics are hand-made SVG.",
-      "assets": [
-        {
-          "name": "Sofia Sans",
-          "license": "OFL-1.1",
-          "source": "https://github.com/lettersoup/Sofia-Sans"
-        }
-      ]
+      "type": "derived",
+      "ru": "Адаптация открытой темы Marby (Startfrom, MIT). Дизайн, вёрстка, фото, видео и страницы — исходные.",
+      "en": "An adaptation of the open-source Marby theme (Startfrom, MIT). Design, layout, photos, video and pages are original to the theme.",
+      "assets": [],
+      "upstream": {
+        "name": "Marby",
+        "url": "https://github.com/agnilem/marby-astro",
+        "sha": "4722d38cfc4a4e70da37a29ffef5e9eccda41bc4",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/agnilem/marby-astro/blob/4722d38cfc4a4e70da37a29ffef5e9eccda41bc4/LICENSE",
+        "authors": "Startfrom (Alex Prokhorov)",
+        "demo": "https://marby.startfrom.co",
+        "fork": "https://github.com/kirill-dorkin/ms-marby-realty"
+      }
     },
     "client": null,
-    "demoUrl": "https://ms-toolor-jazz.vercel.app",
+    "demoUrl": "https://ms-marby-realty.vercel.app",
     "hosting": "showcase",
     "publishedAt": "2026-10-19",
     "verifiedAt": "2026-10-19",
     "featuredRank": 5,
-    "language": "ru",
+    "language": "en",
     "mobileFirst": false,
     "images": {
       "desktop": {
-        "src": "/portfolio/toolor-jazz/desktop.webp",
+        "src": "/portfolio/marby-realty/desktop.webp",
         "width": 1440,
         "height": 900
       },
       "mobile": {
-        "src": "/portfolio/toolor-jazz/mobile.webp",
+        "src": "/portfolio/marby-realty/mobile.webp",
         "width": 780,
         "height": 1688
       },
       "gallery": [
         {
-          "src": "/portfolio/toolor-jazz/lineup.webp",
+          "src": "/portfolio/marby-realty/listings.webp",
           "width": 1440,
           "height": 900,
           "viewport": "desktop",
           "alt": {
-            "ru": "Лайнап с постерами артистов",
-            "en": "Line-up with artist posters"
+            "ru": "Каталог объектов",
+            "en": "Property catalogue"
           }
         },
         {
-          "src": "/portfolio/toolor-jazz/schedule.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Расписание и личный план с пересечением",
-            "en": "Schedule and personal plan with a clash"
-          }
-        },
-        {
-          "src": "/portfolio/toolor-jazz/tickets.webp",
+          "src": "/portfolio/marby-realty/property.webp",
           "width": 780,
           "height": 1688,
           "viewport": "mobile",
           "alt": {
-            "ru": "Выбор билетов на телефоне",
-            "en": "Choosing tickets on a phone"
+            "ru": "Страница объекта на телефоне",
+            "en": "Property page on a phone"
           }
         }
       ]
@@ -901,2731 +841,6 @@
           "alt": {
             "ru": "Следующий экран на телефоне",
             "en": "Next screen on a phone"
-          }
-        }
-      ]
-    }
-  },
-  {
-    "slug": "kaichy-barber",
-    "workType": "demo",
-    "format": "landing",
-    "industry": "local-services",
-    "niche": {
-      "ru": "Барбершоп",
-      "en": "Barbershop"
-    },
-    "title": {
-      "ru": "Кайчы — барбершоп",
-      "en": "Kaichy — barbershop"
-    },
-    "summary": {
-      "ru": "Лендинг барбершопа: прайс с длительностью, мастера и запись в четыре шага со свободными окнами.",
-      "en": "Barbershop landing: prices with duration, barbers and four-step booking with free slots."
-    },
-    "problem": {
-      "ru": "Клиент барбершопа хочет прийти к своему мастеру без ожидания и звонков. Сайт показывает цены и свободные окна и даёт записаться за полминуты.",
-      "en": "A barbershop customer wants to see their barber without waiting or calling. The site shows prices and free slots and books a visit in half a minute."
-    },
-    "scenario": {
-      "ru": "Выбрать услугу → мастера или «любого» → день и свободное время с учётом длительности → контакты → демо-запись → отмена.",
-      "en": "Pick a service → a barber or “any” → a day and a free slot that fits the duration → contacts → demo booking → cancel."
-    },
-    "features": [
-      {
-        "ru": "Слоты с учётом длительности услуги и выходных мастера",
-        "en": "Slots that respect service length and barbers' days off",
-        "kind": "demo-logic"
-      },
-      {
-        "ru": "«Любой свободный мастер» подбирает ближайшего",
-        "en": "“Any barber” picks the nearest free one",
-        "kind": "demo-logic"
-      },
-      {
-        "ru": "Цена зависит от уровня мастера и видна до записи",
-        "en": "Price depends on the barber's level and is shown before booking",
-        "kind": "production-ready"
-      },
-      {
-        "ru": "Синхронизация с журналом записи и SMS-напоминания",
-        "en": "Sync with a booking system and SMS reminders",
-        "kind": "missing-integration"
-      }
-    ],
-    "limits": {
-      "ru": "Расписание генерируется условно, запись хранится только в браузере, напоминания не отправляются.",
-      "en": "The schedule is simulated; the booking stays in the browser and no reminders are sent."
-    },
-    "studio": {
-      "ru": [
-        "Лендинг, в котором запись — главный сценарий, а не форма внизу",
-        "Пошаговая запись: услуга, мастер, время, контакты — с прогрессом",
-        "Логика свободных окон с учётом длительности и выходных",
-        "Плакатная айдентика: Alumni Sans, латунь и векторная эмблема",
-        "Мобильная версия с крупными зонами нажатия"
-      ],
-      "en": [
-        "A landing page where booking is the main flow, not a form at the bottom",
-        "Step-by-step booking with progress: service, barber, time, contacts",
-        "Free-slot logic that respects duration and days off",
-        "Poster-style identity: Alumni Sans, brass and a vector emblem",
-        "Mobile layout with large tap targets"
-      ]
-    },
-    "provenance": {
-      "type": "original",
-      "ru": "Собственная разработка MicroStudio. Шрифты Alumni Sans и Golos Text — SIL OFL 1.1; графика — SVG студии.",
-      "en": "Built from scratch by MicroStudio. Alumni Sans and Golos Text fonts are SIL OFL 1.1; graphics are the studio's SVG.",
-      "assets": [
-        {
-          "name": "Alumni Sans",
-          "license": "OFL-1.1",
-          "source": "https://github.com/googlefonts/alumni"
-        },
-        {
-          "name": "Golos Text",
-          "license": "OFL-1.1",
-          "source": "https://github.com/googlefonts/golos-text"
-        }
-      ]
-    },
-    "client": null,
-    "demoUrl": "https://ms-kaichy-barber.vercel.app",
-    "hosting": "showcase",
-    "publishedAt": "2026-10-19",
-    "verifiedAt": "2026-10-19",
-    "featuredRank": 11,
-    "language": "ru",
-    "mobileFirst": false,
-    "images": {
-      "desktop": {
-        "src": "/portfolio/kaichy-barber/desktop.webp",
-        "width": 1440,
-        "height": 900
-      },
-      "mobile": {
-        "src": "/portfolio/kaichy-barber/mobile.webp",
-        "width": 780,
-        "height": 1688
-      },
-      "gallery": [
-        {
-          "src": "/portfolio/kaichy-barber/booking.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Запись: услуга, мастер, время",
-            "en": "Booking: service, barber, time"
-          }
-        },
-        {
-          "src": "/portfolio/kaichy-barber/prices.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Прайс с длительностью",
-            "en": "Prices with duration"
-          }
-        },
-        {
-          "src": "/portfolio/kaichy-barber/masters.webp",
-          "width": 780,
-          "height": 1688,
-          "viewport": "mobile",
-          "alt": {
-            "ru": "Мастера на телефоне",
-            "en": "Barbers on a phone"
-          }
-        }
-      ]
-    }
-  },
-  {
-    "slug": "garage-312",
-    "workType": "demo",
-    "format": "corporate",
-    "industry": "local-services",
-    "niche": {
-      "ru": "Автосервис",
-      "en": "Car service"
-    },
-    "title": {
-      "ru": "Гараж 312 — автосервис",
-      "en": "Garage 312 — car service"
-    },
-    "summary": {
-      "ru": "Сайт автосервиса: услуги с отчётом диагностики, калькулятор работ по классу авто и запись на пост.",
-      "en": "Car service website: services with a sample diagnostics report, a labour calculator by car class and visit booking."
-    },
-    "problem": {
-      "ru": "Владельцы машин боятся, что в сервисе «найдут лишнего». Сайт объясняет порядок работы, показывает цены до приезда и даёт записаться с описанием проблемы.",
-      "en": "Drivers fear a garage will “find extra work”. The site explains the process, shows prices before the visit and lets them book with a description of the problem."
-    },
-    "scenario": {
-      "ru": "Главная → калькулятор: класс авто и работы → «Записаться с этим списком» → данные машины, симптомы, день и время → демо-запись → сброс.",
-      "en": "Home → calculator: car class and jobs → “Book with this list” → car details, symptoms, day and time → demo booking → reset."
-    },
-    "features": [
-      {
-        "ru": "Калькулятор стоимости и времени работ по классу автомобиля",
-        "en": "Labour price and time calculator by car class",
-        "kind": "demo-logic"
-      },
-      {
-        "ru": "Выбранные работы переносятся в форму записи",
-        "en": "Chosen jobs carry over into the booking form",
-        "kind": "production-ready"
-      },
-      {
-        "ru": "Запись: авто, симптомы, свободное время, проверка полей",
-        "en": "Booking: car, symptoms, free time, validation",
-        "kind": "demo-logic"
-      },
-      {
-        "ru": "Планировщик постов и уведомления клиенту",
-        "en": "Bay scheduler and customer notifications",
-        "kind": "missing-integration"
-      }
-    ],
-    "limits": {
-      "ru": "Автосервис и цены вымышлены, расписание условное, запись хранится только в браузере.",
-      "en": "The garage and prices are fictional, availability is simulated and the booking stays in the browser."
-    },
-    "studio": {
-      "ru": [
-        "Структура из 7 страниц: услуги с деталями, цены, о сервисе, запись",
-        "Пример отчёта диагностики как доказательство подхода вместо отзывов",
-        "Калькулятор работ с коэффициентом класса и временем на посту",
-        "Связка калькулятора и формы записи через адрес страницы",
-        "Динамичная визуальная система: Exo 2 italic, синий и жёлтый"
-      ],
-      "en": [
-        "A 7-page structure: detailed services, prices, about, booking",
-        "A sample diagnostics report as proof of approach instead of reviews",
-        "A labour calculator with a car-class factor and bay time",
-        "The calculator feeds the booking form through the URL",
-        "A dynamic visual system: Exo 2 italic, blue and yellow"
-      ]
-    },
-    "provenance": {
-      "type": "original",
-      "ru": "Собственная разработка MicroStudio. Шрифты Exo 2 и IBM Plex Sans — SIL OFL 1.1; иллюстрации — SVG студии.",
-      "en": "Built from scratch by MicroStudio. Exo 2 and IBM Plex Sans fonts are SIL OFL 1.1; illustrations are the studio's SVG.",
-      "assets": [
-        {
-          "name": "Exo 2",
-          "license": "OFL-1.1",
-          "source": "https://github.com/googlefonts/Exo-2.0"
-        },
-        {
-          "name": "IBM Plex Sans",
-          "license": "OFL-1.1",
-          "source": "https://github.com/IBM/plex"
-        }
-      ]
-    },
-    "client": null,
-    "demoUrl": "https://ms-garage-312.vercel.app",
-    "hosting": "showcase",
-    "publishedAt": "2026-10-19",
-    "verifiedAt": "2026-10-19",
-    "featuredRank": 12,
-    "language": "ru",
-    "mobileFirst": false,
-    "images": {
-      "desktop": {
-        "src": "/portfolio/garage-312/desktop.webp",
-        "width": 1440,
-        "height": 900
-      },
-      "mobile": {
-        "src": "/portfolio/garage-312/mobile.webp",
-        "width": 780,
-        "height": 1688
-      },
-      "gallery": [
-        {
-          "src": "/portfolio/garage-312/prices.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Калькулятор работ по классу автомобиля",
-            "en": "Labour calculator by car class"
-          }
-        },
-        {
-          "src": "/portfolio/garage-312/diagnostics.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Страница диагностики с примером отчёта",
-            "en": "Diagnostics page with a sample report"
-          }
-        },
-        {
-          "src": "/portfolio/garage-312/visit.webp",
-          "width": 780,
-          "height": 1688,
-          "viewport": "mobile",
-          "alt": {
-            "ru": "Запись на сервис с телефона",
-            "en": "Booking a visit on a phone"
-          }
-        }
-      ]
-    }
-  },
-  {
-    "slug": "ak-tish-dental",
-    "workType": "demo",
-    "format": "corporate",
-    "industry": "local-services",
-    "niche": {
-      "ru": "Стоматология",
-      "en": "Dentistry"
-    },
-    "title": {
-      "ru": "Ак Тиш — стоматология",
-      "en": "Ak Tish — dental clinic"
-    },
-    "summary": {
-      "ru": "Сайт стоматологии: направления, страница имплантации, врачи с фильтром, прайс с поиском и запись к врачу.",
-      "en": "Dental clinic site: treatments, an implant page, filterable doctors, a searchable price list and booking with a doctor."
-    },
-    "problem": {
-      "ru": "Пациенты стоматологии боятся неожиданных счетов и не понимают, к кому записаться. Сайт объясняет первый визит, показывает цены и подбирает врача по направлению.",
-      "en": "Dental patients fear surprise bills and don't know which doctor to see. The site explains the first visit, shows prices and matches a doctor to the treatment."
-    },
-    "scenario": {
-      "ru": "Направление → врачи по специализации → «Записаться» к врачу → только его приёмные дни и свободное время → данные пациента → демо-запись.",
-      "en": "Treatment → doctors by specialty → “Book” with a doctor → only their working days and free times → patient details → demo booking."
-    },
-    "features": [
-      {
-        "ru": "Запись учитывает направление, врача и его приёмные дни",
-        "en": "Booking respects the treatment, doctor and their working days",
-        "kind": "demo-logic"
-      },
-      {
-        "ru": "Прайс с поиском по услугам и группам",
-        "en": "Price list searchable by service and group",
-        "kind": "production-ready"
-      },
-      {
-        "ru": "Фильтр врачей по специализации",
-        "en": "Doctor filter by specialty",
-        "kind": "production-ready"
-      },
-      {
-        "ru": "Передача записи в медицинскую информационную систему",
-        "en": "Passing bookings to a clinic information system",
-        "kind": "missing-integration"
-      }
-    ],
-    "limits": {
-      "ru": "Клиника, врачи и цены вымышлены; сайт не даёт медицинских рекомендаций; запись хранится только в браузере.",
-      "en": "The clinic, doctors and prices are fictional; the site gives no medical advice; bookings stay in the browser."
-    },
-    "studio": {
-      "ru": [
-        "Подача через прозрачность: первый визит, план и смета вместо обещаний",
-        "6 страниц: направления, отдельная страница имплантации с этапами и составом цены",
-        "Запись к врачу с учётом его графика и направления",
-        "Прайс с мгновенным поиском и раздел врачей с фильтром",
-        "Спокойная визуальная система: Raleway + Nunito, мятный и коралловый"
-      ],
-      "en": [
-        "Trust through transparency: first visit, plan and estimate instead of promises",
-        "6 pages including an implant page with stages and price breakdown",
-        "Doctor booking that follows the doctor's schedule and treatment",
-        "Instant price search and a filterable doctors section",
-        "A calm visual system: Raleway + Nunito, mint and coral"
-      ]
-    },
-    "provenance": {
-      "type": "original",
-      "ru": "Собственная разработка MicroStudio. Шрифты Raleway и Nunito — SIL OFL 1.1; иллюстрации — SVG студии.",
-      "en": "Built from scratch by MicroStudio. Raleway and Nunito fonts are SIL OFL 1.1; illustrations are the studio's SVG.",
-      "assets": [
-        {
-          "name": "Raleway",
-          "license": "OFL-1.1",
-          "source": "https://github.com/impallari/Raleway"
-        },
-        {
-          "name": "Nunito",
-          "license": "OFL-1.1",
-          "source": "https://github.com/googlefonts/nunito"
-        }
-      ]
-    },
-    "client": null,
-    "demoUrl": "https://ms-ak-tish-dental.vercel.app",
-    "hosting": "showcase",
-    "publishedAt": "2026-10-19",
-    "verifiedAt": "2026-10-19",
-    "featuredRank": 13,
-    "language": "ru",
-    "mobileFirst": false,
-    "images": {
-      "desktop": {
-        "src": "/portfolio/ak-tish-dental/desktop.webp",
-        "width": 1440,
-        "height": 900
-      },
-      "mobile": {
-        "src": "/portfolio/ak-tish-dental/mobile.webp",
-        "width": 780,
-        "height": 1688
-      },
-      "gallery": [
-        {
-          "src": "/portfolio/ak-tish-dental/implants.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Имплантация: этапы и цена",
-            "en": "Implants: stages and price"
-          }
-        },
-        {
-          "src": "/portfolio/ak-tish-dental/prices.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Поиск по прайсу",
-            "en": "Price list search"
-          }
-        },
-        {
-          "src": "/portfolio/ak-tish-dental/appointment.webp",
-          "width": 780,
-          "height": 1688,
-          "viewport": "mobile",
-          "alt": {
-            "ru": "Запись к детскому врачу",
-            "en": "Booking a children's dentist"
-          }
-        }
-      ]
-    }
-  },
-  {
-    "slug": "volt-electronics",
-    "workType": "demo",
-    "format": "shop",
-    "industry": "commerce",
-    "niche": {
-      "ru": "Электроника",
-      "en": "Electronics"
-    },
-    "title": {
-      "ru": "Вольт — магазин электроники",
-      "en": "Volt — electronics store"
-    },
-    "summary": {
-      "ru": "Магазин электроники: фильтры по бренду, цене и памяти, сравнение моделей, варианты с пересчётом цены, рассрочка и самовывоз.",
-      "en": "Electronics store: filters by brand, price and memory, model comparison, variants with live prices, instalments and pickup."
-    },
-    "problem": {
-      "ru": "Технику выбирают по характеристикам и бюджету, часто сравнивая несколько моделей. Магазин даёт сузить выбор фильтрами, сравнить модели рядом и сразу увидеть платёж в рассрочку.",
-      "en": "Electronics are chosen by specs and budget, often comparing several models. The store narrows the choice with filters, compares models side by side and shows the instalment straight away."
-    },
-    "scenario": {
-      "ru": "Каталог → фильтры по бренду и ОЗУ → сравнение трёх смартфонов → карточка: память и цвет, рассрочка → корзина → самовывоз или курьер → демо-заказ.",
-      "en": "Catalogue → brand and RAM filters → compare three phones → product: memory, colour, instalments → cart → pickup or courier → demo order."
-    },
-    "features": [
-      {
-        "ru": "Фильтры по характеристикам и сортировка с состоянием в URL",
-        "en": "Spec filters and sorting kept in the URL",
-        "kind": "production-ready"
-      },
-      {
-        "ru": "Сравнение до 4 моделей одной категории с лучшими значениями",
-        "en": "Compare up to 4 models of one category with best values highlighted",
-        "kind": "production-ready"
-      },
-      {
-        "ru": "Варианты памяти с пересчётом цены и платежа в рассрочку",
-        "en": "Memory variants with live price and instalment",
-        "kind": "demo-logic"
-      },
-      {
-        "ru": "Банк-партнёр для рассрочки и учётная система склада",
-        "en": "Instalment bank partner and stock system",
-        "kind": "missing-integration"
-      }
-    ],
-    "limits": {
-      "ru": "Бренды, модели, цены и наличие вымышлены; изображения — иллюстрации; заказ и заявка на рассрочку не отправляются.",
-      "en": "Brands, models, prices and stock are fictional; images are illustrations; orders and instalment requests are not sent."
-    },
-    "studio": {
-      "ru": [
-        "Каталог из 16 устройств вымышленных брендов в 5 категориях",
-        "Фильтры по характеристикам, сравнение моделей и подсветка лучших значений",
-        "Карточка с вариантами памяти, цветом и калькулятором рассрочки",
-        "Оформление с выбором пункта выдачи или курьера",
-        "Иллюстрации устройств, сгенерированные скриптом, без чужих товарных знаков"
-      ],
-      "en": [
-        "A 16-device catalogue of fictional brands in 5 categories",
-        "Spec filters, model comparison and best-value highlighting",
-        "Product page with memory variants, colours and an instalment calculator",
-        "Checkout with a pickup point or courier",
-        "Script-generated device illustrations without third-party trademarks"
-      ]
-    },
-    "provenance": {
-      "type": "original",
-      "ru": "Собственная разработка MicroStudio. Шрифты Montserrat и Commissioner — SIL OFL 1.1; иллюстрации генерирует tools/art.mjs.",
-      "en": "Built from scratch by MicroStudio. Montserrat and Commissioner fonts are SIL OFL 1.1; illustrations are generated by tools/art.mjs.",
-      "assets": [
-        {
-          "name": "Montserrat",
-          "license": "OFL-1.1",
-          "source": "https://github.com/JulietaUla/Montserrat"
-        },
-        {
-          "name": "Commissioner",
-          "license": "OFL-1.1",
-          "source": "https://github.com/kosbarts/Commissioner"
-        }
-      ]
-    },
-    "client": null,
-    "demoUrl": "https://ms-volt-electronics.vercel.app",
-    "hosting": "showcase",
-    "publishedAt": "2026-10-19",
-    "verifiedAt": "2026-10-19",
-    "featuredRank": 14,
-    "language": "ru",
-    "mobileFirst": false,
-    "images": {
-      "desktop": {
-        "src": "/portfolio/volt-electronics/desktop.webp",
-        "width": 1440,
-        "height": 900
-      },
-      "mobile": {
-        "src": "/portfolio/volt-electronics/mobile.webp",
-        "width": 780,
-        "height": 1688
-      },
-      "gallery": [
-        {
-          "src": "/portfolio/volt-electronics/catalog.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Каталог смартфонов с фильтрами",
-            "en": "Phone catalogue with filters"
-          }
-        },
-        {
-          "src": "/portfolio/volt-electronics/compare.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Сравнение трёх смартфонов",
-            "en": "Comparing three phones"
-          }
-        },
-        {
-          "src": "/portfolio/volt-electronics/product.webp",
-          "width": 780,
-          "height": 1688,
-          "viewport": "mobile",
-          "alt": {
-            "ru": "Карточка с вариантами и рассрочкой",
-            "en": "Product page with variants and instalments"
-          }
-        }
-      ]
-    }
-  },
-  {
-    "slug": "ritm-projects",
-    "workType": "demo",
-    "format": "app",
-    "industry": "products",
-    "niche": {
-      "ru": "Управление проектами",
-      "en": "Project management"
-    },
-    "title": {
-      "ru": "Ритм — проекты и задачи",
-      "en": "Ritm — projects and tasks"
-    },
-    "summary": {
-      "ru": "Сервис управления проектами: список по статусам, таймлайн на 4 недели, загрузка команды и карточка задачи с чек-листом.",
-      "en": "Project management app: status list, 4-week timeline, team workload and a task panel with a checklist."
-    },
-    "problem": {
-      "ru": "Небольшой студии или отделу важно видеть, кто чем занят и где сорвутся сроки. Сервис показывает задачи списком, на шкале времени и в виде загрузки людей по неделям.",
-      "en": "A small studio or team needs to see who is doing what and where deadlines will slip. The app shows tasks as a list, on a timeline and as weekly workload per person."
-    },
-    "scenario": {
-      "ru": "Выбрать проект → отфильтровать просроченные → открыть задачу, отметить пункты чек-листа, перенести срок → увидеть таймлайн и перегрузку команды → создать задачу → сбросить демо.",
-      "en": "Pick a project → filter overdue → open a task, tick checklist items, move the deadline → see the timeline and team overload → create a task → reset."
-    },
-    "features": [
-      {
-        "ru": "Три вида одних данных: список, таймлайн, загрузка",
-        "en": "Three views of the same data: list, timeline, workload",
-        "kind": "production-ready"
-      },
-      {
-        "ru": "Карточка задачи: чек-лист, сроки с проверкой, история изменений",
-        "en": "Task panel: checklist, validated dates, change history",
-        "kind": "demo-logic"
-      },
-      {
-        "ru": "Расчёт перегрузки по рабочим дням и вместимости человека",
-        "en": "Overload calculated from working days and capacity",
-        "kind": "demo-logic"
-      },
-      {
-        "ru": "Командная работа в реальном времени и вход по аккаунтам",
-        "en": "Real-time collaboration and user accounts",
-        "kind": "missing-integration"
-      }
-    ],
-    "limits": {
-      "ru": "Один пользователь, данные в localStorage; даты задач считаются от сегодняшнего дня, чтобы демо всегда выглядело актуальным.",
-      "en": "Single user, data in localStorage; task dates are relative to today so the demo always looks current."
-    },
-    "studio": {
-      "ru": [
-        "Модель данных проектов, задач, чек-листов и истории изменений",
-        "Таймлайн на 4 недели с линией «сегодня» и просроченными задачами",
-        "Загрузка команды по рабочим дням против вместимости",
-        "Боковая карточка задачи с удержанием фокуса и проверкой дат",
-        "Тёмный интерфейс на шрифте Geologica с чёткой цветовой кодировкой статусов"
-      ],
-      "en": [
-        "Data model for projects, tasks, checklists and change history",
-        "A 4-week timeline with a today line and overdue tasks",
-        "Team workload by working days against capacity",
-        "A side task panel with focus trapping and date validation",
-        "A dark Geologica interface with clear status colour coding"
-      ]
-    },
-    "provenance": {
-      "type": "original",
-      "ru": "Собственная разработка MicroStudio без внешней основы. Шрифт Geologica — SIL OFL 1.1.",
-      "en": "Built from scratch by MicroStudio. Geologica font is SIL OFL 1.1.",
-      "assets": [
-        {
-          "name": "Geologica",
-          "license": "OFL-1.1",
-          "source": "https://github.com/googlefonts/geologica"
-        }
-      ]
-    },
-    "client": null,
-    "demoUrl": "https://ms-ritm-projects.vercel.app",
-    "hosting": "showcase",
-    "publishedAt": "2026-10-19",
-    "verifiedAt": "2026-10-19",
-    "featuredRank": 15,
-    "language": "ru",
-    "mobileFirst": false,
-    "images": {
-      "desktop": {
-        "src": "/portfolio/ritm-projects/timeline.webp",
-        "width": 1440,
-        "height": 900
-      },
-      "mobile": {
-        "src": "/portfolio/ritm-projects/mobile.webp",
-        "width": 780,
-        "height": 1688
-      },
-      "gallery": [
-        {
-          "src": "/portfolio/ritm-projects/desktop.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Ритм — проекты и задачи",
-            "en": "Ritm — projects and tasks"
-          }
-        },
-        {
-          "src": "/portfolio/ritm-projects/load.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Загрузка команды по неделям",
-            "en": "Team workload by week"
-          }
-        },
-        {
-          "src": "/portfolio/ritm-projects/task.webp",
-          "width": 780,
-          "height": 1688,
-          "viewport": "mobile",
-          "alt": {
-            "ru": "Карточка задачи с чек-листом",
-            "en": "Task panel with a checklist"
-          }
-        }
-      ]
-    }
-  },
-  {
-    "slug": "kochevnik-moving",
-    "workType": "demo",
-    "format": "landing",
-    "industry": "local-services",
-    "niche": {
-      "ru": "Переезды",
-      "en": "Moving"
-    },
-    "title": {
-      "ru": "Кочевник — переезды",
-      "en": "Kochevnik — moving service"
-    },
-    "summary": {
-      "ru": "Лендинг службы переездов: опись вещей, расчёт объёма, подбор машины и грузчиков, цена и заявка на дату.",
-      "en": "Moving service landing: inventory of belongings, volume estimate, truck and crew selection, price and booking."
-    },
-    "problem": {
-      "ru": "Клиенты переездов боятся, что цена вырастет «по факту». Лендинг считает объём по описи вещей, подбирает машину и показывает понятную разбивку до заявки.",
-      "en": "Moving customers fear the price will grow on the day. The landing page estimates volume from an inventory, picks a truck and shows a clear breakdown before booking."
-    },
-    "scenario": {
-      "ru": "Отметить вещи → увидеть объём и подходящую машину → уточнить этаж, расстояние, упаковку → разбивка цены → заявка на дату → сброс.",
-      "en": "Tick belongings → see volume and the right truck → set floor, distance, packing → price breakdown → booking for a date → reset."
-    },
-    "features": [
-      {
-        "ru": "Опись из 16 позиций с объёмом и заполнением машины",
-        "en": "16-item inventory with volume and truck fill",
-        "kind": "demo-logic"
-      },
-      {
-        "ru": "Подбор машины, рейсов, грузчиков и часов по объёму и этажу",
-        "en": "Truck, trips, crew and hours from volume and floor",
-        "kind": "demo-logic"
-      },
-      {
-        "ru": "Заявка с проверкой даты, адресов и телефона",
-        "en": "Booking with date, address and phone validation",
-        "kind": "production-ready"
-      },
-      {
-        "ru": "Передача заявки диспетчеру",
-        "en": "Sending the request to a dispatcher",
-        "kind": "missing-integration"
-      }
-    ],
-    "limits": {
-      "ru": "Тарифы и объёмы условные; заявка и опись хранятся только в браузере.",
-      "en": "Rates and volumes are approximate; the inventory and request stay in the browser."
-    },
-    "studio": {
-      "ru": [
-        "Калькулятор, который считает от понятных вещей, а не от «кубометров»",
-        "Правила подбора машины, рейсов и бригады с разбивкой стоимости",
-        "Карточки машин подсвечивают подходящую под расчёт",
-        "Игривая айдентика: Rubik, картон и синий, «наклейки» и тени-оффсеты",
-        "Заявка, которая подхватывает расчёт и проверяет поля"
-      ],
-      "en": [
-        "A calculator that starts from familiar items, not cubic metres",
-        "Rules for truck, trips and crew with a cost breakdown",
-        "Truck cards highlight the one that fits the estimate",
-        "A playful identity: Rubik, cardboard and blue, stickers and offset shadows",
-        "A booking form that carries over the estimate and validates fields"
-      ]
-    },
-    "provenance": {
-      "type": "original",
-      "ru": "Собственная разработка MicroStudio. Шрифт Rubik — SIL OFL 1.1; иллюстрации — SVG студии.",
-      "en": "Built from scratch by MicroStudio. Rubik font is SIL OFL 1.1; illustrations are the studio's SVG.",
-      "assets": [
-        {
-          "name": "Rubik",
-          "license": "OFL-1.1",
-          "source": "https://github.com/googlefonts/rubik"
-        }
-      ]
-    },
-    "client": null,
-    "demoUrl": "https://ms-kochevnik-moving.vercel.app",
-    "hosting": "showcase",
-    "publishedAt": "2026-10-19",
-    "verifiedAt": "2026-10-19",
-    "featuredRank": 16,
-    "language": "ru",
-    "mobileFirst": false,
-    "images": {
-      "desktop": {
-        "src": "/portfolio/kochevnik-moving/desktop.webp",
-        "width": 1440,
-        "height": 900
-      },
-      "mobile": {
-        "src": "/portfolio/kochevnik-moving/mobile.webp",
-        "width": 780,
-        "height": 1688
-      },
-      "gallery": [
-        {
-          "src": "/portfolio/kochevnik-moving/calc.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Опись вещей и расчёт переезда",
-            "en": "Inventory and moving estimate"
-          }
-        },
-        {
-          "src": "/portfolio/kochevnik-moving/trucks.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Машины и тарифы",
-            "en": "Trucks and rates"
-          }
-        },
-        {
-          "src": "/portfolio/kochevnik-moving/order.webp",
-          "width": 780,
-          "height": 1688,
-          "viewport": "mobile",
-          "alt": {
-            "ru": "Заявка на переезд на телефоне",
-            "en": "Moving request on a phone"
-          }
-        }
-      ]
-    }
-  },
-  {
-    "slug": "kazan-ogon",
-    "workType": "demo",
-    "format": "corporate",
-    "industry": "food-travel-realty",
-    "niche": {
-      "ru": "Ресторан",
-      "en": "Restaurant"
-    },
-    "title": {
-      "ru": "Казан и Огонь — ресторан",
-      "en": "Kazan & Ogon — restaurant"
-    },
-    "summary": {
-      "ru": "Сайт ресторана: меню с фильтрами и поиском, банкеты с калькулятором сета и бронь стола по зонам.",
-      "en": "Restaurant site: filterable, searchable menu, banquets with a set calculator and table booking by zone."
-    },
-    "problem": {
-      "ru": "Гости ресторана выбирают по меню и хотят сразу забронировать нужный стол. Сайт показывает меню с фильтрами, свободные столы по зонам и считает банкет на гостя.",
-      "en": "Diners choose by the menu and want to book the right table right away. The site shows a filterable menu, free tables by zone and prices a banquet per guest."
-    },
-    "scenario": {
-      "ru": "Меню: фильтр «без мяса», поиск → банкет: сет и число гостей → «Обсудить дату» → бронь: гости, зона, свободное время → демо-бронь.",
-      "en": "Menu: “no meat” filter, search → banquet: set and guest count → “Discuss a date” → booking: guests, zone, free time → demo booking."
-    },
-    "features": [
-      {
-        "ru": "Меню из 22 блюд с фильтрами по тегам и поиском",
-        "en": "22-dish menu with tag filters and search",
-        "kind": "production-ready"
-      },
-      {
-        "ru": "Калькулятор банкета: сет, гости, оформление, обслуживание",
-        "en": "Banquet calculator: set, guests, decor, service",
-        "kind": "demo-logic"
-      },
-      {
-        "ru": "Бронь с ограничением зон по числу гостей и занятостью столов",
-        "en": "Booking that limits zones by party size and shows table availability",
-        "kind": "demo-logic"
-      },
-      {
-        "ru": "Система бронирования зала",
-        "en": "Floor booking system",
-        "kind": "missing-integration"
-      }
-    ],
-    "limits": {
-      "ru": "Ресторан, блюда и цены вымышлены; занятость столов условная; бронь хранится только в браузере.",
-      "en": "The restaurant, dishes and prices are fictional; table availability is simulated; bookings stay in the browser."
-    },
-    "studio": {
-      "ru": [
-        "Атмосферная айдентика: Cormorant и Jost, тёмно-зелёный и медь, иллюстрация казана",
-        "Меню-лист с точечными линиями, тегами и мгновенными фильтрами",
-        "Страница банкетов с форматами и отдельный калькулятор банкетного меню",
-        "Бронь: зоны, вместимость и свободные столы на каждое время",
-        "Тексты о кухне через продукты и процесс, без выдуманных отзывов"
-      ],
-      "en": [
-        "An atmospheric identity: Cormorant and Jost, dark green and copper, a cauldron illustration",
-        "A menu sheet with leader dots, tags and instant filters",
-        "A banquet page with formats and a separate banquet menu calculator",
-        "Booking: zones, capacity and free tables for every time slot",
-        "Copy about the kitchen through produce and process, no invented reviews"
-      ]
-    },
-    "provenance": {
-      "type": "original",
-      "ru": "Собственная разработка MicroStudio. Шрифты Cormorant и Jost — SIL OFL 1.1; иллюстрации — SVG студии.",
-      "en": "Built from scratch by MicroStudio. Cormorant and Jost fonts are SIL OFL 1.1; illustrations are the studio's SVG.",
-      "assets": [
-        {
-          "name": "Cormorant",
-          "license": "OFL-1.1",
-          "source": "https://github.com/CatharsisFonts/Cormorant"
-        },
-        {
-          "name": "Jost",
-          "license": "OFL-1.1",
-          "source": "https://github.com/indestructible-type/Jost"
-        }
-      ]
-    },
-    "client": null,
-    "demoUrl": "https://ms-kazan-ogon.vercel.app",
-    "hosting": "showcase",
-    "publishedAt": "2026-10-19",
-    "verifiedAt": "2026-10-19",
-    "featuredRank": 17,
-    "language": "ru",
-    "mobileFirst": false,
-    "images": {
-      "desktop": {
-        "src": "/portfolio/kazan-ogon/desktop.webp",
-        "width": 1440,
-        "height": 900
-      },
-      "mobile": {
-        "src": "/portfolio/kazan-ogon/mobile.webp",
-        "width": 780,
-        "height": 1688
-      },
-      "gallery": [
-        {
-          "src": "/portfolio/kazan-ogon/menu.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Меню с фильтрами",
-            "en": "Menu with filters"
-          }
-        },
-        {
-          "src": "/portfolio/kazan-ogon/banquet.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Калькулятор банкета",
-            "en": "Banquet calculator"
-          }
-        },
-        {
-          "src": "/portfolio/kazan-ogon/reserve.webp",
-          "width": 780,
-          "height": 1688,
-          "viewport": "mobile",
-          "alt": {
-            "ru": "Бронь стола по зонам",
-            "en": "Table booking by zone"
-          }
-        }
-      ]
-    }
-  },
-  {
-    "slug": "svet24-studio",
-    "workType": "demo",
-    "format": "special",
-    "industry": "creative",
-    "niche": {
-      "ru": "Фотостудия",
-      "en": "Photo studio"
-    },
-    "title": {
-      "ru": "Свет 24 — фотостудия",
-      "en": "Svet 24 — photo studio"
-    },
-    "summary": {
-      "ru": "Сайт фотостудии: три зала со схемами света, недельная сетка свободных часов, оборудование и бронь интервала.",
-      "en": "Photo studio site: three halls with light diagrams, a weekly grid of free hours, equipment and interval booking."
-    },
-    "problem": {
-      "ru": "Фотографу нужно быстро понять, какой зал подходит под съёмку и когда он свободен. Сайт показывает схему света каждого зала и почасовую занятость на неделю вперёд.",
-      "en": "A photographer needs to see quickly which hall suits the shoot and when it is free. The site shows each hall's light setup and hourly availability weeks ahead."
-    },
-    "scenario": {
-      "ru": "Выбрать зал → неделя → два клика по свободным часам задают интервал → оборудование → итог с тарифом выходного → демо-бронь → отмена.",
-      "en": "Pick a hall → a week → two clicks on free hours set the interval → equipment → total with weekend rate → demo booking → cancel."
-    },
-    "features": [
-      {
-        "ru": "Сетка часов на 4 недели с выбором интервала и запретом пересечения с занятым",
-        "en": "4-week hour grid with interval selection that refuses busy overlaps",
-        "kind": "demo-logic"
-      },
-      {
-        "ru": "Навигация по сетке стрелками клавиатуры",
-        "en": "Arrow-key navigation across the grid",
-        "kind": "production-ready"
-      },
-      {
-        "ru": "Расчёт с тарифом выходных и почасовым оборудованием",
-        "en": "Pricing with weekend rates and hourly equipment",
-        "kind": "demo-logic"
-      },
-      {
-        "ru": "Онлайн-оплата и синхронизация с календарём студии",
-        "en": "Online payment and studio calendar sync",
-        "kind": "missing-integration"
-      }
-    ],
-    "limits": {
-      "ru": "Занятость условная, бронь и оплата не проводятся; бронь хранится в браузере.",
-      "en": "Availability is simulated; no booking or payment is made; the booking stays in the browser."
-    },
-    "studio": {
-      "ru": [
-        "Редакционная подача: Noto Serif Display курсивом, чёрно-белая палитра и красная точка записи",
-        "Схемы света для каждого зала вместо стоковых фото",
-        "Почасовая сетка с выбором интервала в два клика и клавиатурной навигацией",
-        "Расчёт стоимости с тарифом выходного дня и оборудованием",
-        "Правила аренды в формате, который читают до брони"
-      ],
-      "en": [
-        "An editorial look: italic Noto Serif Display, black and white with a red record dot",
-        "Light diagrams for each hall instead of stock photos",
-        "An hourly grid with two-click interval selection and keyboard navigation",
-        "Pricing with weekend rates and equipment",
-        "Rental rules presented so people read them before booking"
-      ]
-    },
-    "provenance": {
-      "type": "original",
-      "ru": "Собственная разработка MicroStudio. Шрифты Noto Serif Display и Golos Text — SIL OFL 1.1; схемы — SVG студии.",
-      "en": "Built from scratch by MicroStudio. Noto Serif Display and Golos Text fonts are SIL OFL 1.1; diagrams are the studio's SVG.",
-      "assets": [
-        {
-          "name": "Noto Serif Display",
-          "license": "OFL-1.1",
-          "source": "https://github.com/notofonts/latin-greek-cyrillic"
-        },
-        {
-          "name": "Golos Text",
-          "license": "OFL-1.1",
-          "source": "https://github.com/googlefonts/golos-text"
-        }
-      ]
-    },
-    "client": null,
-    "demoUrl": "https://ms-svet24-studio.vercel.app",
-    "hosting": "showcase",
-    "publishedAt": "2026-10-19",
-    "verifiedAt": "2026-10-19",
-    "featuredRank": 18,
-    "language": "ru",
-    "mobileFirst": false,
-    "images": {
-      "desktop": {
-        "src": "/portfolio/svet24-studio/desktop.webp",
-        "width": 1440,
-        "height": 900
-      },
-      "mobile": {
-        "src": "/portfolio/svet24-studio/mobile.webp",
-        "width": 780,
-        "height": 1688
-      },
-      "gallery": [
-        {
-          "src": "/portfolio/svet24-studio/halls.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Залы со схемами света",
-            "en": "Halls with light diagrams"
-          }
-        },
-        {
-          "src": "/portfolio/svet24-studio/grid.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Сетка свободных часов и выбранный интервал",
-            "en": "Free-hour grid with a selected interval"
-          }
-        },
-        {
-          "src": "/portfolio/svet24-studio/book.webp",
-          "width": 780,
-          "height": 1688,
-          "viewport": "mobile",
-          "alt": {
-            "ru": "Бронь на телефоне",
-            "en": "Booking on a phone"
-          }
-        }
-      ]
-    }
-  },
-  {
-    "slug": "saldo-finance",
-    "workType": "demo",
-    "format": "app",
-    "industry": "products",
-    "niche": {
-      "ru": "Финансовая панель",
-      "en": "Finance dashboard"
-    },
-    "title": {
-      "ru": "Сальдо — финансы бизнеса",
-      "en": "Saldo — business finance"
-    },
-    "summary": {
-      "ru": "Финансовая панель малого бизнеса: итоги месяца, счета, бюджеты по категориям, график за полгода, операции и CSV.",
-      "en": "Small business finance dashboard: monthly totals, accounts, category budgets, a six-month chart, transactions and CSV export."
-    },
-    "problem": {
-      "ru": "Владельцу кофейни или магазина нужно за минуту понять, сколько заработано и куда уходят деньги. Панель сводит счета, бюджеты и операции в один экран.",
-      "en": "A café or shop owner needs to see in a minute what was earned and where money goes. The dashboard brings accounts, budgets and transactions onto one screen."
-    },
-    "scenario": {
-      "ru": "Выбрать месяц → сравнить с прошлым → найти перерасход в бюджете → отфильтровать операции → добавить и исправить операцию → скачать CSV → сбросить демо.",
-      "en": "Pick a month → compare with the previous one → spot budget overspend → filter transactions → add and edit one → download CSV → reset."
-    },
-    "features": [
-      {
-        "ru": "Итоги, маржа и сравнение с прошлым месяцем",
-        "en": "Totals, margin and month-over-month change",
-        "kind": "production-ready"
-      },
-      {
-        "ru": "Бюджеты расходов с предупреждением о перерасходе",
-        "en": "Expense budgets with overspend warnings",
-        "kind": "production-ready"
-      },
-      {
-        "ru": "Добавление, правка и удаление операций, выгрузка CSV",
-        "en": "Add, edit and delete transactions; CSV export",
-        "kind": "demo-logic"
-      },
-      {
-        "ru": "Загрузка выписок из банка и кассы",
-        "en": "Importing bank and POS statements",
-        "kind": "missing-integration"
-      }
-    ],
-    "limits": {
-      "ru": "Организация и операции вымышлены, данные в localStorage; это не бухгалтерский учёт и не налоговая отчётность.",
-      "en": "The company and transactions are fictional, data lives in localStorage; this is not accounting or tax reporting."
-    },
-    "studio": {
-      "ru": [
-        "Набор показателей, которые владелец смотрит каждый день, без лишних графиков",
-        "Генерация реалистичных операций за полгода относительно текущей даты",
-        "Бюджеты с порогами 85% и 100% и подсветкой перерасхода",
-        "Форма операции с проверкой и выгрузка отфильтрованного списка в CSV",
-        "Спокойный интерфейс на IBM Plex Sans с табличными цифрами"
-      ],
-      "en": [
-        "The metrics an owner checks daily, without decorative charts",
-        "Realistic six months of transactions generated relative to today",
-        "Budgets with 85% and 100% thresholds and overspend highlighting",
-        "A validated transaction form and CSV export of the filtered list",
-        "A calm IBM Plex Sans interface with tabular figures"
-      ]
-    },
-    "provenance": {
-      "type": "original",
-      "ru": "Собственная разработка MicroStudio без внешней основы. Шрифт IBM Plex Sans — SIL OFL 1.1.",
-      "en": "Built from scratch by MicroStudio. IBM Plex Sans font is SIL OFL 1.1.",
-      "assets": [
-        {
-          "name": "IBM Plex Sans",
-          "license": "OFL-1.1",
-          "source": "https://github.com/IBM/plex"
-        }
-      ]
-    },
-    "client": null,
-    "demoUrl": "https://ms-saldo-finance.vercel.app",
-    "hosting": "showcase",
-    "publishedAt": "2026-10-19",
-    "verifiedAt": "2026-10-19",
-    "featuredRank": 19,
-    "language": "ru",
-    "mobileFirst": false,
-    "images": {
-      "desktop": {
-        "src": "/portfolio/saldo-finance/desktop.webp",
-        "width": 1440,
-        "height": 900
-      },
-      "mobile": {
-        "src": "/portfolio/saldo-finance/mobile.webp",
-        "width": 780,
-        "height": 1688
-      },
-      "gallery": [
-        {
-          "src": "/portfolio/saldo-finance/transactions.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Операции с фильтрами",
-            "en": "Transactions with filters"
-          }
-        },
-        {
-          "src": "/portfolio/saldo-finance/add.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Новая операция",
-            "en": "New transaction"
-          }
-        },
-        {
-          "src": "/portfolio/saldo-finance/budgets.webp",
-          "width": 780,
-          "height": 1688,
-          "viewport": "mobile",
-          "alt": {
-            "ru": "Бюджеты на телефоне",
-            "en": "Budgets on a phone"
-          }
-        }
-      ]
-    }
-  },
-  {
-    "slug": "aruu-cosmetics",
-    "workType": "demo",
-    "format": "shop",
-    "industry": "commerce",
-    "niche": {
-      "ru": "Косметика",
-      "en": "Cosmetics"
-    },
-    "title": {
-      "ru": "Аруу Lab — магазин ухода",
-      "en": "Aruu Lab — skincare store"
-    },
-    "summary": {
-      "ru": "Магазин косметики: подбор ухода по трём вопросам, каталог с фильтрами по типу кожи и задаче, корзина-шторка и оформление.",
-      "en": "Skincare store: a three-question routine finder, filters by skin type and concern, a slide-in cart and checkout."
-    },
-    "problem": {
-      "ru": "Покупатель ухода теряется среди десятков баночек и боится купить лишнее. Магазин за минуту собирает базовый ритуал под тип кожи и продаёт его набором.",
-      "en": "Skincare shoppers get lost among dozens of jars and fear buying the wrong thing. The store builds a basic routine for their skin type in a minute and sells it as a set."
-    },
-    "scenario": {
-      "ru": "Подбор: тип кожи, чувствительность, задача → ритуал из 4 средств → набор в корзину со скидкой 10% → изменить количество → оформление с промокодом → демо-заказ.",
-      "en": "Finder: skin type, sensitivity, concern → a 4-step routine → set into cart with 10% off → change quantities → checkout with a promo code → demo order."
-    },
-    "features": [
-      {
-        "ru": "Подбор ритуала по правилам: тип кожи, чувствительность, задача",
-        "en": "Rule-based routine finder: skin type, sensitivity, concern",
-        "kind": "demo-logic"
-      },
-      {
-        "ru": "Скидка за полный набор и промокод при оформлении",
-        "en": "Bundle discount and a checkout promo code",
-        "kind": "demo-logic"
-      },
-      {
-        "ru": "Фильтры каталога по шагу, типу кожи и задаче в URL",
-        "en": "Catalogue filters by step, skin type and concern in the URL",
-        "kind": "production-ready"
-      },
-      {
-        "ru": "Онлайн-оплата и учёт остатков",
-        "en": "Online payment and stock tracking",
-        "kind": "missing-integration"
-      }
-    ],
-    "limits": {
-      "ru": "Бренд и средства вымышлены, подбор ориентировочный и не является медицинской рекомендацией; оплата не проводится.",
-      "en": "The brand and products are fictional; the finder is indicative and not medical advice; no payment is taken."
-    },
-    "studio": {
-      "ru": [
-        "Линейка из 14 средств с составом, типами кожи и задачами",
-        "Подбор ухода из трёх вопросов с исключением кислот и ретиноидов для чувствительной кожи",
-        "Набор со скидкой, корзина-шторка с удержанием фокуса",
-        "Иллюстрации упаковки и мягкая айдентика: Literata + Nunito, пудровые тона",
-        "Аккуратные формулировки без медицинских обещаний"
-      ],
-      "en": [
-        "A 14-product line with ingredients, skin types and concerns",
-        "A three-question finder that excludes acids and retinoids for sensitive skin",
-        "A discounted set and a slide-in cart with focus trapping",
-        "Packaging illustrations and a soft identity: Literata + Nunito, powder tones",
-        "Careful wording without medical promises"
-      ]
-    },
-    "provenance": {
-      "type": "original",
-      "ru": "Собственная разработка MicroStudio. Шрифты Literata и Nunito — SIL OFL 1.1; иллюстрации генерирует tools/art.mjs.",
-      "en": "Built from scratch by MicroStudio. Literata and Nunito fonts are SIL OFL 1.1; illustrations are generated by tools/art.mjs.",
-      "assets": [
-        {
-          "name": "Literata",
-          "license": "OFL-1.1",
-          "source": "https://github.com/googlefonts/literata"
-        },
-        {
-          "name": "Nunito",
-          "license": "OFL-1.1",
-          "source": "https://github.com/googlefonts/nunito"
-        }
-      ]
-    },
-    "client": null,
-    "demoUrl": "https://ms-aruu-cosmetics.vercel.app",
-    "hosting": "showcase",
-    "publishedAt": "2026-10-19",
-    "verifiedAt": "2026-10-19",
-    "featuredRank": 20,
-    "language": "ru",
-    "mobileFirst": false,
-    "images": {
-      "desktop": {
-        "src": "/portfolio/aruu-cosmetics/desktop.webp",
-        "width": 1440,
-        "height": 900
-      },
-      "mobile": {
-        "src": "/portfolio/aruu-cosmetics/mobile.webp",
-        "width": 780,
-        "height": 1688
-      },
-      "gallery": [
-        {
-          "src": "/portfolio/aruu-cosmetics/quiz.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Подобранный ритуал ухода",
-            "en": "A matched skincare routine"
-          }
-        },
-        {
-          "src": "/portfolio/aruu-cosmetics/catalog.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Каталог сывороток с фильтрами",
-            "en": "Serums with filters"
-          }
-        },
-        {
-          "src": "/portfolio/aruu-cosmetics/cart.webp",
-          "width": 780,
-          "height": 1688,
-          "viewport": "mobile",
-          "alt": {
-            "ru": "Корзина на телефоне",
-            "en": "Cart on a phone"
-          }
-        }
-      ]
-    }
-  },
-  {
-    "slug": "ordo-legal",
-    "workType": "demo",
-    "format": "corporate",
-    "industry": "local-services",
-    "niche": {
-      "ru": "Юридическая практика",
-      "en": "Law practice"
-    },
-    "title": {
-      "ru": "Ордо — юридическая практика",
-      "en": "Ordo — law practice"
-    },
-    "summary": {
-      "ru": "Сайт юридической компании: практики со стоимостью этапов, чек-лист документов к встрече и запись на консультацию.",
-      "en": "Law firm site: practice areas with staged pricing, a documents checklist for the meeting and consultation booking."
-    },
-    "problem": {
-      "ru": "К юристу идут в стрессе и не знают, что взять с собой и сколько это будет стоить. Сайт объясняет порядок работы, собирает список документов под ситуацию и записывает на встречу.",
-      "en": "People come to a lawyer under stress, unsure what to bring or what it will cost. The site explains the process, builds a documents list for their situation and books a meeting."
-    },
-    "scenario": {
-      "ru": "Практика «Бизнес» → документы для спора о долге, отметить имеющиеся → «Записаться с этим списком» → описание, формат, время → демо-запись.",
-      "en": "Business practice → documents for a debt dispute, tick what you have → “Book with this list” → description, format, time → demo booking."
-    },
-    "features": [
-      {
-        "ru": "Чек-листы документов по 4 ситуациям с сохранением отметок и печатью",
-        "en": "Documents checklists for 4 situations with saved ticks and printing",
-        "kind": "production-ready"
-      },
-      {
-        "ru": "Запись с форматом встречи, слотами и проверкой полей",
-        "en": "Booking with meeting format, slots and validation",
-        "kind": "demo-logic"
-      },
-      {
-        "ru": "Стоимость этапов вместо почасовой ставки",
-        "en": "Staged pricing instead of hourly rates",
-        "kind": "production-ready"
-      },
-      {
-        "ru": "Защищённая передача документов юристу",
-        "en": "Secure document upload to the lawyer",
-        "kind": "missing-integration"
-      }
-    ],
-    "limits": {
-      "ru": "Компания и цены вымышлены; материалы не являются юридической консультацией; запись не отправляется.",
-      "en": "The firm and prices are fictional; content is not legal advice; bookings are not sent."
-    },
-    "studio": {
-      "ru": [
-        "Подача через порядок работы и обязательства, без «выигранных дел» и обещаний исхода",
-        "Страница практики с этапами спора и стоимостью каждого этапа",
-        "Интерактивный чек-лист документов с печатной версией",
-        "Связка чек-листа и записи на консультацию",
-        "Строгая айдентика: Piazzolla + Inter, тёмно-синий, пергамент и бордо"
-      ],
-      "en": [
-        "Presentation through process and commitments, no “won cases” or promised outcomes",
-        "A practice page with dispute stages and the price of each",
-        "An interactive documents checklist with a print version",
-        "The checklist feeds the consultation booking",
-        "A strict identity: Piazzolla + Inter, navy, parchment and burgundy"
-      ]
-    },
-    "provenance": {
-      "type": "original",
-      "ru": "Собственная разработка MicroStudio. Шрифты Piazzolla и Inter — SIL OFL 1.1.",
-      "en": "Built from scratch by MicroStudio. Piazzolla and Inter fonts are SIL OFL 1.1.",
-      "assets": [
-        {
-          "name": "Piazzolla",
-          "license": "OFL-1.1",
-          "source": "https://github.com/huertatipografica/piazzolla"
-        },
-        {
-          "name": "Inter",
-          "license": "OFL-1.1",
-          "source": "https://github.com/rsms/inter"
-        }
-      ]
-    },
-    "client": null,
-    "demoUrl": "https://ms-ordo-legal.vercel.app",
-    "hosting": "showcase",
-    "publishedAt": "2026-10-19",
-    "verifiedAt": "2026-10-19",
-    "featuredRank": 21,
-    "language": "ru",
-    "mobileFirst": false,
-    "images": {
-      "desktop": {
-        "src": "/portfolio/ordo-legal/desktop.webp",
-        "width": 1440,
-        "height": 900
-      },
-      "mobile": {
-        "src": "/portfolio/ordo-legal/mobile.webp",
-        "width": 780,
-        "height": 1688
-      },
-      "gallery": [
-        {
-          "src": "/portfolio/ordo-legal/documents.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Чек-лист документов к встрече",
-            "en": "Documents checklist for the meeting"
-          }
-        },
-        {
-          "src": "/portfolio/ordo-legal/business.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Практика: этапы и стоимость",
-            "en": "Practice: stages and prices"
-          }
-        },
-        {
-          "src": "/portfolio/ordo-legal/consult.webp",
-          "width": 780,
-          "height": 1688,
-          "viewport": "mobile",
-          "alt": {
-            "ru": "Запись на консультацию",
-            "en": "Consultation booking"
-          }
-        }
-      ]
-    }
-  },
-  {
-    "slug": "bugu-coffee",
-    "workType": "demo",
-    "format": "landing",
-    "industry": "food-travel-realty",
-    "niche": {
-      "ru": "Кофейня",
-      "en": "Coffee shop"
-    },
-    "title": {
-      "ru": "Бугу — кофейня",
-      "en": "Bugu — coffee shop"
-    },
-    "summary": {
-      "ru": "Лендинг кофейни: меню-доска, конструктор напитка с ценой, предзаказ ко времени и карта штампов.",
-      "en": "Coffee shop landing: chalkboard menu, drink builder with live price, pre-order for a pickup time and a stamp card."
-    },
-    "problem": {
-      "ru": "Утром гости кофейни не хотят стоять в очереди. Лендинг даёт собрать напиток, выбрать время и забрать заказ у окна выдачи.",
-      "en": "In the morning coffee customers don't want to queue. The landing page lets them build a drink, pick a time and collect it at the pickup window."
-    },
-    "scenario": {
-      "ru": "Выбрать напиток, размер, молоко и добавки → добавить в заказ → второй напиток → время выдачи → имя → демо-предзаказ и штамп.",
-      "en": "Pick a drink, size, milk and extras → add to order → a second drink → pickup time → name → demo pre-order and a stamp."
-    },
-    "features": [
-      {
-        "ru": "Конструктор напитка: размер, молоко, добавки и правила (без молока для чёрного кофе)",
-        "en": "Drink builder: size, milk, extras and rules (no milk for black coffee)",
-        "kind": "demo-logic"
-      },
-      {
-        "ru": "Время выдачи с шагом 10 минут от текущего момента",
-        "en": "Pickup times in 10-minute steps from now",
-        "kind": "demo-logic"
-      },
-      {
-        "ru": "Карта штампов «каждый седьмой в подарок»",
-        "en": "A stamp card: every seventh drink free",
-        "kind": "demo-logic"
-      },
-      {
-        "ru": "Экран заказов для бариста и онлайн-оплата",
-        "en": "Barista order screen and online payment",
-        "kind": "missing-integration"
-      }
-    ],
-    "limits": {
-      "ru": "Кофейня и цены вымышлены; предзаказ и штампы хранятся только в браузере.",
-      "en": "The coffee shop and prices are fictional; the pre-order and stamps stay in the browser."
-    },
-    "studio": {
-      "ru": [
-        "Тёплая айдентика: Yanone Kaffeesatz, крафт и меловая доска меню",
-        "Конструктор напитка с живой ценой и правилами совместимости",
-        "Чек заказа, который собирается по ходу выбора",
-        "Предзаказ ко времени с проверкой и честным демо-состоянием",
-        "Карта лояльности со штампами за заказы"
-      ],
-      "en": [
-        "A warm identity: Yanone Kaffeesatz, kraft paper and a chalkboard menu",
-        "A drink builder with a live price and compatibility rules",
-        "An order ticket that builds up as you choose",
-        "Pre-order for a time with validation and an honest demo state",
-        "A loyalty stamp card for orders"
-      ]
-    },
-    "provenance": {
-      "type": "original",
-      "ru": "Собственная разработка MicroStudio. Шрифты Yanone Kaffeesatz и Sofia Sans — SIL OFL 1.1; иллюстрации — SVG студии.",
-      "en": "Built from scratch by MicroStudio. Yanone Kaffeesatz and Sofia Sans fonts are SIL OFL 1.1; illustrations are the studio's SVG.",
-      "assets": [
-        {
-          "name": "Yanone Kaffeesatz",
-          "license": "OFL-1.1",
-          "source": "https://github.com/alexeiva/yanonekaffeesatz"
-        },
-        {
-          "name": "Sofia Sans",
-          "license": "OFL-1.1",
-          "source": "https://github.com/lettersoup/Sofia-Sans"
-        }
-      ]
-    },
-    "client": null,
-    "demoUrl": "https://ms-bugu-coffee.vercel.app",
-    "hosting": "showcase",
-    "publishedAt": "2026-10-19",
-    "verifiedAt": "2026-10-19",
-    "featuredRank": 22,
-    "language": "ru",
-    "mobileFirst": false,
-    "images": {
-      "desktop": {
-        "src": "/portfolio/bugu-coffee/desktop.webp",
-        "width": 1440,
-        "height": 900
-      },
-      "mobile": {
-        "src": "/portfolio/bugu-coffee/mobile.webp",
-        "width": 780,
-        "height": 1688
-      },
-      "gallery": [
-        {
-          "src": "/portfolio/bugu-coffee/builder.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Конструктор напитка и чек",
-            "en": "Drink builder and order ticket"
-          }
-        },
-        {
-          "src": "/portfolio/bugu-coffee/menu.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Меню-доска",
-            "en": "Chalkboard menu"
-          }
-        },
-        {
-          "src": "/portfolio/bugu-coffee/card.webp",
-          "width": 780,
-          "height": 1688,
-          "viewport": "mobile",
-          "alt": {
-            "ru": "Предзаказ на телефоне",
-            "en": "Pre-order on a phone"
-          }
-        }
-      ]
-    }
-  },
-  {
-    "slug": "kampa-warehouse",
-    "workType": "demo",
-    "format": "app",
-    "industry": "products",
-    "niche": {
-      "ru": "Управление складом",
-      "en": "Warehouse management"
-    },
-    "title": {
-      "ru": "Кампа — складской учёт",
-      "en": "Kampa — warehouse management"
-    },
-    "summary": {
-      "ru": "Складской учёт оптовой компании: остатки по двум складам, приход, отгрузка, перемещение, журнал и инвентаризация.",
-      "en": "Wholesale warehouse app: stock across two warehouses, receipts, shipments, transfers, a journal and stocktaking."
-    },
-    "problem": {
-      "ru": "Оптовику важно знать, сколько товара на каждом складе, и не отгрузить то, чего нет. Сервис проводит документы движения, не даёт уйти в минус и предупреждает о низком остатке.",
-      "en": "A wholesaler needs to know stock in each warehouse and never ship what isn't there. The app posts movement documents, prevents negative stock and warns about low levels."
-    },
-    "scenario": {
-      "ru": "Найти позицию ниже минимума → оформить приход → отгрузить больше остатка и получить ошибку → перемещение между складами → инвентаризация с расхождением → журнал → сброс.",
-      "en": "Find an item below minimum → post a receipt → try to ship more than stock and get an error → transfer between warehouses → stocktake with a discrepancy → journal → reset."
-    },
-    "features": [
-      {
-        "ru": "Документы прихода, отгрузки и перемещения с несколькими строками",
-        "en": "Multi-line receipt, shipment and transfer documents",
-        "kind": "demo-logic"
-      },
-      {
-        "ru": "Запрет отрицательных остатков и предупреждения о минимуме",
-        "en": "No negative stock and minimum-level warnings",
-        "kind": "production-ready"
-      },
-      {
-        "ru": "Инвентаризация с подсветкой расхождений и корректировкой",
-        "en": "Stocktaking with highlighted discrepancies and an adjustment",
-        "kind": "demo-logic"
-      },
-      {
-        "ru": "Сканер штрихкодов и интеграция с 1С",
-        "en": "Barcode scanner and 1C integration",
-        "kind": "missing-integration"
-      }
-    ],
-    "limits": {
-      "ru": "Один пользователь, данные в localStorage; товары и склады вымышлены.",
-      "en": "Single user, data in localStorage; items and warehouses are fictional."
-    },
-    "studio": {
-      "ru": [
-        "Модель остатков по складам и журнал проведённых документов",
-        "Проверки документа: количество, совпадение складов, нехватка товара",
-        "Инвентаризация с расчётом разницы на лету",
-        "Панель предупреждений о низком остатке со ссылкой на приход",
-        "Технический интерфейс на шрифте Tektur с плотными таблицами"
-      ],
-      "en": [
-        "A per-warehouse stock model and a journal of posted documents",
-        "Document checks: quantity, same warehouse, insufficient stock",
-        "Stocktaking with live difference calculation",
-        "A low-stock alert panel linking to a receipt",
-        "A technical Tektur interface with dense tables"
-      ]
-    },
-    "provenance": {
-      "type": "original",
-      "ru": "Собственная разработка MicroStudio без внешней основы. Шрифты Tektur и Golos Text — SIL OFL 1.1.",
-      "en": "Built from scratch by MicroStudio. Tektur and Golos Text fonts are SIL OFL 1.1.",
-      "assets": [
-        {
-          "name": "Tektur",
-          "license": "OFL-1.1",
-          "source": "https://github.com/hyvyys/Tektur"
-        },
-        {
-          "name": "Golos Text",
-          "license": "OFL-1.1",
-          "source": "https://github.com/googlefonts/golos-text"
-        }
-      ]
-    },
-    "client": null,
-    "demoUrl": "https://ms-kampa-warehouse.vercel.app",
-    "hosting": "showcase",
-    "publishedAt": "2026-10-19",
-    "verifiedAt": "2026-10-19",
-    "featuredRank": 23,
-    "language": "ru",
-    "mobileFirst": false,
-    "images": {
-      "desktop": {
-        "src": "/portfolio/kampa-warehouse/desktop.webp",
-        "width": 1440,
-        "height": 900
-      },
-      "mobile": {
-        "src": "/portfolio/kampa-warehouse/mobile.webp",
-        "width": 780,
-        "height": 1688
-      },
-      "gallery": [
-        {
-          "src": "/portfolio/kampa-warehouse/doc.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Документ прихода",
-            "en": "Receipt document"
-          }
-        },
-        {
-          "src": "/portfolio/kampa-warehouse/log.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Журнал движений",
-            "en": "Movement journal"
-          }
-        },
-        {
-          "src": "/portfolio/kampa-warehouse/count.webp",
-          "width": 780,
-          "height": 1688,
-          "viewport": "mobile",
-          "alt": {
-            "ru": "Инвентаризация на телефоне",
-            "en": "Stocktaking on a phone"
-          }
-        }
-      ]
-    }
-  },
-  {
-    "slug": "kumush-jewelry",
-    "workType": "demo",
-    "format": "shop",
-    "industry": "commerce",
-    "niche": {
-      "ru": "Ювелирные украшения",
-      "en": "Jewelry"
-    },
-    "title": {
-      "ru": "Күмүш — ювелирная мастерская",
-      "en": "Kumush — jewelry workshop"
-    },
-    "summary": {
-      "ru": "Магазин украшений на заказ: выбор металла и размера, гравировка с живым превью, подборщик размера кольца и оформление с доставкой.",
-      "en": "Made-to-order jewelry store: metal and size choice, engraving with a live preview, a ring size finder and checkout with delivery."
-    },
-    "problem": {
-      "ru": "Украшения покупают в подарок и боятся ошибиться с размером, а переписка о гравировке и пробе тянется днями. Магазин отвечает на эти вопросы на странице изделия.",
-      "en": "Jewelry is often a gift, and buyers fear getting the size wrong, while chats about engraving and metal drag on for days. The store answers those questions right on the product page."
-    },
-    "scenario": {
-      "ru": "Кольцо → без размера не добавить → «Как узнать размер?»: мерка 54 мм → размер 17 (+½ на сустав) → назад к кольцу с выбранным размером → металл, гравировка с превью, упаковка → корзина → курьер с адресом → демо-заказ.",
-      "en": "Ring → can't add without a size → \"How to find my size?\": 54 mm → size 17 (+½ for knuckles) → back to the ring with the size set → metal, engraving preview, gift box → bag → courier with an address → demo order."
-    },
-    "features": [
-      {
-        "ru": "Подборщик размера кольца по окружности пальца или диаметру своего кольца с возвратом к изделию",
-        "en": "Ring size finder by finger circumference or an existing ring's diameter, with a return to the product",
-        "kind": "demo-logic"
-      },
-      {
-        "ru": "Конфигуратор изделия: металл с пересчётом цены и картинки, гравировка с превью и проверкой символов",
-        "en": "Product configurator: metal with price and image updates, engraving with a preview and character checks",
-        "kind": "demo-logic"
-      },
-      {
-        "ru": "Фильтры каталога по типу, металлу, цене и гравировке в URL",
-        "en": "Catalogue filters by type, metal, price and engraving in the URL",
-        "kind": "production-ready"
-      },
-      {
-        "ru": "Онлайн-предоплата и уведомление мастеру",
-        "en": "Online prepayment and a notification to the jeweller",
-        "kind": "missing-integration"
-      }
-    ],
-    "limits": {
-      "ru": "Мастерская, изделия и цены вымышлены; оплата не проводится, заказ хранится только в браузере.",
-      "en": "The workshop, items and prices are fictional; no payment is taken and the order stays in the browser."
-    },
-    "studio": {
-      "ru": [
-        "Линейка из 12 изделий в трёх металлах и 26 иллюстраций, которые генерирует скрипт",
-        "Подборщик размера с защитой от ошибочной мерки и запасом на сустав",
-        "Гравировка с превью, доплатой и сроком изготовления +2 дня",
-        "Корзина-шторка с удержанием фокуса и предупреждением о возврате гравированных изделий",
-        "Тёмно-слоновая айдентика: Lora italic + Jost"
-      ],
-      "en": [
-        "A 12-item line in three metals with 26 script-generated illustrations",
-        "A size finder that catches wrong measurements and adds knuckle allowance",
-        "Engraving with a preview, surcharge and a +2-day lead time",
-        "A slide-in bag with focus trapping and a no-returns note for engraved items",
-        "Ink-and-ivory identity: Lora italic + Jost"
-      ]
-    },
-    "provenance": {
-      "type": "original",
-      "ru": "Собственная разработка MicroStudio. Шрифты Lora и Jost — SIL OFL 1.1; иллюстрации генерирует tools/art.mjs.",
-      "en": "Built from scratch by MicroStudio. Lora and Jost fonts are SIL OFL 1.1; illustrations are generated by tools/art.mjs.",
-      "assets": [
-        {
-          "name": "Lora",
-          "license": "OFL-1.1",
-          "source": "https://github.com/cyrealtype/Lora-Cyrillic"
-        },
-        {
-          "name": "Jost",
-          "license": "OFL-1.1",
-          "source": "https://github.com/indestructible-type/Jost"
-        }
-      ]
-    },
-    "client": null,
-    "demoUrl": "https://ms-kumush-jewelry.vercel.app",
-    "hosting": "showcase",
-    "publishedAt": "2026-10-19",
-    "verifiedAt": "2026-10-19",
-    "featuredRank": 24,
-    "language": "ru",
-    "mobileFirst": false,
-    "images": {
-      "desktop": {
-        "src": "/portfolio/kumush-jewelry/desktop.webp",
-        "width": 1440,
-        "height": 900
-      },
-      "mobile": {
-        "src": "/portfolio/kumush-jewelry/mobile.webp",
-        "width": 780,
-        "height": 1688
-      },
-      "gallery": [
-        {
-          "src": "/portfolio/kumush-jewelry/product.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Кольцо с выбором металла и превью гравировки",
-            "en": "A ring with metal choice and engraving preview"
-          }
-        },
-        {
-          "src": "/portfolio/kumush-jewelry/size.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Подборщик размера кольца",
-            "en": "Ring size finder"
-          }
-        },
-        {
-          "src": "/portfolio/kumush-jewelry/catalog.webp",
-          "width": 780,
-          "height": 1688,
-          "viewport": "mobile",
-          "alt": {
-            "ru": "Каталог на телефоне",
-            "en": "Catalogue on a phone"
-          }
-        }
-      ]
-    }
-  },
-  {
-    "slug": "soz-language",
-    "workType": "demo",
-    "format": "landing",
-    "industry": "education",
-    "niche": {
-      "ru": "Языковая школа",
-      "en": "Language school"
-    },
-    "title": {
-      "ru": "Сөз — языковая школа",
-      "en": "Soz — language school"
-    },
-    "summary": {
-      "ru": "Лендинг языковой школы: тест уровня английского, расписание групп со свободными местами, калькулятор стоимости и запись на пробный урок.",
-      "en": "Language school landing: an English level test, a group schedule with open seats, a price calculator and a trial lesson sign-up."
-    },
-    "problem": {
-      "ru": "Человек не знает свой уровень и боится попасть в неподходящую группу, а администратор тратит время на одинаковые вопросы о ценах и расписании. Лендинг отвечает на них до первого звонка.",
-      "en": "People don't know their level and fear landing in the wrong group, while the admin answers the same price and schedule questions over and over. The landing answers them before the first call."
-    },
-    "scenario": {
-      "ru": "Тест из 10 вопросов → уровень B1 → «Подходящие группы» фильтрует расписание → полная группа уходит в лист ожидания → калькулятор: 3 месяца + студенческая скидка → запись на пробный урок с уровнем из теста → демо-заявка.",
-      "en": "10-question test → level B1 → \"Matching groups\" filters the schedule → a full group goes to the waitlist → calculator: 3 months + student discount → trial sign-up with the test level → demo request."
-    },
-    "features": [
-      {
-        "ru": "Тест уровня с прогрессом, возвратом к вопросу и сохранением результата",
-        "en": "Level test with progress, going back and a saved result",
-        "kind": "demo-logic"
-      },
-      {
-        "ru": "Расписание групп с фильтрами, счётчиком мест и листом ожидания",
-        "en": "Group schedule with filters, seat counters and a waitlist",
-        "kind": "demo-logic"
-      },
-      {
-        "ru": "Калькулятор стоимости со скидками, которые не суммируются",
-        "en": "Price calculator with non-stacking discounts",
-        "kind": "production-ready"
-      },
-      {
-        "ru": "Синхронизация мест с CRM школы и уведомления в WhatsApp",
-        "en": "Seat sync with the school CRM and WhatsApp notifications",
-        "kind": "missing-integration"
-      }
-    ],
-    "limits": {
-      "ru": "Школа, группы и цены вымышлены; тест ориентировочный, заявка хранится только в браузере.",
-      "en": "The school, groups and prices are fictional; the test is indicative and the request stays in the browser."
-    },
-    "studio": {
-      "ru": [
-        "Тест из 10 вопросов с нарастающей сложностью и шкалой A1–B2",
-        "Связка «тест → расписание → заявка»: уровень и группа подставляются сами",
-        "13 групп на четырёх языках со счётчиком мест и листом ожидания",
-        "Калькулятор с правилами скидок и ценой за занятие",
-        "Дружелюбная айдентика: Comfortaa + Mulish, облачка приветствий"
-      ],
-      "en": [
-        "A 10-question test with rising difficulty and an A1–B2 scale",
-        "A test → schedule → sign-up chain: level and group are filled in automatically",
-        "13 groups in four languages with seat counters and a waitlist",
-        "A calculator with discount rules and a per-lesson price",
-        "A friendly identity: Comfortaa + Mulish, greeting speech bubbles"
-      ]
-    },
-    "provenance": {
-      "type": "original",
-      "ru": "Собственная разработка MicroStudio. Шрифты Comfortaa и Mulish — SIL OFL 1.1; графика — CSS.",
-      "en": "Built from scratch by MicroStudio. Comfortaa and Mulish fonts are SIL OFL 1.1; graphics are CSS.",
-      "assets": [
-        {
-          "name": "Comfortaa",
-          "license": "OFL-1.1",
-          "source": "https://github.com/googlefonts/comfortaa"
-        },
-        {
-          "name": "Mulish",
-          "license": "OFL-1.1",
-          "source": "https://github.com/googlefonts/mulish"
-        }
-      ]
-    },
-    "client": null,
-    "demoUrl": "https://ms-soz-language.vercel.app",
-    "hosting": "showcase",
-    "publishedAt": "2026-10-19",
-    "verifiedAt": "2026-10-19",
-    "featuredRank": 25,
-    "language": "ru",
-    "mobileFirst": false,
-    "images": {
-      "desktop": {
-        "src": "/portfolio/soz-language/desktop.webp",
-        "width": 1440,
-        "height": 900
-      },
-      "mobile": {
-        "src": "/portfolio/soz-language/mobile.webp",
-        "width": 780,
-        "height": 1688
-      },
-      "gallery": [
-        {
-          "src": "/portfolio/soz-language/test.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Тест уровня английского",
-            "en": "English level test"
-          }
-        },
-        {
-          "src": "/portfolio/soz-language/schedule.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Расписание групп со свободными местами",
-            "en": "Group schedule with open seats"
-          }
-        },
-        {
-          "src": "/portfolio/soz-language/price.webp",
-          "width": 780,
-          "height": 1688,
-          "viewport": "mobile",
-          "alt": {
-            "ru": "Калькулятор стоимости на телефоне",
-            "en": "Price calculator on a phone"
-          }
-        }
-      ]
-    }
-  },
-  {
-    "slug": "kolos-bakery",
-    "workType": "demo",
-    "format": "landing",
-    "industry": "food-travel-realty",
-    "niche": {
-      "ru": "Пекарня",
-      "en": "Bakery"
-    },
-    "title": {
-      "ru": "Колос — пекарня у дома",
-      "en": "Kolos — neighbourhood bakery"
-    },
-    "summary": {
-      "ru": "Лендинг пекарни: расписание выпечки с подсветкой «тёплое сейчас», предзаказ на завтра с учётом времени выпечки и конструктор торта с расчётом веса.",
-      "en": "Bakery landing: a bake schedule that highlights what's warm now, next-day preorders that respect bake times and a cake builder that calculates weight."
-    },
-    "problem": {
-      "ru": "Любимый хлеб заканчивается к обеду, а заказы тортов теряются в переписке. Сайт показывает, когда что печётся, принимает предзаказ до 20:00 и собирает торт с ценой без звонка.",
-      "en": "Favourite loaves sell out by lunch and cake orders get lost in chats. The site shows bake times, takes preorders until 8 pm and builds a priced cake without a call."
-    },
-    "scenario": {
-      "ru": "Днём: видно, что тёплое сейчас и через сколько следующая выпечка → в заказ фокачча и хлеб → утренние слоты закрыты, потому что фокачча будет в 12:00 → 12:30 → демо-предзаказ. Торт на 30 гостей: 4,5 кг, два яруса, вишня, надпись → дата раньше чем через 2 дня отклоняется → демо-заявка.",
-      "en": "Midday: see what's warm and when the next bake is → add focaccia and bread → morning slots are locked because focaccia is out at 12:00 → 12:30 → demo preorder. Cake for 30: 4.5 kg, two tiers, cherry, inscription → a date under 2 days away is rejected → demo request."
-    },
-    "features": [
-      {
-        "ru": "Расписание выпечки, «тёплое сейчас» и обратный отсчёт до следующей печи",
-        "en": "Bake schedule, 'warm now' and a countdown to the next bake",
-        "kind": "demo-logic"
-      },
-      {
-        "ru": "Предзаказ с отсечкой в 20:00 и слотами, которые учитывают время выпечки",
-        "en": "Preorders with an 8 pm cutoff and slots that respect bake times",
-        "kind": "demo-logic"
-      },
-      {
-        "ru": "Конструктор торта: вес по числу гостей, ярусы, начинка, надпись, превью",
-        "en": "Cake builder: weight by guests, tiers, filling, inscription, preview",
-        "kind": "demo-logic"
-      },
-      {
-        "ru": "Список заказов для пекаря и предоплата",
-        "en": "Order list for the baker and prepayment",
-        "kind": "missing-integration"
-      }
-    ],
-    "limits": {
-      "ru": "Пекарня, ассортимент и цены вымышлены; заказы хранятся только в браузере. Время можно подставить параметром ?now= для проверки.",
-      "en": "The bakery, range and prices are fictional; orders stay in the browser. Time can be overridden with ?now= for testing."
-    },
-    "studio": {
-      "ru": [
-        "Логика дня пекарни: шесть выпечек, отсечка заказов, закрытые слоты",
-        "Конструктор торта с расчётом веса, ярусов и предоплаты",
-        "SVG-превью торта, которое меняется вместе с выбором",
-        "Параметр ?now= для проверки сценариев в любое время суток",
-        "Тёплая айдентика: Podkova + Ubuntu Sans, ржаной и пшеничный"
-      ],
-      "en": [
-        "Bakery day logic: six bakes, an order cutoff, locked slots",
-        "A cake builder with weight, tiers and prepayment",
-        "An SVG cake preview that follows the choices",
-        "A ?now= parameter to test scenarios at any time of day",
-        "Warm identity: Podkova + Ubuntu Sans, rye and wheat"
-      ]
-    },
-    "provenance": {
-      "type": "original",
-      "ru": "Собственная разработка MicroStudio. Шрифты Podkova и Ubuntu Sans — SIL OFL 1.1 / Ubuntu Font Licence; графика — CSS и SVG.",
-      "en": "Built from scratch by MicroStudio. Podkova (SIL OFL 1.1) and Ubuntu Sans (Ubuntu Font Licence) fonts; graphics are CSS and SVG.",
-      "assets": [
-        {
-          "name": "Podkova",
-          "license": "OFL-1.1",
-          "source": "https://github.com/cyrealtype/Podkova"
-        },
-        {
-          "name": "Ubuntu Sans",
-          "license": "Ubuntu Font Licence 1.0",
-          "source": "https://github.com/canonical/Ubuntu-Sans-fonts"
-        }
-      ]
-    },
-    "client": null,
-    "demoUrl": "https://ms-kolos-bakery.vercel.app",
-    "hosting": "showcase",
-    "publishedAt": "2026-10-19",
-    "verifiedAt": "2026-10-19",
-    "featuredRank": 26,
-    "language": "ru",
-    "mobileFirst": false,
-    "images": {
-      "desktop": {
-        "src": "/portfolio/kolos-bakery/desktop.webp",
-        "width": 1440,
-        "height": 900
-      },
-      "mobile": {
-        "src": "/portfolio/kolos-bakery/mobile.webp",
-        "width": 780,
-        "height": 1688
-      },
-      "gallery": [
-        {
-          "src": "/portfolio/kolos-bakery/preorder.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Предзаказ с закрытыми ранними слотами",
-            "en": "Preorder with early slots locked"
-          }
-        },
-        {
-          "src": "/portfolio/kolos-bakery/cake.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Конструктор торта",
-            "en": "Cake builder"
-          }
-        },
-        {
-          "src": "/portfolio/kolos-bakery/oven.webp",
-          "width": 780,
-          "height": 1688,
-          "viewport": "mobile",
-          "alt": {
-            "ru": "Расписание выпечки на телефоне",
-            "en": "Bake schedule on a phone"
-          }
-        }
-      ]
-    }
-  },
-  {
-    "slug": "archa-hotel",
-    "workType": "demo",
-    "format": "corporate",
-    "industry": "food-travel-realty",
-    "niche": {
-      "ru": "Бутик-отель",
-      "en": "Boutique hotel"
-    },
-    "title": {
-      "ru": "Арча — бутик-отель в горах",
-      "en": "Archa — mountain boutique hotel"
-    },
-    "summary": {
-      "ru": "Сайт бутик-отеля: номера и сравнение, календарь свободных дат с сезонными ценами, правило минимального проживания и бронирование с завтраками и трансфером.",
-      "en": "Boutique hotel site: rooms and a comparison table, an availability calendar with seasonal prices, a minimum-stay rule and booking with breakfast and transfer."
-    },
-    "problem": {
-      "ru": "Маленький отель теряет гостей на агрегаторах из-за комиссий, а на своём сайте нельзя увидеть свободные даты. Здесь гость сразу видит занятость, цену по сезонам и бронирует напрямую.",
-      "en": "A small hotel loses margin to booking platforms, yet its own site can't show free dates. Here guests see availability and seasonal prices and book directly."
-    },
-    "scenario": {
-      "ru": "Номер «Стандарт» → календарь: занятая ночь в диапазоне — отказ, одна ночь с пятницы — отказ, 23–26 октября — 12 600 сом → бронирование: завтраки и трансфер, смена номера пересчитывает цену и лимит гостей → демо-бронь. С главной: 4 гостя → предлагается семейный номер.",
-      "en": "Standard room → calendar: a busy night inside the range is rejected, a single Friday night is rejected, 23–26 Oct costs 12,600 som → booking: breakfast and transfer, switching room recalculates price and guest limit → demo booking. From home: 4 guests → the family room is suggested."
-    },
-    "features": [
-      {
-        "ru": "Календарь занятости с выбором диапазона, сезонными ценами и правилом минимум двух ночей в выходные",
-        "en": "Availability calendar with range picking, seasonal prices and a two-night weekend minimum",
-        "kind": "demo-logic"
-      },
-      {
-        "ru": "Бронирование с пересчётом по номеру, гостям, завтракам и трансферу",
-        "en": "Booking that recalculates by room, guests, breakfast and transfer",
-        "kind": "demo-logic"
-      },
-      {
-        "ru": "Сравнение номеров и страница каждого номера",
-        "en": "Room comparison and a page for every room",
-        "kind": "production-ready"
-      },
-      {
-        "ru": "Синхронизация занятости с channel manager и предоплата",
-        "en": "Availability sync with a channel manager and prepayment",
-        "kind": "missing-integration"
-      }
-    ],
-    "limits": {
-      "ru": "Отель, номера, цены и занятость вымышлены (занятость псевдослучайная, одинаковая для всех); бронь хранится только в браузере, адрес не указан.",
-      "en": "The hotel, rooms, prices and occupancy are fictional (pseudo-random, the same for everyone); the booking stays in the browser and no address is given."
-    },
-    "studio": {
-      "ru": [
-        "Информационная архитектура: главная, номера со сравнением, страницы номеров, об отеле, бронирование",
-        "Календарь с правилами: прошедшие и занятые ночи, выезд в занятый день, сезоны, минимум ночей",
-        "Бронирование, которое принимает даты из календаря и с главной и подбирает номер по числу гостей",
-        "Иллюстрации номеров и пейзажа, которые генерирует скрипт",
-        "Горная айдентика: EB Garamond + Roboto Flex, хвоя и дерево"
-      ],
-      "en": [
-        "Information architecture: home, rooms with comparison, room pages, about, booking",
-        "A calendar with rules: past and busy nights, check-out on a busy day, seasons, minimum nights",
-        "Booking that accepts dates from the calendar and the home form and picks a room by party size",
-        "Script-generated room and landscape illustrations",
-        "Mountain identity: EB Garamond + Roboto Flex, pine and wood"
-      ]
-    },
-    "provenance": {
-      "type": "original",
-      "ru": "Собственная разработка MicroStudio. Шрифты EB Garamond и Roboto Flex — SIL OFL 1.1; иллюстрации генерирует tools/art.mjs.",
-      "en": "Built from scratch by MicroStudio. EB Garamond and Roboto Flex fonts are SIL OFL 1.1; illustrations are generated by tools/art.mjs.",
-      "assets": [
-        {
-          "name": "EB Garamond",
-          "license": "OFL-1.1",
-          "source": "https://github.com/octaviopardo/EBGaramond12"
-        },
-        {
-          "name": "Roboto Flex",
-          "license": "OFL-1.1",
-          "source": "https://github.com/googlefonts/roboto-flex"
-        }
-      ]
-    },
-    "client": null,
-    "demoUrl": "https://ms-archa-hotel.vercel.app",
-    "hosting": "showcase",
-    "publishedAt": "2026-10-19",
-    "verifiedAt": "2026-10-19",
-    "featuredRank": 27,
-    "language": "ru",
-    "mobileFirst": false,
-    "images": {
-      "desktop": {
-        "src": "/portfolio/archa-hotel/desktop.webp",
-        "width": 1440,
-        "height": 900
-      },
-      "mobile": {
-        "src": "/portfolio/archa-hotel/mobile.webp",
-        "width": 780,
-        "height": 1688
-      },
-      "gallery": [
-        {
-          "src": "/portfolio/archa-hotel/calendar.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Календарь свободных дат с расчётом стоимости",
-            "en": "Availability calendar with a price breakdown"
-          }
-        },
-        {
-          "src": "/portfolio/archa-hotel/rooms.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Сравнение номеров",
-            "en": "Room comparison"
-          }
-        },
-        {
-          "src": "/portfolio/archa-hotel/booking.webp",
-          "width": 780,
-          "height": 1688,
-          "viewport": "mobile",
-          "alt": {
-            "ru": "Бронирование на телефоне",
-            "en": "Booking on a phone"
-          }
-        }
-      ]
-    }
-  },
-  {
-    "slug": "gulzar-salon",
-    "workType": "demo",
-    "format": "app",
-    "industry": "local-services",
-    "niche": {
-      "ru": "Салон красоты",
-      "en": "Beauty salon"
-    },
-    "title": {
-      "ru": "Гүлзар — журнал записи салона",
-      "en": "Gulzar — salon booking journal"
-    },
-    "summary": {
-      "ru": "Веб-приложение для администратора салона красоты: расписание мастеров на день, запись без накладок с учётом обеда и навыков мастера, статусы визитов, выручка и карточки клиентов.",
-      "en": "A web app for a beauty salon front desk: the day's schedule by master, conflict-free booking that respects lunch breaks and skills, visit statuses, revenue and client cards."
-    },
-    "problem": {
-      "ru": "Запись в тетради или мессенджере приводит к накладкам, забытым клиентам и непонятной выручке за день. Журнал показывает загрузку мастеров и не даёт записать на занятое время.",
-      "en": "Paper or messenger booking causes double bookings, forgotten clients and unclear daily revenue. The journal shows each master's load and refuses overlapping bookings."
-    },
-    "scenario": {
-      "ru": "Свободное время у мастера → запись конфликтует с обедом и прошедшим временем → укладка в 12:15 → телефон узнаёт постоянную клиентку → запись на доске. Затем «Пришла» → «Оплачено» пересчитывает выручку, «Не пришла» и отмена. Карточка клиента показывает историю и новую запись.",
-      "en": "A free slot → the booking clashes with lunch and past time → a blow-dry at 12:15 → the phone recognises a regular → the visit appears on the board. Then Arrived → Paid updates revenue, a no-show and a cancellation. The client card shows history and the new visit."
-    },
-    "features": [
-      {
-        "ru": "Доска мастеров на день с обедами, выходными и линией текущего времени",
-        "en": "A day board of masters with lunch breaks, days off and a now-line",
-        "kind": "demo-logic"
-      },
-      {
-        "ru": "Проверка пересечений, рабочего времени и навыков мастера при записи",
-        "en": "Checks for overlaps, opening hours and master skills when booking",
-        "kind": "demo-logic"
-      },
-      {
-        "ru": "Статусы визита и выручка за день, карточка клиента с историей",
-        "en": "Visit statuses, daily revenue and a client card with history",
-        "kind": "demo-logic"
-      },
-      {
-        "ru": "Онлайн-запись для клиентов и напоминания в WhatsApp",
-        "en": "Client self-booking and WhatsApp reminders",
-        "kind": "missing-integration"
-      }
-    ],
-    "limits": {
-      "ru": "Салон, мастера и клиенты вымышлены, записи генерируются; изменения хранятся только в браузере.",
-      "en": "The salon, masters and clients are fictional and visits are generated; changes stay in the browser."
-    },
-    "studio": {
-      "ru": [
-        "Сценарии администратора: запись, приход, оплата, неявка, отмена",
-        "Сетка дня на 4 мастера с шагом 15 минут и правилами занятости",
-        "Распознавание постоянных клиентов по телефону",
-        "Диалоги с удержанием фокуса и управлением с клавиатуры",
-        "Спокойная сливовая палитра и Open Sans для плотного интерфейса"
-      ],
-      "en": [
-        "Front-desk flows: book, arrive, pay, no-show, cancel",
-        "A day grid for 4 masters in 15-minute steps with occupancy rules",
-        "Recognising regular clients by phone number",
-        "Dialogs with focus trapping and keyboard control",
-        "A calm plum palette and Open Sans for a dense interface"
-      ]
-    },
-    "provenance": {
-      "type": "original",
-      "ru": "Собственная разработка MicroStudio. Шрифт Open Sans — SIL OFL 1.1.",
-      "en": "Built from scratch by MicroStudio. Open Sans font is SIL OFL 1.1.",
-      "assets": [
-        {
-          "name": "Open Sans",
-          "license": "OFL-1.1",
-          "source": "https://github.com/googlefonts/opensans"
-        }
-      ]
-    },
-    "client": null,
-    "demoUrl": "https://ms-gulzar-salon.vercel.app",
-    "hosting": "showcase",
-    "publishedAt": "2026-10-19",
-    "verifiedAt": "2026-10-19",
-    "featuredRank": 28,
-    "language": "ru",
-    "mobileFirst": false,
-    "images": {
-      "desktop": {
-        "src": "/portfolio/gulzar-salon/desktop.webp",
-        "width": 1440,
-        "height": 900
-      },
-      "mobile": {
-        "src": "/portfolio/gulzar-salon/mobile.webp",
-        "width": 780,
-        "height": 1688
-      },
-      "gallery": [
-        {
-          "src": "/portfolio/gulzar-salon/new.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Новая запись с проверкой времени",
-            "en": "A new booking with time checks"
-          }
-        },
-        {
-          "src": "/portfolio/gulzar-salon/clients.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Карточка клиента с историей",
-            "en": "Client card with history"
-          }
-        },
-        {
-          "src": "/portfolio/gulzar-salon/status.webp",
-          "width": 780,
-          "height": 1688,
-          "viewport": "mobile",
-          "alt": {
-            "ru": "Статус визита на телефоне",
-            "en": "Visit status on a phone"
-          }
-        }
-      ]
-    }
-  },
-  {
-    "slug": "kiyim-store",
-    "workType": "demo",
-    "format": "shop",
-    "industry": "commerce",
-    "niche": {
-      "ru": "Одежда",
-      "en": "Clothing"
-    },
-    "title": {
-      "ru": "Kiyim — магазин одежды",
-      "en": "Kiyim — clothing store"
-    },
-    "summary": {
-      "ru": "Магазин одежды: фильтр «есть в моём размере», подбор размера по меркам с учётом кроя, подписка на поступление, образы со скидкой и шкала бесплатной доставки.",
-      "en": "Clothing store: an \"in my size\" filter, size advice from measurements that accounts for the cut, back-in-stock requests, discounted looks and a free-delivery meter."
-    },
-    "problem": {
-      "ru": "Одежду возвращают из-за размера, а покупатели уходят, увидев, что нужного размера нет. Магазин подсказывает размер для конкретной модели, честно показывает остатки и предлагает альтернативу.",
-      "en": "Clothes come back because of size, and shoppers leave when their size is gone. The store recommends a size per model, shows stock honestly and offers alternatives."
-    },
-    "scenario": {
-      "ru": "Пальто → размер L в графите закончился: предложен песочный, подписка на поступление → мерки: грудь 100 см → M для свободного кроя, S если «плотнее» → корзина не даёт взять больше остатка → свитер: «Добавить образ» даёт −10%, без шапки скидка пропадает → фильтры каталога → оформление с доставкой в регион.",
-      "en": "Coat → size L in graphite is sold out: sand is offered plus a back-in-stock request → measurements: chest 100 cm → M for the relaxed cut, S for a snug fit → the bag won't exceed stock → sweater: Add the look gives −10%, removing the hat drops it → catalogue filters → checkout with regional delivery."
-    },
-    "features": [
-      {
-        "ru": "Остатки по размеру и цвету, «последний», подписка на поступление",
-        "en": "Stock per size and colour, 'last one', back-in-stock requests",
-        "kind": "demo-logic"
-      },
-      {
-        "ru": "Подбор размера по обхвату груди с учётом кроя модели и предпочтения посадки",
-        "en": "Size advice from chest measurement, the model's cut and fit preference",
-        "kind": "demo-logic"
-      },
-      {
-        "ru": "Образы со скидкой 10%, пока в корзине весь образ; шкала бесплатной доставки",
-        "en": "10% off looks while the whole look is in the bag; a free-delivery meter",
-        "kind": "demo-logic"
-      },
-      {
-        "ru": "Фильтр «есть в размере», цвет и категория в URL, избранное",
-        "en": "In-my-size, colour and category filters in the URL; a wishlist",
-        "kind": "production-ready"
-      },
-      {
-        "ru": "Учёт остатков в 1С/МойСклад и онлайн-оплата",
-        "en": "Stock sync with 1C/MoySklad and online payment",
-        "kind": "missing-integration"
-      }
-    ],
-    "limits": {
-      "ru": "Бренд, вещи, остатки и цены вымышлены; заказ и подписки хранятся только в браузере, уведомления не отправляются.",
-      "en": "The brand, items, stock and prices are fictional; orders and subscriptions stay in the browser and no notifications are sent."
-    },
-    "studio": {
-      "ru": [
-        "Модель данных: вещь × цвет × размер с остатками и кроем",
-        "Подборщик размера с размерной сеткой изделия для трёх типов кроя",
-        "Логика образа: подстановка ближайшего доступного размера и условная скидка",
-        "26 иллюстраций одежды с мотивом шырдака, которые генерирует скрипт",
-        "Строгая айдентика: Wix Madefor, графит, молочный и терракота"
-      ],
-      "en": [
-        "Data model: item × colour × size with stock and cut",
-        "A size advisor with garment measurements for three cuts",
-        "Look logic: nearest available size and a conditional discount",
-        "26 script-generated garment illustrations with a shyrdak motif",
-        "A strict identity: Wix Madefor, graphite, milk and terracotta"
-      ]
-    },
-    "provenance": {
-      "type": "original",
-      "ru": "Собственная разработка MicroStudio. Шрифты Wix Madefor Display и Text — SIL OFL 1.1; иллюстрации генерирует tools/art.mjs.",
-      "en": "Built from scratch by MicroStudio. Wix Madefor Display and Text fonts are SIL OFL 1.1; illustrations are generated by tools/art.mjs.",
-      "assets": [
-        {
-          "name": "Wix Madefor Display",
-          "license": "OFL-1.1",
-          "source": "https://github.com/wix-incubator/wixmadefor"
-        },
-        {
-          "name": "Wix Madefor Text",
-          "license": "OFL-1.1",
-          "source": "https://github.com/wix-incubator/wixmadefor"
-        }
-      ]
-    },
-    "client": null,
-    "demoUrl": "https://ms-kiyim-store.vercel.app",
-    "hosting": "showcase",
-    "publishedAt": "2026-10-19",
-    "verifiedAt": "2026-10-19",
-    "featuredRank": 29,
-    "language": "ru",
-    "mobileFirst": false,
-    "images": {
-      "desktop": {
-        "src": "/portfolio/kiyim-store/desktop.webp",
-        "width": 1440,
-        "height": 900
-      },
-      "mobile": {
-        "src": "/portfolio/kiyim-store/mobile.webp",
-        "width": 780,
-        "height": 1688
-      },
-      "gallery": [
-        {
-          "src": "/portfolio/kiyim-store/product.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Подбор размера по меркам",
-            "en": "Size advice from measurements"
-          }
-        },
-        {
-          "src": "/portfolio/kiyim-store/look.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Образ со скидкой в корзине",
-            "en": "A discounted look in the bag"
-          }
-        },
-        {
-          "src": "/portfolio/kiyim-store/catalog.webp",
-          "width": 780,
-          "height": 1688,
-          "viewport": "mobile",
-          "alt": {
-            "ru": "Каталог с фильтром размера на телефоне",
-            "en": "Catalogue with a size filter on a phone"
-          }
-        }
-      ]
-    }
-  },
-  {
-    "slug": "jailoo-camp",
-    "workType": "demo",
-    "format": "special",
-    "industry": "food-travel-realty",
-    "niche": {
-      "ru": "Глэмпинг",
-      "en": "Glamping"
-    },
-    "title": {
-      "ru": "Жайлоо — глэмпинг у горного озера",
-      "en": "Jailoo — mountain lake glamping"
-    },
-    "summary": {
-      "ru": "Спецпроект глэмпинга: интерактивная карта лагеря с занятостью домиков на выбранные даты, активности с ограничениями по гостям и сезону, расчёт поездки и список вещей под месяц.",
-      "en": "A glamping special project: an interactive camp map with unit availability for chosen dates, activities limited by party size and season, a trip estimate and a packing list for the month."
-    },
-    "problem": {
-      "ru": "Гости выбирают не «номер», а место: у воды, под звёздами, подальше от соседей. Карта отвечает на это лучше списка, а честный расчёт и список вещей снимают вопросы до звонка.",
-      "en": "Guests choose a spot, not a room: by the water, under the stars, away from neighbours. A map answers that better than a list, and an honest estimate and packing list remove questions before a call."
-    },
-    "scenario": {
-      "ru": "Май — вне сезона, отказ → 13–15 августа на троих: «Свободно 4 из 8», занятые и тесные домики отмечены → А-фрейм «Арча»: выходные дороже на 20% → конная прогулка не больше числа гостей, телескоп только в июле–августе, трансфер → список вещей под август и активности → демо-заявка.",
-      "en": "May is out of season and rejected → 13–15 August for three: \"4 of 8 free\", busy and too-small units marked → the Archa A-frame: weekend nights +20% → horse ride capped by guests, telescope only in July–August, transfer → a packing list for August and the activities → demo request."
-    },
-    "features": [
-      {
-        "ru": "Карта лагеря: каждый домик показывает занятость на даты и вместимость",
-        "en": "Camp map: every unit shows availability for the dates and its capacity",
-        "kind": "demo-logic"
-      },
-      {
-        "ru": "Правила сезона, наценка выходных, лимиты активностей по гостям, ночам и месяцу",
-        "en": "Season rules, weekend surcharge, activity limits by guests, nights and month",
-        "kind": "demo-logic"
-      },
-      {
-        "ru": "Список вещей, который меняется от месяца и выбранных активностей",
-        "en": "A packing list that changes with the month and chosen activities",
-        "kind": "demo-logic"
-      },
-      {
-        "ru": "Синхронизация занятости и предоплата",
-        "en": "Availability sync and prepayment",
-        "kind": "missing-integration"
-      }
-    ],
-    "limits": {
-      "ru": "Лагерь, цены и занятость вымышлены (занятость псевдослучайная, одинаковая для всех); заявка и отметки хранятся только в браузере.",
-      "en": "The camp, prices and occupancy are fictional (pseudo-random, the same for everyone); the request and ticks stay in the browser."
-    },
-    "studio": {
-      "ru": [
-        "Иллюстрированная схема лагеря с доступными с клавиатуры отметками домиков",
-        "Правила бронирования: сезон, максимум ночей, выходные, вместимость",
-        "Активности с ограничениями и пересчётом поездки",
-        "Полезный контент вместо «воды»: список вещей под погоду месяца",
-        "Ночная айдентика: Advent Pro + Nunito Sans, звёздное небо и луг"
-      ],
-      "en": [
-        "An illustrated camp plan with keyboard-accessible unit markers",
-        "Booking rules: season, maximum nights, weekends, capacity",
-        "Activities with limits and a live trip estimate",
-        "Useful content instead of filler: a packing list for the month's weather",
-        "A night-sky identity: Advent Pro + Nunito Sans, stars and meadow"
-      ]
-    },
-    "provenance": {
-      "type": "original",
-      "ru": "Собственная разработка MicroStudio. Шрифты Advent Pro и Nunito Sans — SIL OFL 1.1; карта нарисована в SVG.",
-      "en": "Built from scratch by MicroStudio. Advent Pro and Nunito Sans fonts are SIL OFL 1.1; the map is hand-built SVG.",
-      "assets": [
-        {
-          "name": "Advent Pro",
-          "license": "OFL-1.1",
-          "source": "https://github.com/googlefonts/advent"
-        },
-        {
-          "name": "Nunito Sans",
-          "license": "OFL-1.1",
-          "source": "https://github.com/googlefonts/NunitoSans"
-        }
-      ]
-    },
-    "client": null,
-    "demoUrl": "https://ms-jailoo-camp.vercel.app",
-    "hosting": "showcase",
-    "publishedAt": "2026-10-19",
-    "verifiedAt": "2026-10-19",
-    "featuredRank": 30,
-    "language": "ru",
-    "mobileFirst": false,
-    "images": {
-      "desktop": {
-        "src": "/portfolio/jailoo-camp/desktop.webp",
-        "width": 1440,
-        "height": 900
-      },
-      "mobile": {
-        "src": "/portfolio/jailoo-camp/mobile.webp",
-        "width": 780,
-        "height": 1688
-      },
-      "gallery": [
-        {
-          "src": "/portfolio/jailoo-camp/map.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Карта лагеря со свободными домиками",
-            "en": "Camp map with free units"
-          }
-        },
-        {
-          "src": "/portfolio/jailoo-camp/extras.webp",
-          "width": 1440,
-          "height": 900,
-          "viewport": "desktop",
-          "alt": {
-            "ru": "Активности с ограничениями",
-            "en": "Activities with limits"
-          }
-        },
-        {
-          "src": "/portfolio/jailoo-camp/pack.webp",
-          "width": 780,
-          "height": 1688,
-          "viewport": "mobile",
-          "alt": {
-            "ru": "Список вещей на телефоне",
-            "en": "Packing list on a phone"
           }
         }
       ]

@@ -70,7 +70,7 @@ test("34. canonical, hreflang and OG image are present", async ({ page, request 
 
 test("unique titles and descriptions across pages", async ({ page }) => {
   const seen = new Set<string>();
-  for (const path of ["/ru", "/ru/services", "/ru/services/design", "/ru/work", "/ru/work/oreh-len", "/ru/about", "/ru/blog", "/ru/special", "/ru/contact", "/ru/privacy", "/en", "/en/work"]) {
+  for (const path of ["/ru", "/ru/services", "/ru/services/design", "/ru/work", "/ru/work/marby-realty", "/ru/about", "/ru/blog", "/ru/special", "/ru/contact", "/ru/privacy", "/en", "/en/work"]) {
     await page.goto(path);
     const title = await page.title();
     expect(seen.has(title), title).toBe(false);
@@ -95,7 +95,7 @@ test("43. no fabricated testimonials, team or metrics", async ({ page }) => {
 });
 
 test("49. English pages contain no Russian text", async ({ page }) => {
-  for (const path of ["/en", "/en/services", "/en/services/marketing", "/en/work", "/en/work/tash-stroy", "/en/about", "/en/blog", "/en/blog/what-happens-after-an-ad-click", "/en/special", "/en/contact", "/en/privacy"]) {
+  for (const path of ["/en", "/en/services", "/en/services/marketing", "/en/work", "/en/work/saima-hotel", "/en/about", "/en/blog", "/en/blog/what-happens-after-an-ad-click", "/en/special", "/en/contact", "/en/privacy"]) {
     await page.goto(path);
     const text = await page.locator("body").innerText();
     expect(text.match(/[А-Яа-яЁё]+/g) ?? [], path).toEqual([]);

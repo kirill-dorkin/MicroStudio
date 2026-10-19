@@ -9,6 +9,8 @@ import portfolio from "./src/data/portfolio.json";
 const legacyWorkSlugs = [
   "fashion-store", "restaurant-tablefork", "photo-lumen", "saas-launchpad", "dashboard-pulse", "startup-ignite", "blog-nova",
   "anna-art", "jarjar", "nova-ielts", "best-electronics-store", "best-electronics-link", "tikitaki",
+  // Self-made demos retired from the public selection on 2026-10-19 (owner decision).
+  "ak-tish-dental", "archa-hotel", "arna-crm", "aruu-cosmetics", "bugu-coffee", "garage-312", "gulzar-salon", "jailoo-camp", "kaichy-barber", "kampa-warehouse", "kazan-ogon", "kiyim-store", "kochevnik-moving", "kolos-bakery", "kumush-jewelry", "ordo-legal", "oreh-len", "ritm-projects", "saldo-finance", "soz-language", "svet24-studio", "svezho-cleaning", "tash-stroy", "toolor-jazz", "volt-electronics",
 ];
 const published = new Set(portfolio.map((p) => p.slug));
 const hiddenWork = legacyWorkSlugs.filter((slug) => !published.has(slug));

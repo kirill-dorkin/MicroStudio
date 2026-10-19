@@ -38,7 +38,9 @@ export const projectSchema = z
       ru: z.string(),
       en: z.string(),
       assets: z.array(z.object({ name: z.string(), license: z.string(), source: url })),
-      upstream: z.object({ name: z.string(), url, sha: z.string(), license: z.string(), licenseUrl: url, authors: z.string() }).optional(),
+      upstream: z
+        .object({ name: z.string(), url, sha: z.string(), license: z.string(), licenseUrl: url, authors: z.string(), demo: url.optional(), fork: url.optional() })
+        .optional(),
     }),
     client: z.object({ name: z.string(), permission: z.string() }).nullable(),
     demoUrl: url,

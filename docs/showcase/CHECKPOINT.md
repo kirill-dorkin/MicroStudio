@@ -22,6 +22,30 @@
 
 > Требования из исходного ТЗ, которые противоречат этому (собственные демо, план из 50 слотов в `PLAN.md`, партии по 5 своих демо), **больше не действуют**. `PLAN.md` сохранён как история, но для новой работы не используется.
 
+## Прогресс по новому подходу (2026-10-19)
+
+Первая пятёрка найдена, адаптирована, опубликована и выведена на сайт. Подробности отбора и отклонённые кандидаты — `SOURCES.md`, скриншоты исходников — `sources/`.
+
+| Проект | Исходник | Наша версия на GitHub | Наше демо |
+|---|---|---|---|
+| Marby — недвижимость | https://github.com/agnilem/marby-astro | https://github.com/kirill-dorkin/ms-marby-realty | https://ms-marby-realty.vercel.app |
+| Очок — ресторан | https://github.com/xocothemes/ombra | https://github.com/kirill-dorkin/ms-ochok-restaurant | https://ms-ochok-restaurant.vercel.app |
+| Saima — отель | https://github.com/Sv3nskie/astro-theme-solenne | https://github.com/kirill-dorkin/ms-saima-hotel | https://ms-saima-hotel.vercel.app |
+| Maison — магазин | https://github.com/njbSaab/astro-njx-maison | https://github.com/kirill-dorkin/ms-maison-archive | https://ms-maison-archive.vercel.app |
+| Kerege Admin — веб-приложение | https://github.com/satnaing/shadcn-admin | https://github.com/kirill-dorkin/ms-kerege-admin | https://ms-kerege-admin.vercel.app |
+
+Список изменений по каждому — в `ADAPTATION.md` в корне форка и в карточке на сайте («Что сделала MicroStudio»).
+
+Публично на сайте сейчас 7 работ: эти 5 + best-electronics-link (клиент) + tikitaki (свой продукт). 25 собственных демо скрыты (`status: retired` в их `showcase.json`), код и деплои сохранены, их адреса кейсов перенаправляются в каталог.
+
+Как устроено:
+- Форки лежат локально в `~/ms-adapted/<repo>`, remote `origin` — форк в kirill-dorkin, `upstream` — исходник.
+- Деплой: `~/ms-adapted/deploy.sh <папка-сборки> <vercel-проект>` (копирует сборку в `~/ms-adapted/_deploy/<проект>`, где хранится привязка к Vercel).
+- Метаданные карточек: `microstudio-showcase/adapted/<slug>/showcase.json` (`provenance.type: "derived"`, `upstream` с `sha`, `license`, `demo`, `fork`). Пайплайн QA/скриншотов/Lighthouse/экспорта тот же, проверка — только живого демо.
+- Lighthouse (мобильный): Ochok 100, Marby 91, Maison 77, Saima 73, Kerege 69 — ниже 90 из-за тяжёлых исходных изображений/бандла; доступность 96–100.
+
+Следующий шаг: ещё партии по 5 из резерва в `SOURCES.md` и новый поиск (магазины одежды/техники, корпоративные B2B, клиники, образование, кабинеты), тот же порядок: просмотр исходника на двух ширинах → форк → минимальная адаптация → деплой → QA → карточка.
+
 ## Репозитории и ветки
 
 ### Сайт студии — `~/MicroStudio` (github.com/kirill-dorkin/MicroStudio)
@@ -31,7 +55,7 @@
 
 ### Демо — `~/microstudio-showcase` (github.com/kirill-dorkin/microstudio-showcase, **приватный**)
 - Ветка: `main`, запушена до `d3c9649`.
-- **Незакоммичено:** `demos/koch-tours/` — начатый демо туроператора. Работа остановлена по решению владельца, не деплоился, не публикуется. Можно удалить или оставить как есть.
+- **Незакоммичено:** `demos/koch-tours/` — начатый собственный демо туроператора. Работа остановлена по решению владельца, не деплоился, не публикуется. Можно удалить или оставить как есть.
 - Публичный репозиторий создать не удалось (автоматическая политика отклонила); если нужен публичный — владелец меняет видимость сам.
 
 ## Где лежат данные портфолио

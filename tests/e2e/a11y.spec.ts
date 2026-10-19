@@ -7,7 +7,7 @@ const pages = [
   "/ru/services",
   "/ru/services/marketing",
   "/ru/work",
-  "/ru/work/arna-crm",
+  "/ru/work/kerege-admin",
   "/ru/work/best-electronics-link",
   "/ru/work/anna-art",
   "/ru/about",

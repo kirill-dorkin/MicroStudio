@@ -203,6 +203,33 @@ export default async function ProjectPage({ params }: Props) {
                   {p.provenance.upstream.license}
                   <span className="sr-only"> ({t.common.newTab})</span>
                 </a>
+                {p.provenance.upstream.demo && (
+                  <>
+                    {" "}·{" "}
+                    <a href={p.provenance.upstream.demo} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">
+                      {tp.upstreamDemo}
+                      <span className="sr-only"> ({t.common.newTab})</span>
+                    </a>
+                  </>
+                )}
+              </p>
+            )}
+            {p.provenance.upstream?.fork && (
+              <p className="mt-2 text-[0.95rem]">
+                {tp.fork}:{" "}
+                <a href={p.provenance.upstream.fork} target="_blank" rel="noopener noreferrer" className="text-lime underline underline-offset-4">
+                  {p.provenance.upstream.fork.replace("https://github.com/", "")}
+                  <span className="sr-only"> ({t.common.newTab})</span>
+                </a>
+              </p>
+            )}
+            {p.provenance.upstream?.fork && (
+              <p className="mt-2 text-[0.95rem]">
+                {tp.ourDemo}:{" "}
+                <a href={p.demoUrl} target="_blank" rel="noopener noreferrer" className="text-lime underline underline-offset-4">
+                  {p.demoUrl.replace("https://", "")}
+                  <span className="sr-only"> ({t.common.newTab})</span>
+                </a>
               </p>
             )}
             {p.provenance.assets.length > 0 && (

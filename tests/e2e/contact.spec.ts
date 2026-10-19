@@ -79,12 +79,12 @@ test.describe("contact page and brief", () => {
   });
 
   test("project from a portfolio page travels into the brief and can be removed", async ({ page }) => {
-    await page.goto("/ru/work/tash-stroy");
+    await page.goto("/ru/work/saima-hotel");
     await page.getByRole("link", { name: "Заполнить бриф с этим примером" }).click();
-    await expect(page).toHaveURL(/\/ru\/contact\?project=tash-stroy/);
-    await expect(page.locator("output")).toContainText("Таш Строй — строительная компания");
+    await expect(page).toHaveURL(/\/ru\/contact\?project=saima-hotel/);
+    await expect(page.locator("output")).toContainText("Saima — бутик-отель в Бишкеке");
     await page.getByRole("button", { name: /Убрать пример/ }).click();
-    await expect(page.locator("output")).not.toContainText("Таш Строй");
+    await expect(page.locator("output")).not.toContainText("Saima");
     await expect(page).not.toHaveURL(/project=/);
   });
 
@@ -115,9 +115,9 @@ test.describe("WhatsApp context from other pages", () => {
   });
 
   test("project page: 'discuss a similar project' names the example", async ({ page }) => {
-    await page.goto("/ru/work/oreh-len");
+    await page.goto("/ru/work/marby-realty");
     const cta = page.locator("main").getByRole("link", { name: /Обсудить похожий проект/ }).first();
-    expect(waText(await cta.getAttribute("href"))).toBe("Здравствуйте! Интересует решение, похожее на «Орех и Лён — магазин мебели».");
+    expect(waText(await cta.getAttribute("href"))).toBe("Здравствуйте! Интересует решение, похожее на «Marby — агентство недвижимости».");
   });
 
   test("service page names the service", async ({ page }) => {

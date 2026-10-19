@@ -12,8 +12,8 @@ describe("contact intents", () => {
   });
 
   it("project message names the example", () => {
-    expect(intentMessage("ru", { kind: "project", slug: "oreh-len" })).toBe("Здравствуйте! Интересует решение, похожее на «Орех и Лён — магазин мебели».");
-    expect(intentMessage("en", { kind: "project", slug: "oreh-len" })).toContain("“Oreh & Len — furniture store”");
+    expect(intentMessage("ru", { kind: "project", slug: "ochok-restaurant" })).toBe("Здравствуйте! Интересует решение, похожее на «Очок — ресторан у огня».");
+    expect(intentMessage("en", { kind: "project", slug: "ochok-restaurant" })).toContain("“Ochok — fire-led tasting counter”");
   });
 
   it("service and format messages name the choice", () => {
@@ -31,10 +31,10 @@ describe("contact intents", () => {
   it("brief links keep the context", () => {
     expect(briefHref("ru", { kind: "special" })).toBe("/ru/contact?service=special#brief");
     expect(briefHref("en", { kind: "service", slug: "websites" })).toBe("/en/contact?service=company#brief");
-    expect(briefHref("ru", { kind: "project", slug: "oreh-len" })).toBe("/ru/contact?project=oreh-len#brief");
+    expect(briefHref("ru", { kind: "project", slug: "marby-realty" })).toBe("/ru/contact?project=marby-realty#brief");
   });
 
   it("analytics params contain ids only", () => {
-    expect(intentParams({ kind: "project", slug: "oreh-len" })).toEqual({ intent: "project", project: "oreh-len" });
+    expect(intentParams({ kind: "project", slug: "marby-realty" })).toEqual({ intent: "project", project: "marby-realty" });
   });
 });
