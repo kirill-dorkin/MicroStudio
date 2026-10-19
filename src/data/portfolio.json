@@ -1585,5 +1585,680 @@
         }
       ]
     }
+  },
+  {
+    "slug": "kochevnik-moving",
+    "workType": "demo",
+    "format": "landing",
+    "industry": "local-services",
+    "niche": {
+      "ru": "Переезды",
+      "en": "Moving"
+    },
+    "title": {
+      "ru": "Кочевник — переезды",
+      "en": "Kochevnik — moving service"
+    },
+    "summary": {
+      "ru": "Лендинг службы переездов: опись вещей, расчёт объёма, подбор машины и грузчиков, цена и заявка на дату.",
+      "en": "Moving service landing: inventory of belongings, volume estimate, truck and crew selection, price and booking."
+    },
+    "problem": {
+      "ru": "Клиенты переездов боятся, что цена вырастет «по факту». Лендинг считает объём по описи вещей, подбирает машину и показывает понятную разбивку до заявки.",
+      "en": "Moving customers fear the price will grow on the day. The landing page estimates volume from an inventory, picks a truck and shows a clear breakdown before booking."
+    },
+    "scenario": {
+      "ru": "Отметить вещи → увидеть объём и подходящую машину → уточнить этаж, расстояние, упаковку → разбивка цены → заявка на дату → сброс.",
+      "en": "Tick belongings → see volume and the right truck → set floor, distance, packing → price breakdown → booking for a date → reset."
+    },
+    "features": [
+      {
+        "ru": "Опись из 16 позиций с объёмом и заполнением машины",
+        "en": "16-item inventory with volume and truck fill",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Подбор машины, рейсов, грузчиков и часов по объёму и этажу",
+        "en": "Truck, trips, crew and hours from volume and floor",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Заявка с проверкой даты, адресов и телефона",
+        "en": "Booking with date, address and phone validation",
+        "kind": "production-ready"
+      },
+      {
+        "ru": "Передача заявки диспетчеру",
+        "en": "Sending the request to a dispatcher",
+        "kind": "missing-integration"
+      }
+    ],
+    "limits": {
+      "ru": "Тарифы и объёмы условные; заявка и опись хранятся только в браузере.",
+      "en": "Rates and volumes are approximate; the inventory and request stay in the browser."
+    },
+    "studio": {
+      "ru": [
+        "Калькулятор, который считает от понятных вещей, а не от «кубометров»",
+        "Правила подбора машины, рейсов и бригады с разбивкой стоимости",
+        "Карточки машин подсвечивают подходящую под расчёт",
+        "Игривая айдентика: Rubik, картон и синий, «наклейки» и тени-оффсеты",
+        "Заявка, которая подхватывает расчёт и проверяет поля"
+      ],
+      "en": [
+        "A calculator that starts from familiar items, not cubic metres",
+        "Rules for truck, trips and crew with a cost breakdown",
+        "Truck cards highlight the one that fits the estimate",
+        "A playful identity: Rubik, cardboard and blue, stickers and offset shadows",
+        "A booking form that carries over the estimate and validates fields"
+      ]
+    },
+    "provenance": {
+      "type": "original",
+      "ru": "Собственная разработка MicroStudio. Шрифт Rubik — SIL OFL 1.1; иллюстрации — SVG студии.",
+      "en": "Built from scratch by MicroStudio. Rubik font is SIL OFL 1.1; illustrations are the studio's SVG.",
+      "assets": [
+        {
+          "name": "Rubik",
+          "license": "OFL-1.1",
+          "source": "https://github.com/googlefonts/rubik"
+        }
+      ]
+    },
+    "client": null,
+    "demoUrl": "https://ms-kochevnik-moving.vercel.app",
+    "hosting": "showcase",
+    "publishedAt": "2026-10-19",
+    "verifiedAt": "2026-10-19",
+    "featuredRank": 16,
+    "language": "ru",
+    "mobileFirst": false,
+    "images": {
+      "desktop": {
+        "src": "/portfolio/kochevnik-moving/desktop.webp",
+        "width": 1440,
+        "height": 900
+      },
+      "mobile": {
+        "src": "/portfolio/kochevnik-moving/mobile.webp",
+        "width": 780,
+        "height": 1688
+      },
+      "gallery": [
+        {
+          "src": "/portfolio/kochevnik-moving/calc.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Опись вещей и расчёт переезда",
+            "en": "Inventory and moving estimate"
+          }
+        },
+        {
+          "src": "/portfolio/kochevnik-moving/trucks.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Машины и тарифы",
+            "en": "Trucks and rates"
+          }
+        },
+        {
+          "src": "/portfolio/kochevnik-moving/order.webp",
+          "width": 780,
+          "height": 1688,
+          "viewport": "mobile",
+          "alt": {
+            "ru": "Заявка на переезд на телефоне",
+            "en": "Moving request on a phone"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "slug": "kazan-ogon",
+    "workType": "demo",
+    "format": "corporate",
+    "industry": "food-travel-realty",
+    "niche": {
+      "ru": "Ресторан",
+      "en": "Restaurant"
+    },
+    "title": {
+      "ru": "Казан и Огонь — ресторан",
+      "en": "Kazan & Ogon — restaurant"
+    },
+    "summary": {
+      "ru": "Сайт ресторана: меню с фильтрами и поиском, банкеты с калькулятором сета и бронь стола по зонам.",
+      "en": "Restaurant site: filterable, searchable menu, banquets with a set calculator and table booking by zone."
+    },
+    "problem": {
+      "ru": "Гости ресторана выбирают по меню и хотят сразу забронировать нужный стол. Сайт показывает меню с фильтрами, свободные столы по зонам и считает банкет на гостя.",
+      "en": "Diners choose by the menu and want to book the right table right away. The site shows a filterable menu, free tables by zone and prices a banquet per guest."
+    },
+    "scenario": {
+      "ru": "Меню: фильтр «без мяса», поиск → банкет: сет и число гостей → «Обсудить дату» → бронь: гости, зона, свободное время → демо-бронь.",
+      "en": "Menu: “no meat” filter, search → banquet: set and guest count → “Discuss a date” → booking: guests, zone, free time → demo booking."
+    },
+    "features": [
+      {
+        "ru": "Меню из 22 блюд с фильтрами по тегам и поиском",
+        "en": "22-dish menu with tag filters and search",
+        "kind": "production-ready"
+      },
+      {
+        "ru": "Калькулятор банкета: сет, гости, оформление, обслуживание",
+        "en": "Banquet calculator: set, guests, decor, service",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Бронь с ограничением зон по числу гостей и занятостью столов",
+        "en": "Booking that limits zones by party size and shows table availability",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Система бронирования зала",
+        "en": "Floor booking system",
+        "kind": "missing-integration"
+      }
+    ],
+    "limits": {
+      "ru": "Ресторан, блюда и цены вымышлены; занятость столов условная; бронь хранится только в браузере.",
+      "en": "The restaurant, dishes and prices are fictional; table availability is simulated; bookings stay in the browser."
+    },
+    "studio": {
+      "ru": [
+        "Атмосферная айдентика: Cormorant и Jost, тёмно-зелёный и медь, иллюстрация казана",
+        "Меню-лист с точечными линиями, тегами и мгновенными фильтрами",
+        "Страница банкетов с форматами и отдельный калькулятор банкетного меню",
+        "Бронь: зоны, вместимость и свободные столы на каждое время",
+        "Тексты о кухне через продукты и процесс, без выдуманных отзывов"
+      ],
+      "en": [
+        "An atmospheric identity: Cormorant and Jost, dark green and copper, a cauldron illustration",
+        "A menu sheet with leader dots, tags and instant filters",
+        "A banquet page with formats and a separate banquet menu calculator",
+        "Booking: zones, capacity and free tables for every time slot",
+        "Copy about the kitchen through produce and process, no invented reviews"
+      ]
+    },
+    "provenance": {
+      "type": "original",
+      "ru": "Собственная разработка MicroStudio. Шрифты Cormorant и Jost — SIL OFL 1.1; иллюстрации — SVG студии.",
+      "en": "Built from scratch by MicroStudio. Cormorant and Jost fonts are SIL OFL 1.1; illustrations are the studio's SVG.",
+      "assets": [
+        {
+          "name": "Cormorant",
+          "license": "OFL-1.1",
+          "source": "https://github.com/CatharsisFonts/Cormorant"
+        },
+        {
+          "name": "Jost",
+          "license": "OFL-1.1",
+          "source": "https://github.com/indestructible-type/Jost"
+        }
+      ]
+    },
+    "client": null,
+    "demoUrl": "https://ms-kazan-ogon.vercel.app",
+    "hosting": "showcase",
+    "publishedAt": "2026-10-19",
+    "verifiedAt": "2026-10-19",
+    "featuredRank": 17,
+    "language": "ru",
+    "mobileFirst": false,
+    "images": {
+      "desktop": {
+        "src": "/portfolio/kazan-ogon/desktop.webp",
+        "width": 1440,
+        "height": 900
+      },
+      "mobile": {
+        "src": "/portfolio/kazan-ogon/mobile.webp",
+        "width": 780,
+        "height": 1688
+      },
+      "gallery": [
+        {
+          "src": "/portfolio/kazan-ogon/menu.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Меню с фильтрами",
+            "en": "Menu with filters"
+          }
+        },
+        {
+          "src": "/portfolio/kazan-ogon/banquet.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Калькулятор банкета",
+            "en": "Banquet calculator"
+          }
+        },
+        {
+          "src": "/portfolio/kazan-ogon/reserve.webp",
+          "width": 780,
+          "height": 1688,
+          "viewport": "mobile",
+          "alt": {
+            "ru": "Бронь стола по зонам",
+            "en": "Table booking by zone"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "slug": "svet24-studio",
+    "workType": "demo",
+    "format": "special",
+    "industry": "creative",
+    "niche": {
+      "ru": "Фотостудия",
+      "en": "Photo studio"
+    },
+    "title": {
+      "ru": "Свет 24 — фотостудия",
+      "en": "Svet 24 — photo studio"
+    },
+    "summary": {
+      "ru": "Сайт фотостудии: три зала со схемами света, недельная сетка свободных часов, оборудование и бронь интервала.",
+      "en": "Photo studio site: three halls with light diagrams, a weekly grid of free hours, equipment and interval booking."
+    },
+    "problem": {
+      "ru": "Фотографу нужно быстро понять, какой зал подходит под съёмку и когда он свободен. Сайт показывает схему света каждого зала и почасовую занятость на неделю вперёд.",
+      "en": "A photographer needs to see quickly which hall suits the shoot and when it is free. The site shows each hall's light setup and hourly availability weeks ahead."
+    },
+    "scenario": {
+      "ru": "Выбрать зал → неделя → два клика по свободным часам задают интервал → оборудование → итог с тарифом выходного → демо-бронь → отмена.",
+      "en": "Pick a hall → a week → two clicks on free hours set the interval → equipment → total with weekend rate → demo booking → cancel."
+    },
+    "features": [
+      {
+        "ru": "Сетка часов на 4 недели с выбором интервала и запретом пересечения с занятым",
+        "en": "4-week hour grid with interval selection that refuses busy overlaps",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Навигация по сетке стрелками клавиатуры",
+        "en": "Arrow-key navigation across the grid",
+        "kind": "production-ready"
+      },
+      {
+        "ru": "Расчёт с тарифом выходных и почасовым оборудованием",
+        "en": "Pricing with weekend rates and hourly equipment",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Онлайн-оплата и синхронизация с календарём студии",
+        "en": "Online payment and studio calendar sync",
+        "kind": "missing-integration"
+      }
+    ],
+    "limits": {
+      "ru": "Занятость условная, бронь и оплата не проводятся; бронь хранится в браузере.",
+      "en": "Availability is simulated; no booking or payment is made; the booking stays in the browser."
+    },
+    "studio": {
+      "ru": [
+        "Редакционная подача: Noto Serif Display курсивом, чёрно-белая палитра и красная точка записи",
+        "Схемы света для каждого зала вместо стоковых фото",
+        "Почасовая сетка с выбором интервала в два клика и клавиатурной навигацией",
+        "Расчёт стоимости с тарифом выходного дня и оборудованием",
+        "Правила аренды в формате, который читают до брони"
+      ],
+      "en": [
+        "An editorial look: italic Noto Serif Display, black and white with a red record dot",
+        "Light diagrams for each hall instead of stock photos",
+        "An hourly grid with two-click interval selection and keyboard navigation",
+        "Pricing with weekend rates and equipment",
+        "Rental rules presented so people read them before booking"
+      ]
+    },
+    "provenance": {
+      "type": "original",
+      "ru": "Собственная разработка MicroStudio. Шрифты Noto Serif Display и Golos Text — SIL OFL 1.1; схемы — SVG студии.",
+      "en": "Built from scratch by MicroStudio. Noto Serif Display and Golos Text fonts are SIL OFL 1.1; diagrams are the studio's SVG.",
+      "assets": [
+        {
+          "name": "Noto Serif Display",
+          "license": "OFL-1.1",
+          "source": "https://github.com/notofonts/latin-greek-cyrillic"
+        },
+        {
+          "name": "Golos Text",
+          "license": "OFL-1.1",
+          "source": "https://github.com/googlefonts/golos-text"
+        }
+      ]
+    },
+    "client": null,
+    "demoUrl": "https://ms-svet24-studio.vercel.app",
+    "hosting": "showcase",
+    "publishedAt": "2026-10-19",
+    "verifiedAt": "2026-10-19",
+    "featuredRank": 18,
+    "language": "ru",
+    "mobileFirst": false,
+    "images": {
+      "desktop": {
+        "src": "/portfolio/svet24-studio/desktop.webp",
+        "width": 1440,
+        "height": 900
+      },
+      "mobile": {
+        "src": "/portfolio/svet24-studio/mobile.webp",
+        "width": 780,
+        "height": 1688
+      },
+      "gallery": [
+        {
+          "src": "/portfolio/svet24-studio/halls.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Залы со схемами света",
+            "en": "Halls with light diagrams"
+          }
+        },
+        {
+          "src": "/portfolio/svet24-studio/grid.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Сетка свободных часов и выбранный интервал",
+            "en": "Free-hour grid with a selected interval"
+          }
+        },
+        {
+          "src": "/portfolio/svet24-studio/book.webp",
+          "width": 780,
+          "height": 1688,
+          "viewport": "mobile",
+          "alt": {
+            "ru": "Бронь на телефоне",
+            "en": "Booking on a phone"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "slug": "saldo-finance",
+    "workType": "demo",
+    "format": "app",
+    "industry": "products",
+    "niche": {
+      "ru": "Финансовая панель",
+      "en": "Finance dashboard"
+    },
+    "title": {
+      "ru": "Сальдо — финансы бизнеса",
+      "en": "Saldo — business finance"
+    },
+    "summary": {
+      "ru": "Финансовая панель малого бизнеса: итоги месяца, счета, бюджеты по категориям, график за полгода, операции и CSV.",
+      "en": "Small business finance dashboard: monthly totals, accounts, category budgets, a six-month chart, transactions and CSV export."
+    },
+    "problem": {
+      "ru": "Владельцу кофейни или магазина нужно за минуту понять, сколько заработано и куда уходят деньги. Панель сводит счета, бюджеты и операции в один экран.",
+      "en": "A café or shop owner needs to see in a minute what was earned and where money goes. The dashboard brings accounts, budgets and transactions onto one screen."
+    },
+    "scenario": {
+      "ru": "Выбрать месяц → сравнить с прошлым → найти перерасход в бюджете → отфильтровать операции → добавить и исправить операцию → скачать CSV → сбросить демо.",
+      "en": "Pick a month → compare with the previous one → spot budget overspend → filter transactions → add and edit one → download CSV → reset."
+    },
+    "features": [
+      {
+        "ru": "Итоги, маржа и сравнение с прошлым месяцем",
+        "en": "Totals, margin and month-over-month change",
+        "kind": "production-ready"
+      },
+      {
+        "ru": "Бюджеты расходов с предупреждением о перерасходе",
+        "en": "Expense budgets with overspend warnings",
+        "kind": "production-ready"
+      },
+      {
+        "ru": "Добавление, правка и удаление операций, выгрузка CSV",
+        "en": "Add, edit and delete transactions; CSV export",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Загрузка выписок из банка и кассы",
+        "en": "Importing bank and POS statements",
+        "kind": "missing-integration"
+      }
+    ],
+    "limits": {
+      "ru": "Организация и операции вымышлены, данные в localStorage; это не бухгалтерский учёт и не налоговая отчётность.",
+      "en": "The company and transactions are fictional, data lives in localStorage; this is not accounting or tax reporting."
+    },
+    "studio": {
+      "ru": [
+        "Набор показателей, которые владелец смотрит каждый день, без лишних графиков",
+        "Генерация реалистичных операций за полгода относительно текущей даты",
+        "Бюджеты с порогами 85% и 100% и подсветкой перерасхода",
+        "Форма операции с проверкой и выгрузка отфильтрованного списка в CSV",
+        "Спокойный интерфейс на IBM Plex Sans с табличными цифрами"
+      ],
+      "en": [
+        "The metrics an owner checks daily, without decorative charts",
+        "Realistic six months of transactions generated relative to today",
+        "Budgets with 85% and 100% thresholds and overspend highlighting",
+        "A validated transaction form and CSV export of the filtered list",
+        "A calm IBM Plex Sans interface with tabular figures"
+      ]
+    },
+    "provenance": {
+      "type": "original",
+      "ru": "Собственная разработка MicroStudio без внешней основы. Шрифт IBM Plex Sans — SIL OFL 1.1.",
+      "en": "Built from scratch by MicroStudio. IBM Plex Sans font is SIL OFL 1.1.",
+      "assets": [
+        {
+          "name": "IBM Plex Sans",
+          "license": "OFL-1.1",
+          "source": "https://github.com/IBM/plex"
+        }
+      ]
+    },
+    "client": null,
+    "demoUrl": "https://ms-saldo-finance.vercel.app",
+    "hosting": "showcase",
+    "publishedAt": "2026-10-19",
+    "verifiedAt": "2026-10-19",
+    "featuredRank": 19,
+    "language": "ru",
+    "mobileFirst": false,
+    "images": {
+      "desktop": {
+        "src": "/portfolio/saldo-finance/desktop.webp",
+        "width": 1440,
+        "height": 900
+      },
+      "mobile": {
+        "src": "/portfolio/saldo-finance/mobile.webp",
+        "width": 780,
+        "height": 1688
+      },
+      "gallery": [
+        {
+          "src": "/portfolio/saldo-finance/transactions.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Операции с фильтрами",
+            "en": "Transactions with filters"
+          }
+        },
+        {
+          "src": "/portfolio/saldo-finance/add.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Новая операция",
+            "en": "New transaction"
+          }
+        },
+        {
+          "src": "/portfolio/saldo-finance/budgets.webp",
+          "width": 780,
+          "height": 1688,
+          "viewport": "mobile",
+          "alt": {
+            "ru": "Бюджеты на телефоне",
+            "en": "Budgets on a phone"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "slug": "aruu-cosmetics",
+    "workType": "demo",
+    "format": "shop",
+    "industry": "commerce",
+    "niche": {
+      "ru": "Косметика",
+      "en": "Cosmetics"
+    },
+    "title": {
+      "ru": "Аруу Lab — магазин ухода",
+      "en": "Aruu Lab — skincare store"
+    },
+    "summary": {
+      "ru": "Магазин косметики: подбор ухода по трём вопросам, каталог с фильтрами по типу кожи и задаче, корзина-шторка и оформление.",
+      "en": "Skincare store: a three-question routine finder, filters by skin type and concern, a slide-in cart and checkout."
+    },
+    "problem": {
+      "ru": "Покупатель ухода теряется среди десятков баночек и боится купить лишнее. Магазин за минуту собирает базовый ритуал под тип кожи и продаёт его набором.",
+      "en": "Skincare shoppers get lost among dozens of jars and fear buying the wrong thing. The store builds a basic routine for their skin type in a minute and sells it as a set."
+    },
+    "scenario": {
+      "ru": "Подбор: тип кожи, чувствительность, задача → ритуал из 4 средств → набор в корзину со скидкой 10% → изменить количество → оформление с промокодом → демо-заказ.",
+      "en": "Finder: skin type, sensitivity, concern → a 4-step routine → set into cart with 10% off → change quantities → checkout with a promo code → demo order."
+    },
+    "features": [
+      {
+        "ru": "Подбор ритуала по правилам: тип кожи, чувствительность, задача",
+        "en": "Rule-based routine finder: skin type, sensitivity, concern",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Скидка за полный набор и промокод при оформлении",
+        "en": "Bundle discount and a checkout promo code",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Фильтры каталога по шагу, типу кожи и задаче в URL",
+        "en": "Catalogue filters by step, skin type and concern in the URL",
+        "kind": "production-ready"
+      },
+      {
+        "ru": "Онлайн-оплата и учёт остатков",
+        "en": "Online payment and stock tracking",
+        "kind": "missing-integration"
+      }
+    ],
+    "limits": {
+      "ru": "Бренд и средства вымышлены, подбор ориентировочный и не является медицинской рекомендацией; оплата не проводится.",
+      "en": "The brand and products are fictional; the finder is indicative and not medical advice; no payment is taken."
+    },
+    "studio": {
+      "ru": [
+        "Линейка из 14 средств с составом, типами кожи и задачами",
+        "Подбор ухода из трёх вопросов с исключением кислот и ретиноидов для чувствительной кожи",
+        "Набор со скидкой, корзина-шторка с удержанием фокуса",
+        "Иллюстрации упаковки и мягкая айдентика: Literata + Nunito, пудровые тона",
+        "Аккуратные формулировки без медицинских обещаний"
+      ],
+      "en": [
+        "A 14-product line with ingredients, skin types and concerns",
+        "A three-question finder that excludes acids and retinoids for sensitive skin",
+        "A discounted set and a slide-in cart with focus trapping",
+        "Packaging illustrations and a soft identity: Literata + Nunito, powder tones",
+        "Careful wording without medical promises"
+      ]
+    },
+    "provenance": {
+      "type": "original",
+      "ru": "Собственная разработка MicroStudio. Шрифты Literata и Nunito — SIL OFL 1.1; иллюстрации генерирует tools/art.mjs.",
+      "en": "Built from scratch by MicroStudio. Literata and Nunito fonts are SIL OFL 1.1; illustrations are generated by tools/art.mjs.",
+      "assets": [
+        {
+          "name": "Literata",
+          "license": "OFL-1.1",
+          "source": "https://github.com/googlefonts/literata"
+        },
+        {
+          "name": "Nunito",
+          "license": "OFL-1.1",
+          "source": "https://github.com/googlefonts/nunito"
+        }
+      ]
+    },
+    "client": null,
+    "demoUrl": "https://ms-aruu-cosmetics.vercel.app",
+    "hosting": "showcase",
+    "publishedAt": "2026-10-19",
+    "verifiedAt": "2026-10-19",
+    "featuredRank": 20,
+    "language": "ru",
+    "mobileFirst": false,
+    "images": {
+      "desktop": {
+        "src": "/portfolio/aruu-cosmetics/desktop.webp",
+        "width": 1440,
+        "height": 900
+      },
+      "mobile": {
+        "src": "/portfolio/aruu-cosmetics/mobile.webp",
+        "width": 780,
+        "height": 1688
+      },
+      "gallery": [
+        {
+          "src": "/portfolio/aruu-cosmetics/quiz.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Подобранный ритуал ухода",
+            "en": "A matched skincare routine"
+          }
+        },
+        {
+          "src": "/portfolio/aruu-cosmetics/catalog.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Каталог сывороток с фильтрами",
+            "en": "Serums with filters"
+          }
+        },
+        {
+          "src": "/portfolio/aruu-cosmetics/cart.webp",
+          "width": 780,
+          "height": 1688,
+          "viewport": "mobile",
+          "alt": {
+            "ru": "Корзина на телефоне",
+            "en": "Cart on a phone"
+          }
+        }
+      ]
+    }
   }
 ]
