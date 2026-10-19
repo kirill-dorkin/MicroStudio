@@ -10,7 +10,7 @@ export const projectFormats = ["landing", "corporate", "shop", "app", "special"]
 export const projectIndustries = ["local-services", "commerce", "food-travel-realty", "education", "b2b", "products", "creative"] as const;
 /**
  * client — made for a confirmed client; product — MicroStudio's own product;
- * demo — a self-initiated demonstration project (fictional company).
+ * demo — a demonstration project for a fictional company (now: adapted open-source projects).
  */
 export const workTypes = ["client", "product", "demo"] as const;
 /** What a feature really is in the demo, shown honestly on the case page. */

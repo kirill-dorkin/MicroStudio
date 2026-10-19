@@ -172,10 +172,16 @@ test("37–38. images load and nothing overflows horizontally", async ({ page })
     }
   });
   await page.waitForLoadState("networkidle");
-  const broken = await page.locator("img").evaluateAll((imgs) =>
-    (imgs as HTMLImageElement[]).filter((i) => !i.complete || i.naturalWidth === 0).map((i) => i.src),
-  );
-  expect(broken).toEqual([]);
+  // Under a fully parallel run images can still be decoding; poll instead of a single check.
+  await expect
+    .poll(
+      () =>
+        page.locator("img").evaluateAll((imgs) =>
+          (imgs as HTMLImageElement[]).filter((i) => !i.complete || i.naturalWidth === 0).map((i) => i.src),
+        ),
+      { timeout: 15_000 },
+    )
+    .toEqual([]);
 });
 
 test("39. every internal link resolves", async ({ page, request }) => {

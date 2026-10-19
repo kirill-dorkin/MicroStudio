@@ -50,7 +50,7 @@ export default async function WorkPage({ params }: Props) {
     <ul className="mt-8 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
       {lp.slice(0, 12).map((p, i) => (
         <li key={p.slug}>
-          <ProjectCard project={p} href={href(locale, `/work/${p.slug}`)} labels={cardLabels(p, locale)} priority={i < 3} />
+          <ProjectCard project={p} href={href(locale, `/work/${p.slug}`)} labels={cardLabels(p, locale)} priority={i < 3} headingLevel="h2" />
         </li>
       ))}
     </ul>

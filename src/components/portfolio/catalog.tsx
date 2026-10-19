@@ -295,6 +295,7 @@ export function Catalog({ items, labels, locale }: { items: CatalogItem[]; label
                 project={p}
                 href={p.href}
                 priority={i < 3}
+                headingLevel="h2"
                 labels={{ type: labels.typeSingle[p.workType], format: labels.formatSingle[p.format], open: p.openLabel, details: labels.details, newTab: labels.newTab }}
               />
             </li>

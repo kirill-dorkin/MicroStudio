@@ -174,7 +174,7 @@ const en: Dictionary = {
   footer: {
     tagline: "MicroStudio — a full-cycle studio, from research and design to launch and growth.",
     disclaimer:
-      "Demo projects are the studio’s work for fictional companies, marked on every card and inside each demo. Third-party fonts and assets are credited on project pages.",
+      "Demo projects are adaptations of open-source projects for fictional companies. Each project page lists the source, licence, our version on GitHub and what we changed.",
     siteTitle: "Site",
     servicesTitle: "Services",
     contactTitle: "Get in touch",
@@ -356,7 +356,7 @@ const en: Dictionary = {
     ],
     stackLead: "We pick tools to suit the project. This website is built with Next.js, React and TypeScript.",
     examplesTitle: "Our work",
-    examplesBody: "The BestElectronics repair centre page, our own TikiTaki product and demo projects across industries: a store, a CRM, a company website, a festival. Each one can be opened.",
+    examplesBody: "The BestElectronics repair centre page, our own TikiTaki product and demos across industries — a hotel, a restaurant, a store, a real estate agency and an admin dashboard. Each one can be opened.",
     examplesCta: "View projects",
   },
   contact: {

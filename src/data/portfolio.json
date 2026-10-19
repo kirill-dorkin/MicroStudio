@@ -98,18 +98,18 @@
     "mobileFirst": false,
     "images": {
       "desktop": {
-        "src": "/portfolio/saima-hotel/desktop.webp",
+        "src": "/portfolio/saima-hotel/desktop.92a7d694.webp",
         "width": 1440,
         "height": 900
       },
       "mobile": {
-        "src": "/portfolio/saima-hotel/mobile.webp",
+        "src": "/portfolio/saima-hotel/mobile.6052623b.webp",
         "width": 780,
         "height": 1688
       },
       "gallery": [
         {
-          "src": "/portfolio/saima-hotel/rooms.webp",
+          "src": "/portfolio/saima-hotel/rooms.72b0eb5f.webp",
           "width": 1440,
           "height": 900,
           "viewport": "desktop",
@@ -119,7 +119,7 @@
           }
         },
         {
-          "src": "/portfolio/saima-hotel/rooms-mobile.webp",
+          "src": "/portfolio/saima-hotel/rooms-mobile.22164c91.webp",
           "width": 780,
           "height": 1688,
           "viewport": "mobile",
@@ -219,18 +219,18 @@
     "mobileFirst": false,
     "images": {
       "desktop": {
-        "src": "/portfolio/ochok-restaurant/desktop.webp",
+        "src": "/portfolio/ochok-restaurant/desktop.61e91897.webp",
         "width": 1440,
         "height": 900
       },
       "mobile": {
-        "src": "/portfolio/ochok-restaurant/mobile.webp",
+        "src": "/portfolio/ochok-restaurant/mobile.6d9b94d5.webp",
         "width": 780,
         "height": 1688
       },
       "gallery": [
         {
-          "src": "/portfolio/ochok-restaurant/menu.webp",
+          "src": "/portfolio/ochok-restaurant/menu.7445c002.webp",
           "width": 1440,
           "height": 900,
           "viewport": "desktop",
@@ -240,7 +240,7 @@
           }
         },
         {
-          "src": "/portfolio/ochok-restaurant/reserve.webp",
+          "src": "/portfolio/ochok-restaurant/reserve.3cf3b75d.webp",
           "width": 780,
           "height": 1688,
           "viewport": "mobile",
@@ -295,25 +295,25 @@
       }
     ],
     "limits": {
-      "ru": "Дома, мастера и предметы вымышлены; покупка не проводится, кабинет — демонстрационный.",
-      "en": "Houses, makers and pieces are fictional; no purchase is made and the cabinet is a demo."
+      "ru": "Дома, мастера и предметы вымышлены; покупка не проводится, кабинет — демонстрационный. Названия домов и мастеров — латиницей, как бренды.",
+      "en": "Houses, makers and pieces are fictional; no purchase is made and the cabinet is a demo. House and maker names stay in Latin script as brands."
     },
     "studio": {
       "ru": [
         "Нашли и отобрали тему Maison (MIT) за полноценный каталог и редакционную типографику",
+        "Перевели магазин на русский: 36 предметов, три дома, фильтры, корзину, избранное и кабинет; добавили кириллический шрифт для текста",
         "Убрали выдуманный «рейтинг покупателей» из карточек, фильтров, сортировки и разметки",
         "Переименовали мастеров, чьи названия напоминали реальные часовые марки",
         "Исправили доступность: контраст бледного текста до WCAG AA, подписи полей цены, сортировки и поиска",
-        "Заменили пустые ссылки на github.com и instagram.com ссылками на проект и исходную тему",
-        "Добавили пометку о демо в подвале и noindex"
+        "Заменили пустые ссылки на github.com и instagram.com ссылками на проект и исходную тему; добавили пометку о демо в подвале и noindex"
       ],
       "en": [
         "Found and selected the Maison theme (MIT) for its full catalogue and editorial typography",
+        "Translated the store to Russian: 36 pieces, three houses, filters, bag, wishlist and cabinet; added a Cyrillic text font",
         "Removed the invented customer rating from cards, filters, sorting and structured data",
         "Renamed makers whose names resembled real watch brands",
         "Fixed accessibility: AA contrast for faint text, labels for price inputs, sorting and search",
-        "Replaced dead links to github.com and instagram.com with the project and theme pages",
-        "Added a demo note in the footer and noindex"
+        "Replaced dead links to github.com and instagram.com with the project and theme pages; added a demo note in the footer and noindex"
       ]
     },
     "provenance": {
@@ -338,22 +338,22 @@
     "publishedAt": "2026-10-19",
     "verifiedAt": "2026-10-19",
     "featuredRank": 3,
-    "language": "en",
+    "language": "ru",
     "mobileFirst": false,
     "images": {
       "desktop": {
-        "src": "/portfolio/maison-archive/desktop.webp",
+        "src": "/portfolio/maison-archive/desktop.2cfbf343.webp",
         "width": 1440,
         "height": 900
       },
       "mobile": {
-        "src": "/portfolio/maison-archive/mobile.webp",
+        "src": "/portfolio/maison-archive/mobile.d795b426.webp",
         "width": 780,
         "height": 1688
       },
       "gallery": [
         {
-          "src": "/portfolio/maison-archive/product.webp",
+          "src": "/portfolio/maison-archive/product.80be182c.webp",
           "width": 1440,
           "height": 900,
           "viewport": "desktop",
@@ -363,7 +363,7 @@
           }
         },
         {
-          "src": "/portfolio/maison-archive/catalog.webp",
+          "src": "/portfolio/maison-archive/catalog.ba853153.webp",
           "width": 780,
           "height": 1688,
           "viewport": "mobile",
@@ -423,22 +423,22 @@
       }
     ],
     "limits": {
-      "ru": "Данные — примеры, изменения не сохраняются на сервере; интерфейс на английском, как в исходнике.",
-      "en": "Data are samples and nothing is saved on a server; the interface is in English as in the original."
+      "ru": "Данные — примеры, изменения не сохраняются на сервере.",
+      "en": "Data are samples and nothing is saved on a server."
     },
     "studio": {
       "ru": [
         "Нашли и отобрали shadcn-admin (MIT) как одну из самых аккуратных открытых админ-панелей",
+        "Перевели интерфейс на русский (около 350 фраз) и данные-примеры: задачи, чаты, пользователи с номерами +996; даты — в русской локали",
         "Переименовали продукт и демо-пользователя, убрали личные данные автора из интерфейса",
-        "Заменили псевдолатынь в задачах (faker lorem) на понятные рабочие задачи",
         "Убрали из меню раздел Clerk (без ключа он показывает инструкцию для разработчика) и заглушку Help Center",
         "Настроили маршрутизацию SPA на Vercel и noindex",
         "Проверили все разделы на 1440 и 390 px: без ошибок и горизонтальной прокрутки"
       ],
       "en": [
         "Found and selected shadcn-admin (MIT) as one of the neatest open admin dashboards",
+        "Translated the interface (about 350 phrases) and sample data to Russian: tasks, chats, users with +996 numbers; Russian date locale",
         "Renamed the product and the demo user, removed the author's personal details from the UI",
-        "Replaced pseudo-Latin task titles (faker lorem) with readable work items",
         "Removed the Clerk section (it shows developer instructions without a key) and the Help Center stub",
         "Set up SPA routing on Vercel and noindex",
         "Checked every section at 1440 and 390 px: no errors, no horizontal scroll"
@@ -466,22 +466,22 @@
     "publishedAt": "2026-10-19",
     "verifiedAt": "2026-10-19",
     "featuredRank": 4,
-    "language": "en",
+    "language": "ru",
     "mobileFirst": false,
     "images": {
       "desktop": {
-        "src": "/portfolio/kerege-admin/desktop.webp",
+        "src": "/portfolio/kerege-admin/desktop.76710b65.webp",
         "width": 1440,
         "height": 900
       },
       "mobile": {
-        "src": "/portfolio/kerege-admin/mobile.webp",
+        "src": "/portfolio/kerege-admin/mobile.da27a883.webp",
         "width": 780,
         "height": 1688
       },
       "gallery": [
         {
-          "src": "/portfolio/kerege-admin/tasks.webp",
+          "src": "/portfolio/kerege-admin/tasks.ec6fad00.webp",
           "width": 1440,
           "height": 900,
           "viewport": "desktop",
@@ -491,7 +491,7 @@
           }
         },
         {
-          "src": "/portfolio/kerege-admin/users.webp",
+          "src": "/portfolio/kerege-admin/users.c974f905.webp",
           "width": 780,
           "height": 1688,
           "viewport": "mobile",
@@ -517,8 +517,8 @@
       "en": "Marby — boutique real estate brokerage"
     },
     "summary": {
-      "ru": "Корпоративный сайт агентства недвижимости в редакционном стиле: видео в первом экране, услуги, каталог объектов с параметрами, страницы объектов, команда, блог и контакты.",
-      "en": "An editorial corporate site for a real estate brokerage: hero video, services, a property catalogue with specs, property pages, team, blog and contacts."
+      "ru": "Корпоративный сайт агентства недвижимости в редакционном стиле: видео в первом экране, услуги, каталог домов в Бишкеке, на Иссык-Куле и в Алматы, страницы объектов, команда, журнал и контакты.",
+      "en": "An editorial corporate site for a real estate agency: hero video, services, a catalogue of homes in Bishkek, Issyk-Kul and Almaty, property pages, team, journal and contacts."
     },
     "problem": {
       "ru": "Агентству дорогой недвижимости нужен сайт, который сам по себе выглядит как обложка журнала: крупная типографика, большие фото, подробные карточки объектов и спокойный путь к консультации.",
@@ -551,23 +551,25 @@
       }
     ],
     "limits": {
-      "ru": "Агентство, команда, объекты и отзывы вымышлены; форма ничего не отправляет. Тексты на английском, как в исходнике.",
-      "en": "The agency, team, listings and testimonials are fictional; the form sends nothing. Copy is in English as in the original."
+      "ru": "Агентство, команда, объекты и отзывы вымышлены; форма ничего не отправляет.",
+      "en": "The agency, team, listings and testimonials are fictional; the form sends nothing."
     },
     "studio": {
       "ru": [
         "Нашли и отобрали тему Marby (MIT) за редакционную вёрстку и полноценные внутренние страницы",
+        "Перевели сайт на русский (6 объектов, 6 статей, интерфейс) и перенесли агентство в Бишкек, на Иссык-Куль и в Алматы; подключили кириллический шрифт для заголовков",
         "Отключили сглаженную прокрутку Lenis — страница прокручивается нативно",
         "Рекламную кнопку магазина тем превратили в метку «Demo · MicroStudio»",
         "Форма честно пишет, что ничего не отправлено; отзывы подписаны как примеры",
-        "Заменили пустые ссылки на соцсети ссылками на проект и исходную тему, добавили noindex"
+        "Заменили пустые ссылки на соцсети ссылками на проект и исходную тему, добавили noindex; исправили ошибку исходника: у всех общих вопросов FAQ был один и тот же ответ"
       ],
       "en": [
         "Found and selected the Marby theme (MIT) for its editorial layout and full inner pages",
+        "Translated the site to Russian (6 listings, 6 articles, UI) and moved the agency to Bishkek, Issyk-Kul and Almaty; added a Cyrillic heading font",
         "Turned off Lenis smooth scrolling — the page scrolls natively",
         "Turned the theme-store promo button into a Demo · MicroStudio badge",
         "The form says honestly that nothing was sent; testimonials are labelled as samples",
-        "Replaced placeholder social links with the project and theme pages, added noindex"
+        "Replaced placeholder social links with the project and theme pages, added noindex; fixed an upstream bug: every general FAQ question had the same answer"
       ]
     },
     "provenance": {
@@ -592,22 +594,22 @@
     "publishedAt": "2026-10-19",
     "verifiedAt": "2026-10-19",
     "featuredRank": 5,
-    "language": "en",
+    "language": "ru",
     "mobileFirst": false,
     "images": {
       "desktop": {
-        "src": "/portfolio/marby-realty/desktop.webp",
+        "src": "/portfolio/marby-realty/desktop.1744fa68.webp",
         "width": 1440,
         "height": 900
       },
       "mobile": {
-        "src": "/portfolio/marby-realty/mobile.webp",
+        "src": "/portfolio/marby-realty/mobile.a1b7874d.webp",
         "width": 780,
         "height": 1688
       },
       "gallery": [
         {
-          "src": "/portfolio/marby-realty/listings.webp",
+          "src": "/portfolio/marby-realty/listings.7fab04b6.webp",
           "width": 1440,
           "height": 900,
           "viewport": "desktop",
@@ -617,7 +619,7 @@
           }
         },
         {
-          "src": "/portfolio/marby-realty/property.webp",
+          "src": "/portfolio/marby-realty/property.c0c2433d.webp",
           "width": 780,
           "height": 1688,
           "viewport": "mobile",
@@ -706,18 +708,18 @@
     "mobileFirst": true,
     "images": {
       "desktop": {
-        "src": "/portfolio/best-electronics-link/desktop.webp",
+        "src": "/portfolio/best-electronics-link/desktop.416f7728.webp",
         "width": 1440,
         "height": 900
       },
       "mobile": {
-        "src": "/portfolio/best-electronics-link/mobile.webp",
+        "src": "/portfolio/best-electronics-link/mobile.37b99f7e.webp",
         "width": 780,
         "height": 1688
       },
       "gallery": [
         {
-          "src": "/portfolio/best-electronics-link/next.webp",
+          "src": "/portfolio/best-electronics-link/next.5fba3549.webp",
           "width": 1440,
           "height": 900,
           "viewport": "desktop",
@@ -727,7 +729,7 @@
           }
         },
         {
-          "src": "/portfolio/best-electronics-link/mobile-next.webp",
+          "src": "/portfolio/best-electronics-link/mobile-next.ed5dad94.webp",
           "width": 780,
           "height": 1688,
           "viewport": "mobile",
@@ -813,18 +815,18 @@
     "mobileFirst": false,
     "images": {
       "desktop": {
-        "src": "/portfolio/tikitaki/desktop.webp",
+        "src": "/portfolio/tikitaki/desktop.5784b287.webp",
         "width": 1440,
         "height": 900
       },
       "mobile": {
-        "src": "/portfolio/tikitaki/mobile.webp",
+        "src": "/portfolio/tikitaki/mobile.277f1a7c.webp",
         "width": 780,
         "height": 1688
       },
       "gallery": [
         {
-          "src": "/portfolio/tikitaki/next.webp",
+          "src": "/portfolio/tikitaki/next.5ab808ca.webp",
           "width": 1440,
           "height": 900,
           "viewport": "desktop",
@@ -834,7 +836,7 @@
           }
         },
         {
-          "src": "/portfolio/tikitaki/mobile-next.webp",
+          "src": "/portfolio/tikitaki/mobile-next.8849ff23.webp",
           "width": 780,
           "height": 1688,
           "viewport": "mobile",

@@ -37,7 +37,7 @@ test("11–16. search, filters, sort and reset keep state in the URL and history
   await expect(cards(page)).toHaveCount(Math.min(12, demos));
   await page.getByLabel("Сортировка").selectOption("az");
   await expect(page).toHaveURL(/type=demo&sort=az/);
-  const names = await page.locator("main ul > li > article h3").allTextContents();
+  const names = await page.locator("main ul > li > article h2").allTextContents();
   expect([...names].sort((a, b) => a.localeCompare(b, "ru"))).toEqual(names);
 
   // Back restores the previous filter set.

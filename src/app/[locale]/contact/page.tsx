@@ -57,9 +57,10 @@ export default async function ContactPage({ params, searchParams }: Props) {
         <p className="lead mt-4">{c.lead}</p>
 
         <h2 className="sr-only">{c.directTitle}</h2>
-        <ul className="mt-8 grid gap-3 md:grid-cols-[1.4fr_1fr_1fr]">
+        {/* Tablet: WhatsApp on its own row, so the handle and phone never truncate. */}
+        <ul className="mt-8 grid gap-3 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr]">
           {wa && site.whatsappE164 && (
-            <li>
+            <li className="md:col-span-2 lg:col-span-1">
               <TrackedLink
                 href={wa}
                 event="contact_method"
