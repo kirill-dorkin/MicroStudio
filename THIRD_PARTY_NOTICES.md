@@ -1,9 +1,10 @@
 # Third-party notices
 
-The MicroStudio website does **not** include or redistribute the source code
-of the demo projects below. It shows screenshots of their public live demos
-as illustrations, links to the original repositories and credits the authors.
-None of these projects was made by or for a MicroStudio client.
+The portfolio leads with MicroStudio's own work. Separately, a "References"
+section shows the open-source templates below. The website does **not**
+include or redistribute their source code: it shows screenshots of their
+public live demos, links to the original repositories and credits the
+authors. None of these templates was made by or for a MicroStudio client.
 
 Screenshots were captured by `scripts/capture-portfolio.ts` from the live
 demos; capture time, URL and SHA-256 of every file are recorded in

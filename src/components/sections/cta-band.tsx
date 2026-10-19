@@ -50,7 +50,6 @@ export function CtaBand({
           </div>
           <div id={ctaId} className="mt-8 flex flex-col gap-3 lg:mt-0">
             <WhatsappCta locale={locale} intent={intent} location={location} size="lg" className="w-full" label={intent.kind === "special" ? t.specialPage.cta : undefined} />
-            <p className="text-center text-sm text-subtle">{t.wa.hint}</p>
             <div className="mt-1 grid grid-cols-1 gap-3 xs:grid-cols-2">
               <Link href={briefHref(locale, intent)} className={buttonClass("secondary", "w-full", "sm")}>
                 {t.finalCta.briefShort}

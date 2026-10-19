@@ -4,13 +4,16 @@ import { ArrowUpRight } from "lucide-react";
 import type { LocalizedProject } from "@/lib/content";
 import { cn } from "@/lib/utils";
 import { BrowserFrame } from "@/components/ui/browser-frame";
-import { DemoBadge } from "@/components/ui/badge";
+import { DemoBadge, WorkBadge } from "@/components/ui/badge";
 
 type Props = {
   project: LocalizedProject;
   href: string;
   categoryLabel: string;
+  /** Label for third-party demos ("Open-source demo"). */
   demoLabel: string;
+  /** Label for MicroStudio's own work. */
+  ownLabel?: string;
   authorLabel: string;
   ctaLabel: string;
   size?: "lg" | "md";
@@ -26,6 +29,7 @@ export function ProjectCard({
   href,
   categoryLabel,
   demoLabel,
+  ownLabel,
   authorLabel,
   ctaLabel,
   size = "md",
@@ -34,21 +38,35 @@ export function ProjectCard({
   headingLevel: Heading = "h3",
   className,
 }: Props) {
+  const badge = project.own ? <WorkBadge label={ownLabel ?? ""} /> : <DemoBadge label={demoLabel} />;
+
   return (
     <article className={cn("group relative flex flex-col", className)}>
-      <BrowserFrame host={project.demoHost} className="transition-[border-color,transform] duration-500 ease-[var(--ease-out-soft)] group-hover:border-white/20">
-        <div className="relative aspect-[16/10] overflow-hidden bg-[#f3f3f1]">
-          <Image
-            src={project.screenshots.desktop}
-            alt=""
-            fill
-            sizes={sizes}
-            priority={priority}
-            className="object-cover object-top transition-transform duration-700 ease-[var(--ease-out-soft)] group-hover:scale-[1.025]"
-          />
+      {project.mobileFirst ? (
+        // Phone-first sites: the phone screen on a calm surface instead of a narrow desktop column.
+        <div className="relative aspect-[16/10] overflow-hidden rounded-[14px] border border-white/10 bg-[linear-gradient(160deg,#1d2326,#121517)] transition-colors duration-500 group-hover:border-white/20">
+          <div className="absolute left-1/2 top-[9%] w-[32%] -translate-x-1/2 overflow-hidden rounded-[20px] border-[5px] border-[#2b3033] bg-[#2b3033] shadow-[0_30px_60px_-20px_rgba(0,0,0,0.9)] transition-transform duration-700 ease-[var(--ease-out-soft)] group-hover:-translate-y-1.5">
+            <div className="relative aspect-[390/844] overflow-hidden rounded-[15px] bg-white">
+              <Image src={project.screenshots.mobile} alt="" fill sizes="(min-width: 1024px) 18vw, 32vw" priority={priority} className="object-cover object-top" />
+            </div>
+          </div>
+          <div className="absolute left-3 top-3">{badge}</div>
         </div>
-        <DemoBadge label={demoLabel} className="absolute left-3 top-3" />
-      </BrowserFrame>
+      ) : (
+        <BrowserFrame host={project.demoHost} className="transition-[border-color] duration-500 group-hover:border-white/20">
+          <div className="relative aspect-[16/10] overflow-hidden bg-[#f3f3f1]">
+            <Image
+              src={project.screenshots.desktop}
+              alt=""
+              fill
+              sizes={sizes}
+              priority={priority}
+              className="object-cover object-top transition-transform duration-700 ease-[var(--ease-out-soft)] group-hover:scale-[1.025]"
+            />
+          </div>
+          <div className="absolute left-3 top-3">{badge}</div>
+        </BrowserFrame>
+      )}
 
       <div className="mt-4 flex items-start justify-between gap-5">
         <div className="min-w-0">
@@ -62,9 +80,11 @@ export function ProjectCard({
             </Link>
           </Heading>
           <p className="mt-2 line-clamp-2 max-w-xl text-[0.95rem] text-muted">{project.description}</p>
-          <p className="mt-2 text-[0.82rem] text-subtle">
-            {authorLabel}: {project.author} · {project.license}
-          </p>
+          {!project.own && project.author && (
+            <p className="mt-2 text-[0.82rem] text-subtle">
+              {authorLabel}: {project.author} · {project.license}
+            </p>
+          )}
         </div>
         <span
           aria-hidden="true"

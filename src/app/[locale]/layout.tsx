@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Manrope } from "next/font/google";
+import { Inter, Manrope, Playfair_Display } from "next/font/google";
 import Script from "next/script";
 import { notFound } from "next/navigation";
 import "../globals.css";
@@ -13,6 +13,15 @@ import { Footer } from "@/components/layout/footer";
 const manrope = Manrope({
   subsets: ["latin", "cyrillic"],
   variable: "--font-manrope",
+  display: "swap",
+});
+
+// Editorial accent for single words in headlines.
+const serif = Playfair_Display({
+  subsets: ["latin", "cyrillic"],
+  variable: "--font-playfair",
+  style: ["italic"],
+  weight: ["500"],
   display: "swap",
 });
 
@@ -54,7 +63,7 @@ export default async function LocaleLayout({
   const t = getDictionary(locale);
 
   return (
-    <html lang={locale} className={`${manrope.variable} ${inter.variable}`}>
+    <html lang={locale} className={`${manrope.variable} ${inter.variable} ${serif.variable}`}>
       <body className="bg-bg text-text antialiased">
         <a
           href="#main"

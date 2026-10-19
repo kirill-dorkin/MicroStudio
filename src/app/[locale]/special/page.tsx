@@ -27,7 +27,7 @@ export default async function SpecialPage({ params }: Props) {
   const { locale } = await params;
   const t = getDictionary(locale);
   const s = t.specialPage;
-  const example = localizeProject(getProject("restaurant-tablefork")!, locale);
+  const example = localizeProject(getProject("best-electronics-link")!, locale);
   const wa = intentWhatsapp(locale, { kind: "special" });
 
   return (
@@ -55,7 +55,6 @@ export default async function SpecialPage({ params }: Props) {
                 <ArrowDown className="size-4" aria-hidden="true" />
               </a>
             </div>
-            <p className="mt-3 text-sm text-subtle">{t.wa.hint}</p>
             <ul className="mt-7 flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted">
               {s.perks.map((perk) => (
                 <li key={perk} className="flex items-center gap-2">
@@ -68,26 +67,21 @@ export default async function SpecialPage({ params }: Props) {
           </div>
 
           <figure>
-            <div className="relative pb-[8%] pr-[12%]">
-              <div className="overflow-hidden rounded-[14px] border border-white/10 bg-[#1b1e21] shadow-[0_40px_90px_-30px_rgba(0,0,0,0.9)]">
-                <div className="flex h-8 items-center gap-1.5 border-b border-white/[0.06] px-3" aria-hidden="true">
-                  <span className="size-2 rounded-full bg-white/15" />
-                  <span className="size-2 rounded-full bg-white/15" />
-                  <span className="size-2 rounded-full bg-white/15" />
-                </div>
-                <div className="relative aspect-[16/10] bg-[#f3f3f1]">
-                  <Image src={example.screenshots.desktop} alt={example.name} fill priority sizes="(min-width: 1024px) 44vw, 90vw" className="object-cover object-top" />
+            <div className="relative mx-auto flex max-w-[480px] items-end justify-center gap-4">
+              <div className="w-[48%] overflow-hidden rounded-[28px] border-[6px] border-[#2b3033] bg-[#2b3033] shadow-[0_40px_90px_-30px_rgba(0,0,0,0.9)]">
+                <div className="relative aspect-[390/844] overflow-hidden rounded-[22px] bg-white">
+                  <Image src={example.screenshots.mobile} alt={example.name} fill priority sizes="(min-width: 1024px) 230px, 46vw" className="object-cover object-top" />
                 </div>
               </div>
-              <div className="absolute bottom-0 right-0 w-[26%] min-w-[84px] overflow-hidden rounded-[20px] border-[5px] border-[#25292c] bg-[#25292c] shadow-[0_30px_60px_-20px_rgba(0,0,0,0.9)]">
-                <div className="relative aspect-[390/844] overflow-hidden rounded-[15px] bg-[#f3f3f1]">
-                  <Image src={example.screenshots.mobile} alt="" fill sizes="(min-width: 1024px) 12vw, 24vw" className="object-cover object-top" />
+              <div className="mb-[12%] w-[44%] overflow-hidden rounded-[26px] border-[6px] border-[#2b3033] bg-[#2b3033] shadow-[0_40px_90px_-30px_rgba(0,0,0,0.9)]">
+                <div className="relative aspect-[390/844] overflow-hidden rounded-[20px] bg-white">
+                  <Image src={example.screenshots.detail ?? example.screenshots.mobile} alt="" fill sizes="(min-width: 1024px) 210px, 42vw" className="object-cover object-[center_top]" />
                 </div>
               </div>
             </div>
-            <figcaption className="mt-4 text-sm text-subtle">
+            <figcaption className="mt-5 text-center text-sm text-subtle">
               {s.exampleCaption}{" "}
-              <Link href={href(locale, "/work/restaurant-tablefork")} className="text-muted underline underline-offset-4 hover:text-text">
+              <Link href={href(locale, `/work/${example.slug}`)} className="text-muted underline underline-offset-4 hover:text-text">
                 {t.work.cardCta}
               </Link>
               <span className="mt-1 block">{s.exampleNote}</span>

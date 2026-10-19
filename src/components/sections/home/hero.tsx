@@ -6,36 +6,32 @@ import { getProject, localizeProject } from "@/lib/content";
 import { href } from "@/lib/i18n";
 import { buttonClass } from "@/components/ui/button";
 import { WhatsappCta } from "@/components/ui/whatsapp-cta";
-import { HeroShowcase } from "@/components/portfolio/hero-showcase";
-
-const heroSlugs = ["fashion-store", "restaurant-tablefork", "saas-launchpad", "dashboard-pulse"];
+import { WorkCollage } from "@/components/portfolio/work-collage";
 
 export function Hero({ locale }: { locale: Locale }) {
   const t = getDictionary(locale);
-  const slides = heroSlugs.map((slug) => {
-    const p = localizeProject(getProject(slug)!, locale);
-    return {
-      slug,
-      name: p.name,
-      short: p.short,
-      image: p.screenshots.desktop,
-      mobile: p.screenshots.mobile,
-      host: p.demoHost,
-      href: href(locale, `/work/${slug}`),
-    };
+  const item = (slug: string) => ({
+    project: localizeProject(getProject(slug)!, locale),
+    href: href(locale, `/work/${slug}`),
   });
 
   return (
-    <section aria-labelledby="hero-title" className="relative overflow-hidden pb-14 pt-[calc(62px+1.75rem)] lg:pb-20 lg:pt-[calc(74px+3.5rem)]">
+    <section aria-labelledby="hero-title" className="relative overflow-hidden pb-14 pt-[calc(62px+1.75rem)] lg:pb-20 lg:pt-[calc(74px+3rem)]">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 opacity-[0.35] [background-image:linear-gradient(to_right,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.04)_1px,transparent_1px)] [background-size:72px_72px] [mask-image:radial-gradient(ellipse_at_top,black_20%,transparent_70%)]"
+        className="pointer-events-none absolute inset-x-0 top-0 h-[70%] bg-[radial-gradient(60%_60%_at_75%_10%,rgba(199,246,108,0.08),transparent_70%)]"
       />
-      <div className="container-page relative grid grid-cols-[minmax(0,1fr)] items-center gap-12 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:gap-14">
+      <div className="container-page relative grid grid-cols-[minmax(0,1fr)] items-center gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-14">
         <div>
-          <p className="eyebrow mb-5">{t.hero.kicker}</p>
-          <h1 id="hero-title" className="h1 max-w-[12ch]">
-            {t.hero.title}
+          <Link
+            href={href(locale, "/special")}
+            className="inline-flex min-h-9 items-center gap-2 rounded-full border border-lime/35 bg-lime/[0.07] px-3.5 text-[0.82rem] font-medium text-lime transition-colors hover:bg-lime/[0.12]"
+          >
+            {t.hero.priceChip}
+            <ArrowRight className="size-3.5" aria-hidden="true" />
+          </Link>
+          <h1 id="hero-title" className="mt-5 font-display text-[clamp(2.3rem,1.5rem+3.3vw,4.4rem)] font-bold leading-[1.02] tracking-[-0.04em]">
+            {t.hero.titleStart} <span className="accent-serif text-lime">{t.hero.titleAccent}</span>
           </h1>
           <p className="mt-5 max-w-[34rem] text-[1.05rem] leading-relaxed text-muted md:text-[1.125rem]">{t.hero.body}</p>
           <div className="mt-7 flex flex-col gap-3 xs:flex-row xs:flex-wrap">
@@ -45,28 +41,17 @@ export function Hero({ locale }: { locale: Locale }) {
               <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
             </Link>
           </div>
-          <p className="mt-4 text-sm text-subtle">{t.hero.replyNote}</p>
-          <ul className="mt-8 hidden flex-wrap gap-x-5 gap-y-2 border-t border-line pt-6 text-sm text-muted sm:flex">
+          <ul className="mt-8 hidden flex-wrap gap-x-5 gap-y-2 text-sm text-subtle sm:flex">
             {t.hero.formats.map((f) => (
-              <li key={f} className="flex items-center gap-2">
-                <span className="size-1 rounded-full bg-lime/70" aria-hidden="true" />
-                {f}
-              </li>
+              <li key={f}>{f}</li>
             ))}
           </ul>
         </div>
 
-        <HeroShowcase
-          slides={slides}
-          labels={{
-            note: t.hero.note,
-            prev: t.hero.prev,
-            next: t.hero.next,
-            position: t.hero.position,
-            open: t.hero.open,
-            demo: t.common.demoBadge,
-            choose: t.hero.choose,
-          }}
+        <WorkCollage
+          desktop={item("best-electronics-store")}
+          phones={[item("best-electronics-link"), item("anna-art"), item("nova-ielts")]}
+          label={t.hero.collageLabel}
         />
       </div>
     </section>

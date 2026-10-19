@@ -1,5 +1,14 @@
 import type { Page } from "@playwright/test";
 
+export const ownSlugs = [
+  "best-electronics-link",
+  "best-electronics-store",
+  "anna-art",
+  "jarjar",
+  "nova-ielts",
+  "tikitaki",
+];
+
 export const projectSlugs = [
   "fashion-store",
   "restaurant-tablefork",

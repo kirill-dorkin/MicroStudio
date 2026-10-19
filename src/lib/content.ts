@@ -20,6 +20,12 @@ export const projects: Project[] = projectSchema
   .parse(portfolioJson)
   .sort((a, b) => a.screenshotPriority - b.screenshotPriority);
 
+export const isOwn = (p: Project) => p.kind !== "open-source-demo";
+/** Work made by MicroStudio — shown first everywhere. */
+export const ownProjects = projects.filter(isOwn);
+/** Third-party open-source templates — a secondary "references" section. */
+export const referenceProjects = projects.filter((p) => !isOwn(p));
+
 const faqs = { ru: faqSchema.parse(faqRuJson), en: faqSchema.parse(faqEnJson) };
 const posts = blogSchema.parse(blogJson);
 const seo = seoSchema.parse(seoJson);
@@ -31,15 +37,8 @@ export function getProject(slug: string) {
   return projects.find((p) => p.slug === slug);
 }
 
-/** Home page "selected work": store, restaurant, photographer, SaaS. */
-export const featuredSlugs = [
-  "fashion-store",
-  "restaurant-tablefork",
-  "photo-lumen",
-  "saas-launchpad",
-] as const;
-
-export const featuredProjects = featuredSlugs.map((slug) => getProject(slug)!);
+/** Home page selection: MicroStudio's own work. */
+export const featuredProjects = ownProjects.slice(0, 6);
 
 export function localizeProject(p: Project, locale: Locale) {
   const ru = locale === "ru";
@@ -52,9 +51,11 @@ export function localizeProject(p: Project, locale: Locale) {
     overview: ru ? p.overviewRu : p.overviewEn,
     features: ru ? p.featureRu : p.featureEn,
     lookFor: ru ? p.lookForRu : p.lookForEn,
+    own: isOwn(p),
+    mobileFirst: !!p.mobileFirst,
     screenshots: {
       desktop: p.screenshotPath,
-      detail: p.screenshotPath.replace(/\.webp$/, "-detail.webp"),
+      detail: p.hideDetail ? null : p.screenshotPath.replace(/\.webp$/, "-detail.webp"),
       mobile: p.screenshotPath.replace(/\.webp$/, "-mobile.webp"),
       og: p.screenshotPath.replace(/\.webp$/, "-og.jpg"),
     },
@@ -63,8 +64,12 @@ export function localizeProject(p: Project, locale: Locale) {
 }
 export type LocalizedProject = ReturnType<typeof localizeProject>;
 
+/** Own work first, then references, matching the categories. */
 export function relatedProjects(categories: ProjectCategory[], limit = 3) {
-  return projects.filter((p) => categories.includes(p.category)).slice(0, limit);
+  const match = (p: Project) => categories.includes(p.category);
+  return [...ownProjects.filter(match), ...referenceProjects.filter(match), ...ownProjects].filter(
+    (p, i, all) => all.indexOf(p) === i,
+  ).slice(0, limit);
 }
 
 export type Post = {
