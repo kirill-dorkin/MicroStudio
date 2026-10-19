@@ -905,5 +905,685 @@
         }
       ]
     }
+  },
+  {
+    "slug": "kaichy-barber",
+    "workType": "demo",
+    "format": "landing",
+    "industry": "local-services",
+    "niche": {
+      "ru": "Барбершоп",
+      "en": "Barbershop"
+    },
+    "title": {
+      "ru": "Кайчы — барбершоп",
+      "en": "Kaichy — barbershop"
+    },
+    "summary": {
+      "ru": "Лендинг барбершопа: прайс с длительностью, мастера и запись в четыре шага со свободными окнами.",
+      "en": "Barbershop landing: prices with duration, barbers and four-step booking with free slots."
+    },
+    "problem": {
+      "ru": "Клиент барбершопа хочет прийти к своему мастеру без ожидания и звонков. Сайт показывает цены и свободные окна и даёт записаться за полминуты.",
+      "en": "A barbershop customer wants to see their barber without waiting or calling. The site shows prices and free slots and books a visit in half a minute."
+    },
+    "scenario": {
+      "ru": "Выбрать услугу → мастера или «любого» → день и свободное время с учётом длительности → контакты → демо-запись → отмена.",
+      "en": "Pick a service → a barber or “any” → a day and a free slot that fits the duration → contacts → demo booking → cancel."
+    },
+    "features": [
+      {
+        "ru": "Слоты с учётом длительности услуги и выходных мастера",
+        "en": "Slots that respect service length and barbers' days off",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "«Любой свободный мастер» подбирает ближайшего",
+        "en": "“Any barber” picks the nearest free one",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Цена зависит от уровня мастера и видна до записи",
+        "en": "Price depends on the barber's level and is shown before booking",
+        "kind": "production-ready"
+      },
+      {
+        "ru": "Синхронизация с журналом записи и SMS-напоминания",
+        "en": "Sync with a booking system and SMS reminders",
+        "kind": "missing-integration"
+      }
+    ],
+    "limits": {
+      "ru": "Расписание генерируется условно, запись хранится только в браузере, напоминания не отправляются.",
+      "en": "The schedule is simulated; the booking stays in the browser and no reminders are sent."
+    },
+    "studio": {
+      "ru": [
+        "Лендинг, в котором запись — главный сценарий, а не форма внизу",
+        "Пошаговая запись: услуга, мастер, время, контакты — с прогрессом",
+        "Логика свободных окон с учётом длительности и выходных",
+        "Плакатная айдентика: Alumni Sans, латунь и векторная эмблема",
+        "Мобильная версия с крупными зонами нажатия"
+      ],
+      "en": [
+        "A landing page where booking is the main flow, not a form at the bottom",
+        "Step-by-step booking with progress: service, barber, time, contacts",
+        "Free-slot logic that respects duration and days off",
+        "Poster-style identity: Alumni Sans, brass and a vector emblem",
+        "Mobile layout with large tap targets"
+      ]
+    },
+    "provenance": {
+      "type": "original",
+      "ru": "Собственная разработка MicroStudio. Шрифты Alumni Sans и Golos Text — SIL OFL 1.1; графика — SVG студии.",
+      "en": "Built from scratch by MicroStudio. Alumni Sans and Golos Text fonts are SIL OFL 1.1; graphics are the studio's SVG.",
+      "assets": [
+        {
+          "name": "Alumni Sans",
+          "license": "OFL-1.1",
+          "source": "https://github.com/googlefonts/alumni"
+        },
+        {
+          "name": "Golos Text",
+          "license": "OFL-1.1",
+          "source": "https://github.com/googlefonts/golos-text"
+        }
+      ]
+    },
+    "client": null,
+    "demoUrl": "https://ms-kaichy-barber.vercel.app",
+    "hosting": "showcase",
+    "publishedAt": "2026-10-19",
+    "verifiedAt": "2026-10-19",
+    "featuredRank": 11,
+    "language": "ru",
+    "mobileFirst": false,
+    "images": {
+      "desktop": {
+        "src": "/portfolio/kaichy-barber/desktop.webp",
+        "width": 1440,
+        "height": 900
+      },
+      "mobile": {
+        "src": "/portfolio/kaichy-barber/mobile.webp",
+        "width": 780,
+        "height": 1688
+      },
+      "gallery": [
+        {
+          "src": "/portfolio/kaichy-barber/booking.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Запись: услуга, мастер, время",
+            "en": "Booking: service, barber, time"
+          }
+        },
+        {
+          "src": "/portfolio/kaichy-barber/prices.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Прайс с длительностью",
+            "en": "Prices with duration"
+          }
+        },
+        {
+          "src": "/portfolio/kaichy-barber/masters.webp",
+          "width": 780,
+          "height": 1688,
+          "viewport": "mobile",
+          "alt": {
+            "ru": "Мастера на телефоне",
+            "en": "Barbers on a phone"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "slug": "garage-312",
+    "workType": "demo",
+    "format": "corporate",
+    "industry": "local-services",
+    "niche": {
+      "ru": "Автосервис",
+      "en": "Car service"
+    },
+    "title": {
+      "ru": "Гараж 312 — автосервис",
+      "en": "Garage 312 — car service"
+    },
+    "summary": {
+      "ru": "Сайт автосервиса: услуги с отчётом диагностики, калькулятор работ по классу авто и запись на пост.",
+      "en": "Car service website: services with a sample diagnostics report, a labour calculator by car class and visit booking."
+    },
+    "problem": {
+      "ru": "Владельцы машин боятся, что в сервисе «найдут лишнего». Сайт объясняет порядок работы, показывает цены до приезда и даёт записаться с описанием проблемы.",
+      "en": "Drivers fear a garage will “find extra work”. The site explains the process, shows prices before the visit and lets them book with a description of the problem."
+    },
+    "scenario": {
+      "ru": "Главная → калькулятор: класс авто и работы → «Записаться с этим списком» → данные машины, симптомы, день и время → демо-запись → сброс.",
+      "en": "Home → calculator: car class and jobs → “Book with this list” → car details, symptoms, day and time → demo booking → reset."
+    },
+    "features": [
+      {
+        "ru": "Калькулятор стоимости и времени работ по классу автомобиля",
+        "en": "Labour price and time calculator by car class",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Выбранные работы переносятся в форму записи",
+        "en": "Chosen jobs carry over into the booking form",
+        "kind": "production-ready"
+      },
+      {
+        "ru": "Запись: авто, симптомы, свободное время, проверка полей",
+        "en": "Booking: car, symptoms, free time, validation",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Планировщик постов и уведомления клиенту",
+        "en": "Bay scheduler and customer notifications",
+        "kind": "missing-integration"
+      }
+    ],
+    "limits": {
+      "ru": "Автосервис и цены вымышлены, расписание условное, запись хранится только в браузере.",
+      "en": "The garage and prices are fictional, availability is simulated and the booking stays in the browser."
+    },
+    "studio": {
+      "ru": [
+        "Структура из 7 страниц: услуги с деталями, цены, о сервисе, запись",
+        "Пример отчёта диагностики как доказательство подхода вместо отзывов",
+        "Калькулятор работ с коэффициентом класса и временем на посту",
+        "Связка калькулятора и формы записи через адрес страницы",
+        "Динамичная визуальная система: Exo 2 italic, синий и жёлтый"
+      ],
+      "en": [
+        "A 7-page structure: detailed services, prices, about, booking",
+        "A sample diagnostics report as proof of approach instead of reviews",
+        "A labour calculator with a car-class factor and bay time",
+        "The calculator feeds the booking form through the URL",
+        "A dynamic visual system: Exo 2 italic, blue and yellow"
+      ]
+    },
+    "provenance": {
+      "type": "original",
+      "ru": "Собственная разработка MicroStudio. Шрифты Exo 2 и IBM Plex Sans — SIL OFL 1.1; иллюстрации — SVG студии.",
+      "en": "Built from scratch by MicroStudio. Exo 2 and IBM Plex Sans fonts are SIL OFL 1.1; illustrations are the studio's SVG.",
+      "assets": [
+        {
+          "name": "Exo 2",
+          "license": "OFL-1.1",
+          "source": "https://github.com/googlefonts/Exo-2.0"
+        },
+        {
+          "name": "IBM Plex Sans",
+          "license": "OFL-1.1",
+          "source": "https://github.com/IBM/plex"
+        }
+      ]
+    },
+    "client": null,
+    "demoUrl": "https://ms-garage-312.vercel.app",
+    "hosting": "showcase",
+    "publishedAt": "2026-10-19",
+    "verifiedAt": "2026-10-19",
+    "featuredRank": 12,
+    "language": "ru",
+    "mobileFirst": false,
+    "images": {
+      "desktop": {
+        "src": "/portfolio/garage-312/desktop.webp",
+        "width": 1440,
+        "height": 900
+      },
+      "mobile": {
+        "src": "/portfolio/garage-312/mobile.webp",
+        "width": 780,
+        "height": 1688
+      },
+      "gallery": [
+        {
+          "src": "/portfolio/garage-312/prices.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Калькулятор работ по классу автомобиля",
+            "en": "Labour calculator by car class"
+          }
+        },
+        {
+          "src": "/portfolio/garage-312/diagnostics.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Страница диагностики с примером отчёта",
+            "en": "Diagnostics page with a sample report"
+          }
+        },
+        {
+          "src": "/portfolio/garage-312/visit.webp",
+          "width": 780,
+          "height": 1688,
+          "viewport": "mobile",
+          "alt": {
+            "ru": "Запись на сервис с телефона",
+            "en": "Booking a visit on a phone"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "slug": "ak-tish-dental",
+    "workType": "demo",
+    "format": "corporate",
+    "industry": "local-services",
+    "niche": {
+      "ru": "Стоматология",
+      "en": "Dentistry"
+    },
+    "title": {
+      "ru": "Ак Тиш — стоматология",
+      "en": "Ak Tish — dental clinic"
+    },
+    "summary": {
+      "ru": "Сайт стоматологии: направления, страница имплантации, врачи с фильтром, прайс с поиском и запись к врачу.",
+      "en": "Dental clinic site: treatments, an implant page, filterable doctors, a searchable price list and booking with a doctor."
+    },
+    "problem": {
+      "ru": "Пациенты стоматологии боятся неожиданных счетов и не понимают, к кому записаться. Сайт объясняет первый визит, показывает цены и подбирает врача по направлению.",
+      "en": "Dental patients fear surprise bills and don't know which doctor to see. The site explains the first visit, shows prices and matches a doctor to the treatment."
+    },
+    "scenario": {
+      "ru": "Направление → врачи по специализации → «Записаться» к врачу → только его приёмные дни и свободное время → данные пациента → демо-запись.",
+      "en": "Treatment → doctors by specialty → “Book” with a doctor → only their working days and free times → patient details → demo booking."
+    },
+    "features": [
+      {
+        "ru": "Запись учитывает направление, врача и его приёмные дни",
+        "en": "Booking respects the treatment, doctor and their working days",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Прайс с поиском по услугам и группам",
+        "en": "Price list searchable by service and group",
+        "kind": "production-ready"
+      },
+      {
+        "ru": "Фильтр врачей по специализации",
+        "en": "Doctor filter by specialty",
+        "kind": "production-ready"
+      },
+      {
+        "ru": "Передача записи в медицинскую информационную систему",
+        "en": "Passing bookings to a clinic information system",
+        "kind": "missing-integration"
+      }
+    ],
+    "limits": {
+      "ru": "Клиника, врачи и цены вымышлены; сайт не даёт медицинских рекомендаций; запись хранится только в браузере.",
+      "en": "The clinic, doctors and prices are fictional; the site gives no medical advice; bookings stay in the browser."
+    },
+    "studio": {
+      "ru": [
+        "Подача через прозрачность: первый визит, план и смета вместо обещаний",
+        "6 страниц: направления, отдельная страница имплантации с этапами и составом цены",
+        "Запись к врачу с учётом его графика и направления",
+        "Прайс с мгновенным поиском и раздел врачей с фильтром",
+        "Спокойная визуальная система: Raleway + Nunito, мятный и коралловый"
+      ],
+      "en": [
+        "Trust through transparency: first visit, plan and estimate instead of promises",
+        "6 pages including an implant page with stages and price breakdown",
+        "Doctor booking that follows the doctor's schedule and treatment",
+        "Instant price search and a filterable doctors section",
+        "A calm visual system: Raleway + Nunito, mint and coral"
+      ]
+    },
+    "provenance": {
+      "type": "original",
+      "ru": "Собственная разработка MicroStudio. Шрифты Raleway и Nunito — SIL OFL 1.1; иллюстрации — SVG студии.",
+      "en": "Built from scratch by MicroStudio. Raleway and Nunito fonts are SIL OFL 1.1; illustrations are the studio's SVG.",
+      "assets": [
+        {
+          "name": "Raleway",
+          "license": "OFL-1.1",
+          "source": "https://github.com/impallari/Raleway"
+        },
+        {
+          "name": "Nunito",
+          "license": "OFL-1.1",
+          "source": "https://github.com/googlefonts/nunito"
+        }
+      ]
+    },
+    "client": null,
+    "demoUrl": "https://ms-ak-tish-dental.vercel.app",
+    "hosting": "showcase",
+    "publishedAt": "2026-10-19",
+    "verifiedAt": "2026-10-19",
+    "featuredRank": 13,
+    "language": "ru",
+    "mobileFirst": false,
+    "images": {
+      "desktop": {
+        "src": "/portfolio/ak-tish-dental/desktop.webp",
+        "width": 1440,
+        "height": 900
+      },
+      "mobile": {
+        "src": "/portfolio/ak-tish-dental/mobile.webp",
+        "width": 780,
+        "height": 1688
+      },
+      "gallery": [
+        {
+          "src": "/portfolio/ak-tish-dental/implants.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Имплантация: этапы и цена",
+            "en": "Implants: stages and price"
+          }
+        },
+        {
+          "src": "/portfolio/ak-tish-dental/prices.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Поиск по прайсу",
+            "en": "Price list search"
+          }
+        },
+        {
+          "src": "/portfolio/ak-tish-dental/appointment.webp",
+          "width": 780,
+          "height": 1688,
+          "viewport": "mobile",
+          "alt": {
+            "ru": "Запись к детскому врачу",
+            "en": "Booking a children's dentist"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "slug": "volt-electronics",
+    "workType": "demo",
+    "format": "shop",
+    "industry": "commerce",
+    "niche": {
+      "ru": "Электроника",
+      "en": "Electronics"
+    },
+    "title": {
+      "ru": "Вольт — магазин электроники",
+      "en": "Volt — electronics store"
+    },
+    "summary": {
+      "ru": "Магазин электроники: фильтры по бренду, цене и памяти, сравнение моделей, варианты с пересчётом цены, рассрочка и самовывоз.",
+      "en": "Electronics store: filters by brand, price and memory, model comparison, variants with live prices, instalments and pickup."
+    },
+    "problem": {
+      "ru": "Технику выбирают по характеристикам и бюджету, часто сравнивая несколько моделей. Магазин даёт сузить выбор фильтрами, сравнить модели рядом и сразу увидеть платёж в рассрочку.",
+      "en": "Electronics are chosen by specs and budget, often comparing several models. The store narrows the choice with filters, compares models side by side and shows the instalment straight away."
+    },
+    "scenario": {
+      "ru": "Каталог → фильтры по бренду и ОЗУ → сравнение трёх смартфонов → карточка: память и цвет, рассрочка → корзина → самовывоз или курьер → демо-заказ.",
+      "en": "Catalogue → brand and RAM filters → compare three phones → product: memory, colour, instalments → cart → pickup or courier → demo order."
+    },
+    "features": [
+      {
+        "ru": "Фильтры по характеристикам и сортировка с состоянием в URL",
+        "en": "Spec filters and sorting kept in the URL",
+        "kind": "production-ready"
+      },
+      {
+        "ru": "Сравнение до 4 моделей одной категории с лучшими значениями",
+        "en": "Compare up to 4 models of one category with best values highlighted",
+        "kind": "production-ready"
+      },
+      {
+        "ru": "Варианты памяти с пересчётом цены и платежа в рассрочку",
+        "en": "Memory variants with live price and instalment",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Банк-партнёр для рассрочки и учётная система склада",
+        "en": "Instalment bank partner and stock system",
+        "kind": "missing-integration"
+      }
+    ],
+    "limits": {
+      "ru": "Бренды, модели, цены и наличие вымышлены; изображения — иллюстрации; заказ и заявка на рассрочку не отправляются.",
+      "en": "Brands, models, prices and stock are fictional; images are illustrations; orders and instalment requests are not sent."
+    },
+    "studio": {
+      "ru": [
+        "Каталог из 16 устройств вымышленных брендов в 5 категориях",
+        "Фильтры по характеристикам, сравнение моделей и подсветка лучших значений",
+        "Карточка с вариантами памяти, цветом и калькулятором рассрочки",
+        "Оформление с выбором пункта выдачи или курьера",
+        "Иллюстрации устройств, сгенерированные скриптом, без чужих товарных знаков"
+      ],
+      "en": [
+        "A 16-device catalogue of fictional brands in 5 categories",
+        "Spec filters, model comparison and best-value highlighting",
+        "Product page with memory variants, colours and an instalment calculator",
+        "Checkout with a pickup point or courier",
+        "Script-generated device illustrations without third-party trademarks"
+      ]
+    },
+    "provenance": {
+      "type": "original",
+      "ru": "Собственная разработка MicroStudio. Шрифты Montserrat и Commissioner — SIL OFL 1.1; иллюстрации генерирует tools/art.mjs.",
+      "en": "Built from scratch by MicroStudio. Montserrat and Commissioner fonts are SIL OFL 1.1; illustrations are generated by tools/art.mjs.",
+      "assets": [
+        {
+          "name": "Montserrat",
+          "license": "OFL-1.1",
+          "source": "https://github.com/JulietaUla/Montserrat"
+        },
+        {
+          "name": "Commissioner",
+          "license": "OFL-1.1",
+          "source": "https://github.com/kosbarts/Commissioner"
+        }
+      ]
+    },
+    "client": null,
+    "demoUrl": "https://ms-volt-electronics.vercel.app",
+    "hosting": "showcase",
+    "publishedAt": "2026-10-19",
+    "verifiedAt": "2026-10-19",
+    "featuredRank": 14,
+    "language": "ru",
+    "mobileFirst": false,
+    "images": {
+      "desktop": {
+        "src": "/portfolio/volt-electronics/desktop.webp",
+        "width": 1440,
+        "height": 900
+      },
+      "mobile": {
+        "src": "/portfolio/volt-electronics/mobile.webp",
+        "width": 780,
+        "height": 1688
+      },
+      "gallery": [
+        {
+          "src": "/portfolio/volt-electronics/catalog.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Каталог смартфонов с фильтрами",
+            "en": "Phone catalogue with filters"
+          }
+        },
+        {
+          "src": "/portfolio/volt-electronics/compare.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Сравнение трёх смартфонов",
+            "en": "Comparing three phones"
+          }
+        },
+        {
+          "src": "/portfolio/volt-electronics/product.webp",
+          "width": 780,
+          "height": 1688,
+          "viewport": "mobile",
+          "alt": {
+            "ru": "Карточка с вариантами и рассрочкой",
+            "en": "Product page with variants and instalments"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "slug": "ritm-projects",
+    "workType": "demo",
+    "format": "app",
+    "industry": "products",
+    "niche": {
+      "ru": "Управление проектами",
+      "en": "Project management"
+    },
+    "title": {
+      "ru": "Ритм — проекты и задачи",
+      "en": "Ritm — projects and tasks"
+    },
+    "summary": {
+      "ru": "Сервис управления проектами: список по статусам, таймлайн на 4 недели, загрузка команды и карточка задачи с чек-листом.",
+      "en": "Project management app: status list, 4-week timeline, team workload and a task panel with a checklist."
+    },
+    "problem": {
+      "ru": "Небольшой студии или отделу важно видеть, кто чем занят и где сорвутся сроки. Сервис показывает задачи списком, на шкале времени и в виде загрузки людей по неделям.",
+      "en": "A small studio or team needs to see who is doing what and where deadlines will slip. The app shows tasks as a list, on a timeline and as weekly workload per person."
+    },
+    "scenario": {
+      "ru": "Выбрать проект → отфильтровать просроченные → открыть задачу, отметить пункты чек-листа, перенести срок → увидеть таймлайн и перегрузку команды → создать задачу → сбросить демо.",
+      "en": "Pick a project → filter overdue → open a task, tick checklist items, move the deadline → see the timeline and team overload → create a task → reset."
+    },
+    "features": [
+      {
+        "ru": "Три вида одних данных: список, таймлайн, загрузка",
+        "en": "Three views of the same data: list, timeline, workload",
+        "kind": "production-ready"
+      },
+      {
+        "ru": "Карточка задачи: чек-лист, сроки с проверкой, история изменений",
+        "en": "Task panel: checklist, validated dates, change history",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Расчёт перегрузки по рабочим дням и вместимости человека",
+        "en": "Overload calculated from working days and capacity",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Командная работа в реальном времени и вход по аккаунтам",
+        "en": "Real-time collaboration and user accounts",
+        "kind": "missing-integration"
+      }
+    ],
+    "limits": {
+      "ru": "Один пользователь, данные в localStorage; даты задач считаются от сегодняшнего дня, чтобы демо всегда выглядело актуальным.",
+      "en": "Single user, data in localStorage; task dates are relative to today so the demo always looks current."
+    },
+    "studio": {
+      "ru": [
+        "Модель данных проектов, задач, чек-листов и истории изменений",
+        "Таймлайн на 4 недели с линией «сегодня» и просроченными задачами",
+        "Загрузка команды по рабочим дням против вместимости",
+        "Боковая карточка задачи с удержанием фокуса и проверкой дат",
+        "Тёмный интерфейс на шрифте Geologica с чёткой цветовой кодировкой статусов"
+      ],
+      "en": [
+        "Data model for projects, tasks, checklists and change history",
+        "A 4-week timeline with a today line and overdue tasks",
+        "Team workload by working days against capacity",
+        "A side task panel with focus trapping and date validation",
+        "A dark Geologica interface with clear status colour coding"
+      ]
+    },
+    "provenance": {
+      "type": "original",
+      "ru": "Собственная разработка MicroStudio без внешней основы. Шрифт Geologica — SIL OFL 1.1.",
+      "en": "Built from scratch by MicroStudio. Geologica font is SIL OFL 1.1.",
+      "assets": [
+        {
+          "name": "Geologica",
+          "license": "OFL-1.1",
+          "source": "https://github.com/googlefonts/geologica"
+        }
+      ]
+    },
+    "client": null,
+    "demoUrl": "https://ms-ritm-projects.vercel.app",
+    "hosting": "showcase",
+    "publishedAt": "2026-10-19",
+    "verifiedAt": "2026-10-19",
+    "featuredRank": 15,
+    "language": "ru",
+    "mobileFirst": false,
+    "images": {
+      "desktop": {
+        "src": "/portfolio/ritm-projects/timeline.webp",
+        "width": 1440,
+        "height": 900
+      },
+      "mobile": {
+        "src": "/portfolio/ritm-projects/mobile.webp",
+        "width": 780,
+        "height": 1688
+      },
+      "gallery": [
+        {
+          "src": "/portfolio/ritm-projects/desktop.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Ритм — проекты и задачи",
+            "en": "Ritm — projects and tasks"
+          }
+        },
+        {
+          "src": "/portfolio/ritm-projects/load.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Загрузка команды по неделям",
+            "en": "Team workload by week"
+          }
+        },
+        {
+          "src": "/portfolio/ritm-projects/task.webp",
+          "width": 780,
+          "height": 1688,
+          "viewport": "mobile",
+          "alt": {
+            "ru": "Карточка задачи с чек-листом",
+            "en": "Task panel with a checklist"
+          }
+        }
+      ]
+    }
   }
 ]
