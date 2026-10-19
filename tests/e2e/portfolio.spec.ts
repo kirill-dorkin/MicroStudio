@@ -3,12 +3,12 @@ import { projectSlugs } from "./helpers";
 
 test("9. home shows four selected demos with badges", async ({ page }) => {
   await page.goto("/ru");
-  const items = page.locator("#work li");
+  const items = page.locator("#work article");
   await expect(items).toHaveCount(4);
   for (const name of ["Storefront", "Table & Fork", "Lumen", "LaunchPad"]) {
     await expect(page.locator("#work").getByRole("heading", { name: new RegExp(name) })).toBeVisible();
   }
-  await expect(page.locator("#work").getByText("Открытое демо")).toHaveCount(4);
+  await expect(page.locator("#work").getByText("Open-source демо")).toHaveCount(4);
 });
 
 test("10. work page shows all seven demos and the disclaimer", async ({ page }) => {

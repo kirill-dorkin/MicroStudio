@@ -25,7 +25,7 @@ export default async function ServicesPage({ params }: Props) {
 
   return (
     <>
-      <section className="container-page pb-16 pt-[calc(62px+3rem)] lg:pt-[calc(74px+4.5rem)]">
+      <section className="container-page page-top pb-12">
         <Breadcrumbs
           label={t.common.breadcrumbs}
           items={[
@@ -38,18 +38,18 @@ export default async function ServicesPage({ params }: Props) {
         <p className="lead mt-6 max-w-2xl">{t.services.lead}</p>
       </section>
 
-      <section aria-label={t.nav.services} className="container-page pb-20 lg:pb-28">
+      <section aria-label={t.nav.services} className="container-page pb-16 lg:pb-20">
         <ul className="grid gap-5 md:grid-cols-2">
           {services.map((s, i) => (
-            <li key={s.slug} className="group relative flex flex-col rounded-[24px] border border-line bg-elevated p-7 transition-colors duration-300 hover:border-line-strong md:p-9" data-reveal>
+            <li key={s.slug} className="group relative flex flex-col rounded-[20px] border border-line bg-elevated p-7 transition-colors duration-300 hover:border-line-strong md:p-9" data-reveal>
               <div className="flex items-start justify-between gap-6">
                 <span className="font-display text-sm font-semibold text-lime">0{i + 1}</span>
                 <span aria-hidden="true" className="inline-flex size-12 items-center justify-center rounded-full border border-line text-muted transition-all duration-300 group-hover:border-lime group-hover:bg-lime group-hover:text-bg">
                   <ArrowUpRight className="size-5" />
                 </span>
               </div>
-              <h2 className="mt-8 font-display text-[1.9rem] font-bold leading-tight tracking-[-0.025em] md:text-[2.4rem]">
-                <Link href={href(locale, `/services/${s.slug}`)} className="after:absolute after:inset-0 after:rounded-[24px] focus-visible:outline-none focus-visible:after:outline focus-visible:after:outline-2 focus-visible:after:outline-lime">
+              <h2 className="mt-6 font-display text-[1.6rem] font-bold leading-tight tracking-[-0.025em] md:text-[2rem]">
+                <Link href={href(locale, `/services/${s.slug}`)} className="after:absolute after:inset-0 after:rounded-[20px] focus-visible:outline-none focus-visible:after:outline focus-visible:after:outline-2 focus-visible:after:outline-lime">
                   {s.title}
                 </Link>
               </h2>

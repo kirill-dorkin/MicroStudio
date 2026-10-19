@@ -50,19 +50,19 @@ export function ProjectCard({
         <DemoBadge label={demoLabel} className="absolute left-3 top-3" />
       </BrowserFrame>
 
-      <div className="mt-5 flex items-start justify-between gap-6">
+      <div className="mt-4 flex items-start justify-between gap-5">
         <div className="min-w-0">
-          <p className="mb-2 text-[0.8rem] font-medium uppercase tracking-[0.12em] text-subtle">
+          <p className="mb-1.5 text-[0.78rem] font-medium uppercase tracking-[0.1em] text-subtle">
             {categoryLabel} · {project.sector}
           </p>
-          <Heading className={cn("font-display font-bold tracking-[-0.02em]", size === "lg" ? "text-2xl md:text-[1.75rem]" : "text-xl md:text-2xl")}>
+          <Heading className={cn("font-display font-bold tracking-[-0.02em]", size === "lg" ? "text-[1.35rem] md:text-[1.6rem]" : "text-[1.25rem] md:text-[1.4rem]")}>
             <Link href={href} className="after:absolute after:inset-0 after:rounded-[14px] focus-visible:outline-none focus-visible:after:outline focus-visible:after:outline-2 focus-visible:after:outline-offset-4 focus-visible:after:outline-lime">
               {project.name}
               <span className="sr-only">. {ctaLabel}</span>
             </Link>
           </Heading>
-          <p className="mt-2 line-clamp-2 max-w-xl text-muted">{project.description}</p>
-          <p className="mt-3 text-sm text-subtle">
+          <p className="mt-2 line-clamp-2 max-w-xl text-[0.95rem] text-muted">{project.description}</p>
+          <p className="mt-2 text-[0.82rem] text-subtle">
             {authorLabel}: {project.author} · {project.license}
           </p>
         </div>

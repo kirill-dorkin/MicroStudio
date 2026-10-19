@@ -1,36 +1,32 @@
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import type { Locale } from "@/config/site";
 import { getDictionary } from "@/content/locales";
 import { href } from "@/lib/i18n";
 import { buttonClass } from "@/components/ui/button";
-import { TrackedLink } from "@/components/ui/tracked-link";
+import { WhatsappCta } from "@/components/ui/whatsapp-cta";
 
 export function SpecialTeaser({ locale }: { locale: Locale }) {
-  const t = getDictionary(locale).special;
+  const t = getDictionary(locale);
+  const s = t.special;
   return (
-    <section aria-labelledby="special-title" className="py-20 lg:py-28">
+    <section aria-labelledby="special-title" className="section-tight">
       <div className="container-page">
-        <div className="relative overflow-hidden rounded-[28px] border border-lime/25 bg-elevated p-8 md:p-12 lg:grid lg:grid-cols-[1.3fr_1fr] lg:items-end lg:gap-16 lg:p-16" data-reveal>
+        <div className="grid gap-6 rounded-[20px] border border-lime/30 bg-elevated p-6 md:p-10 lg:grid-cols-[1.2fr_1fr] lg:items-center lg:gap-12">
           <div>
-            <p className="inline-flex rounded-full bg-lime px-3 py-1 text-xs font-bold uppercase tracking-[0.12em] text-bg">
-              {t.badge}
-            </p>
-            <h2 id="special-title" className="h2 mt-6 max-w-[16ch]">
-              {t.title}
+            <p className="label text-lime">{s.badge}</p>
+            <h2 id="special-title" className="h2 mt-3 max-w-[18ch]">
+              {s.title}
             </h2>
+            <p className="mt-4 max-w-xl text-muted">{s.copy}</p>
+            <p className="mt-2 text-sm text-subtle">{s.note}</p>
           </div>
-          <div className="mt-6 lg:mt-0">
-            <p className="text-muted">{t.copy}</p>
-            <p className="mt-3 text-sm text-subtle">{t.note}</p>
-            <TrackedLink
-              href={href(locale, "/special")}
-              event="special_offer_cta"
-              params={{ location: "home" }}
-              className={buttonClass("secondary", "mt-8 border-lime/50 text-lime hover:border-lime hover:bg-lime/10")}
-            >
-              {t.cta}
+          <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
+            <WhatsappCta locale={locale} intent={{ kind: "special" }} location="home_special" label={t.specialPage.cta} className="w-full" />
+            <Link href={href(locale, "/special")} className={buttonClass("secondary", "w-full")}>
+              {s.cta}
               <ArrowRight className="size-4" aria-hidden="true" />
-            </TrackedLink>
+            </Link>
           </div>
         </div>
       </div>

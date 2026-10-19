@@ -1,66 +1,72 @@
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { site, type Locale } from "@/config/site";
 import { getDictionary } from "@/content/locales";
-import { href } from "@/lib/i18n";
-import { whatsappUrl } from "@/lib/contact";
+import { briefHref, type ContactIntent } from "@/lib/intent";
 import { buttonClass } from "@/components/ui/button";
-import { InstagramIcon, WhatsappIcon } from "@/components/ui/icons";
+import { InstagramIcon } from "@/components/ui/icons";
 import { TrackedLink } from "@/components/ui/tracked-link";
+import { WhatsappCta } from "@/components/ui/whatsapp-cta";
 
-/** Final call to action with the real, configured contact channels. */
+/** Ends a sentence with a lime full stop unless it already has punctuation. */
+function withStop(title: string) {
+  return /[.!?…]$/.test(title) ? (
+    title
+  ) : (
+    <>
+      {title}
+      <span className="text-lime">.</span>
+    </>
+  );
+}
+
+/** Final call to action: WhatsApp first, the optional brief and Instagram second. */
 export function CtaBand({
   locale,
   title,
   body,
   location,
+  intent = { kind: "generic" },
+  ctaId,
 }: {
   locale: Locale;
   title?: string;
   body?: string;
   location: string;
+  intent?: ContactIntent;
+  /** Id of the actions block, e.g. for a sticky CTA to watch. */
+  ctaId?: string;
 }) {
   const t = getDictionary(locale);
   return (
-    <section aria-labelledby={`cta-${location}`} className="border-t border-line py-24 lg:py-36">
-      <div className="container-page" data-reveal>
-        <h2 id={`cta-${location}`} className="font-display text-[clamp(2.5rem,1.2rem+6vw,6.5rem)] font-extrabold leading-[0.98] tracking-[-0.045em]">
-          {title ?? t.finalCta.title}
-          <span className="text-lime">.</span>
-        </h2>
-        <div className="mt-8 flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
-          <p className="lead max-w-xl">{body ?? t.finalCta.copy}</p>
-          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-            <TrackedLink
-              href={href(locale, "/contact")}
-              event="cta_contact"
-              params={{ location }}
-              className={buttonClass("primary")}
-            >
-              {t.finalCta.brief}
-              <ArrowRight className="size-4" aria-hidden="true" />
-            </TrackedLink>
-            {site.whatsappE164 && (
+    <section aria-labelledby={`cta-${location}`} className="section border-t border-line">
+      <div className="container-page">
+        <div className="card relative overflow-hidden px-6 py-10 md:px-12 md:py-14 lg:grid lg:grid-cols-[1.3fr_1fr] lg:items-end lg:gap-12">
+          <div>
+            <h2 id={`cta-${location}`} className="font-display text-[clamp(2rem,1.4rem+2.6vw,3.5rem)] font-extrabold leading-[1.02] tracking-[-0.04em]">
+              {withStop(title ?? t.finalCta.title)}
+            </h2>
+            <p className="lead mt-4">{body ?? t.finalCta.copy}</p>
+          </div>
+          <div id={ctaId} className="mt-8 flex flex-col gap-3 lg:mt-0">
+            <WhatsappCta locale={locale} intent={intent} location={location} size="lg" className="w-full" label={intent.kind === "special" ? t.specialPage.cta : undefined} />
+            <p className="text-center text-sm text-subtle">{t.wa.hint}</p>
+            <div className="mt-1 grid grid-cols-1 gap-3 xs:grid-cols-2">
+              <Link href={briefHref(locale, intent)} className={buttonClass("secondary", "w-full", "sm")}>
+                {t.finalCta.briefShort}
+                <ArrowRight className="size-4 shrink-0" aria-hidden="true" />
+              </Link>
               <TrackedLink
-                href={whatsappUrl(site.whatsappE164)}
+                href={site.instagram}
                 event="contact_method"
-                params={{ method: "whatsapp", location }}
+                params={{ method: "instagram", location }}
                 newTabLabel={t.common.newTab}
-                className={buttonClass("secondary")}
+                className={buttonClass("secondary", "w-full", "sm")}
               >
-                <WhatsappIcon className="size-4" />
-                {t.finalCta.whatsapp}
+                <InstagramIcon className="size-4 shrink-0" />
+                {t.finalCta.instagram}
               </TrackedLink>
-            )}
-            <TrackedLink
-              href={site.instagram}
-              event="contact_method"
-              params={{ method: "instagram", location }}
-              newTabLabel={t.common.newTab}
-              className={buttonClass("secondary")}
-            >
-              <InstagramIcon className="size-4" />
-              {t.finalCta.instagram}
-            </TrackedLink>
+            </div>
           </div>
         </div>
       </div>

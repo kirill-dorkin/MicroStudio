@@ -1,14 +1,15 @@
 import { cn } from "@/lib/utils";
 
+/** Calm, always-readable label for third-party open-source demos. */
 export function DemoBadge({ label, className }: { label: string; className?: string }) {
   return (
     <span
       className={cn(
-        "inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full border border-lime/35 bg-bg/80 px-2.5 py-1 text-[0.7rem] font-semibold tracking-wide text-lime backdrop-blur",
+        "inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full border border-white/15 bg-bg/85 px-2.5 py-1 text-[0.7rem] font-medium tracking-wide text-muted backdrop-blur",
         className,
       )}
     >
-      <span className="size-1.5 rounded-full bg-lime" aria-hidden="true" />
+      <span className="size-1.5 rounded-full bg-lime/80" aria-hidden="true" />
       {label}
     </span>
   );

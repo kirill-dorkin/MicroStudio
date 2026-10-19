@@ -32,7 +32,7 @@ export default async function WorkPage({ params, searchParams }: Props) {
 
   return (
     <>
-      <section className="container-page pb-12 pt-[calc(62px+3rem)] lg:pt-[calc(74px+4.5rem)]">
+      <section className="container-page page-top pb-10">
         <Breadcrumbs
           label={t.common.breadcrumbs}
           items={[
@@ -42,12 +42,12 @@ export default async function WorkPage({ params, searchParams }: Props) {
         />
         <p className="eyebrow mb-5">{t.work.eyebrow}</p>
         <h1 className="h1 max-w-4xl">{t.work.title}</h1>
-        <div className="mt-8 flex max-w-3xl gap-4 rounded-2xl border border-line bg-elevated p-5 md:p-6">
-          <Info className="mt-0.5 size-5 shrink-0 text-lime" aria-hidden="true" />
-          <p className="text-muted">{t.work.intro}</p>
+        <div className="mt-5 flex max-w-3xl gap-3 rounded-xl border border-line bg-elevated px-4 py-3">
+          <Info className="mt-0.5 size-4 shrink-0 text-muted" aria-hidden="true" />
+          <p className="text-sm text-muted">{t.work.intro}</p>
         </div>
       </section>
-      <section aria-label={t.work.title} className="container-page pb-24">
+      <section aria-label={t.work.title} className="container-page pb-16 lg:pb-20">
         <WorkGallery
           initial={initial}
           filters={[...filters]}

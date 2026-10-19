@@ -6,20 +6,32 @@ test.describe("routing and locales", () => {
     await page.goto("/ru");
     await expect(page).toHaveTitle(/MicroStudio/);
     await expect(page.locator("html")).toHaveAttribute("lang", "ru");
-    await expect(page.getByRole("heading", { level: 1 })).toHaveText("Создаём сайты, которые работают на ваш бизнес");
-    const cta = page.locator("main").getByRole("link", { name: "Обсудить проект" }).first();
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText("Разрабатываем сайты для бизнеса");
+    const cta = page.locator("main").getByRole("link", { name: /Написать в WhatsApp/ }).first();
     await expect(cta).toBeInViewport();
+    await expect(cta).toHaveAttribute("href", /^https:\/\/wa\.me\/996700779919\?text=/);
   });
 
   test("2. EN home loads in English", async ({ page }) => {
     await page.goto("/en");
     await expect(page.locator("html")).toHaveAttribute("lang", "en");
-    await expect(page.getByRole("heading", { level: 1 })).toHaveText("Websites built around your business");
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText("We build websites for businesses");
   });
 
   test("3. root redirects to /ru", async ({ page }) => {
     await page.goto("/");
     await expect(page).toHaveURL(/\/ru$/);
+  });
+
+  test("4b. language switch keeps the selected service and project", async ({ page }) => {
+    await page.goto("/ru/contact?service=special");
+    await page.getByRole("link", { name: /Switch to English/ }).first().click();
+    await expect(page).toHaveURL(/\/en\/contact\?service=special/);
+    await expect(page.getByRole("radio", { name: /One-page website for 1,500/ })).toBeChecked();
+    await page.goto("/en/contact?project=photo-lumen");
+    await page.getByRole("link", { name: /Перейти на русский/ }).first().click();
+    await expect(page).toHaveURL(/\/ru\/contact\?project=photo-lumen/);
+    await expect(page.locator("output")).toContainText("Lumen — сайт фотографа");
   });
 
   test("4. language switch keeps the equivalent page", async ({ page }) => {
@@ -42,12 +54,14 @@ test.describe("routing and locales", () => {
       ["Проекты", /\/ru\/work$/],
       ["О студии", /\/ru\/about$/],
       ["Блог", /\/ru\/blog$/],
+      ["Контакты", /\/ru\/contact$/],
     ] as const) {
       await nav.getByRole("link", { name }).click();
       await expect(page).toHaveURL(url);
     }
-    await page.getByRole("banner").getByRole("link", { name: "Обсудить проект" }).click();
-    await expect(page).toHaveURL(/\/ru\/contact$/);
+    const wa = page.getByRole("banner").getByRole("link", { name: /WhatsApp/ });
+    await expect(wa).toHaveAttribute("href", /^https:\/\/wa\.me\/996700779919\?text=/);
+    await expect(wa).toHaveAttribute("target", "_blank");
   });
 
   test("31. unknown page renders localized 404", async ({ page }) => {

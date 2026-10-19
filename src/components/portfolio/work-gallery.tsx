@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Check } from "lucide-react";
 import type { LocalizedProject } from "@/lib/content";
 import type { ProjectCategory } from "@/lib/schemas";
 import { track } from "@/lib/analytics";
@@ -53,7 +54,7 @@ export function WorkGallery({ projects, initial, filters, labels }: Props) {
 
   return (
     <div>
-      <div className="sticky top-[58px] z-20 -mx-5 mb-10 border-b border-line bg-bg/85 px-5 py-3 backdrop-blur-xl md:static md:mx-0 md:border-0 md:bg-transparent md:px-0 md:py-0 md:backdrop-blur-none lg:top-16">
+      <div className="sticky top-[58px] z-20 -mx-5 mb-8 border-b border-line bg-bg/85 px-5 py-3 backdrop-blur-xl md:static md:mx-0 md:border-0 md:bg-transparent md:px-0 md:py-0 md:backdrop-blur-none lg:top-16">
         <div
           role="group"
           aria-label={labels.filtersLabel}
@@ -71,12 +72,13 @@ export function WorkGallery({ projects, initial, filters, labels }: Props) {
                 className={cn(
                   "inline-flex min-h-11 shrink-0 items-center gap-2 rounded-full border px-4 text-[0.9rem] font-medium transition-colors",
                   active
-                    ? "border-lime bg-lime text-bg"
+                    ? "border-white/50 bg-white/[0.1] text-text"
                     : "border-line text-muted hover:border-line-strong hover:text-text",
                 )}
               >
+                {active && <Check className="size-3.5 text-lime" strokeWidth={3} aria-hidden="true" />}
                 {labels.categories[f]}
-                <span className={cn("text-xs tabular-nums", active ? "text-bg/70" : "text-subtle")}>{count}</span>
+                <span className={cn("text-xs tabular-nums", active ? "text-muted" : "text-subtle")}>{count}</span>
               </button>
             );
           })}
@@ -87,7 +89,7 @@ export function WorkGallery({ projects, initial, filters, labels }: Props) {
         {labels.count.replace("{count}", String(visible.length))}
       </p>
 
-      <ul className="grid gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-12 lg:gap-y-20">
+      <ul className="grid gap-x-6 gap-y-12 md:grid-cols-2 lg:grid-cols-12 lg:gap-y-14">
         {visible.map((project, i) => (
           <li key={project.slug} className={cn(spans[i % 4], visible.length === 1 && "lg:col-span-8")}>
             <ProjectCard

@@ -2,13 +2,15 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowRight, ArrowUpRight, Check, Github, ShieldAlert } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Check, Github, Info } from "lucide-react";
 import type { Locale } from "@/config/site";
 import { fmt, getDictionary } from "@/content/locales";
 import manifest from "@/data/capture-manifest.json";
 import { getProject, localizeProject, projects } from "@/lib/content";
 import { formatDate, href, locales } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/metadata";
+import { briefHref } from "@/lib/intent";
+import { WhatsappCta } from "@/components/ui/whatsapp-cta";
 import { BrowserFrame, PhoneFrame } from "@/components/ui/browser-frame";
 import { DemoBadge } from "@/components/ui/badge";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
@@ -61,7 +63,7 @@ export default async function ProjectPage({ params }: Props) {
   return (
     <>
       <TrackView event="view_project" params={{ project: slug }} />
-      <section className="container-page pt-[calc(62px+3rem)] lg:pt-[calc(74px+4.5rem)]">
+      <section className="container-page page-top">
         <Breadcrumbs
           label={t.common.breadcrumbs}
           items={[
@@ -76,18 +78,24 @@ export default async function ProjectPage({ params }: Props) {
             {t.work.categories[p.category]} · {p.sector}
           </span>
         </div>
-        <h1 className="mt-6 max-w-5xl font-display text-[clamp(2.25rem,1.3rem+4vw,4.75rem)] font-bold leading-[1.04] tracking-[-0.035em]">
+        <h1 className="h1 mt-5 max-w-4xl">
           {p.name}
         </h1>
-        <div className="mt-6 grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:items-end">
-          <p className="lead max-w-2xl">{p.description}</p>
-          <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
+        <div className="mt-5 grid gap-6 lg:grid-cols-[1.3fr_1fr] lg:items-end lg:gap-10">
+          <p className="lead">{p.description}</p>
+          <div className="flex flex-col gap-2.5 sm:flex-row sm:flex-wrap lg:justify-end">
+            <WhatsappCta
+              locale={locale}
+              intent={{ kind: "project", slug }}
+              location="project_hero"
+              label={tp.similar}
+            />
             <TrackedLink
               href={p.demo}
               event="open_demo"
               params={{ project: slug }}
               newTabLabel={t.common.newTab}
-              className={buttonClass("primary")}
+              className={buttonClass("secondary")}
             >
               {t.common.openDemo}
               <ArrowUpRight className="size-4" aria-hidden="true" />
@@ -105,12 +113,12 @@ export default async function ProjectPage({ params }: Props) {
           </div>
         </div>
 
-        <div className="mt-10 flex gap-4 rounded-2xl border border-lime/25 bg-lime/[0.05] p-5 md:p-6" role="note">
-          <ShieldAlert className="mt-0.5 size-5 shrink-0 text-lime" aria-hidden="true" />
-          <p className="text-[0.98rem] text-text/90">{tp.disclosure}</p>
+        <div className="mt-6 flex gap-3 rounded-xl border border-line bg-elevated px-4 py-3" role="note">
+          <Info className="mt-0.5 size-4 shrink-0 text-muted" aria-hidden="true" />
+          <p className="text-sm text-muted">{tp.disclosure}</p>
         </div>
 
-        <BrowserFrame host={p.demoHost} className="mt-12 lg:mt-16">
+        <BrowserFrame host={p.demoHost} className="mt-8 lg:mt-10">
           <div className="relative aspect-[16/10] bg-[#f3f3f1]">
             <Image
               src={p.screenshots.desktop}
@@ -124,13 +132,13 @@ export default async function ProjectPage({ params }: Props) {
         </BrowserFrame>
       </section>
 
-      <section className="container-page grid gap-14 py-20 lg:grid-cols-[1.4fr_1fr] lg:gap-20 lg:py-28">
+      <section className="container-page section grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
         <div>
           <h2 className="h3 text-subtle">{tp.overview}</h2>
-          <p className="mt-5 font-display text-[clamp(1.35rem,1.1rem+0.9vw,1.85rem)] font-medium leading-[1.4] tracking-[-0.015em]">
+          <p className="mt-4 max-w-[60ch] text-[1.1rem] leading-relaxed text-text/90 md:text-[1.2rem]">
             {p.overview}
           </p>
-          <div className="mt-14 grid gap-10 md:grid-cols-2">
+          <div className="mt-10 grid gap-8 md:grid-cols-2">
             <div>
               <h2 className="h3">{tp.features}</h2>
               <ul className="mt-5 space-y-3">
@@ -155,7 +163,8 @@ export default async function ProjectPage({ params }: Props) {
             </div>
           </div>
         </div>
-        <dl className="h-fit divide-y divide-line rounded-2xl border border-line bg-elevated px-6">
+        <div className="h-fit space-y-4">
+        <dl className="divide-y divide-line rounded-[20px] border border-line bg-elevated px-6">
           {meta.map(([k, v]) => (
             <div key={k} className="flex justify-between gap-6 py-4">
               <dt className="text-subtle">{k}</dt>
@@ -163,14 +172,19 @@ export default async function ProjectPage({ params }: Props) {
             </div>
           ))}
         </dl>
+          <Link href={briefHref(locale, { kind: "project", slug })} className={buttonClass("quiet", "w-full", "sm")}>
+            {tp.similarBrief}
+            <ArrowRight className="size-4" aria-hidden="true" />
+          </Link>
+        </div>
       </section>
 
-      <section aria-labelledby="screens-title" className="border-t border-line py-20 lg:py-28">
+      <section aria-labelledby="screens-title" className="section border-t border-line">
         <div className="container-page">
           <h2 id="screens-title" className="h2">
             {tp.screens}
           </h2>
-          <div className="mt-12 grid items-start gap-10 lg:grid-cols-[1fr_300px] lg:gap-14">
+          <div className="mt-8 grid items-start gap-8 lg:grid-cols-[1fr_280px] lg:gap-12">
             <figure>
               <BrowserFrame host={p.demoHost}>
                 <div className="relative aspect-[16/10] bg-[#f3f3f1]">
@@ -185,7 +199,7 @@ export default async function ProjectPage({ params }: Props) {
               </BrowserFrame>
               <figcaption className="mt-4 text-sm text-subtle">{tp.desktopShot}</figcaption>
             </figure>
-            <figure className="mx-auto w-full max-w-[300px]">
+            <figure className="mx-auto w-full max-w-[280px]">
               <PhoneFrame>
                 <div className="relative aspect-[390/844] bg-[#f3f3f1]">
                   <Image
@@ -208,7 +222,7 @@ export default async function ProjectPage({ params }: Props) {
         </div>
       </section>
 
-      <section aria-labelledby="credits-title" className="border-t border-line py-20 lg:py-24">
+      <section aria-labelledby="credits-title" className="section border-t border-line">
         <div className="container-page grid gap-10 lg:grid-cols-[1fr_1.4fr]">
           <h2 id="credits-title" className="h2">
             {tp.credits}
@@ -252,7 +266,7 @@ export default async function ProjectPage({ params }: Props) {
         </div>
       </section>
 
-      <CtaBand locale={locale} location={`project_${slug}`} title={tp.ctaTitle} body={tp.ctaBody} />
+      <CtaBand locale={locale} location={`project_${slug}`} title={tp.ctaTitle} body={tp.ctaBody} intent={{ kind: "project", slug }} />
 
       <nav aria-label={tp.next} className="border-t border-line">
         <div className="container-page flex flex-col gap-4 py-10 sm:flex-row sm:items-center sm:justify-between">

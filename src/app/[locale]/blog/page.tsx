@@ -24,7 +24,7 @@ export default async function BlogPage({ params }: Props) {
 
   return (
     <>
-      <section className="container-page pb-12 pt-[calc(62px+3rem)] lg:pt-[calc(74px+4.5rem)]">
+      <section className="container-page page-top pb-10">
         <Breadcrumbs
           label={t.common.breadcrumbs}
           items={[
@@ -37,11 +37,11 @@ export default async function BlogPage({ params }: Props) {
         <p className="lead mt-6 max-w-2xl">{t.blog.lead}</p>
       </section>
 
-      <section aria-label={t.blog.title} className="container-page pb-24">
+      <section aria-label={t.blog.title} className="container-page pb-16">
         <ul className="border-t border-line">
           {posts.map((post, i) => (
             <li key={post.slug} className="group relative border-b border-line" data-reveal>
-              <article className="grid gap-4 py-10 md:grid-cols-[4rem_1fr_auto] md:gap-8 lg:py-12">
+              <article className="grid gap-3 py-8 md:grid-cols-[3rem_1fr_auto] md:gap-8">
                 <span className="font-display text-sm font-semibold tabular-nums text-subtle group-hover:text-lime">
                   0{i + 1}
                 </span>
@@ -50,7 +50,7 @@ export default async function BlogPage({ params }: Props) {
                     {t.blog.categories[post.category]} · <time dateTime={post.date}>{formatDate(post.date, locale)}</time> ·{" "}
                     {fmt(t.blog.minutes, { count: readingTime(post.slug) })}
                   </p>
-                  <h2 className="mt-3 max-w-3xl font-display text-[1.6rem] font-bold leading-tight tracking-[-0.025em] md:text-[2.1rem]">
+                  <h2 className="mt-2 max-w-3xl font-display text-[1.4rem] font-bold leading-tight tracking-[-0.02em] md:text-[1.75rem]">
                     <Link
                       href={href(locale, `/blog/${post.slug}`)}
                       className="after:absolute after:inset-0 focus-visible:outline-none focus-visible:after:outline focus-visible:after:outline-2 focus-visible:after:outline-lime"
@@ -60,7 +60,7 @@ export default async function BlogPage({ params }: Props) {
                   </h2>
                   <p className="mt-3 max-w-2xl text-muted">{post.description}</p>
                 </div>
-                <span aria-hidden="true" className="hidden size-14 items-center justify-center rounded-full border border-line text-muted transition-all group-hover:border-lime group-hover:bg-lime group-hover:text-bg md:inline-flex">
+                <span aria-hidden="true" className="hidden size-12 items-center justify-center rounded-full border border-line text-muted transition-all group-hover:border-lime group-hover:bg-lime group-hover:text-bg md:inline-flex">
                   <ArrowUpRight className="size-5" />
                 </span>
               </article>

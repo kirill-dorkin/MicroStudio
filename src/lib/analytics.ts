@@ -10,7 +10,8 @@ export type AnalyticsEvent =
   | "open_demo"
   | "open_github"
   | "special_offer_view"
-  | "special_offer_cta";
+  | "special_offer_cta"
+  | "select_service";
 
 type Params = Record<string, string | number | boolean>;
 

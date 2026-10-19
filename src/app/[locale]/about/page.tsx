@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
-import { ArrowRight } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, Check } from "lucide-react";
 import type { Locale } from "@/config/site";
 import { getDictionary } from "@/content/locales";
 import { getSeo, localizeProject, projects } from "@/lib/content";
@@ -8,8 +10,6 @@ import { pageMetadata } from "@/lib/metadata";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { ButtonLink } from "@/components/ui/button";
 import { CtaBand } from "@/components/sections/cta-band";
-import Image from "next/image";
-import Link from "next/link";
 
 type Props = { params: Promise<{ locale: Locale }> };
 
@@ -26,7 +26,7 @@ export default async function AboutPage({ params }: Props) {
 
   return (
     <>
-      <section className="container-page pb-16 pt-[calc(62px+3rem)] lg:pb-24 lg:pt-[calc(74px+4.5rem)]">
+      <section className="container-page page-top pb-12">
         <Breadcrumbs
           label={t.common.breadcrumbs}
           items={[
@@ -34,71 +34,78 @@ export default async function AboutPage({ params }: Props) {
             { name: t.nav.about, href: href(locale, "/about") },
           ]}
         />
-        <p className="eyebrow mb-5">{a.eyebrow}</p>
-        <h1 className="h1 max-w-5xl">{a.title}</h1>
-        <p className="mt-10 max-w-4xl font-display text-[clamp(1.35rem,1.1rem+1vw,2rem)] font-medium leading-[1.4] tracking-[-0.015em] text-text/90">
-          {a.lead}
-        </p>
-      </section>
-
-      <section aria-labelledby="about-what" className="border-t border-line py-20 lg:py-28">
-        <div className="container-page grid gap-10 lg:grid-cols-[1fr_1.5fr] lg:gap-20">
-          <h2 id="about-what" className="h2">
-            {a.whatTitle}
-          </h2>
-          <ul className="divide-y divide-line border-y border-line">
-            {a.what.map((item, i) => (
-              <li key={item} className="grid grid-cols-[3rem_1fr] gap-4 py-6 text-[1.1rem]" data-reveal>
-                <span className="font-display text-sm font-semibold text-lime">0{i + 1}</span>
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      <section aria-labelledby="about-approach" className="border-t border-line py-20 lg:py-28">
-        <div className="container-page">
-          <h2 id="about-approach" className="h2">
-            {a.approachTitle}
-          </h2>
-          <ul className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-line bg-line md:grid-cols-2">
-            {a.approach.map((item) => (
-              <li key={item.title} className="bg-bg p-7 md:p-10" data-reveal>
-                <h3 className="h3">{item.title}</h3>
-                <p className="mt-3 text-muted">{item.body}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      <section aria-labelledby="about-stack" className="border-t border-line py-20 lg:py-28">
-        <div className="container-page grid gap-10 lg:grid-cols-[1fr_1.5fr] lg:gap-20">
+        <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
           <div>
-            <h2 id="about-stack" className="h2">
-              {a.stackTitle}
-            </h2>
-            <p className="mt-6 text-muted">{a.stackLead}</p>
+            <p className="eyebrow mb-4">{a.eyebrow}</p>
+            <h1 className="h1 max-w-[16ch]">{a.title}</h1>
+            <p className="lead mt-5">{a.lead}</p>
           </div>
-          <ul className="flex flex-wrap content-start gap-3">
-            {a.stack.map((item) => (
-              <li key={item} className="rounded-full border border-line-strong px-5 py-3 font-display font-semibold">
-                {item}
-              </li>
-            ))}
-          </ul>
+          <div className="card self-end p-6">
+            <h2 className="label">{a.whatTitle}</h2>
+            <ul className="mt-4 space-y-3">
+              {a.what.map((item) => (
+                <li key={item} className="flex gap-3">
+                  <Check className="mt-1 size-4 shrink-0 text-lime" aria-hidden="true" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
-      <section aria-labelledby="about-examples" className="border-t border-line py-20 lg:py-28">
-        <div className="container-page grid gap-12 lg:grid-cols-[1fr_1.5fr] lg:items-center lg:gap-20">
+      <section aria-labelledby="about-process" className="section border-t border-line">
+        <div className="container-page">
+          <h2 id="about-process" className="h2 max-w-[22ch]">
+            {a.processTitle}
+          </h2>
+          <ol className="mt-8 grid gap-px overflow-hidden rounded-[20px] border border-line bg-line md:grid-cols-2 lg:grid-cols-4">
+            {a.process.map((step, i) => (
+              <li key={step.title} className="bg-bg p-6">
+                <span className="inline-flex size-8 items-center justify-center rounded-full border border-line-strong font-display text-sm font-semibold text-lime">
+                  {i + 1}
+                </span>
+                <h3 className="h3 mt-4">{step.title}</h3>
+                <p className="mt-2 text-[0.95rem] text-muted">{step.body}</p>
+              </li>
+            ))}
+          </ol>
+          <div className="mt-4 grid gap-4 lg:grid-cols-[1fr_1.4fr]">
+            <div className="card p-6">
+              <h3 className="h3">{a.youTitle}</h3>
+              <ul className="mt-4 space-y-2.5 text-[0.95rem] text-muted">
+                {a.you.map((item) => (
+                  <li key={item} className="flex gap-3">
+                    <span className="mt-2.5 h-px w-3 shrink-0 bg-lime" aria-hidden="true" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="rounded-[20px] border border-line p-6">
+              <h3 className="h3">{a.approachTitle}</h3>
+              <ul className="mt-4 grid gap-5 sm:grid-cols-3">
+                {a.approach.map((item) => (
+                  <li key={item.title}>
+                    <p className="font-semibold">{item.title}</p>
+                    <p className="mt-1.5 text-[0.92rem] text-muted">{item.body}</p>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-6 border-t border-line pt-4 text-sm text-subtle">{a.stackLead}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="about-examples" className="section border-t border-line">
+        <div className="container-page grid gap-10 lg:grid-cols-[1fr_1.5fr] lg:items-center lg:gap-16">
           <div>
             <h2 id="about-examples" className="h2">
               {a.examplesTitle}
             </h2>
-            <p className="mt-6 text-muted">{a.examplesBody}</p>
-            <ButtonLink href={href(locale, "/work")} variant="secondary" className="mt-8">
+            <p className="mt-4 text-muted">{a.examplesBody}</p>
+            <ButtonLink href={href(locale, "/work")} variant="secondary" className="mt-6">
               {a.examplesCta}
               <ArrowRight className="size-4" aria-hidden="true" />
             </ButtonLink>
@@ -106,10 +113,7 @@ export default async function AboutPage({ params }: Props) {
           <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3">
             {strip.map((p) => (
               <li key={p.slug}>
-                <Link
-                  href={href(locale, `/work/${p.slug}`)}
-                  className="group block overflow-hidden rounded-xl border border-line bg-[#f3f3f1]"
-                >
+                <Link href={href(locale, `/work/${p.slug}`)} className="group block overflow-hidden rounded-xl border border-line bg-[#f3f3f1]">
                   <span className="relative block aspect-[16/10]">
                     <Image
                       src={p.screenshots.desktop}

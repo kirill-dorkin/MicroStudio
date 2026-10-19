@@ -8,12 +8,12 @@ import { ButtonLink } from "@/components/ui/button";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { ProjectCard } from "@/components/portfolio/project-card";
 
-const spans = ["lg:col-span-7", "lg:col-span-5 lg:mt-24", "lg:col-span-5", "lg:col-span-7 lg:-mt-24"];
+const spans = ["lg:col-span-7", "lg:col-span-5 lg:mt-16", "lg:col-span-5", "lg:col-span-7 lg:-mt-16"];
 
 export function SelectedWork({ locale }: { locale: Locale }) {
   const t = getDictionary(locale);
   return (
-    <section id="work" aria-labelledby="work-title" className="py-20 lg:py-32">
+    <section id="work" aria-labelledby="work-title" className="section border-t border-line">
       <div className="container-page">
         <SectionHeading
           id="work-title"
@@ -27,11 +27,11 @@ export function SelectedWork({ locale }: { locale: Locale }) {
             </ButtonLink>
           }
         />
-        <ul className="mt-14 grid gap-x-8 gap-y-14 md:grid-cols-2 lg:mt-20 lg:grid-cols-12 lg:gap-y-16">
+        <ul className="mt-10 grid gap-x-6 gap-y-12 md:grid-cols-2 lg:mt-12 lg:grid-cols-12 lg:gap-y-14">
           {featuredProjects.map((p, i) => {
             const project = localizeProject(p, locale);
             return (
-              <li key={p.slug} className={cn(spans[i])} data-reveal>
+              <li key={p.slug} className={cn(spans[i])}>
                 <ProjectCard
                   project={project}
                   href={href(locale, `/work/${p.slug}`)}
