@@ -123,7 +123,10 @@ test("hero: full-cycle offer, two actions, real screenshots and a secondary prom
   const wa = hero.getByRole("link", { name: /Обсудить проект/ });
   expect(new URL((await wa.getAttribute("href"))!).searchParams.get("text")).toBe("Здравствуйте! Хочу обсудить проект для моего бизнеса.");
   await expect(hero.getByRole("link", { name: /Смотреть проекты/ })).toHaveAttribute("href", "/ru/work");
-  await expect(hero.locator(`a[href="/ru/work/${published[0].slug}"]`)).toHaveCount(1);
+  // The hero shows real screenshots that link to published case pages.
+  const caseLinks = await hero.locator('a[href^="/ru/work/"]').evaluateAll((as) => as.map((a) => a.getAttribute("href")));
+  expect(caseLinks.length).toBeGreaterThan(0);
+  for (const l of caseLinks) expect(published.map((p) => `/ru/work/${p.slug}`)).toContain(l);
   await expect(hero.getByRole("link", { name: /1\s500 сом/ })).toHaveAttribute("href", "/ru/special");
 });
 

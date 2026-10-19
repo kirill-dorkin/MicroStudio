@@ -4,13 +4,10 @@ import { getDictionary } from "@/content/locales";
 import { featuredProjects, localizeProject } from "@/lib/content";
 import { cardLabels } from "@/lib/cards";
 import { href } from "@/lib/i18n";
-import { cn } from "@/lib/utils";
 import { ButtonLink } from "@/components/ui/button";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { ProjectCard } from "@/components/portfolio/project-card";
 
-// One large work, then pairs of different widths — not a uniform template grid.
-const spans = ["lg:col-span-7", "lg:col-span-5", "lg:col-span-5", "lg:col-span-7", "lg:col-span-6", "lg:col-span-6", "lg:col-span-6", "lg:col-span-6"];
 
 export function SelectedWork({ locale }: { locale: Locale }) {
   const t = getDictionary(locale);
@@ -32,17 +29,18 @@ export function SelectedWork({ locale }: { locale: Locale }) {
             </ButtonLink>
           }
         />
-        <ul className="mt-10 grid gap-x-6 gap-y-12 md:grid-cols-2 lg:mt-12 lg:grid-cols-12 lg:gap-y-14">
+        <ul className="mt-10 grid gap-x-8 gap-y-14 md:grid-cols-2 lg:mt-12 lg:gap-y-16">
           {shown.map((raw, i) => {
             const p = localizeProject(raw, locale);
             return (
-              <li key={p.slug} className={cn(spans[i])}>
+              <li key={p.slug}>
                 <ProjectCard
                   project={p}
                   href={href(locale, `/work/${p.slug}`)}
                   labels={cardLabels(p, locale)}
-                  size={i < 2 ? "lg" : "md"}
-                  sizes="(min-width: 1024px) 58vw, (min-width: 768px) 50vw, 100vw"
+                  size="lg"
+                  sizes="(min-width: 1024px) 50vw, (min-width: 768px) 50vw, 100vw"
+                  priority={i < 2}
                 />
               </li>
             );

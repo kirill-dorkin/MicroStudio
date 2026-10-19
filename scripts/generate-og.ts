@@ -12,6 +12,10 @@ import { getDictionary } from "../src/content/locales";
 import { getServices } from "../src/content/services";
 import { getPosts, getSeo } from "../src/lib/content";
 import type { Locale } from "../src/config/site";
+import portfolio from "../src/data/portfolio.json";
+
+// A real screenshot on the home and catalogue cards makes link previews look like the work.
+const showcaseShot = (portfolio.find((p) => p.slug === "marby-realty") ?? portfolio[0])?.images.desktop.src;
 
 const root = process.cwd();
 const outDir = path.join(root, "public/og");
@@ -24,10 +28,10 @@ function cards(locale: Locale): Card[] {
   const t = getDictionary(locale);
   const seo = (k: string) => strip(getSeo(k, locale)!.title);
   return [
-    { key: "home", eyebrow: t.hero.kicker, title: t.hero.title },
+    { key: "home", eyebrow: t.hero.kicker, title: t.hero.title, image: showcaseShot },
     { key: "services", eyebrow: t.services.eyebrow, title: seo("services") },
     ...getServices(locale).map((s) => ({ key: `service-${s.slug}`, eyebrow: s.title, title: s.heroTitle })),
-    { key: "work", eyebrow: t.work.eyebrow, title: t.work.title },
+    { key: "work", eyebrow: t.work.eyebrow, title: t.work.title, image: showcaseShot },
     // Case pages use a cover cut from their live screenshot (scripts/sync-showcase.ts).
     { key: "about", eyebrow: t.about.eyebrow, title: t.about.title },
     { key: "blog", eyebrow: t.blog.eyebrow, title: t.blog.title },

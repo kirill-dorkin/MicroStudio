@@ -14,12 +14,17 @@ import { WhatsappCta } from "@/components/ui/whatsapp-cta";
  * a full desktop screen and a phone from another project, both readable and
  * linking to their case pages. Static: nothing rotates.
  */
+const HERO_PROJECT = "marby-realty";
+const HERO_PHONE = "maison-archive";
+
 export function Hero({ locale }: { locale: Locale }) {
   const t = getDictionary(locale);
-  const [main, second] = featuredProjects(8).map((p) => localizeProject(p, locale));
-  const phone = featuredProjects(8)
-    .map((p) => localizeProject(p, locale))
-    .find((p) => p.slug !== main.slug && p.slug !== second?.slug) ?? second;
+  const all = featuredProjects(8).map((p) => localizeProject(p, locale));
+  // The works grid right below opens with the first project, so the hero shows
+  // a different strong desktop screen and a phone from yet another project.
+  const main = all.find((p) => p.slug === HERO_PROJECT) ?? all[0];
+  const second = all.find((p) => p.slug !== main.slug);
+  const phone = all.find((p) => p.slug === HERO_PHONE && p.slug !== main.slug) ?? all.find((p) => p.slug !== main.slug && p.slug !== second?.slug) ?? second;
 
   return (
     <section aria-labelledby="hero-title" className="relative overflow-hidden pb-14 pt-[calc(62px+1.75rem)] lg:pb-20 lg:pt-[calc(74px+3rem)]">

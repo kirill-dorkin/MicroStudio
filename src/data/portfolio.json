@@ -13,8 +13,8 @@
       "en": "Saima — boutique hotel in Bishkek"
     },
     "summary": {
-      "ru": "Одностраничный сайт бутик-отеля: бронирование в первом экране, местное время и погода, фотогалерея номеров, светлая и тёмная тема.",
-      "en": "A one-page boutique hotel site: booking bar in the first screen, local time and weather, room gallery, light and dark themes."
+      "ru": "Сайт бутик-отеля: бронирование в первом экране, погода и время Бишкека, галерея номеров.",
+      "en": "Boutique hotel site: booking in the first screen, Bishkek weather and time, room gallery."
     },
     "problem": {
       "ru": "Небольшому отелю нужен сайт, который сразу выглядит дорого, отвечает на практичные вопросы гостя (как добраться, когда заезд, какая погода) и ведёт к прямому бронированию без комиссии агрегаторов.",
@@ -145,8 +145,8 @@
       "en": "Ochok — fire-led tasting counter"
     },
     "summary": {
-      "ru": "Атмосферный сайт дегустационного ресторана: сет из шести подач с сопровождением, история шефа, интерьер и форма брони.",
-      "en": "An atmospheric site for a tasting-counter restaurant: a six-course set with pairings, the chef's story, the room and a reservation form."
+      "ru": "Сайт ресторана: дегустационный сет, история шефа, интерьер и бронь столика.",
+      "en": "Restaurant site: tasting menu, the chef's story, the room and table booking."
     },
     "problem": {
       "ru": "Ресторану высокого уровня сайт нужен не как меню-прайс, а как приглашение: передать настроение, объяснить формат сета и аккуратно привести к брони.",
@@ -258,16 +258,16 @@
     "format": "shop",
     "industry": "commerce",
     "niche": {
-      "ru": "Магазин премиальных товаров",
-      "en": "Premium goods store"
+      "ru": "Премиальные товары",
+      "en": "Premium goods"
     },
     "title": {
       "ru": "Maison — магазин редких вещей",
       "en": "Maison — rare pieces store"
     },
     "summary": {
-      "ru": "Интернет-магазин в «печатной» эстетике: три дома с каталогами, фильтры по мастеру, материалу, эпохе и цене, избранное, корзина, кабинет покупателя и смена валюты.",
-      "en": "An online store with a printed-archive aesthetic: three houses with catalogues, filters by maker, material, era and price, wishlist, bag, customer cabinet and currency switch."
+      "ru": "Интернет-магазин: каталог с фильтрами, карточки товаров, избранное, корзина и кабинет.",
+      "en": "Online store: filtered catalogue, product pages, wishlist, bag and customer cabinet."
     },
     "problem": {
       "ru": "Магазин штучных дорогих вещей должен продавать атмосферой и подробностями, а не баннерами: строгая типографика, полные карточки, удобный каталог и спокойный путь к запросу.",
@@ -389,8 +389,8 @@
       "en": "Kerege Admin — admin dashboard"
     },
     "summary": {
-      "ru": "Веб-приложение для команды: дашборд с выручкой и продажами, задачи с фильтрами и массовыми действиями, пользователи, чаты, настройки, светлая и тёмная тема.",
-      "en": "A web app for a team: a dashboard with revenue and sales, tasks with filters and bulk actions, users, chats, settings, light and dark themes."
+      "ru": "Панель управления: дашборд продаж, задачи, пользователи, чаты и настройки.",
+      "en": "Admin dashboard: sales overview, tasks, users, chats and settings."
     },
     "problem": {
       "ru": "Бизнесу нужен внутренний кабинет, в котором удобно работать каждый день: быстрые таблицы, понятная навигация, поиск по ⌘K и аккуратный мобильный вид.",
@@ -517,8 +517,8 @@
       "en": "Marby — boutique real estate brokerage"
     },
     "summary": {
-      "ru": "Корпоративный сайт агентства недвижимости в редакционном стиле: видео в первом экране, услуги, каталог домов в Бишкеке, на Иссык-Куле и в Алматы, страницы объектов, команда, журнал и контакты.",
-      "en": "An editorial corporate site for a real estate agency: hero video, services, a catalogue of homes in Bishkek, Issyk-Kul and Almaty, property pages, team, journal and contacts."
+      "ru": "Сайт агентства недвижимости: видео, услуги, каталог домов и страницы объектов.",
+      "en": "Real estate agency site: video, services, home catalogue and property pages."
     },
     "problem": {
       "ru": "Агентству дорогой недвижимости нужен сайт, который сам по себе выглядит как обложка журнала: крупная типографика, большие фото, подробные карточки объектов и спокойный путь к консультации.",
@@ -645,8 +645,8 @@
       "en": "BestElectronics — service centre page"
     },
     "summary": {
-      "ru": "Мобильная страница сервисного центра: звонок и WhatsApp в одно касание, адрес с картой и выбор ремонта с готовым сообщением.",
-      "en": "A mobile page for a repair centre: one-tap call and WhatsApp, address with a map and a repair picker that opens a ready message."
+      "ru": "Мобильная страница сервисного центра: звонок и WhatsApp в одно касание, адрес и выбор ремонта.",
+      "en": "Mobile page for a repair centre: one-tap call and WhatsApp, address and repair picker."
     },
     "problem": {
       "ru": "Клиенты сервисного центра приходят с телефона и хотят быстро спросить про ремонт. Страница даёт звонок и WhatsApp на первом экране и готовое сообщение под выбранную поломку.",
@@ -755,8 +755,8 @@
       "en": "TikiTaki — online booking service"
     },
     "summary": {
-      "ru": "Сайт продукта для онлайн-записи: отрасли, запись по QR-коду, управление через Telegram и модульная настройка.",
-      "en": "A product site for online booking: industries, QR booking, management via Telegram and modular setup."
+      "ru": "Сайт сервиса онлайн-записи: сценарии по отраслям, запись по QR-коду, управление в Telegram.",
+      "en": "Online booking product site: industry scenarios, QR booking, management in Telegram."
     },
     "problem": {
       "ru": "Владельцу салона или студии нужно понять, подойдёт ли сервис записи его отрасли. Продуктовая страница показывает сценарии по отраслям, запись по QR-коду и управление в Telegram.",
