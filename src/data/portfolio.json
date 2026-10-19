@@ -2260,5 +2260,690 @@
         }
       ]
     }
+  },
+  {
+    "slug": "ordo-legal",
+    "workType": "demo",
+    "format": "corporate",
+    "industry": "local-services",
+    "niche": {
+      "ru": "Юридическая практика",
+      "en": "Law practice"
+    },
+    "title": {
+      "ru": "Ордо — юридическая практика",
+      "en": "Ordo — law practice"
+    },
+    "summary": {
+      "ru": "Сайт юридической компании: практики со стоимостью этапов, чек-лист документов к встрече и запись на консультацию.",
+      "en": "Law firm site: practice areas with staged pricing, a documents checklist for the meeting and consultation booking."
+    },
+    "problem": {
+      "ru": "К юристу идут в стрессе и не знают, что взять с собой и сколько это будет стоить. Сайт объясняет порядок работы, собирает список документов под ситуацию и записывает на встречу.",
+      "en": "People come to a lawyer under stress, unsure what to bring or what it will cost. The site explains the process, builds a documents list for their situation and books a meeting."
+    },
+    "scenario": {
+      "ru": "Практика «Бизнес» → документы для спора о долге, отметить имеющиеся → «Записаться с этим списком» → описание, формат, время → демо-запись.",
+      "en": "Business practice → documents for a debt dispute, tick what you have → “Book with this list” → description, format, time → demo booking."
+    },
+    "features": [
+      {
+        "ru": "Чек-листы документов по 4 ситуациям с сохранением отметок и печатью",
+        "en": "Documents checklists for 4 situations with saved ticks and printing",
+        "kind": "production-ready"
+      },
+      {
+        "ru": "Запись с форматом встречи, слотами и проверкой полей",
+        "en": "Booking with meeting format, slots and validation",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Стоимость этапов вместо почасовой ставки",
+        "en": "Staged pricing instead of hourly rates",
+        "kind": "production-ready"
+      },
+      {
+        "ru": "Защищённая передача документов юристу",
+        "en": "Secure document upload to the lawyer",
+        "kind": "missing-integration"
+      }
+    ],
+    "limits": {
+      "ru": "Компания и цены вымышлены; материалы не являются юридической консультацией; запись не отправляется.",
+      "en": "The firm and prices are fictional; content is not legal advice; bookings are not sent."
+    },
+    "studio": {
+      "ru": [
+        "Подача через порядок работы и обязательства, без «выигранных дел» и обещаний исхода",
+        "Страница практики с этапами спора и стоимостью каждого этапа",
+        "Интерактивный чек-лист документов с печатной версией",
+        "Связка чек-листа и записи на консультацию",
+        "Строгая айдентика: Piazzolla + Inter, тёмно-синий, пергамент и бордо"
+      ],
+      "en": [
+        "Presentation through process and commitments, no “won cases” or promised outcomes",
+        "A practice page with dispute stages and the price of each",
+        "An interactive documents checklist with a print version",
+        "The checklist feeds the consultation booking",
+        "A strict identity: Piazzolla + Inter, navy, parchment and burgundy"
+      ]
+    },
+    "provenance": {
+      "type": "original",
+      "ru": "Собственная разработка MicroStudio. Шрифты Piazzolla и Inter — SIL OFL 1.1.",
+      "en": "Built from scratch by MicroStudio. Piazzolla and Inter fonts are SIL OFL 1.1.",
+      "assets": [
+        {
+          "name": "Piazzolla",
+          "license": "OFL-1.1",
+          "source": "https://github.com/huertatipografica/piazzolla"
+        },
+        {
+          "name": "Inter",
+          "license": "OFL-1.1",
+          "source": "https://github.com/rsms/inter"
+        }
+      ]
+    },
+    "client": null,
+    "demoUrl": "https://ms-ordo-legal.vercel.app",
+    "hosting": "showcase",
+    "publishedAt": "2026-10-19",
+    "verifiedAt": "2026-10-19",
+    "featuredRank": 21,
+    "language": "ru",
+    "mobileFirst": false,
+    "images": {
+      "desktop": {
+        "src": "/portfolio/ordo-legal/desktop.webp",
+        "width": 1440,
+        "height": 900
+      },
+      "mobile": {
+        "src": "/portfolio/ordo-legal/mobile.webp",
+        "width": 780,
+        "height": 1688
+      },
+      "gallery": [
+        {
+          "src": "/portfolio/ordo-legal/documents.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Чек-лист документов к встрече",
+            "en": "Documents checklist for the meeting"
+          }
+        },
+        {
+          "src": "/portfolio/ordo-legal/business.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Практика: этапы и стоимость",
+            "en": "Practice: stages and prices"
+          }
+        },
+        {
+          "src": "/portfolio/ordo-legal/consult.webp",
+          "width": 780,
+          "height": 1688,
+          "viewport": "mobile",
+          "alt": {
+            "ru": "Запись на консультацию",
+            "en": "Consultation booking"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "slug": "bugu-coffee",
+    "workType": "demo",
+    "format": "landing",
+    "industry": "food-travel-realty",
+    "niche": {
+      "ru": "Кофейня",
+      "en": "Coffee shop"
+    },
+    "title": {
+      "ru": "Бугу — кофейня",
+      "en": "Bugu — coffee shop"
+    },
+    "summary": {
+      "ru": "Лендинг кофейни: меню-доска, конструктор напитка с ценой, предзаказ ко времени и карта штампов.",
+      "en": "Coffee shop landing: chalkboard menu, drink builder with live price, pre-order for a pickup time and a stamp card."
+    },
+    "problem": {
+      "ru": "Утром гости кофейни не хотят стоять в очереди. Лендинг даёт собрать напиток, выбрать время и забрать заказ у окна выдачи.",
+      "en": "In the morning coffee customers don't want to queue. The landing page lets them build a drink, pick a time and collect it at the pickup window."
+    },
+    "scenario": {
+      "ru": "Выбрать напиток, размер, молоко и добавки → добавить в заказ → второй напиток → время выдачи → имя → демо-предзаказ и штамп.",
+      "en": "Pick a drink, size, milk and extras → add to order → a second drink → pickup time → name → demo pre-order and a stamp."
+    },
+    "features": [
+      {
+        "ru": "Конструктор напитка: размер, молоко, добавки и правила (без молока для чёрного кофе)",
+        "en": "Drink builder: size, milk, extras and rules (no milk for black coffee)",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Время выдачи с шагом 10 минут от текущего момента",
+        "en": "Pickup times in 10-minute steps from now",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Карта штампов «каждый седьмой в подарок»",
+        "en": "A stamp card: every seventh drink free",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Экран заказов для бариста и онлайн-оплата",
+        "en": "Barista order screen and online payment",
+        "kind": "missing-integration"
+      }
+    ],
+    "limits": {
+      "ru": "Кофейня и цены вымышлены; предзаказ и штампы хранятся только в браузере.",
+      "en": "The coffee shop and prices are fictional; the pre-order and stamps stay in the browser."
+    },
+    "studio": {
+      "ru": [
+        "Тёплая айдентика: Yanone Kaffeesatz, крафт и меловая доска меню",
+        "Конструктор напитка с живой ценой и правилами совместимости",
+        "Чек заказа, который собирается по ходу выбора",
+        "Предзаказ ко времени с проверкой и честным демо-состоянием",
+        "Карта лояльности со штампами за заказы"
+      ],
+      "en": [
+        "A warm identity: Yanone Kaffeesatz, kraft paper and a chalkboard menu",
+        "A drink builder with a live price and compatibility rules",
+        "An order ticket that builds up as you choose",
+        "Pre-order for a time with validation and an honest demo state",
+        "A loyalty stamp card for orders"
+      ]
+    },
+    "provenance": {
+      "type": "original",
+      "ru": "Собственная разработка MicroStudio. Шрифты Yanone Kaffeesatz и Sofia Sans — SIL OFL 1.1; иллюстрации — SVG студии.",
+      "en": "Built from scratch by MicroStudio. Yanone Kaffeesatz and Sofia Sans fonts are SIL OFL 1.1; illustrations are the studio's SVG.",
+      "assets": [
+        {
+          "name": "Yanone Kaffeesatz",
+          "license": "OFL-1.1",
+          "source": "https://github.com/alexeiva/yanonekaffeesatz"
+        },
+        {
+          "name": "Sofia Sans",
+          "license": "OFL-1.1",
+          "source": "https://github.com/lettersoup/Sofia-Sans"
+        }
+      ]
+    },
+    "client": null,
+    "demoUrl": "https://ms-bugu-coffee.vercel.app",
+    "hosting": "showcase",
+    "publishedAt": "2026-10-19",
+    "verifiedAt": "2026-10-19",
+    "featuredRank": 22,
+    "language": "ru",
+    "mobileFirst": false,
+    "images": {
+      "desktop": {
+        "src": "/portfolio/bugu-coffee/desktop.webp",
+        "width": 1440,
+        "height": 900
+      },
+      "mobile": {
+        "src": "/portfolio/bugu-coffee/mobile.webp",
+        "width": 780,
+        "height": 1688
+      },
+      "gallery": [
+        {
+          "src": "/portfolio/bugu-coffee/builder.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Конструктор напитка и чек",
+            "en": "Drink builder and order ticket"
+          }
+        },
+        {
+          "src": "/portfolio/bugu-coffee/menu.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Меню-доска",
+            "en": "Chalkboard menu"
+          }
+        },
+        {
+          "src": "/portfolio/bugu-coffee/card.webp",
+          "width": 780,
+          "height": 1688,
+          "viewport": "mobile",
+          "alt": {
+            "ru": "Предзаказ на телефоне",
+            "en": "Pre-order on a phone"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "slug": "kampa-warehouse",
+    "workType": "demo",
+    "format": "app",
+    "industry": "products",
+    "niche": {
+      "ru": "Управление складом",
+      "en": "Warehouse management"
+    },
+    "title": {
+      "ru": "Кампа — складской учёт",
+      "en": "Kampa — warehouse management"
+    },
+    "summary": {
+      "ru": "Складской учёт оптовой компании: остатки по двум складам, приход, отгрузка, перемещение, журнал и инвентаризация.",
+      "en": "Wholesale warehouse app: stock across two warehouses, receipts, shipments, transfers, a journal and stocktaking."
+    },
+    "problem": {
+      "ru": "Оптовику важно знать, сколько товара на каждом складе, и не отгрузить то, чего нет. Сервис проводит документы движения, не даёт уйти в минус и предупреждает о низком остатке.",
+      "en": "A wholesaler needs to know stock in each warehouse and never ship what isn't there. The app posts movement documents, prevents negative stock and warns about low levels."
+    },
+    "scenario": {
+      "ru": "Найти позицию ниже минимума → оформить приход → отгрузить больше остатка и получить ошибку → перемещение между складами → инвентаризация с расхождением → журнал → сброс.",
+      "en": "Find an item below minimum → post a receipt → try to ship more than stock and get an error → transfer between warehouses → stocktake with a discrepancy → journal → reset."
+    },
+    "features": [
+      {
+        "ru": "Документы прихода, отгрузки и перемещения с несколькими строками",
+        "en": "Multi-line receipt, shipment and transfer documents",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Запрет отрицательных остатков и предупреждения о минимуме",
+        "en": "No negative stock and minimum-level warnings",
+        "kind": "production-ready"
+      },
+      {
+        "ru": "Инвентаризация с подсветкой расхождений и корректировкой",
+        "en": "Stocktaking with highlighted discrepancies and an adjustment",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Сканер штрихкодов и интеграция с 1С",
+        "en": "Barcode scanner and 1C integration",
+        "kind": "missing-integration"
+      }
+    ],
+    "limits": {
+      "ru": "Один пользователь, данные в localStorage; товары и склады вымышлены.",
+      "en": "Single user, data in localStorage; items and warehouses are fictional."
+    },
+    "studio": {
+      "ru": [
+        "Модель остатков по складам и журнал проведённых документов",
+        "Проверки документа: количество, совпадение складов, нехватка товара",
+        "Инвентаризация с расчётом разницы на лету",
+        "Панель предупреждений о низком остатке со ссылкой на приход",
+        "Технический интерфейс на шрифте Tektur с плотными таблицами"
+      ],
+      "en": [
+        "A per-warehouse stock model and a journal of posted documents",
+        "Document checks: quantity, same warehouse, insufficient stock",
+        "Stocktaking with live difference calculation",
+        "A low-stock alert panel linking to a receipt",
+        "A technical Tektur interface with dense tables"
+      ]
+    },
+    "provenance": {
+      "type": "original",
+      "ru": "Собственная разработка MicroStudio без внешней основы. Шрифты Tektur и Golos Text — SIL OFL 1.1.",
+      "en": "Built from scratch by MicroStudio. Tektur and Golos Text fonts are SIL OFL 1.1.",
+      "assets": [
+        {
+          "name": "Tektur",
+          "license": "OFL-1.1",
+          "source": "https://github.com/hyvyys/Tektur"
+        },
+        {
+          "name": "Golos Text",
+          "license": "OFL-1.1",
+          "source": "https://github.com/googlefonts/golos-text"
+        }
+      ]
+    },
+    "client": null,
+    "demoUrl": "https://ms-kampa-warehouse.vercel.app",
+    "hosting": "showcase",
+    "publishedAt": "2026-10-19",
+    "verifiedAt": "2026-10-19",
+    "featuredRank": 23,
+    "language": "ru",
+    "mobileFirst": false,
+    "images": {
+      "desktop": {
+        "src": "/portfolio/kampa-warehouse/desktop.webp",
+        "width": 1440,
+        "height": 900
+      },
+      "mobile": {
+        "src": "/portfolio/kampa-warehouse/mobile.webp",
+        "width": 780,
+        "height": 1688
+      },
+      "gallery": [
+        {
+          "src": "/portfolio/kampa-warehouse/doc.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Документ прихода",
+            "en": "Receipt document"
+          }
+        },
+        {
+          "src": "/portfolio/kampa-warehouse/log.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Журнал движений",
+            "en": "Movement journal"
+          }
+        },
+        {
+          "src": "/portfolio/kampa-warehouse/count.webp",
+          "width": 780,
+          "height": 1688,
+          "viewport": "mobile",
+          "alt": {
+            "ru": "Инвентаризация на телефоне",
+            "en": "Stocktaking on a phone"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "slug": "kumush-jewelry",
+    "workType": "demo",
+    "format": "shop",
+    "industry": "commerce",
+    "niche": {
+      "ru": "Ювелирные украшения",
+      "en": "Jewelry"
+    },
+    "title": {
+      "ru": "Күмүш — ювелирная мастерская",
+      "en": "Kumush — jewelry workshop"
+    },
+    "summary": {
+      "ru": "Магазин украшений на заказ: выбор металла и размера, гравировка с живым превью, подборщик размера кольца и оформление с доставкой.",
+      "en": "Made-to-order jewelry store: metal and size choice, engraving with a live preview, a ring size finder and checkout with delivery."
+    },
+    "problem": {
+      "ru": "Украшения покупают в подарок и боятся ошибиться с размером, а переписка о гравировке и пробе тянется днями. Магазин отвечает на эти вопросы на странице изделия.",
+      "en": "Jewelry is often a gift, and buyers fear getting the size wrong, while chats about engraving and metal drag on for days. The store answers those questions right on the product page."
+    },
+    "scenario": {
+      "ru": "Кольцо → без размера не добавить → «Как узнать размер?»: мерка 54 мм → размер 17 (+½ на сустав) → назад к кольцу с выбранным размером → металл, гравировка с превью, упаковка → корзина → курьер с адресом → демо-заказ.",
+      "en": "Ring → can't add without a size → \"How to find my size?\": 54 mm → size 17 (+½ for knuckles) → back to the ring with the size set → metal, engraving preview, gift box → bag → courier with an address → demo order."
+    },
+    "features": [
+      {
+        "ru": "Подборщик размера кольца по окружности пальца или диаметру своего кольца с возвратом к изделию",
+        "en": "Ring size finder by finger circumference or an existing ring's diameter, with a return to the product",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Конфигуратор изделия: металл с пересчётом цены и картинки, гравировка с превью и проверкой символов",
+        "en": "Product configurator: metal with price and image updates, engraving with a preview and character checks",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Фильтры каталога по типу, металлу, цене и гравировке в URL",
+        "en": "Catalogue filters by type, metal, price and engraving in the URL",
+        "kind": "production-ready"
+      },
+      {
+        "ru": "Онлайн-предоплата и уведомление мастеру",
+        "en": "Online prepayment and a notification to the jeweller",
+        "kind": "missing-integration"
+      }
+    ],
+    "limits": {
+      "ru": "Мастерская, изделия и цены вымышлены; оплата не проводится, заказ хранится только в браузере.",
+      "en": "The workshop, items and prices are fictional; no payment is taken and the order stays in the browser."
+    },
+    "studio": {
+      "ru": [
+        "Линейка из 12 изделий в трёх металлах и 26 иллюстраций, которые генерирует скрипт",
+        "Подборщик размера с защитой от ошибочной мерки и запасом на сустав",
+        "Гравировка с превью, доплатой и сроком изготовления +2 дня",
+        "Корзина-шторка с удержанием фокуса и предупреждением о возврате гравированных изделий",
+        "Тёмно-слоновая айдентика: Lora italic + Jost"
+      ],
+      "en": [
+        "A 12-item line in three metals with 26 script-generated illustrations",
+        "A size finder that catches wrong measurements and adds knuckle allowance",
+        "Engraving with a preview, surcharge and a +2-day lead time",
+        "A slide-in bag with focus trapping and a no-returns note for engraved items",
+        "Ink-and-ivory identity: Lora italic + Jost"
+      ]
+    },
+    "provenance": {
+      "type": "original",
+      "ru": "Собственная разработка MicroStudio. Шрифты Lora и Jost — SIL OFL 1.1; иллюстрации генерирует tools/art.mjs.",
+      "en": "Built from scratch by MicroStudio. Lora and Jost fonts are SIL OFL 1.1; illustrations are generated by tools/art.mjs.",
+      "assets": [
+        {
+          "name": "Lora",
+          "license": "OFL-1.1",
+          "source": "https://github.com/cyrealtype/Lora-Cyrillic"
+        },
+        {
+          "name": "Jost",
+          "license": "OFL-1.1",
+          "source": "https://github.com/indestructible-type/Jost"
+        }
+      ]
+    },
+    "client": null,
+    "demoUrl": "https://ms-kumush-jewelry.vercel.app",
+    "hosting": "showcase",
+    "publishedAt": "2026-10-19",
+    "verifiedAt": "2026-10-19",
+    "featuredRank": 24,
+    "language": "ru",
+    "mobileFirst": false,
+    "images": {
+      "desktop": {
+        "src": "/portfolio/kumush-jewelry/desktop.webp",
+        "width": 1440,
+        "height": 900
+      },
+      "mobile": {
+        "src": "/portfolio/kumush-jewelry/mobile.webp",
+        "width": 780,
+        "height": 1688
+      },
+      "gallery": [
+        {
+          "src": "/portfolio/kumush-jewelry/product.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Кольцо с выбором металла и превью гравировки",
+            "en": "A ring with metal choice and engraving preview"
+          }
+        },
+        {
+          "src": "/portfolio/kumush-jewelry/size.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Подборщик размера кольца",
+            "en": "Ring size finder"
+          }
+        },
+        {
+          "src": "/portfolio/kumush-jewelry/catalog.webp",
+          "width": 780,
+          "height": 1688,
+          "viewport": "mobile",
+          "alt": {
+            "ru": "Каталог на телефоне",
+            "en": "Catalogue on a phone"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "slug": "soz-language",
+    "workType": "demo",
+    "format": "landing",
+    "industry": "education",
+    "niche": {
+      "ru": "Языковая школа",
+      "en": "Language school"
+    },
+    "title": {
+      "ru": "Сөз — языковая школа",
+      "en": "Soz — language school"
+    },
+    "summary": {
+      "ru": "Лендинг языковой школы: тест уровня английского, расписание групп со свободными местами, калькулятор стоимости и запись на пробный урок.",
+      "en": "Language school landing: an English level test, a group schedule with open seats, a price calculator and a trial lesson sign-up."
+    },
+    "problem": {
+      "ru": "Человек не знает свой уровень и боится попасть в неподходящую группу, а администратор тратит время на одинаковые вопросы о ценах и расписании. Лендинг отвечает на них до первого звонка.",
+      "en": "People don't know their level and fear landing in the wrong group, while the admin answers the same price and schedule questions over and over. The landing answers them before the first call."
+    },
+    "scenario": {
+      "ru": "Тест из 10 вопросов → уровень B1 → «Подходящие группы» фильтрует расписание → полная группа уходит в лист ожидания → калькулятор: 3 месяца + студенческая скидка → запись на пробный урок с уровнем из теста → демо-заявка.",
+      "en": "10-question test → level B1 → \"Matching groups\" filters the schedule → a full group goes to the waitlist → calculator: 3 months + student discount → trial sign-up with the test level → demo request."
+    },
+    "features": [
+      {
+        "ru": "Тест уровня с прогрессом, возвратом к вопросу и сохранением результата",
+        "en": "Level test with progress, going back and a saved result",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Расписание групп с фильтрами, счётчиком мест и листом ожидания",
+        "en": "Group schedule with filters, seat counters and a waitlist",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Калькулятор стоимости со скидками, которые не суммируются",
+        "en": "Price calculator with non-stacking discounts",
+        "kind": "production-ready"
+      },
+      {
+        "ru": "Синхронизация мест с CRM школы и уведомления в WhatsApp",
+        "en": "Seat sync with the school CRM and WhatsApp notifications",
+        "kind": "missing-integration"
+      }
+    ],
+    "limits": {
+      "ru": "Школа, группы и цены вымышлены; тест ориентировочный, заявка хранится только в браузере.",
+      "en": "The school, groups and prices are fictional; the test is indicative and the request stays in the browser."
+    },
+    "studio": {
+      "ru": [
+        "Тест из 10 вопросов с нарастающей сложностью и шкалой A1–B2",
+        "Связка «тест → расписание → заявка»: уровень и группа подставляются сами",
+        "13 групп на четырёх языках со счётчиком мест и листом ожидания",
+        "Калькулятор с правилами скидок и ценой за занятие",
+        "Дружелюбная айдентика: Comfortaa + Mulish, облачка приветствий"
+      ],
+      "en": [
+        "A 10-question test with rising difficulty and an A1–B2 scale",
+        "A test → schedule → sign-up chain: level and group are filled in automatically",
+        "13 groups in four languages with seat counters and a waitlist",
+        "A calculator with discount rules and a per-lesson price",
+        "A friendly identity: Comfortaa + Mulish, greeting speech bubbles"
+      ]
+    },
+    "provenance": {
+      "type": "original",
+      "ru": "Собственная разработка MicroStudio. Шрифты Comfortaa и Mulish — SIL OFL 1.1; графика — CSS.",
+      "en": "Built from scratch by MicroStudio. Comfortaa and Mulish fonts are SIL OFL 1.1; graphics are CSS.",
+      "assets": [
+        {
+          "name": "Comfortaa",
+          "license": "OFL-1.1",
+          "source": "https://github.com/googlefonts/comfortaa"
+        },
+        {
+          "name": "Mulish",
+          "license": "OFL-1.1",
+          "source": "https://github.com/googlefonts/mulish"
+        }
+      ]
+    },
+    "client": null,
+    "demoUrl": "https://ms-soz-language.vercel.app",
+    "hosting": "showcase",
+    "publishedAt": "2026-10-19",
+    "verifiedAt": "2026-10-19",
+    "featuredRank": 25,
+    "language": "ru",
+    "mobileFirst": false,
+    "images": {
+      "desktop": {
+        "src": "/portfolio/soz-language/desktop.webp",
+        "width": 1440,
+        "height": 900
+      },
+      "mobile": {
+        "src": "/portfolio/soz-language/mobile.webp",
+        "width": 780,
+        "height": 1688
+      },
+      "gallery": [
+        {
+          "src": "/portfolio/soz-language/test.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Тест уровня английского",
+            "en": "English level test"
+          }
+        },
+        {
+          "src": "/portfolio/soz-language/schedule.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Расписание групп со свободными местами",
+            "en": "Group schedule with open seats"
+          }
+        },
+        {
+          "src": "/portfolio/soz-language/price.webp",
+          "width": 780,
+          "height": 1688,
+          "viewport": "mobile",
+          "alt": {
+            "ru": "Калькулятор стоимости на телефоне",
+            "en": "Price calculator on a phone"
+          }
+        }
+      ]
+    }
   }
 ]

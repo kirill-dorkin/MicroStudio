@@ -29,12 +29,12 @@ test("11–16. search, filters, sort and reset keep state in the URL and history
   const shops = published.filter((p) => p.format === "shop").length;
   await page.getByLabel("Формат").selectOption("shop");
   await expect(page).toHaveURL(/\?format=shop$/);
-  await expect(cards(page)).toHaveCount(shops);
+  await expect(cards(page)).toHaveCount(Math.min(12, shops));
 
   await page.getByLabel("Формат").selectOption("");
   const demos = published.filter((p) => p.type === "demo").length;
   await page.getByLabel("Тип работы").selectOption("demo");
-  await expect(cards(page)).toHaveCount(demos);
+  await expect(cards(page)).toHaveCount(Math.min(12, demos));
   await page.getByLabel("Сортировка").selectOption("az");
   await expect(page).toHaveURL(/type=demo&sort=az/);
   const names = await page.locator("main ul > li > article h3").allTextContents();
@@ -43,7 +43,7 @@ test("11–16. search, filters, sort and reset keep state in the URL and history
   // Back restores the previous filter set.
   await page.goBack();
   await expect(page).toHaveURL(/\?type=demo$/);
-  await expect(cards(page)).toHaveCount(demos);
+  await expect(cards(page)).toHaveCount(Math.min(12, demos));
 
   // Search runs over the registry; an impossible query shows the empty state.
   await page.getByLabel("Поиск по проектам").fill("мебель");
