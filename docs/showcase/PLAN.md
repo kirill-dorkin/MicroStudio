@@ -16,7 +16,7 @@
 | 5 | Языковая школа | soz-language | education | ✅ |
 | 6 | Сервис электроники (клиент) | best-electronics-link | local-services | ✅ |
 | 7 | Онлайн-запись (свой продукт) | tikitaki | products | ✅ |
-| 8 | Пекарня с предзаказом | — | food-travel-realty | ⏳ |
+| 8 | Пекарня с предзаказом | kolos-bakery | food-travel-realty | ✅ |
 | 9 | Онлайн-курс | — | education | ⏳ |
 | 10 | Кейтеринг / мероприятия | — | local-services | ⏳ |
 
@@ -28,7 +28,7 @@
 | 3 | Автосервис | garage-312 | local-services | ✅ |
 | 4 | Ресторан | kazan-ogon | food-travel-realty | ✅ |
 | 5 | Юридическая практика | ordo-legal | local-services | ✅ |
-| 6 | Бутик-отель | — | food-travel-realty | ⏳ |
+| 6 | Бутик-отель | archa-hotel | food-travel-realty | ✅ |
 | 7 | Туроператор | — | food-travel-realty | ⏳ |
 | 8 | IT-курсы | — | education | ⏳ |
 | 9 | Детский центр | — | education | ⏳ |
@@ -45,7 +45,7 @@
 | 2 | Электроника | volt-electronics | commerce | ✅ |
 | 3 | Косметика | aruu-cosmetics | commerce | ✅ |
 | 4 | Ювелирные украшения | kumush-jewelry | commerce | ✅ |
-| 5 | Одежда | — | commerce | ⏳ |
+| 5 | Одежда | kiyim-store | commerce | ✅ |
 | 6 | Спорттовары | — | commerce | ⏳ |
 | 7 | Фермерские продукты | — | commerce | ⏳ |
 | 8 | B2B-оборудование | — | b2b | ⏳ |
@@ -57,7 +57,7 @@
 | 2 | Управление проектами | ritm-projects | products | ✅ |
 | 3 | Финансовая панель | saldo-finance | products | ✅ |
 | 4 | Склад | kampa-warehouse | products | ✅ |
-| 5 | Запись в салон красоты | — | local-services | ⏳ |
+| 5 | Журнал записи салона красоты | gulzar-salon | local-services | ✅ |
 | 6 | Доставка еды | — | food-travel-realty | ⏳ |
 | 7 | Поиск недвижимости | — | food-travel-realty | ⏳ |
 | 8 | Обучающая платформа (LMS) | — | education | ⏳ |
@@ -69,7 +69,7 @@
 |---|------|--------|---------|--------|
 | 1 | Культурное событие | toolor-jazz | creative | ✅ |
 | 2 | Фотостудия (бронирование) | svet24-studio | creative | ✅ |
-| 3 | Глэмпинг (бронирование домиков) | — | food-travel-realty | ⏳ |
+| 3 | Глэмпинг (карта лагеря) | jailoo-camp | food-travel-realty | ✅ |
 | 4 | Портфолио эксперта | — | creative | ⏳ |
 | 5 | Архитектурное бюро | — | creative | ⏳ |
 | 6 | Лукбук бренда одежды | — | creative | ⏳ |

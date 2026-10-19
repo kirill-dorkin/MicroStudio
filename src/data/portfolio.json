@@ -2945,5 +2945,690 @@
         }
       ]
     }
+  },
+  {
+    "slug": "kolos-bakery",
+    "workType": "demo",
+    "format": "landing",
+    "industry": "food-travel-realty",
+    "niche": {
+      "ru": "Пекарня",
+      "en": "Bakery"
+    },
+    "title": {
+      "ru": "Колос — пекарня у дома",
+      "en": "Kolos — neighbourhood bakery"
+    },
+    "summary": {
+      "ru": "Лендинг пекарни: расписание выпечки с подсветкой «тёплое сейчас», предзаказ на завтра с учётом времени выпечки и конструктор торта с расчётом веса.",
+      "en": "Bakery landing: a bake schedule that highlights what's warm now, next-day preorders that respect bake times and a cake builder that calculates weight."
+    },
+    "problem": {
+      "ru": "Любимый хлеб заканчивается к обеду, а заказы тортов теряются в переписке. Сайт показывает, когда что печётся, принимает предзаказ до 20:00 и собирает торт с ценой без звонка.",
+      "en": "Favourite loaves sell out by lunch and cake orders get lost in chats. The site shows bake times, takes preorders until 8 pm and builds a priced cake without a call."
+    },
+    "scenario": {
+      "ru": "Днём: видно, что тёплое сейчас и через сколько следующая выпечка → в заказ фокачча и хлеб → утренние слоты закрыты, потому что фокачча будет в 12:00 → 12:30 → демо-предзаказ. Торт на 30 гостей: 4,5 кг, два яруса, вишня, надпись → дата раньше чем через 2 дня отклоняется → демо-заявка.",
+      "en": "Midday: see what's warm and when the next bake is → add focaccia and bread → morning slots are locked because focaccia is out at 12:00 → 12:30 → demo preorder. Cake for 30: 4.5 kg, two tiers, cherry, inscription → a date under 2 days away is rejected → demo request."
+    },
+    "features": [
+      {
+        "ru": "Расписание выпечки, «тёплое сейчас» и обратный отсчёт до следующей печи",
+        "en": "Bake schedule, 'warm now' and a countdown to the next bake",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Предзаказ с отсечкой в 20:00 и слотами, которые учитывают время выпечки",
+        "en": "Preorders with an 8 pm cutoff and slots that respect bake times",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Конструктор торта: вес по числу гостей, ярусы, начинка, надпись, превью",
+        "en": "Cake builder: weight by guests, tiers, filling, inscription, preview",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Список заказов для пекаря и предоплата",
+        "en": "Order list for the baker and prepayment",
+        "kind": "missing-integration"
+      }
+    ],
+    "limits": {
+      "ru": "Пекарня, ассортимент и цены вымышлены; заказы хранятся только в браузере. Время можно подставить параметром ?now= для проверки.",
+      "en": "The bakery, range and prices are fictional; orders stay in the browser. Time can be overridden with ?now= for testing."
+    },
+    "studio": {
+      "ru": [
+        "Логика дня пекарни: шесть выпечек, отсечка заказов, закрытые слоты",
+        "Конструктор торта с расчётом веса, ярусов и предоплаты",
+        "SVG-превью торта, которое меняется вместе с выбором",
+        "Параметр ?now= для проверки сценариев в любое время суток",
+        "Тёплая айдентика: Podkova + Ubuntu Sans, ржаной и пшеничный"
+      ],
+      "en": [
+        "Bakery day logic: six bakes, an order cutoff, locked slots",
+        "A cake builder with weight, tiers and prepayment",
+        "An SVG cake preview that follows the choices",
+        "A ?now= parameter to test scenarios at any time of day",
+        "Warm identity: Podkova + Ubuntu Sans, rye and wheat"
+      ]
+    },
+    "provenance": {
+      "type": "original",
+      "ru": "Собственная разработка MicroStudio. Шрифты Podkova и Ubuntu Sans — SIL OFL 1.1 / Ubuntu Font Licence; графика — CSS и SVG.",
+      "en": "Built from scratch by MicroStudio. Podkova (SIL OFL 1.1) and Ubuntu Sans (Ubuntu Font Licence) fonts; graphics are CSS and SVG.",
+      "assets": [
+        {
+          "name": "Podkova",
+          "license": "OFL-1.1",
+          "source": "https://github.com/cyrealtype/Podkova"
+        },
+        {
+          "name": "Ubuntu Sans",
+          "license": "Ubuntu Font Licence 1.0",
+          "source": "https://github.com/canonical/Ubuntu-Sans-fonts"
+        }
+      ]
+    },
+    "client": null,
+    "demoUrl": "https://ms-kolos-bakery.vercel.app",
+    "hosting": "showcase",
+    "publishedAt": "2026-10-19",
+    "verifiedAt": "2026-10-19",
+    "featuredRank": 26,
+    "language": "ru",
+    "mobileFirst": false,
+    "images": {
+      "desktop": {
+        "src": "/portfolio/kolos-bakery/desktop.webp",
+        "width": 1440,
+        "height": 900
+      },
+      "mobile": {
+        "src": "/portfolio/kolos-bakery/mobile.webp",
+        "width": 780,
+        "height": 1688
+      },
+      "gallery": [
+        {
+          "src": "/portfolio/kolos-bakery/preorder.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Предзаказ с закрытыми ранними слотами",
+            "en": "Preorder with early slots locked"
+          }
+        },
+        {
+          "src": "/portfolio/kolos-bakery/cake.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Конструктор торта",
+            "en": "Cake builder"
+          }
+        },
+        {
+          "src": "/portfolio/kolos-bakery/oven.webp",
+          "width": 780,
+          "height": 1688,
+          "viewport": "mobile",
+          "alt": {
+            "ru": "Расписание выпечки на телефоне",
+            "en": "Bake schedule on a phone"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "slug": "archa-hotel",
+    "workType": "demo",
+    "format": "corporate",
+    "industry": "food-travel-realty",
+    "niche": {
+      "ru": "Бутик-отель",
+      "en": "Boutique hotel"
+    },
+    "title": {
+      "ru": "Арча — бутик-отель в горах",
+      "en": "Archa — mountain boutique hotel"
+    },
+    "summary": {
+      "ru": "Сайт бутик-отеля: номера и сравнение, календарь свободных дат с сезонными ценами, правило минимального проживания и бронирование с завтраками и трансфером.",
+      "en": "Boutique hotel site: rooms and a comparison table, an availability calendar with seasonal prices, a minimum-stay rule and booking with breakfast and transfer."
+    },
+    "problem": {
+      "ru": "Маленький отель теряет гостей на агрегаторах из-за комиссий, а на своём сайте нельзя увидеть свободные даты. Здесь гость сразу видит занятость, цену по сезонам и бронирует напрямую.",
+      "en": "A small hotel loses margin to booking platforms, yet its own site can't show free dates. Here guests see availability and seasonal prices and book directly."
+    },
+    "scenario": {
+      "ru": "Номер «Стандарт» → календарь: занятая ночь в диапазоне — отказ, одна ночь с пятницы — отказ, 23–26 октября — 12 600 сом → бронирование: завтраки и трансфер, смена номера пересчитывает цену и лимит гостей → демо-бронь. С главной: 4 гостя → предлагается семейный номер.",
+      "en": "Standard room → calendar: a busy night inside the range is rejected, a single Friday night is rejected, 23–26 Oct costs 12,600 som → booking: breakfast and transfer, switching room recalculates price and guest limit → demo booking. From home: 4 guests → the family room is suggested."
+    },
+    "features": [
+      {
+        "ru": "Календарь занятости с выбором диапазона, сезонными ценами и правилом минимум двух ночей в выходные",
+        "en": "Availability calendar with range picking, seasonal prices and a two-night weekend minimum",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Бронирование с пересчётом по номеру, гостям, завтракам и трансферу",
+        "en": "Booking that recalculates by room, guests, breakfast and transfer",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Сравнение номеров и страница каждого номера",
+        "en": "Room comparison and a page for every room",
+        "kind": "production-ready"
+      },
+      {
+        "ru": "Синхронизация занятости с channel manager и предоплата",
+        "en": "Availability sync with a channel manager and prepayment",
+        "kind": "missing-integration"
+      }
+    ],
+    "limits": {
+      "ru": "Отель, номера, цены и занятость вымышлены (занятость псевдослучайная, одинаковая для всех); бронь хранится только в браузере, адрес не указан.",
+      "en": "The hotel, rooms, prices and occupancy are fictional (pseudo-random, the same for everyone); the booking stays in the browser and no address is given."
+    },
+    "studio": {
+      "ru": [
+        "Информационная архитектура: главная, номера со сравнением, страницы номеров, об отеле, бронирование",
+        "Календарь с правилами: прошедшие и занятые ночи, выезд в занятый день, сезоны, минимум ночей",
+        "Бронирование, которое принимает даты из календаря и с главной и подбирает номер по числу гостей",
+        "Иллюстрации номеров и пейзажа, которые генерирует скрипт",
+        "Горная айдентика: EB Garamond + Roboto Flex, хвоя и дерево"
+      ],
+      "en": [
+        "Information architecture: home, rooms with comparison, room pages, about, booking",
+        "A calendar with rules: past and busy nights, check-out on a busy day, seasons, minimum nights",
+        "Booking that accepts dates from the calendar and the home form and picks a room by party size",
+        "Script-generated room and landscape illustrations",
+        "Mountain identity: EB Garamond + Roboto Flex, pine and wood"
+      ]
+    },
+    "provenance": {
+      "type": "original",
+      "ru": "Собственная разработка MicroStudio. Шрифты EB Garamond и Roboto Flex — SIL OFL 1.1; иллюстрации генерирует tools/art.mjs.",
+      "en": "Built from scratch by MicroStudio. EB Garamond and Roboto Flex fonts are SIL OFL 1.1; illustrations are generated by tools/art.mjs.",
+      "assets": [
+        {
+          "name": "EB Garamond",
+          "license": "OFL-1.1",
+          "source": "https://github.com/octaviopardo/EBGaramond12"
+        },
+        {
+          "name": "Roboto Flex",
+          "license": "OFL-1.1",
+          "source": "https://github.com/googlefonts/roboto-flex"
+        }
+      ]
+    },
+    "client": null,
+    "demoUrl": "https://ms-archa-hotel.vercel.app",
+    "hosting": "showcase",
+    "publishedAt": "2026-10-19",
+    "verifiedAt": "2026-10-19",
+    "featuredRank": 27,
+    "language": "ru",
+    "mobileFirst": false,
+    "images": {
+      "desktop": {
+        "src": "/portfolio/archa-hotel/desktop.webp",
+        "width": 1440,
+        "height": 900
+      },
+      "mobile": {
+        "src": "/portfolio/archa-hotel/mobile.webp",
+        "width": 780,
+        "height": 1688
+      },
+      "gallery": [
+        {
+          "src": "/portfolio/archa-hotel/calendar.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Календарь свободных дат с расчётом стоимости",
+            "en": "Availability calendar with a price breakdown"
+          }
+        },
+        {
+          "src": "/portfolio/archa-hotel/rooms.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Сравнение номеров",
+            "en": "Room comparison"
+          }
+        },
+        {
+          "src": "/portfolio/archa-hotel/booking.webp",
+          "width": 780,
+          "height": 1688,
+          "viewport": "mobile",
+          "alt": {
+            "ru": "Бронирование на телефоне",
+            "en": "Booking on a phone"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "slug": "gulzar-salon",
+    "workType": "demo",
+    "format": "app",
+    "industry": "local-services",
+    "niche": {
+      "ru": "Салон красоты",
+      "en": "Beauty salon"
+    },
+    "title": {
+      "ru": "Гүлзар — журнал записи салона",
+      "en": "Gulzar — salon booking journal"
+    },
+    "summary": {
+      "ru": "Веб-приложение для администратора салона красоты: расписание мастеров на день, запись без накладок с учётом обеда и навыков мастера, статусы визитов, выручка и карточки клиентов.",
+      "en": "A web app for a beauty salon front desk: the day's schedule by master, conflict-free booking that respects lunch breaks and skills, visit statuses, revenue and client cards."
+    },
+    "problem": {
+      "ru": "Запись в тетради или мессенджере приводит к накладкам, забытым клиентам и непонятной выручке за день. Журнал показывает загрузку мастеров и не даёт записать на занятое время.",
+      "en": "Paper or messenger booking causes double bookings, forgotten clients and unclear daily revenue. The journal shows each master's load and refuses overlapping bookings."
+    },
+    "scenario": {
+      "ru": "Свободное время у мастера → запись конфликтует с обедом и прошедшим временем → укладка в 12:15 → телефон узнаёт постоянную клиентку → запись на доске. Затем «Пришла» → «Оплачено» пересчитывает выручку, «Не пришла» и отмена. Карточка клиента показывает историю и новую запись.",
+      "en": "A free slot → the booking clashes with lunch and past time → a blow-dry at 12:15 → the phone recognises a regular → the visit appears on the board. Then Arrived → Paid updates revenue, a no-show and a cancellation. The client card shows history and the new visit."
+    },
+    "features": [
+      {
+        "ru": "Доска мастеров на день с обедами, выходными и линией текущего времени",
+        "en": "A day board of masters with lunch breaks, days off and a now-line",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Проверка пересечений, рабочего времени и навыков мастера при записи",
+        "en": "Checks for overlaps, opening hours and master skills when booking",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Статусы визита и выручка за день, карточка клиента с историей",
+        "en": "Visit statuses, daily revenue and a client card with history",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Онлайн-запись для клиентов и напоминания в WhatsApp",
+        "en": "Client self-booking and WhatsApp reminders",
+        "kind": "missing-integration"
+      }
+    ],
+    "limits": {
+      "ru": "Салон, мастера и клиенты вымышлены, записи генерируются; изменения хранятся только в браузере.",
+      "en": "The salon, masters and clients are fictional and visits are generated; changes stay in the browser."
+    },
+    "studio": {
+      "ru": [
+        "Сценарии администратора: запись, приход, оплата, неявка, отмена",
+        "Сетка дня на 4 мастера с шагом 15 минут и правилами занятости",
+        "Распознавание постоянных клиентов по телефону",
+        "Диалоги с удержанием фокуса и управлением с клавиатуры",
+        "Спокойная сливовая палитра и Open Sans для плотного интерфейса"
+      ],
+      "en": [
+        "Front-desk flows: book, arrive, pay, no-show, cancel",
+        "A day grid for 4 masters in 15-minute steps with occupancy rules",
+        "Recognising regular clients by phone number",
+        "Dialogs with focus trapping and keyboard control",
+        "A calm plum palette and Open Sans for a dense interface"
+      ]
+    },
+    "provenance": {
+      "type": "original",
+      "ru": "Собственная разработка MicroStudio. Шрифт Open Sans — SIL OFL 1.1.",
+      "en": "Built from scratch by MicroStudio. Open Sans font is SIL OFL 1.1.",
+      "assets": [
+        {
+          "name": "Open Sans",
+          "license": "OFL-1.1",
+          "source": "https://github.com/googlefonts/opensans"
+        }
+      ]
+    },
+    "client": null,
+    "demoUrl": "https://ms-gulzar-salon.vercel.app",
+    "hosting": "showcase",
+    "publishedAt": "2026-10-19",
+    "verifiedAt": "2026-10-19",
+    "featuredRank": 28,
+    "language": "ru",
+    "mobileFirst": false,
+    "images": {
+      "desktop": {
+        "src": "/portfolio/gulzar-salon/desktop.webp",
+        "width": 1440,
+        "height": 900
+      },
+      "mobile": {
+        "src": "/portfolio/gulzar-salon/mobile.webp",
+        "width": 780,
+        "height": 1688
+      },
+      "gallery": [
+        {
+          "src": "/portfolio/gulzar-salon/new.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Новая запись с проверкой времени",
+            "en": "A new booking with time checks"
+          }
+        },
+        {
+          "src": "/portfolio/gulzar-salon/clients.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Карточка клиента с историей",
+            "en": "Client card with history"
+          }
+        },
+        {
+          "src": "/portfolio/gulzar-salon/status.webp",
+          "width": 780,
+          "height": 1688,
+          "viewport": "mobile",
+          "alt": {
+            "ru": "Статус визита на телефоне",
+            "en": "Visit status on a phone"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "slug": "kiyim-store",
+    "workType": "demo",
+    "format": "shop",
+    "industry": "commerce",
+    "niche": {
+      "ru": "Одежда",
+      "en": "Clothing"
+    },
+    "title": {
+      "ru": "Kiyim — магазин одежды",
+      "en": "Kiyim — clothing store"
+    },
+    "summary": {
+      "ru": "Магазин одежды: фильтр «есть в моём размере», подбор размера по меркам с учётом кроя, подписка на поступление, образы со скидкой и шкала бесплатной доставки.",
+      "en": "Clothing store: an \"in my size\" filter, size advice from measurements that accounts for the cut, back-in-stock requests, discounted looks and a free-delivery meter."
+    },
+    "problem": {
+      "ru": "Одежду возвращают из-за размера, а покупатели уходят, увидев, что нужного размера нет. Магазин подсказывает размер для конкретной модели, честно показывает остатки и предлагает альтернативу.",
+      "en": "Clothes come back because of size, and shoppers leave when their size is gone. The store recommends a size per model, shows stock honestly and offers alternatives."
+    },
+    "scenario": {
+      "ru": "Пальто → размер L в графите закончился: предложен песочный, подписка на поступление → мерки: грудь 100 см → M для свободного кроя, S если «плотнее» → корзина не даёт взять больше остатка → свитер: «Добавить образ» даёт −10%, без шапки скидка пропадает → фильтры каталога → оформление с доставкой в регион.",
+      "en": "Coat → size L in graphite is sold out: sand is offered plus a back-in-stock request → measurements: chest 100 cm → M for the relaxed cut, S for a snug fit → the bag won't exceed stock → sweater: Add the look gives −10%, removing the hat drops it → catalogue filters → checkout with regional delivery."
+    },
+    "features": [
+      {
+        "ru": "Остатки по размеру и цвету, «последний», подписка на поступление",
+        "en": "Stock per size and colour, 'last one', back-in-stock requests",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Подбор размера по обхвату груди с учётом кроя модели и предпочтения посадки",
+        "en": "Size advice from chest measurement, the model's cut and fit preference",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Образы со скидкой 10%, пока в корзине весь образ; шкала бесплатной доставки",
+        "en": "10% off looks while the whole look is in the bag; a free-delivery meter",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Фильтр «есть в размере», цвет и категория в URL, избранное",
+        "en": "In-my-size, colour and category filters in the URL; a wishlist",
+        "kind": "production-ready"
+      },
+      {
+        "ru": "Учёт остатков в 1С/МойСклад и онлайн-оплата",
+        "en": "Stock sync with 1C/MoySklad and online payment",
+        "kind": "missing-integration"
+      }
+    ],
+    "limits": {
+      "ru": "Бренд, вещи, остатки и цены вымышлены; заказ и подписки хранятся только в браузере, уведомления не отправляются.",
+      "en": "The brand, items, stock and prices are fictional; orders and subscriptions stay in the browser and no notifications are sent."
+    },
+    "studio": {
+      "ru": [
+        "Модель данных: вещь × цвет × размер с остатками и кроем",
+        "Подборщик размера с размерной сеткой изделия для трёх типов кроя",
+        "Логика образа: подстановка ближайшего доступного размера и условная скидка",
+        "26 иллюстраций одежды с мотивом шырдака, которые генерирует скрипт",
+        "Строгая айдентика: Wix Madefor, графит, молочный и терракота"
+      ],
+      "en": [
+        "Data model: item × colour × size with stock and cut",
+        "A size advisor with garment measurements for three cuts",
+        "Look logic: nearest available size and a conditional discount",
+        "26 script-generated garment illustrations with a shyrdak motif",
+        "A strict identity: Wix Madefor, graphite, milk and terracotta"
+      ]
+    },
+    "provenance": {
+      "type": "original",
+      "ru": "Собственная разработка MicroStudio. Шрифты Wix Madefor Display и Text — SIL OFL 1.1; иллюстрации генерирует tools/art.mjs.",
+      "en": "Built from scratch by MicroStudio. Wix Madefor Display and Text fonts are SIL OFL 1.1; illustrations are generated by tools/art.mjs.",
+      "assets": [
+        {
+          "name": "Wix Madefor Display",
+          "license": "OFL-1.1",
+          "source": "https://github.com/wix-incubator/wixmadefor"
+        },
+        {
+          "name": "Wix Madefor Text",
+          "license": "OFL-1.1",
+          "source": "https://github.com/wix-incubator/wixmadefor"
+        }
+      ]
+    },
+    "client": null,
+    "demoUrl": "https://ms-kiyim-store.vercel.app",
+    "hosting": "showcase",
+    "publishedAt": "2026-10-19",
+    "verifiedAt": "2026-10-19",
+    "featuredRank": 29,
+    "language": "ru",
+    "mobileFirst": false,
+    "images": {
+      "desktop": {
+        "src": "/portfolio/kiyim-store/desktop.webp",
+        "width": 1440,
+        "height": 900
+      },
+      "mobile": {
+        "src": "/portfolio/kiyim-store/mobile.webp",
+        "width": 780,
+        "height": 1688
+      },
+      "gallery": [
+        {
+          "src": "/portfolio/kiyim-store/product.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Подбор размера по меркам",
+            "en": "Size advice from measurements"
+          }
+        },
+        {
+          "src": "/portfolio/kiyim-store/look.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Образ со скидкой в корзине",
+            "en": "A discounted look in the bag"
+          }
+        },
+        {
+          "src": "/portfolio/kiyim-store/catalog.webp",
+          "width": 780,
+          "height": 1688,
+          "viewport": "mobile",
+          "alt": {
+            "ru": "Каталог с фильтром размера на телефоне",
+            "en": "Catalogue with a size filter on a phone"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "slug": "jailoo-camp",
+    "workType": "demo",
+    "format": "special",
+    "industry": "food-travel-realty",
+    "niche": {
+      "ru": "Глэмпинг",
+      "en": "Glamping"
+    },
+    "title": {
+      "ru": "Жайлоо — глэмпинг у горного озера",
+      "en": "Jailoo — mountain lake glamping"
+    },
+    "summary": {
+      "ru": "Спецпроект глэмпинга: интерактивная карта лагеря с занятостью домиков на выбранные даты, активности с ограничениями по гостям и сезону, расчёт поездки и список вещей под месяц.",
+      "en": "A glamping special project: an interactive camp map with unit availability for chosen dates, activities limited by party size and season, a trip estimate and a packing list for the month."
+    },
+    "problem": {
+      "ru": "Гости выбирают не «номер», а место: у воды, под звёздами, подальше от соседей. Карта отвечает на это лучше списка, а честный расчёт и список вещей снимают вопросы до звонка.",
+      "en": "Guests choose a spot, not a room: by the water, under the stars, away from neighbours. A map answers that better than a list, and an honest estimate and packing list remove questions before a call."
+    },
+    "scenario": {
+      "ru": "Май — вне сезона, отказ → 13–15 августа на троих: «Свободно 4 из 8», занятые и тесные домики отмечены → А-фрейм «Арча»: выходные дороже на 20% → конная прогулка не больше числа гостей, телескоп только в июле–августе, трансфер → список вещей под август и активности → демо-заявка.",
+      "en": "May is out of season and rejected → 13–15 August for three: \"4 of 8 free\", busy and too-small units marked → the Archa A-frame: weekend nights +20% → horse ride capped by guests, telescope only in July–August, transfer → a packing list for August and the activities → demo request."
+    },
+    "features": [
+      {
+        "ru": "Карта лагеря: каждый домик показывает занятость на даты и вместимость",
+        "en": "Camp map: every unit shows availability for the dates and its capacity",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Правила сезона, наценка выходных, лимиты активностей по гостям, ночам и месяцу",
+        "en": "Season rules, weekend surcharge, activity limits by guests, nights and month",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Список вещей, который меняется от месяца и выбранных активностей",
+        "en": "A packing list that changes with the month and chosen activities",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Синхронизация занятости и предоплата",
+        "en": "Availability sync and prepayment",
+        "kind": "missing-integration"
+      }
+    ],
+    "limits": {
+      "ru": "Лагерь, цены и занятость вымышлены (занятость псевдослучайная, одинаковая для всех); заявка и отметки хранятся только в браузере.",
+      "en": "The camp, prices and occupancy are fictional (pseudo-random, the same for everyone); the request and ticks stay in the browser."
+    },
+    "studio": {
+      "ru": [
+        "Иллюстрированная схема лагеря с доступными с клавиатуры отметками домиков",
+        "Правила бронирования: сезон, максимум ночей, выходные, вместимость",
+        "Активности с ограничениями и пересчётом поездки",
+        "Полезный контент вместо «воды»: список вещей под погоду месяца",
+        "Ночная айдентика: Advent Pro + Nunito Sans, звёздное небо и луг"
+      ],
+      "en": [
+        "An illustrated camp plan with keyboard-accessible unit markers",
+        "Booking rules: season, maximum nights, weekends, capacity",
+        "Activities with limits and a live trip estimate",
+        "Useful content instead of filler: a packing list for the month's weather",
+        "A night-sky identity: Advent Pro + Nunito Sans, stars and meadow"
+      ]
+    },
+    "provenance": {
+      "type": "original",
+      "ru": "Собственная разработка MicroStudio. Шрифты Advent Pro и Nunito Sans — SIL OFL 1.1; карта нарисована в SVG.",
+      "en": "Built from scratch by MicroStudio. Advent Pro and Nunito Sans fonts are SIL OFL 1.1; the map is hand-built SVG.",
+      "assets": [
+        {
+          "name": "Advent Pro",
+          "license": "OFL-1.1",
+          "source": "https://github.com/googlefonts/advent"
+        },
+        {
+          "name": "Nunito Sans",
+          "license": "OFL-1.1",
+          "source": "https://github.com/googlefonts/NunitoSans"
+        }
+      ]
+    },
+    "client": null,
+    "demoUrl": "https://ms-jailoo-camp.vercel.app",
+    "hosting": "showcase",
+    "publishedAt": "2026-10-19",
+    "verifiedAt": "2026-10-19",
+    "featuredRank": 30,
+    "language": "ru",
+    "mobileFirst": false,
+    "images": {
+      "desktop": {
+        "src": "/portfolio/jailoo-camp/desktop.webp",
+        "width": 1440,
+        "height": 900
+      },
+      "mobile": {
+        "src": "/portfolio/jailoo-camp/mobile.webp",
+        "width": 780,
+        "height": 1688
+      },
+      "gallery": [
+        {
+          "src": "/portfolio/jailoo-camp/map.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Карта лагеря со свободными домиками",
+            "en": "Camp map with free units"
+          }
+        },
+        {
+          "src": "/portfolio/jailoo-camp/extras.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Активности с ограничениями",
+            "en": "Activities with limits"
+          }
+        },
+        {
+          "src": "/portfolio/jailoo-camp/pack.webp",
+          "width": 780,
+          "height": 1688,
+          "viewport": "mobile",
+          "alt": {
+            "ru": "Список вещей на телефоне",
+            "en": "Packing list on a phone"
+          }
+        }
+      ]
+    }
   }
 ]

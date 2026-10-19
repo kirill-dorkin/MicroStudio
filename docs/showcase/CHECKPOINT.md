@@ -7,8 +7,8 @@
 - Демо: репозиторий `kirill-dorkin/microstudio-showcase` (приватный), `demos/<slug>` — код, `external/<slug>` — метаданные проектов владельца.
 - Реестр: `microstudio-showcase/registry/projects.json` (внутренний), `registry/public.json` (для сайта).
 
-## Готово: 22 из 50 опубликованы и проверены
-Демо (ms-<slug>.vercel.app): svezho-cleaning, tash-stroy, oreh-len, arna-crm, toolor-jazz, kaichy-barber, garage-312, ak-tish-dental, volt-electronics, ritm-projects, kochevnik-moving, kazan-ogon, svet24-studio, saldo-finance, aruu-cosmetics, ordo-legal, bugu-coffee, kampa-warehouse, kumush-jewelry, soz-language. Клиент: best-electronics-link. Собственный продукт: tikitaki.
+## Готово: 27 из 50 опубликованы и проверены
+Демо (ms-<slug>.vercel.app): svezho-cleaning, tash-stroy, oreh-len, arna-crm, toolor-jazz, kaichy-barber, garage-312, ak-tish-dental, volt-electronics, ritm-projects, kochevnik-moving, kazan-ogon, svet24-studio, saldo-finance, aruu-cosmetics, ordo-legal, bugu-coffee, kampa-warehouse, kumush-jewelry, soz-language, kolos-bakery, archa-hotel, gulzar-salon, kiyim-store, jailoo-camp. Клиент: best-electronics-link. Собственный продукт: tikitaki.
 Заблокированы: best-electronics-store, jarjar, nova-ielts, anna-art — причины в registry/projects.json.
 
 ## Цикл одного демо
@@ -24,4 +24,4 @@ cd ~/MicroStudio && pnpm sync:showcase && pnpm check && pnpm test:e2e
 ```
 
 ## Дальше
-Партии по 5 демо по слотам ⏳ в PLAN.md (осталось 28), затем документация, финальная проверка, PR.
+Партии по 5 демо по слотам ⏳ в PLAN.md (осталось 23), затем документация, финальная проверка, PR.
