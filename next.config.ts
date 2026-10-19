@@ -1,5 +1,17 @@
 import type { NextConfig } from "next";
 import createMDX from "@next/mdx";
+import portfolio from "./src/data/portfolio.json";
+
+// Case pages that existed earlier. Those not published now redirect to the
+// catalogue (temporarily, so a page comes back as soon as it is published):
+// third-party template references whose demos were hosted by their authors,
+// and owner projects that have not passed verification yet.
+const legacyWorkSlugs = [
+  "fashion-store", "restaurant-tablefork", "photo-lumen", "saas-launchpad", "dashboard-pulse", "startup-ignite", "blog-nova",
+  "anna-art", "jarjar", "nova-ielts", "best-electronics-store", "best-electronics-link", "tikitaki",
+];
+const published = new Set(portfolio.map((p) => p.slug));
+const hiddenWork = legacyWorkSlugs.filter((slug) => !published.has(slug));
 
 const gaEnabled = !!process.env.NEXT_PUBLIC_GA_ID;
 
@@ -44,6 +56,11 @@ const nextConfig: NextConfig = {
       // Pages of the previous version of the site.
       { source: "/full-version", destination: "/ru/contact", permanent: true },
       { source: "/demo/:slug*", destination: "/ru/work", permanent: true },
+      // Services regrouped into six full-cycle directions.
+      { source: "/:locale(ru|en)/services/advertising", destination: "/:locale/services/marketing", permanent: true },
+      ...(hiddenWork.length
+        ? [{ source: `/:locale(ru|en)/work/:slug(${hiddenWork.join("|")})`, destination: "/:locale/work", permanent: false }]
+        : []),
     ];
   },
 };

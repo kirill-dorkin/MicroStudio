@@ -26,7 +26,8 @@
     "og": "tsx scripts/generate-og.ts",
     "qa:screens": "tsx scripts/qa-screenshots.ts",
     "check": "pnpm typecheck && pnpm lint && pnpm test && pnpm build",
-    "check:links": "tsx scripts/check-external-links.ts"
+    "check:links": "tsx scripts/check-external-links.ts",
+    "sync:showcase": "tsx scripts/sync-showcase.ts"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",

@@ -1,23 +1,10 @@
 import type { Page } from "@playwright/test";
 
-export const ownSlugs = [
-  "best-electronics-link",
-  "best-electronics-store",
-  "anna-art",
-  "jarjar",
-  "nova-ielts",
-  "tikitaki",
-];
+import portfolio from "../../src/data/portfolio.json";
 
-export const projectSlugs = [
-  "fashion-store",
-  "restaurant-tablefork",
-  "photo-lumen",
-  "saas-launchpad",
-  "dashboard-pulse",
-  "startup-ignite",
-  "blog-nova",
-];
+/** Published projects, in editorial order. */
+export const published = portfolio.map((p) => ({ slug: p.slug, name: p.title.ru, nameEn: p.title.en, type: p.workType, format: p.format, demoUrl: p.demoUrl, hosting: p.hosting }));
+export const legacyHidden = ["fashion-store", "dashboard-pulse", "anna-art", "jarjar", "nova-ielts", "best-electronics-store"];
 
 export async function openMenuIfMobile(page: Page, label: string) {
   const button = page.getByRole("button", { name: label });

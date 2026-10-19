@@ -2,21 +2,22 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowRight, ArrowUpRight, Check, Github, Info } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Check, CircleDashed, FlaskConical } from "lucide-react";
 import type { Locale } from "@/config/site";
 import { fmt, getDictionary } from "@/content/locales";
-import manifest from "@/data/capture-manifest.json";
-import { getProject, localizeProject, ownProjects, projects, referenceProjects } from "@/lib/content";
+import { getProject, localizeProject, projects, relatedProjects } from "@/lib/content";
+import { cardLabels } from "@/lib/cards";
 import { formatDate, href, locales } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/metadata";
 import { briefHref } from "@/lib/intent";
+import { cn } from "@/lib/utils";
 import { WhatsappCta } from "@/components/ui/whatsapp-cta";
 import { BrowserFrame, PhoneFrame } from "@/components/ui/browser-frame";
-import { DemoBadge, WorkBadge } from "@/components/ui/badge";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { buttonClass } from "@/components/ui/button";
 import { TrackedLink } from "@/components/ui/tracked-link";
 import { TrackView } from "@/components/ui/track-view";
+import { ProjectCard, typeStyle } from "@/components/portfolio/project-card";
 import { CtaBand } from "@/components/sections/cta-band";
 
 type Props = { params: Promise<{ locale: Locale; slug: string }> };
@@ -32,12 +33,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const raw = getProject(slug);
   if (!raw) return {};
   const p = localizeProject(raw, locale);
-  const ru = locale === "ru";
-  const description = p.own
-    ? `${ru ? "Проект MicroStudio" : "MicroStudio project"}: ${p.description}`
-    : `${ru ? "Open-source шаблон" : "Open-source template"}: ${p.description} ${ru ? "Автор" : "Author"}: ${p.author}, ${p.license}.`;
-  return pageMetadata({ locale, path: `/work/${slug}`, og: `work-${slug}`, title: `${p.name} | MicroStudio`, description });
+  const t = getDictionary(locale);
+  return pageMetadata({
+    locale,
+    path: `/work/${slug}`,
+    og: `work-${slug}`,
+    ogImage: p.og,
+    title: `${p.name} · ${t.labels.workType[p.workType]} | MicroStudio`,
+    description: `${p.summary} ${p.problem.split(". ")[0]}.`.slice(0, 300),
+  });
 }
+
+const featureIcon = { "production-ready": Check, "demo-logic": FlaskConical, "missing-integration": CircleDashed } as const;
 
 export default async function ProjectPage({ params }: Props) {
   const { locale, slug } = await params;
@@ -46,22 +53,10 @@ export default async function ProjectPage({ params }: Props) {
   const p = localizeProject(raw, locale);
   const t = getDictionary(locale);
   const tp = t.project;
-  const capturedAt = (manifest as Record<string, { capturedAt?: string }>)[slug]?.capturedAt;
-  // "Next" stays inside the same group: own work, or references.
-  const group = p.own ? ownProjects : referenceProjects;
-  const index = group.findIndex((x) => x.slug === slug);
-  const next = localizeProject(group[(index + 1) % group.length], locale);
-
-  const meta: [string, string][] = [
-    ...(raw.client ? [[tp.client, raw.client] as [string, string]] : []),
-    [tp.sector, p.sector],
-    [tp.category, t.work.categories[p.category]],
-    [tp.stack, p.tech.join(", ")],
-    ...(!p.own ? ([[tp.license, p.license ?? ""], [tp.author, p.author ?? ""]] as [string, string][]) : []),
-  ];
-
-  const openLabel = p.own ? tp.openSite : t.common.openDemo;
-  const detail = p.screenshots.detail;
+  const index = projects.findIndex((x) => x.slug === slug);
+  const next = localizeProject(projects[(index + 1) % projects.length], locale);
+  const related = relatedProjects(raw, 3).map((x) => localizeProject(x, locale));
+  const openLabel = p.workType === "demo" ? tp.openDemo : tp.openSite;
 
   return (
     <>
@@ -76,207 +71,191 @@ export default async function ProjectPage({ params }: Props) {
           ]}
         />
         <div className="flex flex-wrap items-center gap-3">
-          {p.own ? (
-            <WorkBadge label={raw.kind === "client-project" ? t.selected.clientBadge : t.selected.ownBadge} />
-          ) : (
-            <DemoBadge label={t.common.demoBadgeLong} />
-          )}
+          <span className={cn("inline-flex items-center rounded-full px-3 py-1 text-[0.78rem] font-semibold", typeStyle[p.workType])}>{t.labels.workType[p.workType]}</span>
           <span className="text-sm text-subtle">
-            {t.work.categories[p.category]} · {p.sector}
+            {t.labels.format[p.format]} · {p.niche}
           </span>
         </div>
         <h1 className="h1 mt-5 max-w-4xl">{p.name}</h1>
         <div className="mt-5 grid gap-6 lg:grid-cols-[1.3fr_1fr] lg:items-end lg:gap-10">
-          <p className="lead">{p.description}</p>
+          <p className="lead">{p.summary}</p>
           <div className="flex flex-col gap-2.5 sm:flex-row sm:flex-wrap lg:justify-end">
-            <WhatsappCta locale={locale} intent={{ kind: "project", slug }} location="project_hero" label={tp.similar} />
-            <TrackedLink
-              href={p.demo}
-              event="open_demo"
-              params={{ project: slug }}
-              newTabLabel={t.common.newTab}
-              className={buttonClass("secondary")}
-            >
+            <TrackedLink href={p.demoUrl} event="open_demo" params={{ project: slug, location: "case_hero" }} newTabLabel={t.common.newTab} className={buttonClass("primary")}>
               {openLabel}
               <ArrowUpRight className="size-4" aria-hidden="true" />
             </TrackedLink>
-            {p.source && (
-              <TrackedLink
-                href={p.source}
-                event="open_github"
-                params={{ project: slug }}
-                newTabLabel={t.common.newTab}
-                className={buttonClass("secondary")}
-              >
-                <Github className="size-4" aria-hidden="true" />
-                GitHub
-              </TrackedLink>
-            )}
+            <WhatsappCta locale={locale} intent={{ kind: "project", slug }} location="project_hero" label={tp.similar} variant="secondary" />
           </div>
         </div>
-
-        {!p.own && (
-          <div className="mt-6 flex gap-3 rounded-xl border border-line bg-elevated px-4 py-3" role="note">
-            <Info className="mt-0.5 size-4 shrink-0 text-muted" aria-hidden="true" />
-            <p className="text-sm text-muted">{tp.disclosure}</p>
-          </div>
-        )}
 
         {p.mobileFirst ? (
           <div className="mt-8 flex justify-center rounded-[20px] border border-line bg-[linear-gradient(160deg,#1d2326,#121517)] px-6 py-10 lg:mt-10">
             <PhoneFrame className="w-full max-w-[300px]">
-              <div className="relative aspect-[390/844] bg-white">
-                <Image src={p.screenshots.mobile} alt={fmt(tp.mobileAlt, { name: p.name })} fill priority sizes="300px" className="object-cover object-top" />
-              </div>
+              <Image src={p.images.mobile.src} width={p.images.mobile.width} height={p.images.mobile.height} alt={fmt(tp.mobileAlt, { name: p.name })} priority sizes="300px" className="block h-auto w-full" />
             </PhoneFrame>
           </div>
         ) : (
           <BrowserFrame host={p.demoHost} className="mt-8 lg:mt-10">
-            <div className="relative aspect-[16/10] bg-[#f3f3f1]">
-              <Image
-                src={p.screenshots.desktop}
-                alt={fmt(tp.heroAlt, { name: p.name })}
-                fill
-                priority
-                sizes="(min-width: 1408px) 1280px, 100vw"
-                className="object-cover object-top"
-              />
-            </div>
+            <Image
+              src={p.images.desktop.src}
+              width={p.images.desktop.width}
+              height={p.images.desktop.height}
+              alt={fmt(tp.heroAlt, { name: p.name })}
+              priority
+              sizes="(min-width: 1408px) 1280px, 100vw"
+              className="block h-auto w-full"
+            />
           </BrowserFrame>
         )}
       </section>
 
-      <section className="container-page section grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
+      <section className="container-page section grid gap-10 lg:grid-cols-[1fr_1fr] lg:gap-16">
         <div>
-          <h2 className="h3 text-subtle">{tp.overview}</h2>
-          <p className="mt-4 max-w-[60ch] text-[1.1rem] leading-relaxed text-text/90 md:text-[1.2rem]">{p.overview}</p>
-          <div className="mt-10 grid gap-8 md:grid-cols-2">
-            <div>
-              <h2 className="h3">{p.own ? tp.featuresOwn : tp.features}</h2>
-              <ul className="mt-5 space-y-3">
-                {p.features.map((f) => (
-                  <li key={f} className="flex gap-3">
-                    <Check className="mt-1 size-4 shrink-0 text-lime" aria-hidden="true" />
-                    <span>{f}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h2 className="h3">{tp.lookFor}</h2>
-              <ul className="mt-5 space-y-3 text-muted">
-                {p.lookFor.map((f) => (
-                  <li key={f} className="flex gap-3">
-                    <span className="mt-2.5 h-px w-3 shrink-0 bg-lime" aria-hidden="true" />
-                    <span>{f}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+          <h2 className="h2">{tp.solves}</h2>
+          <p className="mt-4 max-w-[60ch] text-[1.1rem] leading-relaxed text-text/90">{p.problem}</p>
+          <h3 className="label mt-8">{tp.scenario}</h3>
+          <p className="mt-2 max-w-[60ch] text-muted">{p.scenario}</p>
         </div>
-        <div className="h-fit space-y-4">
-          <dl className="divide-y divide-line rounded-[20px] border border-line bg-elevated px-6">
-            {meta.map(([k, v]) => (
-              <div key={k} className="flex justify-between gap-6 py-4">
-                <dt className="text-subtle">{k}</dt>
-                <dd className="text-right">{v}</dd>
-              </div>
+        <div>
+          <h2 className="h2">{tp.did}</h2>
+          <ul className="mt-5 space-y-3">
+            {p.studio.map((item) => (
+              <li key={item} className="flex gap-3">
+                <Check className="mt-1 size-4 shrink-0 text-lime" aria-hidden="true" />
+                <span>{item}</span>
+              </li>
             ))}
-          </dl>
-          <Link href={briefHref(locale, { kind: "project", slug })} className={buttonClass("quiet", "w-full", "sm")}>
-            {tp.similarBrief}
-            <ArrowRight className="size-4" aria-hidden="true" />
-          </Link>
+          </ul>
         </div>
       </section>
 
       <section aria-labelledby="screens-title" className="section border-t border-line">
         <div className="container-page">
           <h2 id="screens-title" className="h2">
-            {tp.screens}
+            {tp.gallery}
           </h2>
-          {p.mobileFirst ? (
-            <figure className="mt-8 lg:max-w-3xl">
-              <BrowserFrame host={p.demoHost}>
-                <div className="relative aspect-[16/10] bg-[#f3f3f1]">
-                  <Image src={p.screenshots.desktop} alt={fmt(tp.heroAlt, { name: p.name })} fill sizes="(min-width: 1024px) 760px, 100vw" className="object-cover object-top" />
-                </div>
-              </BrowserFrame>
-              <figcaption className="mt-4 text-sm text-subtle">{tp.desktopFirst}</figcaption>
-            </figure>
-          ) : (
-            <div className={detail ? "mt-8 grid items-start gap-8 lg:grid-cols-[1fr_280px] lg:gap-12" : "mt-8"}>
-              {detail && (
-                <figure>
-                  <BrowserFrame host={p.demoHost}>
-                    <div className="relative aspect-[16/10] bg-[#f3f3f1]">
-                      <Image src={detail} alt={fmt(tp.detailAlt, { name: p.name })} fill sizes="(min-width: 1024px) 900px, 100vw" className="object-cover object-top" />
-                    </div>
-                  </BrowserFrame>
-                  <figcaption className="mt-4 text-sm text-subtle">{tp.desktopShot}</figcaption>
-                </figure>
-              )}
-              <figure className={detail ? "mx-auto w-full max-w-[280px]" : "w-full max-w-[280px]"}>
-                <PhoneFrame>
-                  <div className="relative aspect-[390/844] bg-[#f3f3f1]">
-                    <Image src={p.screenshots.mobile} alt={fmt(tp.mobileAlt, { name: p.name })} fill sizes="280px" className="object-cover object-top" />
-                  </div>
-                </PhoneFrame>
-                <figcaption className="mt-4 text-center text-sm text-subtle">{tp.mobileShot}</figcaption>
-              </figure>
+          <div className="mt-8 grid items-start gap-8 lg:grid-cols-[1fr_300px] lg:gap-12">
+            <div className="grid gap-8">
+              {p.images.gallery
+                .filter((g) => g.viewport === "desktop")
+                .map((g) => (
+                  <figure key={g.src}>
+                    <BrowserFrame host={p.demoHost}>
+                      <Image src={g.src} width={g.width} height={g.height} alt={g.alt} sizes="(min-width: 1024px) 860px, 100vw" className="block h-auto w-full" />
+                    </BrowserFrame>
+                    <figcaption className="mt-3 text-sm text-subtle">{g.alt}</figcaption>
+                  </figure>
+                ))}
             </div>
-          )}
-          {capturedAt && (
-            <p className="mt-8 max-w-3xl text-sm text-subtle">
-              {fmt(p.own ? tp.capturedOwn : tp.captured, { date: formatDate(capturedAt.slice(0, 10), locale) })}
-            </p>
-          )}
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-1">
+              {[{ src: p.images.mobile.src, width: p.images.mobile.width, height: p.images.mobile.height, alt: fmt(tp.mobileAlt, { name: p.name }) }, ...p.images.gallery.filter((g) => g.viewport === "mobile")].map((g) => (
+                <figure key={g.src} className="mx-auto w-full max-w-[300px]">
+                  <PhoneFrame>
+                    <Image src={g.src} width={g.width} height={g.height} alt={g.alt} sizes="300px" className="block h-auto w-full" />
+                  </PhoneFrame>
+                  <figcaption className="mt-3 text-center text-sm text-subtle">{g.alt}</figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
-      {!p.own && p.source && (
-        <section aria-labelledby="credits-title" className="section border-t border-line">
-          <div className="container-page grid gap-10 lg:grid-cols-[1fr_1.4fr]">
-            <h2 id="credits-title" className="h2">
-              {tp.credits}
+      <section aria-labelledby="caps-title" className="section border-t border-line">
+        <div className="container-page grid gap-10 lg:grid-cols-[1.3fr_1fr] lg:gap-16">
+          <div>
+            <h2 id="caps-title" className="h2">
+              {tp.capabilities}
             </h2>
-            <div className="card p-6 md:p-8">
-              <dl className="grid gap-5 sm:grid-cols-2">
-                <div>
-                  <dt className="text-sm text-subtle">{tp.author}</dt>
-                  <dd className="mt-1">{p.author}</dd>
-                </div>
-                <div>
-                  <dt className="text-sm text-subtle">{tp.copyright}</dt>
-                  <dd className="mt-1">{p.copyright}</dd>
-                </div>
-                <div>
-                  <dt className="text-sm text-subtle">{tp.sourceRepo}</dt>
-                  <dd className="mt-1">
-                    <TrackedLink
-                      href={p.source}
-                      event="open_github"
-                      params={{ project: slug, location: "credits" }}
-                      newTabLabel={t.common.newTab}
-                      className="break-all text-lime underline underline-offset-4"
-                    >
-                      {p.source.replace("https://", "")}
-                    </TrackedLink>
-                  </dd>
-                </div>
-                <div>
-                  <dt className="text-sm text-subtle">{tp.license}</dt>
-                  <dd className="mt-1">
-                    <a href={p.licenseUrl} target="_blank" rel="noopener noreferrer" className="text-lime underline underline-offset-4">
-                      {p.license} — {tp.licenseText}
-                      <span className="sr-only"> ({t.common.newTab})</span>
-                    </a>
-                  </dd>
-                </div>
-              </dl>
-              <p className="mt-6 border-t border-line pt-6 font-semibold">{tp.notForClient}</p>
+            <ul className="mt-6 divide-y divide-line border-y border-line">
+              {p.features.map((f) => {
+                const Icon = featureIcon[f.kind];
+                return (
+                  <li key={f.text} className="flex gap-4 py-4">
+                    <Icon className={cn("mt-0.5 size-5 shrink-0", f.kind === "production-ready" ? "text-lime" : "text-muted")} aria-hidden="true" />
+                    <div>
+                      <p>{f.text}</p>
+                      <p className="mt-0.5 text-sm text-subtle">{t.labels.feature[f.kind]}</p>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+            <p className="mt-5 text-muted">
+              <span className="font-semibold text-text">{tp.limits}: </span>
+              {p.limits}
+            </p>
+          </div>
+          <aside aria-labelledby="origin-title" className="h-fit rounded-[20px] border border-line bg-elevated p-6">
+            <h2 id="origin-title" className="h3">
+              {tp.provenance}
+            </h2>
+            <p className="mt-3 text-[0.95rem] text-muted">{p.provenance.text}</p>
+            {p.provenance.upstream && (
+              <p className="mt-3 text-[0.95rem]">
+                {tp.upstream}:{" "}
+                <a href={p.provenance.upstream.url} target="_blank" rel="noopener noreferrer" className="text-lime underline underline-offset-4">
+                  {p.provenance.upstream.name}
+                  <span className="sr-only"> ({t.common.newTab})</span>
+                </a>{" "}
+                · {p.provenance.upstream.authors} ·{" "}
+                <a href={p.provenance.upstream.licenseUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">
+                  {p.provenance.upstream.license}
+                  <span className="sr-only"> ({t.common.newTab})</span>
+                </a>
+              </p>
+            )}
+            {p.provenance.assets.length > 0 && (
+              <>
+                <h3 className="label mt-5">{tp.assets}</h3>
+                <ul className="mt-2 space-y-1 text-[0.92rem]">
+                  {p.provenance.assets.map((a) => (
+                    <li key={a.name}>
+                      <a href={a.source} target="_blank" rel="noopener noreferrer" className="underline decoration-line-strong underline-offset-4 hover:text-lime">
+                        {a.name}
+                        <span className="sr-only"> ({t.common.newTab})</span>
+                      </a>{" "}
+                      <span className="text-subtle">· {a.license}</span>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )}
+            <dl className="mt-5 grid grid-cols-[auto_1fr] gap-x-4 gap-y-1.5 border-t border-line pt-4 text-sm">
+              {p.client && (
+                <>
+                  <dt className="text-subtle">{tp.client}</dt>
+                  <dd>{p.client.name}</dd>
+                </>
+              )}
+              <dt className="text-subtle">{tp.published}</dt>
+              <dd>{formatDate(p.publishedAt, locale)}</dd>
+              <dt className="text-subtle">{tp.verified}</dt>
+              <dd>{formatDate(p.verifiedAt, locale)}</dd>
+            </dl>
+          </aside>
+        </div>
+      </section>
+
+      {related.length > 0 && (
+        <section aria-labelledby="related-title" className="section border-t border-line">
+          <div className="container-page">
+            <div className="flex items-end justify-between gap-6">
+              <h2 id="related-title" className="h2">
+                {tp.related}
+              </h2>
+              <Link href={href(locale, "/work")} className="hidden min-h-11 items-center gap-2 text-muted hover:text-text sm:inline-flex">
+                {tp.back}
+                <ArrowRight className="size-4" aria-hidden="true" />
+              </Link>
             </div>
+            <ul className="mt-8 grid gap-x-6 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
+              {related.map((r) => (
+                <li key={r.slug}>
+                  <ProjectCard project={r} href={href(locale, `/work/${r.slug}`)} labels={cardLabels(r, locale)} showSummary={false} />
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
       )}
@@ -289,11 +268,16 @@ export default async function ProjectPage({ params }: Props) {
             <ArrowLeft className="size-4" aria-hidden="true" />
             {tp.back}
           </Link>
-          <Link href={href(locale, `/work/${next.slug}`)} className="group inline-flex min-h-11 items-center gap-3 font-display text-xl font-semibold">
-            <span className="text-sm font-normal text-subtle">{tp.next}:</span>
-            {next.name}
-            <ArrowRight className="size-5 text-lime transition-transform group-hover:translate-x-1" aria-hidden="true" />
-          </Link>
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+            <Link href={briefHref(locale, { kind: "project", slug })} className="inline-flex min-h-11 items-center text-sm text-muted underline-offset-4 hover:text-text hover:underline">
+              {tp.similarBrief}
+            </Link>
+            <Link href={href(locale, `/work/${next.slug}`)} className="group inline-flex min-h-11 items-center gap-3 font-display text-xl font-semibold">
+              <span className="text-sm font-normal text-subtle">{tp.next}:</span>
+              {next.name}
+              <ArrowRight className="size-5 text-lime transition-transform group-hover:translate-x-1" aria-hidden="true" />
+            </Link>
+          </div>
         </div>
       </nav>
     </>

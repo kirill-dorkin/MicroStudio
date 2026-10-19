@@ -4,27 +4,15 @@ import faqEnJson from "@/data/faq.en.json";
 import blogJson from "@/data/blog.seed.json";
 import seoJson from "@/data/seo.seed.json";
 import type { Locale } from "@/config/site";
-import {
-  blogSchema,
-  faqSchema,
-  projectSchema,
-  seoSchema,
-  type Project,
-  type ProjectCategory,
-} from "./schemas";
+import { blogSchema, faqSchema, projectSchema, seoSchema, type Project, type ProjectFormat } from "./schemas";
 
 // Content is validated once at import: a broken data file fails the build.
+// Only projects that passed the showcase QA are in portfolio.json (see scripts/sync-showcase.ts).
 export const projects: Project[] = projectSchema
   .array()
-  .min(7)
+  .min(1)
   .parse(portfolioJson)
-  .sort((a, b) => a.screenshotPriority - b.screenshotPriority);
-
-export const isOwn = (p: Project) => p.kind !== "open-source-demo";
-/** Work made by MicroStudio — shown first everywhere. */
-export const ownProjects = projects.filter(isOwn);
-/** Third-party open-source templates — a secondary "references" section. */
-export const referenceProjects = projects.filter((p) => !isOwn(p));
+  .sort((a, b) => (a.featuredRank ?? 999) - (b.featuredRank ?? 999) || a.slug.localeCompare(b.slug));
 
 const faqs = { ru: faqSchema.parse(faqRuJson), en: faqSchema.parse(faqEnJson) };
 const posts = blogSchema.parse(blogJson);
@@ -37,39 +25,53 @@ export function getProject(slug: string) {
   return projects.find((p) => p.slug === slug);
 }
 
-/** Home page selection: MicroStudio's own work. */
-export const featuredProjects = ownProjects.slice(0, 6);
+/** Editorial selection for the home page. */
+export const featuredProjects = (limit = 8) => projects.filter((p) => p.featuredRank !== null).slice(0, limit);
 
 export function localizeProject(p: Project, locale: Locale) {
-  const ru = locale === "ru";
+  const l = locale;
   return {
-    ...p,
-    name: ru ? p.title : p.titleEn,
-    short: ru ? p.shortTitle : p.shortTitleEn,
-    sector: ru ? p.sectorRu : p.sectorEn,
-    description: ru ? p.descriptionRu : p.descriptionEn,
-    overview: ru ? p.overviewRu : p.overviewEn,
-    features: ru ? p.featureRu : p.featureEn,
-    lookFor: ru ? p.lookForRu : p.lookForEn,
-    own: isOwn(p),
-    mobileFirst: !!p.mobileFirst,
-    screenshots: {
-      desktop: p.screenshotPath,
-      detail: p.hideDetail ? null : p.screenshotPath.replace(/\.webp$/, "-detail.webp"),
-      mobile: p.screenshotPath.replace(/\.webp$/, "-mobile.webp"),
-      og: p.screenshotPath.replace(/\.webp$/, "-og.jpg"),
+    slug: p.slug,
+    workType: p.workType,
+    format: p.format,
+    industry: p.industry,
+    name: p.title[l],
+    niche: p.niche[l],
+    summary: p.summary[l],
+    problem: p.problem[l],
+    scenario: p.scenario[l],
+    features: p.features.map((f) => ({ text: f[l], kind: f.kind })),
+    limits: p.limits[l],
+    studio: p.studio[l],
+    provenance: { type: p.provenance.type, text: p.provenance[l], assets: p.provenance.assets, upstream: p.provenance.upstream ?? null },
+    client: p.client,
+    demoUrl: p.demoUrl,
+    demoHost: new URL(p.demoUrl).host,
+    hosting: p.hosting,
+    publishedAt: p.publishedAt,
+    verifiedAt: p.verifiedAt,
+    mobileFirst: p.mobileFirst,
+    images: {
+      desktop: p.images.desktop,
+      mobile: p.images.mobile,
+      gallery: p.images.gallery.map((g) => ({ src: g.src, width: g.width, height: g.height, viewport: g.viewport, alt: g.alt[l] })),
     },
-    demoHost: new URL(p.demo).host,
+    og: `/og/work-${p.slug}.jpg`,
   };
 }
 export type LocalizedProject = ReturnType<typeof localizeProject>;
 
-/** Own work first, then references, matching the categories. */
-export function relatedProjects(categories: ProjectCategory[], limit = 3) {
-  const match = (p: Project) => categories.includes(p.category);
-  return [...ownProjects.filter(match), ...referenceProjects.filter(match), ...ownProjects].filter(
-    (p, i, all) => all.indexOf(p) === i,
-  ).slice(0, limit);
+/** Same format first, then same industry, then the editorial order. */
+export function relatedProjects(p: Project, limit = 3) {
+  const rest = projects.filter((x) => x.slug !== p.slug);
+  return [...rest.filter((x) => x.format === p.format), ...rest.filter((x) => x.industry === p.industry), ...rest]
+    .filter((x, i, all) => all.indexOf(x) === i)
+    .slice(0, limit);
+}
+
+/** Projects that illustrate a service, by format, in editorial order. */
+export function projectsForFormats(formats: ProjectFormat[], limit = 3) {
+  return [...projects.filter((p) => formats.includes(p.format)), ...projects].filter((x, i, all) => all.indexOf(x) === i).slice(0, limit);
 }
 
 export type Post = {

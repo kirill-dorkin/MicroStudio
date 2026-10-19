@@ -10,6 +10,8 @@ type PageMeta = {
   description: string;
   /** Key of the pre-rendered image in public/og/{key}-{locale}.jpg. */
   og: string;
+  /** Explicit share image path, e.g. a project cover (overrides `og`). */
+  ogImage?: string;
   /** Path of the same page in each locale when slugs differ (blog). */
   alternatePaths?: Record<Locale, string>;
   type?: "website" | "article";
@@ -20,7 +22,7 @@ type PageMeta = {
 export function pageMetadata(m: PageMeta): Metadata {
   const paths = m.alternatePaths ?? { ru: m.path, en: m.path };
   const url = `/${m.locale}${paths[m.locale]}`;
-  const image = `/og/${m.og}-${m.locale}.jpg`;
+  const image = m.ogImage ?? `/og/${m.og}-${m.locale}.jpg`;
   const index = site.indexable && !m.noindex;
 
   return {

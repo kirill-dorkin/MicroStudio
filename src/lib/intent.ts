@@ -19,9 +19,11 @@ export type ContactIntent =
 
 /** Brief project-type id for a service page. */
 const serviceToBriefType: Record<ServiceSlug, string> = {
-  websites: "company",
+  strategy: "strategy",
   design: "design",
-  advertising: "advertising",
+  websites: "company",
+  automation: "automation",
+  marketing: "marketing",
   support: "support",
 };
 

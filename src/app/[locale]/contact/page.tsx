@@ -26,7 +26,8 @@ function intentFrom(service?: string, project?: string): ContactIntent {
   if (project && getProject(project)) return { kind: "project", slug: project };
   if (service === "special") return { kind: "special" };
   if (service === "company" || service === "store" || service === "custom") return { kind: "format", id: service };
-  if (service === "design" || service === "advertising" || service === "support") return { kind: "service", slug: service };
+  if (service === "strategy" || service === "design" || service === "automation" || service === "marketing" || service === "support")
+    return { kind: "service", slug: service };
   return { kind: "generic" };
 }
 

@@ -1,4 +1,5 @@
 import { expect, test } from "@playwright/test";
+import { published } from "./helpers";
 
 test("22–23. special offer shows price, contents and exclusions", async ({ page }) => {
   await page.goto("/ru/special");
@@ -12,8 +13,8 @@ test("22–23. special offer shows price, contents and exclusions", async ({ pag
   await expect(page.locator("main")).not.toContainText("не входят в стоимость");
 });
 
-test("24. four service pages with FAQ and examples", async ({ page }) => {
-  for (const slug of ["websites", "design", "advertising", "support"]) {
+test("24. six service pages with FAQ and examples", async ({ page }) => {
+  for (const slug of ["strategy", "design", "websites", "automation", "marketing", "support"]) {
     await page.goto(`/ru/services/${slug}`);
     await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
     await expect(page.getByRole("heading", { name: "Вопросы об услуге" })).toBeVisible();
@@ -21,7 +22,9 @@ test("24. four service pages with FAQ and examples", async ({ page }) => {
     expect(await page.locator("#examples article").count()).toBeGreaterThanOrEqual(2);
   }
   await page.goto("/en/services");
-  await expect(page.locator("main ul h2")).toHaveCount(4);
+  await expect(page.locator("main ul h2")).toHaveCount(6);
+  await page.goto("/ru/services/advertising");
+  await expect(page).toHaveURL(/\/ru\/services\/marketing$/);
 });
 
 test("25–26. blog lists and renders every article in both languages", async ({ page }) => {
@@ -41,7 +44,8 @@ test("25–26. blog lists and renders every article in both languages", async ({
 test("32. sitemap lists every indexable route", async ({ request }) => {
   const xml = await (await request.get("/sitemap.xml")).text();
   const urls = xml.match(/<loc>/g)?.length ?? 0;
-  expect(urls).toBe(56);
+  // 2 locales × (home, services + 6 services, work + projects, about, special, contact, blog + 3 posts, privacy)
+  expect(urls).toBe(2 * (17 + published.length));
   expect(xml).toContain("/en/blog/which-website-for-your-business");
   expect(xml).toContain('hreflang="ru"');
 });
@@ -66,7 +70,7 @@ test("34. canonical, hreflang and OG image are present", async ({ page, request 
 
 test("unique titles and descriptions across pages", async ({ page }) => {
   const seen = new Set<string>();
-  for (const path of ["/ru", "/ru/services", "/ru/services/design", "/ru/work", "/ru/work/blog-nova", "/ru/about", "/ru/blog", "/ru/special", "/ru/contact", "/ru/privacy", "/en", "/en/work"]) {
+  for (const path of ["/ru", "/ru/services", "/ru/services/design", "/ru/work", "/ru/work/oreh-len", "/ru/about", "/ru/blog", "/ru/special", "/ru/contact", "/ru/privacy", "/en", "/en/work"]) {
     await page.goto(path);
     const title = await page.title();
     expect(seen.has(title), title).toBe(false);
@@ -91,7 +95,7 @@ test("43. no fabricated testimonials, team or metrics", async ({ page }) => {
 });
 
 test("49. English pages contain no Russian text", async ({ page }) => {
-  for (const path of ["/en", "/en/services", "/en/services/advertising", "/en/work", "/en/work/fashion-store", "/en/about", "/en/blog", "/en/blog/what-happens-after-an-ad-click", "/en/special", "/en/contact", "/en/privacy"]) {
+  for (const path of ["/en", "/en/services", "/en/services/marketing", "/en/work", "/en/work/tash-stroy", "/en/about", "/en/blog", "/en/blog/what-happens-after-an-ad-click", "/en/special", "/en/contact", "/en/privacy"]) {
     await page.goto(path);
     const text = await page.locator("body").innerText();
     expect(text.match(/[А-Яа-яЁё]+/g) ?? [], path).toEqual([]);
@@ -112,21 +116,20 @@ test("36. reduced motion removes transitions and smooth scrolling", async ({ bro
   await context.close();
 });
 
-test("hero collage links to real MicroStudio projects", async ({ page }) => {
+test("hero: full-cycle offer, two actions, real screenshots and a secondary promo", async ({ page }) => {
   await page.goto("/ru");
   const hero = page.locator("section[aria-labelledby='hero-title']");
-  for (const slug of ["best-electronics-store", "best-electronics-link", "anna-art", "nova-ielts"]) {
-    await expect(hero.locator(`a[href="/ru/work/${slug}"]`)).toHaveCount(1);
-  }
-  await expect(hero.getByRole("link", { name: /Сайт-визитка — 1/ })).toHaveAttribute("href", "/ru/special");
+  await expect(hero.getByRole("heading", { level: 1 })).toHaveText("Создаём сайты. Помогаем бизнесу расти.");
+  const wa = hero.getByRole("link", { name: /Обсудить проект/ });
+  expect(new URL((await wa.getAttribute("href"))!).searchParams.get("text")).toBe("Здравствуйте! Хочу обсудить проект для моего бизнеса.");
+  await expect(hero.getByRole("link", { name: /Смотреть проекты/ })).toHaveAttribute("href", "/ru/work");
+  await expect(hero.locator(`a[href="/ru/work/${published[0].slug}"]`)).toHaveCount(1);
+  await expect(hero.getByRole("link", { name: /1\s500 сом/ })).toHaveAttribute("href", "/ru/special");
 });
 
-test("proof section uses the real BestElectronics page", async ({ page }) => {
+test("home lists six full-cycle services", async ({ page }) => {
   await page.goto("/ru");
-  const proof = page.locator("section[aria-labelledby='proof-title']");
-  await expect(proof.getByRole("link", { name: /Открыть сайт/ })).toHaveAttribute("href", "https://be-lending.vercel.app/");
-  const cta = proof.getByRole("link", { name: /Хочу так же/ });
-  expect(new URL((await cta.getAttribute("href"))!).searchParams.get("text")).toContain("BestElectronics");
+  await expect(page.locator("section[aria-labelledby='services-title'] li")).toHaveCount(6);
 });
 
 test("fixed header does not cover anchored headings", async ({ page }) => {
@@ -152,7 +155,7 @@ test("37–38. images load and nothing overflows horizontally", async ({ page })
   test.setTimeout(180_000);
   for (const width of [360, 390, 430, 768, 1024, 1440]) {
     await page.setViewportSize({ width, height: 900 });
-    for (const path of ["/ru", "/ru/work", "/ru/contact", "/ru/special", "/ru/services/websites", "/ru/work/startup-ignite"]) {
+    for (const path of ["/ru", "/ru/work", "/ru/contact", "/ru/special", "/ru/services/websites", `/ru/work/${published[0].slug}`]) {
       await page.goto(path);
       const overflow = await page.evaluate(() => {
         document.body.style.overflowX = "visible";
@@ -177,7 +180,7 @@ test("37–38. images load and nothing overflows horizontally", async ({ page })
 
 test("39. every internal link resolves", async ({ page, request }) => {
   test.setTimeout(120_000);
-  const pages = ["/ru", "/en", "/ru/work", "/ru/services", "/ru/blog", "/ru/about", "/ru/special", "/ru/contact", "/ru/privacy", "/en/work/blog-nova"];
+  const pages = ["/ru", "/en", "/ru/work", "/ru/services", "/ru/blog", "/ru/about", "/ru/special", "/ru/contact", "/ru/privacy", `/en/work/${published[0].slug}`];
   const links = new Set<string>();
   for (const path of pages) {
     await page.goto(path);

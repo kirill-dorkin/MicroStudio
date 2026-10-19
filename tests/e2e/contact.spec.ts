@@ -7,7 +7,7 @@ test.describe("contact page and brief", () => {
     await page.goto("/ru/contact");
     const wa = page.locator("main").getByRole("link", { name: /Написать в WhatsApp/ }).first();
     await expect(wa).toBeInViewport();
-    expect(waText(await wa.getAttribute("href"))).toContain("Хочу обсудить сайт");
+    expect(waText(await wa.getAttribute("href"))).toContain("Хочу обсудить проект для моего бизнеса");
     // No mandatory consent checkbox anywhere.
     await expect(page.getByRole("checkbox")).toHaveCount(0);
   });
@@ -17,11 +17,11 @@ test.describe("contact page and brief", () => {
     const send = page.getByRole("link", { name: /Открыть WhatsApp с сообщением/ });
     // Even with nothing selected there is a usable message.
     expect(waText(await send.getAttribute("href"))).toContain("Здравствуйте, MicroStudio!");
-    await page.getByRole("radio", { name: "Сайт компании" }).focus();
+    await page.getByRole("radio", { name: "Лендинг или сайт компании" }).focus();
     await page.keyboard.press("Space");
-    await expect(page.getByRole("radio", { name: "Сайт компании" })).toBeChecked();
+    await expect(page.getByRole("radio", { name: "Лендинг или сайт компании" })).toBeChecked();
     await expect(page).toHaveURL(/service=company/);
-    expect(waText(await send.getAttribute("href"))).toContain("Сайт компании");
+    expect(waText(await send.getAttribute("href"))).toContain("Лендинг или сайт компании");
   });
 
   test("30. WhatsApp link carries the encoded brief; no fake 'sent' state", async ({ page }) => {
@@ -49,7 +49,7 @@ test.describe("contact page and brief", () => {
     await page.goto("/ru/contact?service=special");
     await expect(page.getByRole("radio", { name: /Одностраничный сайт за 1/ })).toBeChecked();
     await expect(page.getByText("Ориентир по бюджету")).toHaveCount(0);
-    await page.getByRole("radio", { name: "Сайт компании" }).check({ force: true });
+    await page.getByRole("radio", { name: "Лендинг или сайт компании" }).check({ force: true });
     await expect(page.getByText("Ориентир по бюджету")).toBeVisible();
   });
 
@@ -63,7 +63,7 @@ test.describe("contact page and brief", () => {
     expect(popup.url()).toMatch(/instagram\.com\/microstudio_official/);
     await popup.close();
     await expect(page.getByText("Текст скопирован. Вставьте его в сообщение в Instagram.")).toBeVisible();
-    expect(await page.evaluate(() => navigator.clipboard.readText())).toContain("Сайт компании");
+    expect(await page.evaluate(() => navigator.clipboard.readText())).toContain("Лендинг или сайт компании");
   });
 
   test("27b. failed copy shows manual fallback instead of success", async ({ page }) => {
@@ -79,12 +79,12 @@ test.describe("contact page and brief", () => {
   });
 
   test("project from a portfolio page travels into the brief and can be removed", async ({ page }) => {
-    await page.goto("/ru/work/restaurant-tablefork");
+    await page.goto("/ru/work/tash-stroy");
     await page.getByRole("link", { name: "Заполнить бриф с этим примером" }).click();
-    await expect(page).toHaveURL(/\/ru\/contact\?project=restaurant-tablefork/);
-    await expect(page.locator("output")).toContainText("Table & Fork — сайт ресторана");
+    await expect(page).toHaveURL(/\/ru\/contact\?project=tash-stroy/);
+    await expect(page.locator("output")).toContainText("Таш Строй — строительная компания");
     await page.getByRole("button", { name: /Убрать пример/ }).click();
-    await expect(page.locator("output")).not.toContainText("Table & Fork");
+    await expect(page.locator("output")).not.toContainText("Таш Строй");
     await expect(page).not.toHaveURL(/project=/);
   });
 
@@ -96,9 +96,9 @@ test.describe("contact page and brief", () => {
   });
 
   test("EN brief produces an English message", async ({ page }) => {
-    await page.goto("/en/contact?service=advertising");
-    await expect(page.getByRole("radio", { name: "Advertising and analytics" })).toBeChecked();
-    await expect(page.locator("output")).toContainText("I'd like to discuss a project: Advertising and analytics.");
+    await page.goto("/en/contact?service=marketing");
+    await expect(page.getByRole("radio", { name: "Launch, ads and analytics" })).toBeChecked();
+    await expect(page.locator("output")).toContainText("I'd like to discuss a project: Launch, ads and analytics.");
   });
 });
 
@@ -114,19 +114,16 @@ test.describe("WhatsApp context from other pages", () => {
     expect(waText(await en.getAttribute("href"))).toContain("one-page website for 1,500");
   });
 
-  test("project page: 'discuss a similar site' names the example", async ({ page }) => {
-    await page.goto("/ru/work/photo-lumen");
-    const cta = page.locator("main").getByRole("link", { name: /Обсудить похожий сайт/ }).first();
-    expect(waText(await cta.getAttribute("href"))).toContain("«Lumen — сайт фотографа»");
+  test("project page: 'discuss a similar project' names the example", async ({ page }) => {
+    await page.goto("/ru/work/oreh-len");
+    const cta = page.locator("main").getByRole("link", { name: /Обсудить похожий проект/ }).first();
+    expect(waText(await cta.getAttribute("href"))).toBe("Здравствуйте! Интересует решение, похожее на «Орех и Лён — магазин мебели».");
   });
 
-  test("service page and home formats name the service", async ({ page }) => {
-    await page.goto("/ru/services/advertising");
+  test("service page names the service", async ({ page }) => {
+    await page.goto("/ru/services/marketing");
     const cta = page.locator("main").getByRole("link", { name: /Написать в WhatsApp/ }).first();
-    expect(waText(await cta.getAttribute("href"))).toContain("«Реклама и аналитика»");
-    await page.goto("/ru");
-    const store = page.locator("#formats li", { hasText: "Интернет-магазин или каталог" }).getByRole("link", { name: /Обсудить в WhatsApp/ });
-    expect(waText(await store.getAttribute("href"))).toContain("интернет-магазин или каталог");
+    expect(waText(await cta.getAttribute("href"))).toBe("Здравствуйте! Хочу обсудить услугу «Запуск и продвижение».");
   });
 
   test("sticky offer CTA on phones appears after the hero and hides at the end", async ({ page, isMobile }) => {

@@ -5,7 +5,8 @@ import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
 import type { Locale } from "@/config/site";
 import { getDictionary } from "@/content/locales";
 import { getService, getServices, serviceSlugs } from "@/content/services";
-import { getPosts, localizeProject, relatedProjects } from "@/lib/content";
+import { getPosts, localizeProject, projectsForFormats } from "@/lib/content";
+import { cardLabels } from "@/lib/cards";
 import { href, locales } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/metadata";
 import { JsonLd, faqLd, serviceLd } from "@/lib/jsonld";
@@ -28,16 +29,20 @@ export function generateStaticParams() {
 
 const seoTitles: Record<Locale, Record<string, string>> = {
   ru: {
-    websites: "Разработка сайтов для бизнеса — MicroStudio",
-    design: "Дизайн сайтов и UX/UI для бизнеса — MicroStudio",
-    advertising: "Реклама, посадочные страницы и аналитика — MicroStudio",
-    support: "Доработка и поддержка сайтов — MicroStudio",
+    strategy: "Анализ бизнеса, аудит сайта и стратегия — MicroStudio",
+    design: "Бренд, дизайн сайтов и UX/UI — MicroStudio",
+    websites: "Разработка сайтов и интернет-магазинов — MicroStudio",
+    automation: "Кабинеты, CRM и автоматизация процессов — MicroStudio",
+    marketing: "SEO, аналитика и реклама — MicroStudio",
+    support: "Поддержка и развитие сайтов — MicroStudio",
   },
   en: {
-    websites: "Website Development for Business — MicroStudio",
-    design: "Website Design and UX/UI — MicroStudio",
-    advertising: "Advertising, Landing Pages and Analytics — MicroStudio",
-    support: "Website Improvements and Support — MicroStudio",
+    strategy: "Business Research, Site Audit and Strategy — MicroStudio",
+    design: "Brand, Website Design and UX/UI — MicroStudio",
+    websites: "Websites and Online Stores — MicroStudio",
+    automation: "Portals, CRM and Process Automation — MicroStudio",
+    marketing: "SEO, Analytics and Advertising — MicroStudio",
+    support: "Website Support and Growth — MicroStudio",
   },
 };
 
@@ -60,7 +65,7 @@ export default async function ServicePage({ params }: Props) {
   if (!s) notFound();
   const t = getDictionary(locale);
   const ts = t.services;
-  const related = relatedProjects(s.relatedCategories, 3).map((p) => localizeProject(p, locale));
+  const related = projectsForFormats(s.relatedFormats, 3).map((p) => localizeProject(p, locale));
   const post = getPosts(locale).find((p) => p.ruSlug === s.relatedPost)!;
   const others = getServices(locale).filter((o) => o.slug !== s.slug);
   const path = href(locale, `/services/${slug}`);
@@ -172,10 +177,7 @@ export default async function ServicePage({ params }: Props) {
                 <ProjectCard
                   project={p}
                   href={href(locale, `/work/${p.slug}`)}
-                  categoryLabel={t.work.categories[p.category]}
-                  demoLabel={t.common.demoBadge}
-                  authorLabel={t.selected.author}
-                  ctaLabel={t.work.cardCta}
+                  labels={cardLabels(p, locale)}
                   sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                 />
               </li>

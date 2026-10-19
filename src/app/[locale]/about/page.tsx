@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import type { Locale } from "@/config/site";
 import { getDictionary } from "@/content/locales";
-import { getSeo, localizeProject, ownProjects } from "@/lib/content";
+import { getSeo, localizeProject, featuredProjects } from "@/lib/content";
 import { Founder } from "@/components/sections/founder";
 import { href } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/metadata";
@@ -23,7 +23,7 @@ export default async function AboutPage({ params }: Props) {
   const { locale } = await params;
   const t = getDictionary(locale);
   const a = t.about;
-  const strip = ownProjects.slice(0, 6).map((p) => localizeProject(p, locale));
+  const strip = featuredProjects(6).map((p) => localizeProject(p, locale));
 
   return (
     <>
@@ -119,7 +119,7 @@ export default async function AboutPage({ params }: Props) {
                 <Link href={href(locale, `/work/${p.slug}`)} className="group block overflow-hidden rounded-xl border border-line bg-[#f3f3f1]">
                   <span className="relative block aspect-[16/10]">
                     <Image
-                      src={p.screenshots.desktop}
+                      src={p.images.desktop.src}
                       alt={p.name}
                       fill
                       sizes="(min-width: 1024px) 240px, 45vw"

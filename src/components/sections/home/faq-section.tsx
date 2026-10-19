@@ -4,8 +4,8 @@ import { getFaq } from "@/lib/content";
 import { FaqList } from "@/components/ui/faq-list";
 import { WhatsappCta } from "@/components/ui/whatsapp-cta";
 
-/** Questions that usually stop people from writing: price, offer, timing, materials, start. */
-const blockingQuestions = [0, 1, 3, 9, 10];
+/** Questions that usually stop people from writing: price, timing, promotion, existing site, start. */
+const blockingQuestions = [0, 3, 5, 6, 10];
 
 export function FaqSection({ locale }: { locale: Locale }) {
   const t = getDictionary(locale);

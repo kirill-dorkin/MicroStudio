@@ -12,12 +12,13 @@ describe("contact intents", () => {
   });
 
   it("project message names the example", () => {
-    expect(intentMessage("ru", { kind: "project", slug: "photo-lumen" })).toContain("«Lumen — сайт фотографа»");
-    expect(intentMessage("en", { kind: "project", slug: "photo-lumen" })).toContain("“Lumen — photographer website”");
+    expect(intentMessage("ru", { kind: "project", slug: "oreh-len" })).toBe("Здравствуйте! Интересует решение, похожее на «Орех и Лён — магазин мебели».");
+    expect(intentMessage("en", { kind: "project", slug: "oreh-len" })).toContain("“Oreh & Len — furniture store”");
   });
 
   it("service and format messages name the choice", () => {
-    expect(intentMessage("ru", { kind: "service", slug: "advertising" })).toContain("«Реклама и аналитика»");
+    expect(intentMessage("ru", { kind: "service", slug: "marketing" })).toBe("Здравствуйте! Хочу обсудить услугу «Запуск и продвижение».");
+    expect(intentMessage("ru", { kind: "generic" })).toBe("Здравствуйте! Хочу обсудить проект для моего бизнеса.");
     expect(intentMessage("ru", { kind: "format", id: "store" })).toContain("интернет-магазин или каталог");
   });
 
@@ -30,10 +31,10 @@ describe("contact intents", () => {
   it("brief links keep the context", () => {
     expect(briefHref("ru", { kind: "special" })).toBe("/ru/contact?service=special#brief");
     expect(briefHref("en", { kind: "service", slug: "websites" })).toBe("/en/contact?service=company#brief");
-    expect(briefHref("ru", { kind: "project", slug: "blog-nova" })).toBe("/ru/contact?project=blog-nova#brief");
+    expect(briefHref("ru", { kind: "project", slug: "oreh-len" })).toBe("/ru/contact?project=oreh-len#brief");
   });
 
   it("analytics params contain ids only", () => {
-    expect(intentParams({ kind: "project", slug: "blog-nova" })).toEqual({ intent: "project", project: "blog-nova" });
+    expect(intentParams({ kind: "project", slug: "oreh-len" })).toEqual({ intent: "project", project: "oreh-len" });
   });
 });

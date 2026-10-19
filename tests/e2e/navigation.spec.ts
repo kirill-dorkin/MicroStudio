@@ -6,8 +6,8 @@ test.describe("routing and locales", () => {
     await page.goto("/ru");
     await expect(page).toHaveTitle(/MicroStudio/);
     await expect(page.locator("html")).toHaveAttribute("lang", "ru");
-    await expect(page.getByRole("heading", { level: 1 })).toHaveText("Сайты, с которых клиенты пишут вам в WhatsApp");
-    const cta = page.locator("main").getByRole("link", { name: /Написать в WhatsApp/ }).first();
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText("Создаём сайты. Помогаем бизнесу расти.");
+    const cta = page.locator("main").getByRole("link", { name: /Обсудить проект/ }).first();
     await expect(cta).toBeInViewport();
     await expect(cta).toHaveAttribute("href", /^https:\/\/wa\.me\/996700779919\?text=/);
   });
@@ -15,7 +15,7 @@ test.describe("routing and locales", () => {
   test("2. EN home loads in English", async ({ page }) => {
     await page.goto("/en");
     await expect(page.locator("html")).toHaveAttribute("lang", "en");
-    await expect(page.getByRole("heading", { level: 1 })).toHaveText("Websites that get customers messaging you on WhatsApp");
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText("We build websites. We help businesses grow.");
   });
 
   test("3. root redirects to /ru", async ({ page }) => {
@@ -28,16 +28,16 @@ test.describe("routing and locales", () => {
     await page.getByRole("link", { name: /Switch to English/ }).first().click();
     await expect(page).toHaveURL(/\/en\/contact\?service=special/);
     await expect(page.getByRole("radio", { name: /One-page website for 1,500/ })).toBeChecked();
-    await page.goto("/en/contact?project=photo-lumen");
+    await page.goto("/en/contact?project=oreh-len");
     await page.getByRole("link", { name: /Перейти на русский/ }).first().click();
-    await expect(page).toHaveURL(/\/ru\/contact\?project=photo-lumen/);
-    await expect(page.locator("output")).toContainText("Lumen — сайт фотографа");
+    await expect(page).toHaveURL(/\/ru\/contact\?project=oreh-len/);
+    await expect(page.locator("output")).toContainText("Орех и Лён — магазин мебели");
   });
 
   test("4. language switch keeps the equivalent page", async ({ page }) => {
-    await page.goto("/ru/work/photo-lumen");
+    await page.goto("/ru/work/oreh-len");
     await page.getByRole("link", { name: "Switch to English" }).first().click();
-    await expect(page).toHaveURL(/\/en\/work\/photo-lumen$/);
+    await expect(page).toHaveURL(/\/en\/work\/oreh-len$/);
     await page.goto("/ru/blog/kakoy-sayt-nuzhen-biznesu");
     await page.getByRole("link", { name: "Switch to English" }).first().click();
     await expect(page).toHaveURL(/\/en\/blog\/which-website-for-your-business$/);

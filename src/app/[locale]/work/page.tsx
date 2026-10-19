@@ -1,95 +1,125 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
+import Link from "next/link";
 import type { Locale } from "@/config/site";
 import { getDictionary } from "@/content/locales";
-import { getSeo, localizeProject, ownProjects, referenceProjects } from "@/lib/content";
-import { ProjectCard } from "@/components/portfolio/project-card";
+import { getSeo, localizeProject, projects } from "@/lib/content";
+import { cardLabels } from "@/lib/cards";
 import { href } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/metadata";
-import { projectCategories, type ProjectCategory } from "@/lib/schemas";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
-import { WorkGallery } from "@/components/portfolio/work-gallery";
+import { Catalog, type CatalogItem } from "@/components/portfolio/catalog";
+import { ProjectCard } from "@/components/portfolio/project-card";
 import { CtaBand } from "@/components/sections/cta-band";
-import { Info } from "lucide-react";
 
-type Props = {
-  params: Promise<{ locale: Locale }>;
-  searchParams: Promise<{ type?: string }>;
-};
+type Props = { params: Promise<{ locale: Locale }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   return pageMetadata({ locale, path: "/work", og: "work", ...getSeo("work", locale)! });
 }
 
-const filters = ["all", ...projectCategories] as const;
-
-export default async function WorkPage({ params, searchParams }: Props) {
+export default async function WorkPage({ params }: Props) {
   const { locale } = await params;
-  const { type } = await searchParams;
   const t = getDictionary(locale);
-  const initial = ownProjects.some((p) => p.category === type) ? (type as ProjectCategory) : "all";
+  const tw = t.work;
+  const lp = projects.map((p) => localizeProject(p, locale));
+  const items: CatalogItem[] = lp.map((p, i) => ({
+    slug: p.slug,
+    name: p.name,
+    niche: p.niche,
+    summary: p.summary,
+    workType: p.workType,
+    demoUrl: p.demoUrl,
+    mobileFirst: p.mobileFirst,
+    images: { desktop: p.images.desktop, mobile: p.images.mobile },
+    href: href(locale, `/work/${p.slug}`),
+    format: p.format,
+    industry: p.industry,
+    publishedAt: p.publishedAt,
+    rank: i,
+    openLabel: p.workType === "demo" ? t.common.openDemo : t.common.openSite,
+    haystack: [p.name, p.niche, p.summary, p.problem, t.labels.industry[p.industry], t.labels.format[p.format], t.labels.workType[p.workType]]
+      .join(" ")
+      .toLowerCase()
+      .replace(/ё/g, "е"),
+  }));
+
+  // Without JavaScript (and before hydration) the first page renders as plain cards.
+  const fallback = (
+    <ul className="mt-8 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+      {lp.slice(0, 12).map((p, i) => (
+        <li key={p.slug}>
+          <ProjectCard project={p} href={href(locale, `/work/${p.slug}`)} labels={cardLabels(p, locale)} priority={i < 3} />
+        </li>
+      ))}
+    </ul>
+  );
 
   return (
     <>
-      <section className="container-page page-top pb-10">
+      <section className="container-page page-top pb-8">
         <Breadcrumbs
           label={t.common.breadcrumbs}
           items={[
             { name: t.common.home, href: href(locale) },
-            { name: t.work.title, href: href(locale, "/work") },
+            { name: tw.title, href: href(locale, "/work") },
           ]}
         />
-        <p className="eyebrow mb-4">{t.work.eyebrow}</p>
-        <h1 className="h1 max-w-4xl">{t.work.title}</h1>
-        <p className="lead mt-4">{t.work.lead}</p>
+        <h1 className="h1 max-w-4xl">{tw.title}</h1>
+        <p className="lead mt-4">{tw.lead}</p>
       </section>
-      <section aria-label={t.work.title} className="container-page pb-16 lg:pb-20">
-        <WorkGallery
-          initial={initial}
-          filters={[...filters]}
-          projects={ownProjects.map((p) => ({ ...localizeProject(p, locale), href: href(locale, `/work/${p.slug}`) }))}
-          labels={{
-            categories: t.work.categories,
-            filtersLabel: t.work.filtersLabel,
-            count: t.work.count,
-            demo: t.common.demoBadge,
-            own: t.selected.ownBadge,
-            client: t.selected.clientBadge,
-            author: t.selected.author,
-            cta: t.work.cardCta,
-          }}
-        />
-      </section>
-      <section id="references" aria-labelledby="refs-title" className="section border-t border-line">
-        <div className="container-page">
-          <h2 id="refs-title" className="h2">
-            {t.work.refsTitle}
-          </h2>
-          <div className="mt-4 flex max-w-3xl gap-3 rounded-xl border border-line bg-elevated px-4 py-3">
-            <Info className="mt-0.5 size-4 shrink-0 text-muted" aria-hidden="true" />
-            <p className="text-sm text-muted">{t.work.intro}</p>
-          </div>
-          <ul className="mt-8 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-            {referenceProjects.map((raw) => {
-              const p = localizeProject(raw, locale);
-              return (
-                <li key={p.slug}>
-                  <ProjectCard
-                    project={p}
-                    href={href(locale, `/work/${p.slug}`)}
-                    categoryLabel={t.work.categories[p.category]}
-                    demoLabel={t.common.demoBadge}
-                    authorLabel={t.selected.author}
-                    ctaLabel={t.work.cardCta}
-                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                  />
-                </li>
-              );
-            })}
+      <section aria-label={tw.title} className="container-page pb-16 lg:pb-20">
+        <Suspense fallback={fallback}>
+          <Catalog
+            items={items}
+            locale={locale}
+            labels={{
+              searchLabel: tw.searchLabel,
+              searchPlaceholder: tw.searchPlaceholder,
+              clearSearch: tw.clearSearch,
+              formatLabel: tw.formatLabel,
+              industryLabel: tw.industryLabel,
+              typeLabel: tw.typeLabel,
+              sortLabel: tw.sortLabel,
+              sort: tw.sort,
+              filters: tw.filters,
+              showFilters: tw.showFilters,
+              hideFilters: tw.hideFilters,
+              count: tw.count,
+              countLabel: tw.countLabel,
+              reset: tw.reset,
+              removeFilter: tw.removeFilter,
+              more: tw.more,
+              empty: tw.empty,
+              emptyHint: tw.emptyHint,
+              open: t.common.openDemo,
+              details: t.selected.details,
+              newTab: t.common.newTab,
+              formats: t.labels.formatFilter,
+              formatSingle: t.labels.format,
+              industries: t.labels.industry,
+              industryAll: t.labels.industryAll,
+              types: t.labels.workTypeFilter,
+              typeSingle: t.labels.workType,
+            }}
+          />
+        </Suspense>
+        <noscript>
+          <h2 className="h3 mt-12">{tw.allList}</h2>
+          <ul className="mt-4 grid gap-2 sm:grid-cols-2">
+            {lp.map((p) => (
+              <li key={p.slug}>
+                <Link href={href(locale, `/work/${p.slug}`)} className="text-lime underline underline-offset-4">
+                  {p.name}
+                </Link>{" "}
+                <span className="text-muted">— {p.niche}</span>
+              </li>
+            ))}
           </ul>
-        </div>
+        </noscript>
       </section>
-      <CtaBand locale={locale} location="work" title={t.work.ctaTitle} body={t.work.ctaBody} />
+      <CtaBand locale={locale} location="work" title={tw.ctaTitle} body={tw.ctaBody} />
     </>
   );
 }

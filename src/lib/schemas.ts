@@ -1,75 +1,69 @@
 import { z } from "zod";
 
 const url = z.string().url();
+const text = z.object({ ru: z.string().min(1), en: z.string().min(1) });
+const image = z.object({ src: z.string().startsWith("/portfolio/"), width: z.number().int().positive(), height: z.number().int().positive() });
 
-export const projectCategories = [
-  "ecommerce",
-  "business",
-  "landing",
-  "webapp",
-  "portfolio",
-  "content",
-] as const;
-
-export const projectKinds = ["client-project", "studio-project", "open-source-demo"] as const;
+/** Primary format of a project — one per project. */
+export const projectFormats = ["landing", "corporate", "shop", "app", "special"] as const;
+/** Industry group, a separate axis from the format. */
+export const projectIndustries = ["local-services", "commerce", "food-travel-realty", "education", "b2b", "products", "creative"] as const;
+/**
+ * client — made for a confirmed client; product — MicroStudio's own product;
+ * demo — a self-initiated demonstration project (fictional company).
+ */
+export const workTypes = ["client", "product", "demo"] as const;
+/** What a feature really is in the demo, shown honestly on the case page. */
+export const featureKinds = ["production-ready", "demo-logic", "missing-integration"] as const;
 
 export const projectSchema = z
   .object({
-    id: z.string(),
     slug: z.string().regex(/^[a-z0-9-]+$/),
-    title: z.string(),
-    titleEn: z.string(),
-    shortTitle: z.string(),
-    shortTitleEn: z.string(),
-    sectorRu: z.string(),
-    sectorEn: z.string(),
-    category: z.enum(projectCategories),
-    /**
-     * client-project — made by MicroStudio for a client (needs `permission`);
-     * studio-project — made by MicroStudio; open-source-demo — third-party
-     * template shown as a reference (needs author, source and licence).
-     */
-    kind: z.enum(projectKinds),
-    demo: url,
-    tech: z.array(z.string()).min(1),
-    descriptionRu: z.string(),
-    descriptionEn: z.string(),
-    overviewRu: z.string(),
-    overviewEn: z.string(),
-    featureRu: z.array(z.string()).length(3),
-    featureEn: z.array(z.string()).length(3),
-    lookForRu: z.array(z.string()).min(2),
-    lookForEn: z.array(z.string()).min(2),
-    screenshotPath: z.string().startsWith("/portfolio/"),
-    captureRoute: z.string(),
-    screenshotPriority: z.number().int(),
-    /** Skip the second desktop screenshot (e.g. it shows unfinished content). */
-    hideDetail: z.boolean().optional(),
-    /** The site is designed for phones: present the mobile screenshot first. */
-    mobileFirst: z.boolean().optional(),
-    // Third-party demos only.
-    author: z.string().optional(),
-    copyright: z.string().optional(),
-    source: url.optional(),
-    license: z.string().optional(),
-    licenseUrl: url.optional(),
-    // Own projects — fill only with confirmed facts.
-    client: z.string().optional(),
-    year: z.number().int().optional(),
-    goal: z.string().optional(),
-    contribution: z.string().optional(),
-    permission: z.string().optional(),
-    result: z.string().optional(),
+    workType: z.enum(workTypes),
+    format: z.enum(projectFormats),
+    industry: z.enum(projectIndustries),
+    niche: text,
+    title: text,
+    /** One line for cards. */
+    summary: text,
+    /** What the project solves — 2–3 sentences for the case page. */
+    problem: text,
+    scenario: text,
+    features: z.array(text.extend({ kind: z.enum(featureKinds) })).min(2),
+    limits: text,
+    /** What MicroStudio did: 3–6 concrete points. */
+    studio: z.object({ ru: z.array(z.string()).min(3).max(6), en: z.array(z.string()).min(3).max(6) }),
+    provenance: z.object({
+      type: z.enum(["original", "derived", "own", "client"]),
+      ru: z.string(),
+      en: z.string(),
+      assets: z.array(z.object({ name: z.string(), license: z.string(), source: url })),
+      upstream: z.object({ name: z.string(), url, sha: z.string(), license: z.string(), licenseUrl: url, authors: z.string() }).optional(),
+    }),
+    client: z.object({ name: z.string(), permission: z.string() }).nullable(),
+    demoUrl: url,
+    /** showcase — our deployment from the showcase repo; external — hosted by the owner/client. */
+    hosting: z.enum(["showcase", "external"]),
+    /** Release date of our version (first deployment). */
+    publishedAt: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+    verifiedAt: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+    /** Editorial order for "Recommended"; null = after ranked projects. */
+    featuredRank: z.number().int().positive().nullable(),
+    language: z.string(),
+    mobileFirst: z.boolean(),
+    images: z.object({
+      desktop: image,
+      mobile: image,
+      gallery: z.array(image.extend({ viewport: z.enum(["desktop", "mobile"]), alt: text })),
+    }),
   })
-  .refine((p) => p.kind !== "client-project" || !!p.permission, {
-    message: "client-project entries need a documented permission",
-  })
-  .refine((p) => p.kind !== "open-source-demo" || (p.author && p.copyright && p.source && p.license && p.licenseUrl), {
-    message: "open-source demos need author, copyright, source and licence",
-  });
+  .refine((p) => p.workType !== "client" || !!p.client?.permission, { message: "client projects need a documented permission" })
+  .refine((p) => p.provenance.type !== "derived" || !!p.provenance.upstream, { message: "derived projects need upstream, SHA and licence" });
 
 export type Project = z.infer<typeof projectSchema>;
-export type ProjectCategory = (typeof projectCategories)[number];
+export type ProjectFormat = (typeof projectFormats)[number];
+export type ProjectIndustry = (typeof projectIndustries)[number];
+export type WorkType = (typeof workTypes)[number];
 
 export const faqSchema = z.array(z.object({ question: z.string(), answer: z.string() })).min(5);
 export type FaqItem = { question: string; answer: string };

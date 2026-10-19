@@ -22,7 +22,7 @@ export function generateStaticParams() {
   return locales.flatMap((locale) => getPosts(locale).map((p) => ({ locale, slug: p.slug })));
 }
 
-const relatedService = { websites: "websites", planning: "design", advertising: "advertising" } as const;
+const relatedService = { websites: "websites", planning: "strategy", advertising: "marketing" } as const;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;

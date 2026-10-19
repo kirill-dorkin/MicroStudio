@@ -4,8 +4,7 @@ import { getSeo } from "@/lib/content";
 import { pageMetadata } from "@/lib/metadata";
 import { Hero } from "@/components/sections/home/hero";
 import { SelectedWork } from "@/components/sections/home/selected-work";
-import { Proof } from "@/components/sections/home/proof";
-import { Formats } from "@/components/sections/home/formats";
+import { ServicesGrid } from "@/components/sections/home/services-grid";
 import { Process } from "@/components/sections/home/process";
 import { FaqSection } from "@/components/sections/home/faq-section";
 import { Founder } from "@/components/sections/founder";
@@ -25,10 +24,9 @@ export default async function HomePage({ params }: Props) {
     <>
       <Hero locale={locale} />
       <SelectedWork locale={locale} />
-      <Proof locale={locale} />
-      <Formats locale={locale} />
-      <Founder locale={locale} />
+      <ServicesGrid locale={locale} />
       <Process locale={locale} />
+      <Founder locale={locale} />
       <FaqSection locale={locale} />
       <CtaBand locale={locale} location="home" />
     </>

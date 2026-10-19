@@ -39,9 +39,9 @@ export default async function ServicesPage({ params }: Props) {
       </section>
 
       <section aria-label={t.nav.services} className="container-page pb-16 lg:pb-20">
-        <ul className="grid gap-5 md:grid-cols-2">
+        <ul className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {services.map((s, i) => (
-            <li key={s.slug} className="group relative flex flex-col rounded-[20px] border border-line bg-elevated p-7 transition-colors duration-300 hover:border-line-strong md:p-9" data-reveal>
+            <li key={s.slug} className="group relative flex flex-col rounded-[20px] border border-line bg-elevated p-7 transition-colors duration-300 hover:border-line-strong md:p-9">
               <div className="flex items-start justify-between gap-6">
                 <span className="font-display text-sm font-semibold text-lime">0{i + 1}</span>
                 <span aria-hidden="true" className="inline-flex size-12 items-center justify-center rounded-full border border-line text-muted transition-all duration-300 group-hover:border-lime group-hover:bg-lime group-hover:text-bg">
@@ -53,12 +53,12 @@ export default async function ServicesPage({ params }: Props) {
                   {s.title}
                 </Link>
               </h2>
-              <p className="mt-4 text-muted">{s.lead}</p>
+              <p className="mt-4 text-muted">{s.card}</p>
               <ul className="mt-8 grid gap-2 border-t border-line pt-6 text-[0.95rem] sm:grid-cols-2">
-                {s.whatWeDo.map((w) => (
-                  <li key={w.title} className="flex gap-2.5">
+                {s.points.map((w) => (
+                  <li key={w} className="flex gap-2.5">
                     <span className="mt-2.5 h-px w-3 shrink-0 bg-lime" aria-hidden="true" />
-                    {w.title}
+                    {w}
                   </li>
                 ))}
               </ul>

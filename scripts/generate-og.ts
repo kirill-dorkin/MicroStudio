@@ -10,7 +10,7 @@ import path from "node:path";
 import sharp from "sharp";
 import { getDictionary } from "../src/content/locales";
 import { getServices } from "../src/content/services";
-import { getPosts, getSeo, localizeProject, projects } from "../src/lib/content";
+import { getPosts, getSeo } from "../src/lib/content";
 import type { Locale } from "../src/config/site";
 
 const root = process.cwd();
@@ -28,15 +28,7 @@ function cards(locale: Locale): Card[] {
     { key: "services", eyebrow: t.services.eyebrow, title: seo("services") },
     ...getServices(locale).map((s) => ({ key: `service-${s.slug}`, eyebrow: s.title, title: s.heroTitle })),
     { key: "work", eyebrow: t.work.eyebrow, title: t.work.title },
-    ...projects.map((p) => {
-      const lp = localizeProject(p, locale);
-      return {
-        key: `work-${p.slug}`,
-        eyebrow: `${t.common.demoBadgeLong} · ${lp.author}`,
-        title: lp.name,
-        image: lp.screenshots.desktop,
-      };
-    }),
+    // Case pages use a cover cut from their live screenshot (scripts/sync-showcase.ts).
     { key: "about", eyebrow: t.about.eyebrow, title: t.about.title },
     { key: "blog", eyebrow: t.blog.eyebrow, title: t.blog.title },
     ...getPosts(locale).map((p) => ({ key: `blog-${p.ruSlug}`, eyebrow: t.blog.eyebrow, title: p.title })),

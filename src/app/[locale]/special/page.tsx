@@ -70,12 +70,12 @@ export default async function SpecialPage({ params }: Props) {
             <div className="relative mx-auto flex max-w-[480px] items-end justify-center gap-4">
               <div className="w-[48%] overflow-hidden rounded-[28px] border-[6px] border-[#2b3033] bg-[#2b3033] shadow-[0_40px_90px_-30px_rgba(0,0,0,0.9)]">
                 <div className="relative aspect-[390/844] overflow-hidden rounded-[22px] bg-white">
-                  <Image src={example.screenshots.mobile} alt={example.name} fill priority sizes="(min-width: 1024px) 230px, 46vw" className="object-cover object-top" />
+                  <Image src={example.images.mobile.src} alt={example.name} fill priority sizes="(min-width: 1024px) 230px, 46vw" className="object-cover object-top" />
                 </div>
               </div>
               <div className="mb-[12%] w-[44%] overflow-hidden rounded-[26px] border-[6px] border-[#2b3033] bg-[#2b3033] shadow-[0_40px_90px_-30px_rgba(0,0,0,0.9)]">
                 <div className="relative aspect-[390/844] overflow-hidden rounded-[20px] bg-white">
-                  <Image src={example.screenshots.detail ?? example.screenshots.mobile} alt="" fill sizes="(min-width: 1024px) 210px, 42vw" className="object-cover object-[center_top]" />
+                  <Image src={example.images.gallery.find((g) => g.viewport === "mobile")?.src ?? example.images.mobile.src} alt="" fill sizes="(min-width: 1024px) 210px, 42vw" className="object-cover object-[center_top]" />
                 </div>
               </div>
             </div>

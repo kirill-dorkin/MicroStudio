@@ -40,7 +40,7 @@ export default async function BlogPage({ params }: Props) {
       <section aria-label={t.blog.title} className="container-page pb-16">
         <ul className="border-t border-line">
           {posts.map((post, i) => (
-            <li key={post.slug} className="group relative border-b border-line" data-reveal>
+            <li key={post.slug} className="group relative border-b border-line">
               <article className="grid gap-3 py-8 md:grid-cols-[3rem_1fr_auto] md:gap-8">
                 <span className="font-display text-sm font-semibold tabular-nums text-subtle group-hover:text-lime">
                   0{i + 1}

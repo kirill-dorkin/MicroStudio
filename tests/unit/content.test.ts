@@ -6,7 +6,7 @@ import sharp from "sharp";
 import ru from "@/content/locales/ru";
 import en from "@/content/locales/en";
 import { getServices, serviceSlugs } from "@/content/services";
-import { featuredProjects, getFaq, getPosts, localizeProject, ownProjects, projects, referenceProjects } from "@/lib/content";
+import { featuredProjects, getFaq, getPosts, localizeProject, projects } from "@/lib/content";
 
 const pub = (p: string) => path.join(process.cwd(), "public", p);
 
@@ -18,39 +18,40 @@ function keys(obj: unknown, prefix = ""): string[] {
 }
 
 describe("portfolio", () => {
-  it("leads with MicroStudio's own work", () => {
-    expect(ownProjects.length).toBeGreaterThanOrEqual(6);
-    expect(projects.slice(0, ownProjects.length).every((p) => p.kind !== "open-source-demo")).toBe(true);
-    expect(featuredProjects.every((p) => p.kind !== "open-source-demo")).toBe(true);
-    for (const p of ownProjects) {
-      expect(p.demo).toMatch(/^https:\/\//);
-      if (p.kind === "client-project") expect(p.permission).toBeTruthy();
+  it("contains only verified, labelled work with own deployments", () => {
+    expect(projects.length).toBeGreaterThanOrEqual(5);
+    const slugs = new Set(projects.map((p) => p.slug));
+    expect(slugs.size).toBe(projects.length);
+    for (const p of projects) {
+      expect(p.demoUrl).toMatch(/^https:\/\//);
+      if (p.workType === "client") expect(p.client?.permission).toBeTruthy();
+      // New demos must run on MicroStudio's own deployments, never an upstream author's demo.
+      if (p.hosting === "showcase") expect(new URL(p.demoUrl).host).toMatch(/^ms-[a-z0-9-]+\.vercel\.app$/);
+      if (p.provenance.type === "derived") expect(p.provenance.upstream?.license).toBeTruthy();
     }
   });
 
-  it("keeps all seven open-source references with credits", () => {
-    expect(referenceProjects).toHaveLength(7);
-    for (const p of referenceProjects) {
-      expect(p.license).toBe("MIT");
-      expect(p.source).toMatch(/^https:\/\/github\.com\//);
-      expect(p.licenseUrl).toMatch(/LICENSE$/);
-      expect(p.author?.length).toBeGreaterThan(2);
-    }
+  it("features ranked projects only, in editorial order", () => {
+    const featured = featuredProjects(8);
+    expect(featured.length).toBeGreaterThanOrEqual(4);
+    const ranks = featured.map((p) => p.featuredRank!);
+    expect([...ranks].sort((a, b) => a - b)).toEqual(ranks);
   });
 
-  it("ships real, distinct screenshots at least 900px wide", async () => {
+  it("ships real, distinct screenshots for every project", async () => {
     const hashes = new Set<string>();
     for (const p of projects) {
-      const shots = localizeProject(p, "ru").screenshots;
-      for (const file of [shots.desktop, shots.detail, shots.mobile, shots.og].filter((f): f is string => !!f)) {
+      const img = localizeProject(p, "ru").images;
+      for (const file of [img.desktop.src, img.mobile.src, ...img.gallery.map((g) => g.src), `/og/work-${p.slug}.jpg`]) {
         expect(existsSync(pub(file)), file).toBe(true);
       }
-      const meta = await sharp(pub(shots.desktop)).metadata();
+      const meta = await sharp(pub(img.desktop.src)).metadata();
+      expect(meta.width).toBe(img.desktop.width);
       expect(meta.width).toBeGreaterThanOrEqual(900);
-      const stats = await sharp(pub(shots.desktop)).stats();
+      const stats = await sharp(pub(img.desktop.src)).stats();
       // A flat placeholder would have near-zero deviation in every channel.
       expect(Math.max(...stats.channels.map((c) => c.stdev))).toBeGreaterThan(10);
-      hashes.add(createHash("sha256").update(readFileSync(pub(shots.desktop))).digest("hex"));
+      hashes.add(createHash("sha256").update(readFileSync(pub(img.desktop.src))).digest("hex"));
     }
     expect(hashes.size).toBe(projects.length);
   });
@@ -66,7 +67,7 @@ describe("content completeness", () => {
     expect(all).not.toMatch(/lorem ipsum|coming soon|скоро здесь|TODO|placeholder number/i);
   });
 
-  it("has four services per locale with 4–6 FAQ items", () => {
+  it("has six full-cycle services per locale with 4–6 FAQ items", () => {
     for (const locale of ["ru", "en"] as const) {
       const services = getServices(locale);
       expect(services.map((s) => s.slug)).toEqual(serviceSlugs);
