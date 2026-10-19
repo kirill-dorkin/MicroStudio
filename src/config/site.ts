@@ -27,7 +27,20 @@ function resolveSiteUrl(): string {
   return "http://localhost:3000";
 }
 
+/**
+ * The person behind the studio, shown on the home and about pages.
+ * Fill in only with real, approved data (photo goes to /public/team/).
+ */
+type Founder = {
+  name: string;
+  role: { ru: string; en: string };
+  bio: { ru: string; en: string };
+  photo: string;
+};
+const founder: Founder | null = null;
+
 export const site = {
+  founder: founder as Founder | null,
   name: "MicroStudio",
   instagram: "https://www.instagram.com/microstudio_official/",
   instagramHandle: "@microstudio_official",

@@ -1,5 +1,279 @@
 [
   {
+    "id": "best-electronics-link",
+    "slug": "best-electronics-link",
+    "kind": "client-project",
+    "title": "BestElectronics — страница сервисного центра",
+    "titleEn": "BestElectronics — service centre page",
+    "shortTitle": "Сервисный центр",
+    "shortTitleEn": "Service centre",
+    "sectorRu": "Ремонт техники, Бишкек",
+    "sectorEn": "Electronics repair, Bishkek",
+    "category": "business",
+    "client": "BestElectronics",
+    "demo": "https://be-lending.vercel.app/",
+    "tech": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "permission": "Подтверждено владельцем MicroStudio как реальный проект (бриф от 2026-10-18)",
+    "descriptionRu": "Мобильная страница сервисного центра: звонок и WhatsApp в одно касание, адрес с картой и выбор ремонта с готовым сообщением.",
+    "descriptionEn": "A mobile page for a repair centre: one-tap call and WhatsApp, address with a map and a repair picker that opens a ready message.",
+    "overviewRu": "Клиенты сервисного центра приходят с телефона и хотят одного — быстро спросить про ремонт. Поэтому страница начинается с двух кнопок: «Позвонить» и «WhatsApp». Ниже — адрес на карте со ссылкой в 2ГИС и список типовых поломок: человек выбирает «Ноутбук» или «Чистка» — и WhatsApp открывается с уже написанным сообщением.",
+    "overviewEn": "Repair customers arrive on a phone and want one thing: to ask about a repair quickly. So the page opens with two buttons — Call and WhatsApp. Below are the address on a map with a 2GIS link and a list of common problems: a visitor taps “Laptop” or “Cleaning” and WhatsApp opens with the message already written.",
+    "featureRu": [
+      "Звонок и WhatsApp на первом экране",
+      "Выбор ремонта с готовым сообщением",
+      "Адрес, карта и ссылка в 2ГИС"
+    ],
+    "featureEn": [
+      "Call and WhatsApp on the first screen",
+      "Repair picker with a ready message",
+      "Address, map and 2GIS link"
+    ],
+    "lookForRu": [
+      "Как быстро можно связаться с телефона",
+      "Категории ремонта, каждая открывает WhatsApp",
+      "Карту и часы работы"
+    ],
+    "lookForEn": [
+      "How fast you can get in touch from a phone",
+      "Repair categories, each opening WhatsApp",
+      "The map and opening hours"
+    ],
+    "screenshotPath": "/portfolio/best-electronics-link.webp",
+    "captureRoute": "/",
+    "screenshotPriority": 1,
+    "mobileFirst": true
+  },
+  {
+    "id": "best-electronics-store",
+    "slug": "best-electronics-store",
+    "kind": "client-project",
+    "title": "BestElectronics — интернет-магазин и сервис",
+    "titleEn": "BestElectronics — online store and service",
+    "shortTitle": "Магазин электроники",
+    "shortTitleEn": "Electronics store",
+    "sectorRu": "Электроника и ремонт",
+    "sectorEn": "Electronics and repair",
+    "category": "ecommerce",
+    "client": "BestElectronics",
+    "demo": "https://be-kg.vercel.app/",
+    "tech": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "permission": "Подтверждено владельцем MicroStudio как реальный проект (бриф от 2026-10-18)",
+    "descriptionRu": "Сайт магазина электроники с каталогом, разделом сервисного центра, процессом ремонта и программой лояльности.",
+    "descriptionEn": "An electronics store website with a catalogue, a service centre section, a repair process and a loyalty programme.",
+    "overviewRu": "Магазин и сервисный центр в одном сайте: каталог техники с ценами в сомах, отдельный раздел ремонта с описанием этапов, блок про доставку и гарантию и подписка Community для постоянных клиентов. Переключение языка и валюты — в шапке.",
+    "overviewEn": "A store and a service centre in one site: a catalogue with prices in KGS, a repair section that explains each stage, delivery and warranty information and a Community subscription for regular customers. Language and currency switches sit in the header.",
+    "featureRu": [
+      "Каталог и поиск товаров",
+      "Раздел сервиса и этапы ремонта",
+      "Языки и валюта в шапке"
+    ],
+    "featureEn": [
+      "Catalogue and product search",
+      "Service section and repair stages",
+      "Language and currency switches"
+    ],
+    "lookForRu": [
+      "Как магазин и ремонт уживаются на одном сайте",
+      "Понятный процесс ремонта по шагам",
+      "Блок подписки для постоянных клиентов"
+    ],
+    "lookForEn": [
+      "How a store and repairs live on one site",
+      "A clear step-by-step repair process",
+      "The subscription block for regular customers"
+    ],
+    "screenshotPath": "/portfolio/best-electronics-store.webp",
+    "captureRoute": "/",
+    "screenshotPriority": 2
+  },
+  {
+    "id": "anna-art",
+    "slug": "anna-art",
+    "kind": "studio-project",
+    "title": "Anna Art — бантики ручной работы",
+    "titleEn": "Anna Art — handmade hair bows",
+    "shortTitle": "Ручная работа",
+    "shortTitleEn": "Handmade shop",
+    "sectorRu": "Товары ручной работы",
+    "sectorEn": "Handmade goods",
+    "category": "ecommerce",
+    "demo": "https://anna-art-2026-delta.vercel.app/",
+    "tech": [
+      "Next.js",
+      "Tailwind CSS"
+    ],
+    "descriptionRu": "Тёплая витрина для мастера: изделия, преимущества и заказ через WhatsApp без корзины и регистрации.",
+    "descriptionEn": "A warm storefront for a maker: products, benefits and ordering via WhatsApp — no cart or sign-up.",
+    "overviewRu": "Небольшому мастеру не нужна сложная корзина — достаточно показать изделия и дать удобный способ заказать. Мягкая палитра и антиква передают характер ручной работы, а каждая кнопка ведёт в WhatsApp, где уточняются цвет, наличие и доставка.",
+    "overviewEn": "A small maker doesn’t need a complex cart — just a way to show the work and an easy way to order. A soft palette and a serif typeface carry the handmade feel, and every button leads to WhatsApp to confirm colour, availability and delivery.",
+    "featureRu": [
+      "Витрина изделий",
+      "Заказ через WhatsApp",
+      "Фирменный тёплый стиль"
+    ],
+    "featureEn": [
+      "Product showcase",
+      "Ordering via WhatsApp",
+      "A warm, branded style"
+    ],
+    "lookForRu": [
+      "Как стиль передаёт характер товара",
+      "Путь от просмотра до сообщения в WhatsApp",
+      "Мобильную версию"
+    ],
+    "lookForEn": [
+      "How the style reflects the product",
+      "The path from browsing to a WhatsApp message",
+      "The mobile version"
+    ],
+    "screenshotPath": "/portfolio/anna-art.webp",
+    "captureRoute": "/",
+    "screenshotPriority": 3,
+    "hideDetail": true
+  },
+  {
+    "id": "jarjar",
+    "slug": "jarjar",
+    "kind": "studio-project",
+    "title": "Jarjar — подрядчики для праздников",
+    "titleEn": "Jarjar — event services marketplace",
+    "shortTitle": "Маркетплейс",
+    "shortTitleEn": "Marketplace",
+    "sectorRu": "Свадьбы, тои и мероприятия",
+    "sectorEn": "Weddings and events",
+    "category": "webapp",
+    "demo": "https://toi-front.vercel.app/",
+    "tech": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "descriptionRu": "Платформа для поиска банкетных залов, ведущих, фотографов и артистов: поиск по городу и типу события, карточки, сравнение и связь в WhatsApp.",
+    "descriptionEn": "A platform for finding venues, hosts, photographers and performers: search by city and event type, listing cards, comparison and WhatsApp contact.",
+    "overviewRu": "Организатор тоя или свадьбы ищет сразу несколько подрядчиков. Jarjar собирает их в одном месте: поиск по категории, городу и типу события, карточки с рейтингом и ценой «от», сравнение и кнопка WhatsApp прямо в карточке. Для бизнеса — отдельный вход и размещение объявления.",
+    "overviewEn": "Someone planning a wedding or a toi needs several vendors at once. Jarjar brings them together: search by category, city and event type, cards with rating and starting price, comparison and a WhatsApp button on every card. Businesses get their own sign-in and listing flow.",
+    "featureRu": [
+      "Поиск по категории, городу и событию",
+      "Карточки, сравнение и WhatsApp",
+      "Кабинет для размещения бизнеса"
+    ],
+    "featureEn": [
+      "Search by category, city and event",
+      "Cards, comparison and WhatsApp",
+      "A business area for listings"
+    ],
+    "lookForRu": [
+      "Поисковую панель на первом экране",
+      "Карточки подрядчиков с быстрыми действиями",
+      "Категории услуг"
+    ],
+    "lookForEn": [
+      "The search panel on the first screen",
+      "Vendor cards with quick actions",
+      "Service categories"
+    ],
+    "screenshotPath": "/portfolio/jarjar.webp",
+    "captureRoute": "/",
+    "screenshotPriority": 4
+  },
+  {
+    "id": "nova-ielts",
+    "slug": "nova-ielts",
+    "kind": "studio-project",
+    "title": "Nova — школа подготовки к IELTS",
+    "titleEn": "Nova — IELTS preparation school",
+    "shortTitle": "Онлайн-школа",
+    "shortTitleEn": "Online school",
+    "sectorRu": "Образование",
+    "sectorEn": "Education",
+    "category": "landing",
+    "demo": "https://nova-five-snowy.vercel.app/",
+    "tech": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "descriptionRu": "Продающий лендинг онлайн-школы: программа, калькулятор балла, тарифы, истории учеников и заявка на пробное занятие.",
+    "descriptionEn": "A sales landing page for an online school: programme, score calculator, pricing plans, student stories and a trial-lesson form.",
+    "overviewRu": "Лендинг ведёт ученика от обещания к заявке: преимущества формата, интерактивный калькулятор балла, три тарифа с понятной разницей, вопросы и форма записи на бесплатное занятие с выбором удобного мессенджера.",
+    "overviewEn": "The landing page leads a student from the promise to an enquiry: format benefits, an interactive score calculator, three plans with clear differences, FAQ and a free-trial form with a preferred messenger.",
+    "featureRu": [
+      "Калькулятор балла",
+      "Тарифы и FAQ",
+      "Заявка на пробное занятие"
+    ],
+    "featureEn": [
+      "Score calculator",
+      "Pricing and FAQ",
+      "Trial lesson form"
+    ],
+    "lookForRu": [
+      "Сильный первый экран с двумя действиями",
+      "Интерактивный калькулятор",
+      "Сравнение тарифов"
+    ],
+    "lookForEn": [
+      "A strong hero with two actions",
+      "The interactive calculator",
+      "Plan comparison"
+    ],
+    "screenshotPath": "/portfolio/nova-ielts.webp",
+    "captureRoute": "/",
+    "screenshotPriority": 5
+  },
+  {
+    "id": "tikitaki",
+    "slug": "tikitaki",
+    "kind": "studio-project",
+    "title": "TikiTaki — сервис онлайн-записи",
+    "titleEn": "TikiTaki — online booking service",
+    "shortTitle": "Онлайн-запись",
+    "shortTitleEn": "Online booking",
+    "sectorRu": "Сервис для салонов и студий",
+    "sectorEn": "Booking for salons and studios",
+    "category": "webapp",
+    "demo": "https://beauty-salon-plum-mu.vercel.app/",
+    "tech": [
+      "Next.js",
+      "TypeScript"
+    ],
+    "descriptionRu": "Сайт продукта для онлайн-записи: отрасли, запись по QR-коду, управление через Telegram и модульная настройка.",
+    "descriptionEn": "A product site for online booking: industries, QR booking, management via Telegram and modular setup.",
+    "overviewRu": "Тёмная продуктовая страница для сервиса записи клиентов: показывает, для каких отраслей он подходит — от салонов до автосервисов, — как клиент записывается по QR-коду без приложений и как владелец управляет записями через Telegram.",
+    "overviewEn": "A dark product page for a client booking service: which industries it suits — from salons to car services — how customers book via a QR code without an app, and how owners manage bookings in Telegram.",
+    "featureRu": [
+      "Сценарии для разных отраслей",
+      "Запись по QR-коду",
+      "Управление через Telegram"
+    ],
+    "featureEn": [
+      "Scenarios for different industries",
+      "QR-code booking",
+      "Management via Telegram"
+    ],
+    "lookForRu": [
+      "Продуктовую подачу первого экрана",
+      "Сетку отраслей",
+      "Мобильную версию"
+    ],
+    "lookForEn": [
+      "The product-style hero",
+      "The industry grid",
+      "The mobile version"
+    ],
+    "screenshotPath": "/portfolio/tikitaki.webp",
+    "captureRoute": "/",
+    "screenshotPriority": 6
+  },
+  {
     "id": "commerce-fashion",
     "slug": "fashion-store",
     "title": "Storefront — интернет-магазин одежды",
@@ -25,7 +299,7 @@
     ],
     "screenshotPath": "/portfolio/fashion-store.webp",
     "captureRoute": "/",
-    "screenshotPriority": 1,
+    "screenshotPriority": 101,
     "titleEn": "Storefront — fashion online store",
     "shortTitleEn": "Online store",
     "sectorRu": "Одежда и аксессуары",
@@ -77,7 +351,7 @@
     ],
     "screenshotPath": "/portfolio/restaurant-tablefork.webp",
     "captureRoute": "/",
-    "screenshotPriority": 2,
+    "screenshotPriority": 102,
     "titleEn": "Table & Fork — restaurant website",
     "shortTitleEn": "Restaurant",
     "sectorRu": "Ресторан и кафе",
@@ -129,7 +403,7 @@
     ],
     "screenshotPath": "/portfolio/photo-lumen.webp",
     "captureRoute": "/",
-    "screenshotPriority": 3,
+    "screenshotPriority": 103,
     "titleEn": "Lumen — photographer website",
     "shortTitleEn": "Photo portfolio",
     "sectorRu": "Фотограф, творческие услуги",
@@ -181,7 +455,7 @@
     ],
     "screenshotPath": "/portfolio/saas-launchpad.webp",
     "captureRoute": "/",
-    "screenshotPriority": 4,
+    "screenshotPriority": 104,
     "titleEn": "LaunchPad — SaaS presentation",
     "shortTitleEn": "SaaS product",
     "sectorRu": "Программный продукт",
@@ -233,7 +507,7 @@
     ],
     "screenshotPath": "/portfolio/dashboard-pulse.webp",
     "captureRoute": "/",
-    "screenshotPriority": 5,
+    "screenshotPriority": 105,
     "titleEn": "Pulse — analytics dashboard",
     "shortTitleEn": "Dashboard",
     "sectorRu": "Веб-приложение, внутренние инструменты",
@@ -285,7 +559,7 @@
     ],
     "screenshotPath": "/portfolio/startup-ignite.webp",
     "captureRoute": "/",
-    "screenshotPriority": 6,
+    "screenshotPriority": 106,
     "titleEn": "Ignite — startup website",
     "shortTitleEn": "Startup",
     "sectorRu": "Стартап, финансовый сервис",
@@ -337,7 +611,7 @@
     ],
     "screenshotPath": "/portfolio/blog-nova.webp",
     "captureRoute": "/",
-    "screenshotPriority": 7,
+    "screenshotPriority": 107,
     "titleEn": "Nova — content website",
     "shortTitleEn": "Blog & media",
     "sectorRu": "Блог, медиа, экспертный контент",

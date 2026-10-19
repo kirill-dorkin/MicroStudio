@@ -14,6 +14,7 @@
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-manrope), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), Georgia, serif;
 
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
   --breakpoint-xs: 400px;
@@ -45,6 +46,7 @@
     text-wrap: balance;
   }
   p { text-wrap: pretty; }
+  .accent-serif { font-family: var(--font-playfair), Georgia, serif; font-style: italic; font-weight: 500; letter-spacing: -0.02em; }
   ::selection { background: var(--color-lime); color: var(--color-bg); }
   :focus-visible {
     outline: 2px solid var(--color-lime);

@@ -19,6 +19,8 @@ type Props = {
     filtersLabel: string;
     count: string;
     demo: string;
+    own: string;
+    client: string;
     author: string;
     cta: string;
   };
@@ -60,7 +62,7 @@ export function WorkGallery({ projects, initial, filters, labels }: Props) {
           aria-label={labels.filtersLabel}
           className="no-scrollbar flex gap-2 overflow-x-auto md:flex-wrap"
         >
-          {filters.map((f) => {
+          {filters.filter((f) => f === "all" || projects.some((p) => p.category === f)).map((f) => {
             const count = f === "all" ? projects.length : projects.filter((p) => p.category === f).length;
             const active = f === filter;
             return (
@@ -97,6 +99,7 @@ export function WorkGallery({ projects, initial, filters, labels }: Props) {
               href={project.href}
               categoryLabel={labels.categories[project.category]}
               demoLabel={labels.demo}
+              ownLabel={project.kind === "client-project" ? labels.client : labels.own}
               authorLabel={labels.author}
               ctaLabel={labels.cta}
               headingLevel="h2"

@@ -41,7 +41,7 @@ test("25–26. blog lists and renders every article in both languages", async ({
 test("32. sitemap lists every indexable route", async ({ request }) => {
   const xml = await (await request.get("/sitemap.xml")).text();
   const urls = xml.match(/<loc>/g)?.length ?? 0;
-  expect(urls).toBe(44);
+  expect(urls).toBe(56);
   expect(xml).toContain("/en/blog/which-website-for-your-business");
   expect(xml).toContain('hreflang="ru"');
 });
@@ -103,31 +103,30 @@ test("36. reduced motion removes transitions and smooth scrolling", async ({ bro
   const page = await context.newPage();
   await page.goto("/ru");
   const duration = await page
-    .getByRole("button", { name: "Следующий пример" })
+    .locator("main")
+    .getByRole("link", { name: /Написать в WhatsApp/ })
+    .first()
     .evaluate((el) => parseFloat(getComputedStyle(el).transitionDuration));
   expect(duration).toBeLessThan(0.01);
   expect(await page.evaluate(() => getComputedStyle(document.documentElement).scrollBehavior)).toBe("auto");
   await context.close();
 });
 
-test("hero examples switch with arrows and named tabs, no autoplay", async ({ page, isMobile }) => {
-  test.skip(isMobile, "tabs are desktop/tablet; phones use the arrows (covered below)");
+test("hero collage links to real MicroStudio projects", async ({ page }) => {
   await page.goto("/ru");
-  const group = page.getByRole("group", { name: "Выбрать пример" });
-  await expect(group.getByRole("button", { name: "Интернет-магазин" })).toHaveAttribute("aria-pressed", "true");
-  await page.waitForTimeout(3000);
-  await expect(group.getByRole("button", { name: "Интернет-магазин" })).toHaveAttribute("aria-pressed", "true");
-  await page.getByRole("button", { name: "Следующий пример" }).click();
-  await expect(group.getByRole("button", { name: "Ресторан" })).toHaveAttribute("aria-pressed", "true");
-  await group.getByRole("button", { name: "Dashboard" }).click();
-  await expect(page.getByRole("link", { name: /Открыть пример: Pulse/ })).toHaveAttribute("href", "/ru/work/dashboard-pulse");
+  const hero = page.locator("section[aria-labelledby='hero-title']");
+  for (const slug of ["best-electronics-store", "best-electronics-link", "anna-art", "nova-ielts"]) {
+    await expect(hero.locator(`a[href="/ru/work/${slug}"]`)).toHaveCount(1);
+  }
+  await expect(hero.getByRole("link", { name: /Сайт-визитка — 1/ })).toHaveAttribute("href", "/ru/special");
 });
 
-test("hero arrows switch examples on phones", async ({ page, isMobile }) => {
-  test.skip(!isMobile, "mobile only");
+test("proof section uses the real BestElectronics page", async ({ page }) => {
   await page.goto("/ru");
-  await page.getByRole("button", { name: "Следующий пример" }).click();
-  await expect(page.getByRole("link", { name: /Открыть пример: Table & Fork/ })).toBeVisible();
+  const proof = page.locator("section[aria-labelledby='proof-title']");
+  await expect(proof.getByRole("link", { name: /Открыть сайт/ })).toHaveAttribute("href", "https://be-lending.vercel.app/");
+  const cta = proof.getByRole("link", { name: /Хочу так же/ });
+  expect(new URL((await cta.getAttribute("href"))!).searchParams.get("text")).toContain("BestElectronics");
 });
 
 test("fixed header does not cover anchored headings", async ({ page }) => {

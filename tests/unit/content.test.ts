@@ -6,7 +6,7 @@ import sharp from "sharp";
 import ru from "@/content/locales/ru";
 import en from "@/content/locales/en";
 import { getServices, serviceSlugs } from "@/content/services";
-import { featuredProjects, getFaq, getPosts, localizeProject, projects } from "@/lib/content";
+import { featuredProjects, getFaq, getPosts, localizeProject, ownProjects, projects, referenceProjects } from "@/lib/content";
 
 const pub = (p: string) => path.join(process.cwd(), "public", p);
 
@@ -18,26 +18,31 @@ function keys(obj: unknown, prefix = ""): string[] {
 }
 
 describe("portfolio", () => {
-  it("has at least seven open-source demos with credits", () => {
-    expect(projects.length).toBeGreaterThanOrEqual(7);
-    for (const p of projects) {
-      expect(p.kind).toBe("open-source-demo");
-      expect(p.license).toBe("MIT");
-      expect(p.source).toMatch(/^https:\/\/github\.com\//);
-      expect(p.licenseUrl).toMatch(/LICENSE$/);
-      expect(p.author.length).toBeGreaterThan(2);
+  it("leads with MicroStudio's own work", () => {
+    expect(ownProjects.length).toBeGreaterThanOrEqual(6);
+    expect(projects.slice(0, ownProjects.length).every((p) => p.kind !== "open-source-demo")).toBe(true);
+    expect(featuredProjects.every((p) => p.kind !== "open-source-demo")).toBe(true);
+    for (const p of ownProjects) {
+      expect(p.demo).toMatch(/^https:\/\//);
+      if (p.kind === "client-project") expect(p.permission).toBeTruthy();
     }
   });
 
-  it("features store, restaurant, photographer and SaaS on the home page", () => {
-    expect(featuredProjects.map((p) => p.category)).toEqual(["ecommerce", "business", "portfolio", "landing"]);
+  it("keeps all seven open-source references with credits", () => {
+    expect(referenceProjects).toHaveLength(7);
+    for (const p of referenceProjects) {
+      expect(p.license).toBe("MIT");
+      expect(p.source).toMatch(/^https:\/\/github\.com\//);
+      expect(p.licenseUrl).toMatch(/LICENSE$/);
+      expect(p.author?.length).toBeGreaterThan(2);
+    }
   });
 
   it("ships real, distinct screenshots at least 900px wide", async () => {
     const hashes = new Set<string>();
     for (const p of projects) {
       const shots = localizeProject(p, "ru").screenshots;
-      for (const file of [shots.desktop, shots.detail, shots.mobile, shots.og]) {
+      for (const file of [shots.desktop, shots.detail, shots.mobile, shots.og].filter((f): f is string => !!f)) {
         expect(existsSync(pub(file)), file).toBe(true);
       }
       const meta = await sharp(pub(shots.desktop)).metadata();

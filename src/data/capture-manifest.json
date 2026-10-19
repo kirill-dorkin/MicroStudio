@@ -201,5 +201,179 @@
         "bytes": 42269
       }
     }
+  },
+  "best-electronics-link": {
+    "source": "https://be-lending.vercel.app/",
+    "url": "https://be-lending.vercel.app/",
+    "capturedAt": "2026-10-19T07:10:09.013Z",
+    "status": "ok",
+    "browser": "Google Chrome (Playwright, channel chrome)",
+    "viewports": {
+      "desktop": "1440x900@2x",
+      "mobile": "390x844@2x"
+    },
+    "files": {
+      "best-electronics-link.webp": {
+        "sha256": "829400599b14a0fdb8897ad6639d90088368100e396aa34bb7e606dc13107a1b",
+        "bytes": 64682
+      },
+      "best-electronics-link-detail.webp": {
+        "sha256": "ef1cdd067c139107cf187aec903c53d54c849c336c49df1a8355a1c181a83273",
+        "bytes": 50512
+      },
+      "best-electronics-link-mobile.webp": {
+        "sha256": "84e9140f56ec0c62ab355e40e9f08c81cb41d9660673da915eba50f572ef4b99",
+        "bytes": 66290
+      },
+      "best-electronics-link-og.jpg": {
+        "sha256": "74b838e43c96197fc14a4df6591006c0fd3cba0ee9b90945439cc03a8febb007",
+        "bytes": 40160
+      }
+    }
+  },
+  "best-electronics-store": {
+    "source": "https://be-kg.vercel.app/",
+    "url": "https://be-kg.vercel.app/",
+    "capturedAt": "2026-10-19T07:10:27.781Z",
+    "status": "ok",
+    "browser": "Google Chrome (Playwright, channel chrome)",
+    "viewports": {
+      "desktop": "1440x900@2x",
+      "mobile": "390x844@2x"
+    },
+    "files": {
+      "best-electronics-store.webp": {
+        "sha256": "f67c8197eac7656ae576c226e9a43be251d56839673a8588d4afe413f1131cc2",
+        "bytes": 60766
+      },
+      "best-electronics-store-detail.webp": {
+        "sha256": "64b4983dcea6889d3cce38786cf61c9b582ce5ab98afc1e00a9b7b837e12f73c",
+        "bytes": 75966
+      },
+      "best-electronics-store-mobile.webp": {
+        "sha256": "c530dcbcb90626d513f510ef0ae1ef1a91b354632406c0b04f23650fff36ab54",
+        "bytes": 50460
+      },
+      "best-electronics-store-og.jpg": {
+        "sha256": "bd0f63e589f7562d71bf086f1702d1db7e42af32003ebbd5825c5fe06a28069c",
+        "bytes": 34418
+      }
+    }
+  },
+  "anna-art": {
+    "source": "https://anna-art-2026-delta.vercel.app/",
+    "url": "https://anna-art-2026-delta.vercel.app/",
+    "capturedAt": "2026-10-19T07:10:39.483Z",
+    "status": "ok",
+    "browser": "Google Chrome (Playwright, channel chrome)",
+    "viewports": {
+      "desktop": "1440x900@2x",
+      "mobile": "390x844@2x"
+    },
+    "files": {
+      "anna-art.webp": {
+        "sha256": "5d3894809fc0603bbb4717adf83e24dabcb4fab9786dbdc8d7b74b519e83242c",
+        "bytes": 71800
+      },
+      "anna-art-detail.webp": {
+        "sha256": "128e50cd44cb45313729cb23bec7140709d814bb4ee755f82ff842572a4a1300",
+        "bytes": 51734
+      },
+      "anna-art-mobile.webp": {
+        "sha256": "33f7d85b3736aab38dada0d65d8310563679bf67d55241c3cea79be170034fde",
+        "bytes": 46884
+      },
+      "anna-art-og.jpg": {
+        "sha256": "776614b901e495ee5fb8e933d552c3707c0de6cf6979a82c57cb1deecfb490fe",
+        "bytes": 49923
+      }
+    }
+  },
+  "jarjar": {
+    "source": "https://toi-front.vercel.app/",
+    "url": "https://toi-front.vercel.app/",
+    "capturedAt": "2026-10-19T07:11:07.971Z",
+    "status": "ok",
+    "browser": "Google Chrome (Playwright, channel chrome)",
+    "viewports": {
+      "desktop": "1440x900@2x",
+      "mobile": "390x844@2x"
+    },
+    "files": {
+      "jarjar.webp": {
+        "sha256": "aeb20fd8dc8c47e834a35491d606a203320738b73a7313be570964e507667f61",
+        "bytes": 101184
+      },
+      "jarjar-detail.webp": {
+        "sha256": "32693dc259a75e721d9e33ce66700d8a62eab9d67548abe9ab78b862afc5c17c",
+        "bytes": 241508
+      },
+      "jarjar-mobile.webp": {
+        "sha256": "c5944cd202704cb163e149bbe0f037c362852ac0627d7c327eccba8e8f9d2a5e",
+        "bytes": 56260
+      },
+      "jarjar-og.jpg": {
+        "sha256": "95595c37de0f9a545576a8732b902e442481a0fe38b3c3b4120bb8d8461d8dfc",
+        "bytes": 62449
+      }
+    }
+  },
+  "nova-ielts": {
+    "source": "https://nova-five-snowy.vercel.app/",
+    "url": "https://nova-five-snowy.vercel.app/",
+    "capturedAt": "2026-10-19T07:11:24.993Z",
+    "status": "ok",
+    "browser": "Google Chrome (Playwright, channel chrome)",
+    "viewports": {
+      "desktop": "1440x900@2x",
+      "mobile": "390x844@2x"
+    },
+    "files": {
+      "nova-ielts.webp": {
+        "sha256": "4b8e223f30b0578d90b28f2ee2976ddd338761a54de3d85ec0c027adbbf09e9d",
+        "bytes": 115004
+      },
+      "nova-ielts-detail.webp": {
+        "sha256": "a3808775efaa94ba7baeeac16535abfd07fa0204d867b59421406cc5eb39b258",
+        "bytes": 80966
+      },
+      "nova-ielts-mobile.webp": {
+        "sha256": "480aebbbd511c81ca4142c5c84452a7561bc5b511814a6f021d6562e06aaa5e0",
+        "bytes": 61102
+      },
+      "nova-ielts-og.jpg": {
+        "sha256": "077c8619c4fccc458dd9f3ab225c1a16cf2568c0a3587b11a7b7bf6e1ff503f9",
+        "bytes": 82235
+      }
+    }
+  },
+  "tikitaki": {
+    "source": "https://beauty-salon-plum-mu.vercel.app/",
+    "url": "https://beauty-salon-plum-mu.vercel.app/",
+    "capturedAt": "2026-10-19T07:11:38.182Z",
+    "status": "ok",
+    "browser": "Google Chrome (Playwright, channel chrome)",
+    "viewports": {
+      "desktop": "1440x900@2x",
+      "mobile": "390x844@2x"
+    },
+    "files": {
+      "tikitaki.webp": {
+        "sha256": "02789628dfcf4f43dfc1a404b02981ed9b7d31d9c27c1401adeaee491c7f1413",
+        "bytes": 39230
+      },
+      "tikitaki-detail.webp": {
+        "sha256": "5b1965015e43576cbe0f3a15dc1f4e19bd17f2dae52bf39cb921a5620c05355b",
+        "bytes": 36778
+      },
+      "tikitaki-mobile.webp": {
+        "sha256": "e91eea084f9a5264a7963f7a6fd83bc99ee2a6d4e35f3b6a9beb83962c2dc27c",
+        "bytes": 33260
+      },
+      "tikitaki-og.jpg": {
+        "sha256": "365aeb94d0cbe6b6cc80796c6da0f182cd4c8804d78e5d15c054ecd658f492e0",
+        "bytes": 29679
+      }
+    }
   }
 }

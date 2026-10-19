@@ -4,7 +4,8 @@ import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import type { Locale } from "@/config/site";
 import { getDictionary } from "@/content/locales";
-import { getSeo, localizeProject, projects } from "@/lib/content";
+import { getSeo, localizeProject, ownProjects } from "@/lib/content";
+import { Founder } from "@/components/sections/founder";
 import { href } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/metadata";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
@@ -22,7 +23,7 @@ export default async function AboutPage({ params }: Props) {
   const { locale } = await params;
   const t = getDictionary(locale);
   const a = t.about;
-  const strip = projects.slice(0, 6).map((p) => localizeProject(p, locale));
+  const strip = ownProjects.slice(0, 6).map((p) => localizeProject(p, locale));
 
   return (
     <>
@@ -53,6 +54,8 @@ export default async function AboutPage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      <Founder locale={locale} />
 
       <section aria-labelledby="about-process" className="section border-t border-line">
         <div className="container-page">

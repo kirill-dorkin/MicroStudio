@@ -2,21 +2,21 @@
   "home": {
     "ru": {
       "title": "MicroStudio — разработка сайтов и дизайн для бизнеса",
-      "description": "Создаём сайты для компаний, лендинги, магазины и веб-проекты. UX/UI, реклама, поддержка. Обсудите ваш проект с MicroStudio."
+      "description": "Делаем сайты для сервисов, магазинов, мастеров и школ — от страницы-визитки за 1 500 сом до интернет-магазина. Клиенты пишут вам в WhatsApp."
     },
     "en": {
       "title": "MicroStudio — Websites and Design for Business",
-      "description": "Landing pages, company websites, online stores and custom web projects. UX/UI, advertising and support. Discuss your project with MicroStudio."
+      "description": "Websites for service businesses, shops, makers and schools — from a one-page site for 1,500 KGS to an online store. Customers message you on WhatsApp."
     }
   },
   "work": {
     "ru": {
-      "title": "Проекты и демо — MicroStudio",
-      "description": "Открытые демонстрационные сайты, магазины, лендинги и интерфейсы. Изучите примеры, исходный код и живые версии."
+      "title": "Наши работы — сайты MicroStudio",
+      "description": "Сайты и веб-сервисы MicroStudio: сервисный центр и магазин электроники, витрина мастера, онлайн-школа, маркетплейс и сервис записи."
     },
     "en": {
-      "title": "Projects and Open-Source Demos — MicroStudio",
-      "description": "Explore open-source website demos, storefronts, landing pages and dashboards, including live previews and source repositories."
+      "title": "Our Work — Websites by MicroStudio",
+      "description": "Websites and web services built by MicroStudio: a repair centre and electronics store, a maker shop, an online school, a marketplace and a booking service."
     }
   },
   "services": {

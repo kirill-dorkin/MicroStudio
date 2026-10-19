@@ -8,6 +8,8 @@ const pages = [
   "/ru/services/advertising",
   "/ru/work",
   "/ru/work/photo-lumen",
+  "/ru/work/best-electronics-link",
+  "/ru/work/anna-art",
   "/ru/about",
   "/ru/blog",
   "/ru/blog/sayt-i-reklama-posle-klika",
