@@ -8,7 +8,7 @@
   --color-lime-dim: #a9d65a;
   --color-text: #f6f7f3;
   --color-muted: #a2a8a6;
-  --color-subtle: #7d8482;
+  --color-subtle: #8a918f;
   --color-line: #2a2f2d;
   --color-line-strong: #3a403e;
 
@@ -24,7 +24,7 @@
     background: var(--color-bg);
     color: var(--color-text);
     -webkit-text-size-adjust: 100%;
-    scroll-padding-top: 88px;
+    scroll-padding-top: 96px;
   }
   @media (prefers-reduced-motion: no-preference) {
     html { scroll-behavior: smooth; }
@@ -86,14 +86,29 @@
     background: var(--color-lime);
   }
 
-  .h1 { font-size: clamp(2.35rem, 1.2rem + 5.2vw, 5.5rem); font-weight: 700; }
-  .h2 { font-size: clamp(2rem, 1.3rem + 2.8vw, 3.75rem); font-weight: 700; }
-  .h3 { font-size: clamp(1.25rem, 1.1rem + 0.6vw, 1.6rem); font-weight: 650; letter-spacing: -0.015em; }
-  .lead { font-size: clamp(1.05rem, 1rem + 0.3vw, 1.25rem); color: var(--color-muted); line-height: 1.55; }
+  /* Type scale: one display size per page, compact section headings. */
+  .h1 { font-size: clamp(2.25rem, 1.45rem + 3.1vw, 4.25rem); font-weight: 700; letter-spacing: -0.035em; line-height: 1.04; }
+  .h2 { font-size: clamp(1.75rem, 1.35rem + 1.5vw, 2.75rem); font-weight: 700; letter-spacing: -0.03em; }
+  .h3 { font-size: clamp(1.125rem, 1.05rem + 0.3vw, 1.3rem); font-weight: 650; letter-spacing: -0.015em; line-height: 1.25; }
+  .lead { font-size: clamp(1.02rem, 0.98rem + 0.2vw, 1.15rem); color: var(--color-muted); line-height: 1.6; max-width: 40rem; }
 
-  .prose-ms { color: #d9dcd7; font-size: 1.0625rem; line-height: 1.75; }
-  .prose-ms > * + * { margin-top: 1.1em; }
-  .prose-ms h2 { color: var(--color-text); font-size: 1.6rem; font-weight: 700; margin-top: 2.2em; }
+  /* Spacing system: sections, cards and small labels. */
+  .section { padding-block: 4rem; }
+  @media (min-width: 768px) { .section { padding-block: 5rem; } }
+  @media (min-width: 1200px) { .section { padding-block: 6rem; } }
+  .section-tight { padding-block: 3rem; }
+  @media (min-width: 1200px) { .section-tight { padding-block: 4rem; } }
+  .page-top { padding-top: calc(62px + 2rem); }
+  @media (min-width: 1024px) { .page-top { padding-top: calc(74px + 3rem); } }
+  .card { border: 1px solid var(--color-line); background: var(--color-elevated); border-radius: 20px; }
+  .label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-subtle); }
+
+  .prose-ms { color: #d9dcd7; font-size: 1.0625rem; line-height: 1.75; max-width: 66ch; hyphens: auto; }
+  @media (min-width: 768px) { .prose-ms { font-size: 1.125rem; } }
+  .prose-ms > * + * { margin-top: 1.15em; }
+  .prose-ms > p:first-child { font-size: 1.15em; color: var(--color-text); line-height: 1.65; }
+  .prose-ms h2 { color: var(--color-text); font-size: 1.5rem; font-weight: 700; margin-top: 2em; padding-top: 1.2em; border-top: 1px solid var(--color-line); }
+  .prose-ms h2 + * { margin-top: 0.7em; }
   .prose-ms h3 { color: var(--color-text); font-size: 1.25rem; font-weight: 650; margin-top: 1.8em; }
   .prose-ms ul, .prose-ms ol { padding-left: 1.3em; }
   .prose-ms ul { list-style: disc; }
@@ -113,7 +128,8 @@
 /* Scroll reveal without JS: browsers without scroll-driven animations simply
    show the content. Above-the-fold elements are already "entered". */
 @keyframes ms-reveal {
-  from { opacity: 0; transform: translateY(28px); }
+  /* Never fully transparent: if the timeline misbehaves, content stays readable. */
+  from { opacity: 0.4; transform: translateY(16px); }
   to { opacity: 1; transform: none; }
 }
 @supports (animation-timeline: view()) {

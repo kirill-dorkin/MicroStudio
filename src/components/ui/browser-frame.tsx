@@ -46,7 +46,7 @@ export function PhoneFrame({ children, className }: { children: ReactNode; class
         className,
       )}
     >
-      <div className="relative overflow-hidden rounded-[24px]">{children}</div>
+      <div className="relative overflow-hidden rounded-[20px]">{children}</div>
     </div>
   );
 }

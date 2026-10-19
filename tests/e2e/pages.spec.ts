@@ -1,15 +1,15 @@
 import { expect, test } from "@playwright/test";
 
-test("22–23. special offer shows price and exclusions", async ({ page }) => {
+test("22–23. special offer shows price, contents and exclusions", async ({ page }) => {
   await page.goto("/ru/special");
-  await expect(page.getByRole("heading", { level: 1 })).toContainText("1 500");
-  await expect(page.getByRole("heading", { name: "Рассчитывается отдельно" })).toBeVisible();
-  for (const item of ["Домен", "Многоязычность", "Интернет-магазин и онлайн-оплата", "Реклама и рекламный бюджет"]) {
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Одностраничный сайт для бизнеса");
+  await expect(page.locator("main").getByText("1\u00a0500\u00a0сом", { exact: true }).first()).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Оплачивается отдельно" })).toBeVisible();
+  for (const item of ["Домен", "Вторая языковая версия", "Интернет-магазин и онлайн-оплата", "Реклама и рекламный бюджет"]) {
     await expect(page.getByText(item, { exact: true })).toBeVisible();
   }
-  await page.getByRole("link", { name: "Обсудить одностраничный сайт" }).first().click();
-  await expect(page).toHaveURL(/\/ru\/contact\?service=special$/);
-  await expect(page.getByRole("radio", { name: /Одностраничный сайт за 1/ })).toBeChecked();
+  await expect(page.getByRole("heading", { name: "Срок, правки и оплата" })).toBeVisible();
+  await expect(page.locator("main")).not.toContainText("не входят в стоимость");
 });
 
 test("24. four service pages with FAQ and examples", async ({ page }) => {
@@ -98,13 +98,55 @@ test("49. English pages contain no Russian text", async ({ page }) => {
   }
 });
 
-test("36. reduced motion disables reveal animations", async ({ browser }) => {
+test("36. reduced motion removes transitions and smooth scrolling", async ({ browser }) => {
   const context = await browser.newContext({ reducedMotion: "reduce" });
   const page = await context.newPage();
   await page.goto("/ru");
-  const anim = await page.locator("[data-reveal]").first().evaluate((el) => getComputedStyle(el).animationName);
-  expect(anim).toBe("none");
+  const duration = await page
+    .getByRole("button", { name: "Следующий пример" })
+    .evaluate((el) => parseFloat(getComputedStyle(el).transitionDuration));
+  expect(duration).toBeLessThan(0.01);
+  expect(await page.evaluate(() => getComputedStyle(document.documentElement).scrollBehavior)).toBe("auto");
   await context.close();
+});
+
+test("hero examples switch with arrows and named tabs, no autoplay", async ({ page, isMobile }) => {
+  test.skip(isMobile, "tabs are desktop/tablet; phones use the arrows (covered below)");
+  await page.goto("/ru");
+  const group = page.getByRole("group", { name: "Выбрать пример" });
+  await expect(group.getByRole("button", { name: "Интернет-магазин" })).toHaveAttribute("aria-pressed", "true");
+  await page.waitForTimeout(3000);
+  await expect(group.getByRole("button", { name: "Интернет-магазин" })).toHaveAttribute("aria-pressed", "true");
+  await page.getByRole("button", { name: "Следующий пример" }).click();
+  await expect(group.getByRole("button", { name: "Ресторан" })).toHaveAttribute("aria-pressed", "true");
+  await group.getByRole("button", { name: "Dashboard" }).click();
+  await expect(page.getByRole("link", { name: /Открыть пример: Pulse/ })).toHaveAttribute("href", "/ru/work/dashboard-pulse");
+});
+
+test("hero arrows switch examples on phones", async ({ page, isMobile }) => {
+  test.skip(!isMobile, "mobile only");
+  await page.goto("/ru");
+  await page.getByRole("button", { name: "Следующий пример" }).click();
+  await expect(page.getByRole("link", { name: /Открыть пример: Table & Fork/ })).toBeVisible();
+});
+
+test("fixed header does not cover anchored headings", async ({ page }) => {
+  await page.goto("/ru/special");
+  await page.locator("main").getByRole("link", { name: /Что входит/ }).first().click();
+  await expect(page).toHaveURL(/#included$/);
+  await page.waitForTimeout(600);
+  const headerBottom = await page.locator("header").evaluate((el) => el.getBoundingClientRect().bottom);
+  const headingTop = await page.locator("#included-title").evaluate((el) => el.getBoundingClientRect().top);
+  expect(headingTop).toBeGreaterThanOrEqual(headerBottom);
+});
+
+test("FAQ items open and close", async ({ page }) => {
+  await page.goto("/ru");
+  const item = page.locator("details").first();
+  await item.locator("summary").click();
+  await expect(item).toHaveAttribute("open", "");
+  await item.locator("summary").click();
+  await expect(item).not.toHaveAttribute("open", "");
 });
 
 test("37–38. images load and nothing overflows horizontally", async ({ page }) => {

@@ -19,13 +19,13 @@ export function SectionHeading({
   as?: "h1" | "h2";
 }) {
   return (
-    <div className={cn("flex flex-col gap-6 md:flex-row md:items-end md:justify-between", className)} data-reveal>
-      <div className="max-w-3xl">
-        {eyebrow && <p className="eyebrow mb-5">{eyebrow}</p>}
+    <div className={cn("flex flex-col gap-5 md:flex-row md:items-end md:justify-between md:gap-10", className)}>
+      <div className="max-w-2xl">
+        {eyebrow && <p className="eyebrow mb-4">{eyebrow}</p>}
         <Tag id={id} className={Tag === "h1" ? "h1" : "h2"}>
           {title}
         </Tag>
-        {lead && <p className="lead mt-5 max-w-2xl">{lead}</p>}
+        {lead && <p className="lead mt-4">{lead}</p>}
       </div>
       {action && <div className="shrink-0">{action}</div>}
     </div>

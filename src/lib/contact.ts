@@ -9,19 +9,29 @@ export function whatsappUrl(number: string, message?: string) {
 }
 
 export type BriefInput = {
-  projectType: string;
+  /** Selected project type label; optional — the brief never blocks contact. */
+  projectType?: string;
+  /** Name of a portfolio example the visitor liked. */
+  project?: string;
   task: string;
   budget?: string;
 };
 
 export function buildBriefMessage(locale: Locale, input: BriefInput) {
   const ru = locale === "ru";
-  const lines = [
-    ru ? "Здравствуйте, MicroStudio!" : "Hello MicroStudio,",
-    ru
-      ? `Хочу обсудить проект: ${input.projectType}.`
-      : `I'd like to discuss a project: ${input.projectType}.`,
-  ];
+  const lines = [ru ? "Здравствуйте, MicroStudio!" : "Hello MicroStudio,"];
+  if (input.projectType) {
+    lines.push(
+      ru ? `Хочу обсудить проект: ${input.projectType}.` : `I'd like to discuss a project: ${input.projectType}.`,
+    );
+  } else {
+    lines.push(ru ? "Хочу обсудить сайт для своего бизнеса." : "I'd like to discuss a website for my business.");
+  }
+  if (input.project) {
+    lines.push(
+      ru ? `Понравился пример «${input.project}» на вашем сайте.` : `I liked the “${input.project}” example on your site.`,
+    );
+  }
   const task = input.task.trim();
   if (task) lines.push(ru ? `Задача: ${task}` : `What I need: ${task}`);
   if (input.budget) lines.push(ru ? `Ориентир по бюджету: ${input.budget}.` : `Approximate budget: ${input.budget}.`);

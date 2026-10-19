@@ -34,6 +34,12 @@ describe("brief message", () => {
     expect(msg).not.toContain("бюджет");
   });
 
+  it("works without a project type and mentions a liked example", () => {
+    const msg = buildBriefMessage("ru", { task: "", project: "Nova — контентный сайт" });
+    expect(msg).toContain("Хочу обсудить сайт для своего бизнеса.");
+    expect(msg).toContain("«Nova — контентный сайт»");
+  });
+
   it("builds an English message", () => {
     const msg = buildBriefMessage("en", { projectType: "Online store", task: "Shoes", budget: "not sure yet" });
     expect(msg).toMatch(/Online store/);

@@ -31,7 +31,7 @@ export default async function PrivacyPage({ params }: Props) {
   const p = t.privacy;
 
   return (
-    <section className="container-page pb-24 pt-[calc(62px+3rem)] lg:pt-[calc(74px+4.5rem)]">
+    <section className="container-page pb-24 page-top">
       <Breadcrumbs
         label={t.common.breadcrumbs}
         items={[
@@ -43,7 +43,7 @@ export default async function PrivacyPage({ params }: Props) {
       <p className="mt-6 text-sm text-subtle">
         {p.updated}: <time dateTime={UPDATED}>{formatDate(UPDATED, locale)}</time>
       </p>
-      <div className="mt-14 max-w-3xl divide-y divide-line border-y border-line">
+      <div className="mt-10 max-w-3xl divide-y divide-line border-y border-line">
         {p.sections.map((s) => (
           <section key={s.title} className="py-8">
             <h2 className="h3">{s.title}</h2>

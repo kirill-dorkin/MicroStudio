@@ -2,53 +2,44 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-type Variant = "primary" | "secondary" | "ghost";
+export type ButtonVariant = "primary" | "secondary" | "quiet" | "ghost";
+export type ButtonSize = "sm" | "md" | "lg";
 
 const base =
-  "group inline-flex min-h-12 items-center justify-center gap-2.5 rounded-full px-6 py-2 text-center text-[0.95rem] font-semibold leading-tight transition-[background-color,color,border-color,transform] duration-300 ease-[var(--ease-out-soft)] active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50";
+  "group relative inline-flex items-center justify-center gap-2 rounded-full text-center font-semibold leading-tight transition-[background-color,color,border-color,box-shadow,transform] duration-200 ease-[var(--ease-out-soft)] active:translate-y-px disabled:pointer-events-none disabled:opacity-45 aria-disabled:pointer-events-none aria-disabled:opacity-45";
 
-const variants: Record<Variant, string> = {
-  primary: "bg-lime text-bg hover:bg-[#d6fb8c]",
-  secondary: "border border-line-strong text-text hover:border-text/60 hover:bg-white/[0.04]",
-  ghost: "px-0 text-text underline-offset-4 hover:text-lime",
+const variants: Record<ButtonVariant, string> = {
+  // Main action: the only filled lime element in a block.
+  primary: "bg-lime text-bg shadow-[0_8px_24px_-12px_rgba(199,246,108,0.55)] hover:bg-[#d4fa86] active:bg-lime-dim",
+  // Secondary: outlined, never competes with the primary.
+  secondary: "border border-line-strong bg-white/[0.02] text-text hover:border-white/35 hover:bg-white/[0.06]",
+  // Quiet: filled neutral surface for tertiary actions inside cards.
+  quiet: "bg-white/[0.06] text-text hover:bg-white/[0.11]",
+  ghost: "text-text underline-offset-4 hover:text-lime hover:underline",
 };
 
-export function buttonClass(variant: Variant = "primary", className?: string) {
-  return cn(base, variants[variant], className);
+const sizes: Record<ButtonSize, string> = {
+  sm: "min-h-11 px-4 text-[0.875rem]",
+  md: "min-h-12 px-5 text-[0.95rem]",
+  lg: "min-h-14 px-7 text-[1rem]",
+};
+
+export function buttonClass(variant: ButtonVariant = "primary", className?: string, size: ButtonSize = "md") {
+  return cn(base, variants[variant], variant === "ghost" ? "min-h-11 px-0" : sizes[size], className);
 }
 
 type LinkProps = {
   href: string;
   children: ReactNode;
-  variant?: Variant;
+  variant?: ButtonVariant;
+  size?: ButtonSize;
   className?: string;
 };
 
-export function ButtonLink({ href, children, variant = "primary", className }: LinkProps) {
+export function ButtonLink({ href, children, variant = "primary", size, className }: LinkProps) {
   return (
-    <Link href={href} className={buttonClass(variant, className)}>
+    <Link href={href} className={buttonClass(variant, className, size)}>
       {children}
     </Link>
-  );
-}
-
-/** External link that always opens in a new tab and says so to screen readers. */
-export function ExternalLink({
-  href,
-  children,
-  className,
-  newTabLabel,
-  ...rest
-}: {
-  href: string;
-  children: ReactNode;
-  className?: string;
-  newTabLabel: string;
-} & Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "href" | "target" | "rel">) {
-  return (
-    <a href={href} target="_blank" rel="noopener noreferrer" className={className} {...rest}>
-      {children}
-      <span className="sr-only"> ({newTabLabel})</span>
-    </a>
   );
 }

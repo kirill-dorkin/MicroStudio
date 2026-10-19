@@ -4,11 +4,9 @@ import { getSeo } from "@/lib/content";
 import { pageMetadata } from "@/lib/metadata";
 import { Hero } from "@/components/sections/home/hero";
 import { SelectedWork } from "@/components/sections/home/selected-work";
-import { ServicesPreview } from "@/components/sections/home/services-preview";
+import { Formats } from "@/components/sections/home/formats";
 import { Process } from "@/components/sections/home/process";
-import { Journey } from "@/components/sections/home/journey";
 import { SpecialTeaser } from "@/components/sections/home/special-teaser";
-import { Principles } from "@/components/sections/home/principles";
 import { FaqSection } from "@/components/sections/home/faq-section";
 import { CtaBand } from "@/components/sections/cta-band";
 
@@ -26,11 +24,9 @@ export default async function HomePage({ params }: Props) {
     <>
       <Hero locale={locale} />
       <SelectedWork locale={locale} />
-      <ServicesPreview locale={locale} />
+      <Formats locale={locale} />
       <Process locale={locale} />
-      <Journey locale={locale} />
       <SpecialTeaser locale={locale} />
-      <Principles locale={locale} />
       <FaqSection locale={locale} />
       <CtaBand locale={locale} location="home" />
     </>

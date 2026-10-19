@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ArrowRight, Menu, X } from "lucide-react";
 import type { Locale } from "@/config/site";
@@ -9,6 +9,7 @@ import { translatePath } from "@/lib/i18n";
 import { track } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 import { Logo } from "@/components/ui/logo";
+import { WhatsappIcon } from "@/components/ui/icons";
 import { buttonClass } from "@/components/ui/button";
 
 type NavItem = { href: string; label: string };
@@ -18,6 +19,8 @@ type Props = {
   homeHref: string;
   items: NavItem[];
   cta: NavItem;
+  /** Direct WhatsApp link (generic message) or null when not configured. */
+  whatsapp: { href: string; label: string; short: string; newTab: string } | null;
   labels: {
     main: string;
     openMenu: string;
@@ -29,8 +32,9 @@ type Props = {
   footerNote: string;
 };
 
-export function HeaderClient({ locale, homeHref, items, cta, labels, footerNote }: Props) {
+export function HeaderClient({ locale, homeHref, items, cta, whatsapp, labels, footerNote }: Props) {
   const pathname = usePathname();
+  const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const menuButton = useRef<HTMLButtonElement>(null);
@@ -109,6 +113,13 @@ export function HeaderClient({ locale, homeHref, items, cta, labels, footerNote 
       hrefLang={otherLocale}
       lang={otherLocale}
       aria-label={`${otherLocale.toUpperCase()} — ${labels.switchTo}`}
+      onClick={(e) => {
+        // Keep the visitor's context (?service, ?project, ?type) and anchor.
+        const { search, hash } = window.location;
+        if (!search && !hash) return;
+        e.preventDefault();
+        router.push(`${switchHref}${search}${hash}`);
+      }}
       className={cn(
         "inline-flex h-10 min-w-11 items-center justify-center rounded-full border border-line px-3 text-[0.8rem] font-semibold uppercase tracking-wider text-muted transition-colors hover:border-line-strong hover:text-text",
         className,
@@ -146,7 +157,7 @@ export function HeaderClient({ locale, homeHref, items, cta, labels, footerNote 
                   href={item.href}
                   aria-current={isActive(item.href) ? "page" : undefined}
                   className={cn(
-                    "inline-flex h-10 items-center rounded-full px-4 text-[0.92rem] font-medium transition-colors",
+                    "inline-flex h-10 items-center rounded-full px-3 text-[0.92rem] font-medium transition-colors xl:px-4",
                     isActive(item.href) ? "text-text" : "text-muted hover:text-text",
                   )}
                 >
@@ -162,15 +173,30 @@ export function HeaderClient({ locale, homeHref, items, cta, labels, footerNote 
           <div role="group" aria-label={labels.language}>
             {languageSwitch()}
           </div>
-          <span className="hidden lg:block">
-            <Link
-              href={cta.href}
-              onClick={() => track("cta_contact", { location: "header" })}
-              className={buttonClass("primary", "min-h-10 px-5 text-[0.88rem]")}
+          {whatsapp ? (
+            <a
+              href={whatsapp.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => track("contact_method", { method: "whatsapp", location: "header", intent: "generic" })}
+              className={buttonClass("primary", "max-lg:size-11 max-lg:min-h-11 max-lg:px-0 lg:min-h-10 lg:px-4", "sm")}
             >
-              {cta.label}
-            </Link>
-          </span>
+              <WhatsappIcon className="size-[1.1rem] shrink-0" />
+              <span className="max-lg:sr-only xl:hidden">{whatsapp.short}</span>
+              <span className="hidden xl:inline">{whatsapp.label}</span>
+              <span className="sr-only"> ({whatsapp.newTab})</span>
+            </a>
+          ) : (
+            <span className="hidden lg:block">
+              <Link
+                href={cta.href}
+                onClick={() => track("cta_contact", { location: "header" })}
+                className={buttonClass("primary", "lg:min-h-10", "sm")}
+              >
+                {cta.label}
+              </Link>
+            </span>
+          )}
           <button
             ref={menuButton}
             type="button"
@@ -204,7 +230,7 @@ export function HeaderClient({ locale, homeHref, items, cta, labels, footerNote 
                     href={item.href}
                     aria-current={isActive(item.href) ? "page" : undefined}
                     onClick={() => close(false)}
-                    className="flex min-h-16 items-center justify-between font-display text-[1.75rem] font-bold tracking-[-0.02em]"
+                    className="flex min-h-14 items-center justify-between font-display text-[1.5rem] font-bold tracking-[-0.02em]"
                   >
                     {item.label}
                     <ArrowRight aria-hidden="true" className="size-5 text-muted" />
@@ -214,13 +240,26 @@ export function HeaderClient({ locale, homeHref, items, cta, labels, footerNote 
             </ul>
           </nav>
           <div className="mt-8 flex flex-col gap-3">
+            {whatsapp && (
+              <a
+                href={whatsapp.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => track("contact_method", { method: "whatsapp", location: "mobile_menu", intent: "generic" })}
+                className={buttonClass("primary", "w-full", "lg")}
+              >
+                <WhatsappIcon className="size-5 shrink-0" />
+                {whatsapp.label}
+                <span className="sr-only"> ({whatsapp.newTab})</span>
+              </a>
+            )}
             <Link
               href={cta.href}
               onClick={() => {
                 track("cta_contact", { location: "mobile_menu" });
                 close(false);
               }}
-              className={buttonClass("primary", "w-full")}
+              className={buttonClass(whatsapp ? "secondary" : "primary", "w-full", "lg")}
             >
               {cta.label}
             </Link>
