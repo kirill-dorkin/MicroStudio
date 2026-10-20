@@ -1,0 +1,851 @@
+[
+  {
+    "slug": "saima-hotel",
+    "workType": "demo",
+    "format": "landing",
+    "industry": "food-travel-realty",
+    "niche": {
+      "ru": "Отель",
+      "en": "Hotel"
+    },
+    "title": {
+      "ru": "Saima — бутик-отель в Бишкеке",
+      "en": "Saima — boutique hotel in Bishkek"
+    },
+    "summary": {
+      "ru": "Сайт бутик-отеля: бронирование в первом экране, погода и время Бишкека, галерея номеров.",
+      "en": "Boutique hotel site: booking in the first screen, Bishkek weather and time, room gallery."
+    },
+    "problem": {
+      "ru": "Небольшому отелю нужен сайт, который сразу выглядит дорого, отвечает на практичные вопросы гостя (как добраться, когда заезд, какая погода) и ведёт к прямому бронированию без комиссии агрегаторов.",
+      "en": "A small hotel needs a site that looks premium at once, answers practical guest questions (getting there, check-in, weather) and leads to direct booking without platform fees."
+    },
+    "scenario": {
+      "ru": "Первый экран → выбрать даты заезда и выезда в календаре → указать гостей и питомца → «Проверить даты» показывает итог поиска; ниже — часы и погода Бишкека, номера, преимущества прямой брони.",
+      "en": "First screen → pick check-in and check-out in the calendar → set guests and a pet → Check dates shows the search summary; below — Bishkek time and weather, rooms and direct-booking benefits."
+    },
+    "features": [
+      {
+        "ru": "Календарь дат и выбор гостей в панели бронирования",
+        "en": "Date calendar and guest picker in the booking bar",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Живые часы и погода Бишкека (Open-Meteo)",
+        "en": "Live Bishkek clock and weather (Open-Meteo)",
+        "kind": "production-ready"
+      },
+      {
+        "ru": "Светлая и тёмная тема",
+        "en": "Light and dark themes",
+        "kind": "production-ready"
+      },
+      {
+        "ru": "Подключение системы бронирования отеля",
+        "en": "Hotel booking engine integration",
+        "kind": "missing-integration"
+      }
+    ],
+    "limits": {
+      "ru": "Отель вымышлен; кнопка проверки дат показывает итог поиска, бронь не создаётся.",
+      "en": "The hotel is fictional; the date check shows a search summary and no booking is made."
+    },
+    "studio": {
+      "ru": [
+        "Нашли и отобрали тему Solenne (MIT) по качеству исходного дизайна",
+        "Перенесли отель в Бишкек: часы, погода, расстояния до Ала-Тоо, Ошского базара и Манаса",
+        "Перевели тексты на русский, склонения в календаре и выборе гостей",
+        "Заменили отзывы с выдуманными именами на сценарии поездки без цитат",
+        "Добавили запасной вариант, когда прогноз погоды не загрузился; noindex и указание автора темы"
+      ],
+      "en": [
+        "Found and selected the Solenne theme (MIT) for its original design quality",
+        "Moved the hotel to Bishkek: clock, weather, distances to Ala-Too, Osh Bazaar and Manas",
+        "Translated the copy to Russian, with proper plurals in the calendar and guest picker",
+        "Replaced reviews with invented names by trip scenarios without quotes",
+        "Added a fallback when the weather fails to load; noindex and theme credit"
+      ]
+    },
+    "provenance": {
+      "type": "derived",
+      "ru": "Адаптация открытой темы Solenne (Sven Esser, MIT). Дизайн, вёрстка и компоненты — исходные; фото — Unsplash.",
+      "en": "An adaptation of the open-source Solenne theme (Sven Esser, MIT). Design, layout and components are original to the theme; photos are from Unsplash.",
+      "assets": [
+        {
+          "name": "Unsplash photos",
+          "license": "Unsplash License",
+          "source": "https://unsplash.com/license"
+        }
+      ],
+      "upstream": {
+        "name": "Solenne",
+        "url": "https://github.com/Sv3nskie/astro-theme-solenne",
+        "sha": "f7d0b69373249d55d5cc8dfff5fb118db27eb3ea",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/Sv3nskie/astro-theme-solenne/blob/f7d0b69373249d55d5cc8dfff5fb118db27eb3ea/LICENSE",
+        "authors": "Sven Esser (sv3n.dev)",
+        "demo": "https://sv3nskie.github.io/astro-theme-solenne/",
+        "fork": "https://github.com/kirill-dorkin/ms-saima-hotel"
+      }
+    },
+    "client": null,
+    "demoUrl": "https://ms-saima-hotel.vercel.app",
+    "hosting": "showcase",
+    "publishedAt": "2026-10-19",
+    "verifiedAt": "2026-10-19",
+    "featuredRank": 1,
+    "language": "ru",
+    "mobileFirst": false,
+    "images": {
+      "desktop": {
+        "src": "/portfolio/saima-hotel/desktop.92a7d694.webp",
+        "width": 1440,
+        "height": 900
+      },
+      "mobile": {
+        "src": "/portfolio/saima-hotel/mobile.6052623b.webp",
+        "width": 780,
+        "height": 1688
+      },
+      "gallery": [
+        {
+          "src": "/portfolio/saima-hotel/rooms.72b0eb5f.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Галерея номеров",
+            "en": "Room gallery"
+          }
+        },
+        {
+          "src": "/portfolio/saima-hotel/rooms-mobile.22164c91.webp",
+          "width": 780,
+          "height": 1688,
+          "viewport": "mobile",
+          "alt": {
+            "ru": "Номера на телефоне",
+            "en": "Rooms on a phone"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "slug": "ochok-restaurant",
+    "workType": "demo",
+    "format": "landing",
+    "industry": "food-travel-realty",
+    "niche": {
+      "ru": "Ресторан",
+      "en": "Restaurant"
+    },
+    "title": {
+      "ru": "Очок — ресторан у огня",
+      "en": "Ochok — fire-led tasting counter"
+    },
+    "summary": {
+      "ru": "Сайт ресторана: дегустационный сет, история шефа, интерьер и бронь столика.",
+      "en": "Restaurant site: tasting menu, the chef's story, the room and table booking."
+    },
+    "problem": {
+      "ru": "Ресторану высокого уровня сайт нужен не как меню-прайс, а как приглашение: передать настроение, объяснить формат сета и аккуратно привести к брони.",
+      "en": "A fine-dining restaurant needs a site that works as an invitation rather than a price list: convey the mood, explain the set format and lead gently to a booking."
+    },
+    "scenario": {
+      "ru": "Первый экран с огнём → идея ресторана → сет из шести подач с винным сопровождением → шеф и его путь → зал → форма брони: дата, гости, посадка, повод → «Демо-запрос создан».",
+      "en": "A fire-lit first screen → the concept → a six-course set with pairings → the chef and his path → the room → reservation form: date, guests, seating, occasion → demo request created."
+    },
+    "features": [
+      {
+        "ru": "Форма брони с проверкой полей",
+        "en": "Reservation form with field validation",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Мобильное меню без JavaScript, плавное появление секций с учётом reduced motion",
+        "en": "JS-free mobile menu, section reveal that respects reduced motion",
+        "kind": "production-ready"
+      },
+      {
+        "ru": "Отправка брони в систему ресторана",
+        "en": "Sending bookings to the restaurant's system",
+        "kind": "missing-integration"
+      }
+    ],
+    "limits": {
+      "ru": "Ресторан и шеф вымышлены; форма не отправляет данные.",
+      "en": "The restaurant and chef are fictional; the form sends nothing."
+    },
+    "studio": {
+      "ru": [
+        "Нашли и отобрали тему Ombra (MIT) по качеству исходного дизайна",
+        "Перенесли ресторан в Бишкек: местные продукты в сете, цены в сомах, перевод на русский",
+        "Убрали значок Michelin и стажировки в реальных ресторанах — у вымышленного ресторана нет настоящих наград",
+        "Форма брони показывает «Демо-запрос создан» вместо отправки на почту-заглушку",
+        "Подключили кириллические начертания шрифтов, noindex и указание автора темы"
+      ],
+      "en": [
+        "Found and selected the Ombra theme (MIT) for its original design quality",
+        "Moved the restaurant to Bishkek: local produce in the set, prices in som, Russian copy",
+        "Removed the Michelin badge and stages at real restaurants — a fictional place has no real awards",
+        "The form shows a demo confirmation instead of mailing a placeholder address",
+        "Added Cyrillic font subsets, noindex and theme credit"
+      ]
+    },
+    "provenance": {
+      "type": "derived",
+      "ru": "Адаптация открытой темы Ombra (Andrei Alba, MIT). Дизайн, вёрстка, фото и анимации — исходные.",
+      "en": "An adaptation of the open-source Ombra theme (Andrei Alba, MIT). Design, layout, photos and animations are original to the theme.",
+      "assets": [],
+      "upstream": {
+        "name": "Ombra",
+        "url": "https://github.com/xocothemes/ombra",
+        "sha": "3d005a7eef5b9fd624e6af2861e1a32fb8997599",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/xocothemes/ombra/blob/3d005a7eef5b9fd624e6af2861e1a32fb8997599/LICENSE",
+        "authors": "Andrei Alba",
+        "demo": "https://ombra-lemon.vercel.app",
+        "fork": "https://github.com/kirill-dorkin/ms-ochok-restaurant"
+      }
+    },
+    "client": null,
+    "demoUrl": "https://ms-ochok-restaurant.vercel.app",
+    "hosting": "showcase",
+    "publishedAt": "2026-10-19",
+    "verifiedAt": "2026-10-19",
+    "featuredRank": 2,
+    "language": "ru",
+    "mobileFirst": false,
+    "images": {
+      "desktop": {
+        "src": "/portfolio/ochok-restaurant/desktop.61e91897.webp",
+        "width": 1440,
+        "height": 900
+      },
+      "mobile": {
+        "src": "/portfolio/ochok-restaurant/mobile.6d9b94d5.webp",
+        "width": 780,
+        "height": 1688
+      },
+      "gallery": [
+        {
+          "src": "/portfolio/ochok-restaurant/menu.7445c002.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Сет из шести подач",
+            "en": "Six-course set"
+          }
+        },
+        {
+          "src": "/portfolio/ochok-restaurant/reserve.3cf3b75d.webp",
+          "width": 780,
+          "height": 1688,
+          "viewport": "mobile",
+          "alt": {
+            "ru": "Форма брони на телефоне",
+            "en": "Reservation form on a phone"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "slug": "maison-archive",
+    "workType": "demo",
+    "format": "shop",
+    "industry": "commerce",
+    "niche": {
+      "ru": "Премиальные товары",
+      "en": "Premium goods"
+    },
+    "title": {
+      "ru": "Maison — магазин редких вещей",
+      "en": "Maison — rare pieces store"
+    },
+    "summary": {
+      "ru": "Интернет-магазин: каталог с фильтрами, карточки товаров, избранное, корзина и кабинет.",
+      "en": "Online store: filtered catalogue, product pages, wishlist, bag and customer cabinet."
+    },
+    "problem": {
+      "ru": "Магазин штучных дорогих вещей должен продавать атмосферой и подробностями, а не баннерами: строгая типографика, полные карточки, удобный каталог и спокойный путь к запросу.",
+      "en": "A store for unique high-end pieces sells through atmosphere and detail rather than banners: strict typography, full product records, a convenient catalogue and a calm path to an enquiry."
+    },
+    "scenario": {
+      "ru": "Каталог часов → фильтр по мастеру и материалу, сортировка по цене, вид списком → карточка предмета → в избранное и в корзину → переключение на другой дом (ателье, антиквариат) → поиск ⌘K → кабинет покупателя.",
+      "en": "Watch catalogue → filter by maker and material, sort by price, list view → item record → wishlist and bag → switch to another house (tailoring, antiques) → ⌘K search → customer cabinet."
+    },
+    "features": [
+      {
+        "ru": "Каталог из 36 предметов в трёх домах с фасетными фильтрами",
+        "en": "A 36-piece catalogue across three houses with faceted filters",
+        "kind": "production-ready"
+      },
+      {
+        "ru": "Избранное, корзина и смена валюты с сохранением в браузере",
+        "en": "Wishlist, bag and currency switch persisted in the browser",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Подключение Shopify Storefront API двумя переменными окружения",
+        "en": "Shopify Storefront API via two environment variables",
+        "kind": "missing-integration"
+      }
+    ],
+    "limits": {
+      "ru": "Дома, мастера и предметы вымышлены; покупка не проводится, кабинет — демонстрационный. Названия домов и мастеров — латиницей, как бренды.",
+      "en": "Houses, makers and pieces are fictional; no purchase is made and the cabinet is a demo. House and maker names stay in Latin script as brands."
+    },
+    "studio": {
+      "ru": [
+        "Нашли и отобрали тему Maison (MIT) за полноценный каталог и редакционную типографику",
+        "Перевели магазин на русский: 36 предметов, три дома, фильтры, корзину, избранное и кабинет; добавили кириллический шрифт для текста",
+        "Убрали выдуманный «рейтинг покупателей» из карточек, фильтров, сортировки и разметки",
+        "Переименовали мастеров, чьи названия напоминали реальные часовые марки",
+        "Исправили доступность: контраст бледного текста до WCAG AA, подписи полей цены, сортировки и поиска",
+        "Заменили пустые ссылки на github.com и instagram.com ссылками на проект и исходную тему; добавили пометку о демо в подвале и noindex"
+      ],
+      "en": [
+        "Found and selected the Maison theme (MIT) for its full catalogue and editorial typography",
+        "Translated the store to Russian: 36 pieces, three houses, filters, bag, wishlist and cabinet; added a Cyrillic text font",
+        "Removed the invented customer rating from cards, filters, sorting and structured data",
+        "Renamed makers whose names resembled real watch brands",
+        "Fixed accessibility: AA contrast for faint text, labels for price inputs, sorting and search",
+        "Replaced dead links to github.com and instagram.com with the project and theme pages; added a demo note in the footer and noindex"
+      ]
+    },
+    "provenance": {
+      "type": "derived",
+      "ru": "Адаптация открытой темы Maison (njxui, MIT). Дизайн, вёрстка, каталог и фото — исходные.",
+      "en": "An adaptation of the open-source Maison theme (njxui, MIT). Design, layout, catalogue and photos are original to the theme.",
+      "assets": [],
+      "upstream": {
+        "name": "Maison",
+        "url": "https://github.com/njbSaab/astro-njx-maison",
+        "sha": "02284b566f8974ebbde734532f263a868ffa791e",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/njbSaab/astro-njx-maison/blob/02284b566f8974ebbde734532f263a868ffa791e/LICENSE",
+        "authors": "njxui (njbSaab)",
+        "demo": "https://astro-njx-maison.pages.dev",
+        "fork": "https://github.com/kirill-dorkin/ms-maison-archive"
+      }
+    },
+    "client": null,
+    "demoUrl": "https://ms-maison-archive.vercel.app",
+    "hosting": "showcase",
+    "publishedAt": "2026-10-19",
+    "verifiedAt": "2026-10-19",
+    "featuredRank": 3,
+    "language": "ru",
+    "mobileFirst": false,
+    "images": {
+      "desktop": {
+        "src": "/portfolio/maison-archive/desktop.2cfbf343.webp",
+        "width": 1440,
+        "height": 900
+      },
+      "mobile": {
+        "src": "/portfolio/maison-archive/mobile.d795b426.webp",
+        "width": 780,
+        "height": 1688
+      },
+      "gallery": [
+        {
+          "src": "/portfolio/maison-archive/product.80be182c.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Карточка предмета",
+            "en": "Item record"
+          }
+        },
+        {
+          "src": "/portfolio/maison-archive/catalog.ba853153.webp",
+          "width": 780,
+          "height": 1688,
+          "viewport": "mobile",
+          "alt": {
+            "ru": "Каталог на телефоне",
+            "en": "Catalogue on a phone"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "slug": "kerege-admin",
+    "workType": "demo",
+    "format": "app",
+    "industry": "products",
+    "niche": {
+      "ru": "Панель управления",
+      "en": "Admin dashboard"
+    },
+    "title": {
+      "ru": "Kerege Admin — панель управления",
+      "en": "Kerege Admin — admin dashboard"
+    },
+    "summary": {
+      "ru": "Панель управления: дашборд продаж, задачи, пользователи, чаты и настройки.",
+      "en": "Admin dashboard: sales overview, tasks, users, chats and settings."
+    },
+    "problem": {
+      "ru": "Бизнесу нужен внутренний кабинет, в котором удобно работать каждый день: быстрые таблицы, понятная навигация, поиск по ⌘K и аккуратный мобильный вид.",
+      "en": "A business needs an internal cabinet that is pleasant for daily work: fast tables, clear navigation, ⌘K search and a tidy mobile view."
+    },
+    "scenario": {
+      "ru": "Дашборд → задачи: поиск, фильтр по статусу и приоритету, выбор нескольких строк, сортировка → пользователи: приглашение и редактирование → чаты → настройки профиля и внешнего вида → тёмная тема.",
+      "en": "Dashboard → tasks: search, status and priority filters, multi-select, sorting → users: invite and edit → chats → profile and appearance settings → dark theme."
+    },
+    "features": [
+      {
+        "ru": "Таблицы с фильтрами, сортировкой, пагинацией и выбором строк",
+        "en": "Tables with filters, sorting, pagination and row selection",
+        "kind": "production-ready"
+      },
+      {
+        "ru": "Командное меню ⌘K, светлая/тёмная тема, сворачиваемое меню",
+        "en": "⌘K command menu, light/dark theme, collapsible sidebar",
+        "kind": "production-ready"
+      },
+      {
+        "ru": "Данные-примеры вместо API",
+        "en": "Sample data instead of an API",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Авторизация и подключение к бэкенду",
+        "en": "Authentication and backend connection",
+        "kind": "missing-integration"
+      }
+    ],
+    "limits": {
+      "ru": "Данные — примеры, изменения не сохраняются на сервере.",
+      "en": "Data are samples and nothing is saved on a server."
+    },
+    "studio": {
+      "ru": [
+        "Нашли и отобрали shadcn-admin (MIT) как одну из самых аккуратных открытых админ-панелей",
+        "Перевели интерфейс на русский (около 350 фраз) и данные-примеры: задачи, чаты, пользователи с номерами +996; даты — в русской локали",
+        "Переименовали продукт и демо-пользователя, убрали личные данные автора из интерфейса",
+        "Убрали из меню раздел Clerk (без ключа он показывает инструкцию для разработчика) и заглушку Help Center",
+        "Настроили маршрутизацию SPA на Vercel и noindex",
+        "Проверили все разделы на 1440 и 390 px: без ошибок и горизонтальной прокрутки"
+      ],
+      "en": [
+        "Found and selected shadcn-admin (MIT) as one of the neatest open admin dashboards",
+        "Translated the interface (about 350 phrases) and sample data to Russian: tasks, chats, users with +996 numbers; Russian date locale",
+        "Renamed the product and the demo user, removed the author's personal details from the UI",
+        "Removed the Clerk section (it shows developer instructions without a key) and the Help Center stub",
+        "Set up SPA routing on Vercel and noindex",
+        "Checked every section at 1440 and 390 px: no errors, no horizontal scroll"
+      ]
+    },
+    "provenance": {
+      "type": "derived",
+      "ru": "Адаптация открытого проекта shadcn-admin (Sat Naing, MIT). Интерфейс, компоненты и данные-примеры — исходные.",
+      "en": "An adaptation of the open-source shadcn-admin (Sat Naing, MIT). Interface, components and sample data are original to the project.",
+      "assets": [],
+      "upstream": {
+        "name": "shadcn-admin",
+        "url": "https://github.com/satnaing/shadcn-admin",
+        "sha": "e16c87f213a5ba5e45964e9b67c792105ec74d26",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/satnaing/shadcn-admin/blob/e16c87f213a5ba5e45964e9b67c792105ec74d26/LICENSE",
+        "authors": "Sat Naing",
+        "demo": "https://shadcn-admin.netlify.app",
+        "fork": "https://github.com/kirill-dorkin/ms-kerege-admin"
+      }
+    },
+    "client": null,
+    "demoUrl": "https://ms-kerege-admin.vercel.app",
+    "hosting": "showcase",
+    "publishedAt": "2026-10-19",
+    "verifiedAt": "2026-10-19",
+    "featuredRank": 4,
+    "language": "ru",
+    "mobileFirst": false,
+    "images": {
+      "desktop": {
+        "src": "/portfolio/kerege-admin/desktop.76710b65.webp",
+        "width": 1440,
+        "height": 900
+      },
+      "mobile": {
+        "src": "/portfolio/kerege-admin/mobile.da27a883.webp",
+        "width": 780,
+        "height": 1688
+      },
+      "gallery": [
+        {
+          "src": "/portfolio/kerege-admin/tasks.ec6fad00.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Задачи с фильтрами",
+            "en": "Tasks with filters"
+          }
+        },
+        {
+          "src": "/portfolio/kerege-admin/users.c974f905.webp",
+          "width": 780,
+          "height": 1688,
+          "viewport": "mobile",
+          "alt": {
+            "ru": "Пользователи на телефоне",
+            "en": "Users on a phone"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "slug": "marby-realty",
+    "workType": "demo",
+    "format": "corporate",
+    "industry": "food-travel-realty",
+    "niche": {
+      "ru": "Недвижимость",
+      "en": "Real estate"
+    },
+    "title": {
+      "ru": "Marby — агентство недвижимости",
+      "en": "Marby — boutique real estate brokerage"
+    },
+    "summary": {
+      "ru": "Сайт агентства недвижимости: видео, услуги, каталог домов и страницы объектов.",
+      "en": "Real estate agency site: video, services, home catalogue and property pages."
+    },
+    "problem": {
+      "ru": "Агентству дорогой недвижимости нужен сайт, который сам по себе выглядит как обложка журнала: крупная типографика, большие фото, подробные карточки объектов и спокойный путь к консультации.",
+      "en": "A high-end brokerage needs a site that reads like a magazine cover: large type, big photography, detailed property records and a calm path to a consultation."
+    },
+    "scenario": {
+      "ru": "Главная с видео → услуги для покупателей, продавцов и управления → избранные объекты → каталог с фильтром → страница объекта: галерея, площадь, спальни, цена, советник → блог → контакты и форма консультации.",
+      "en": "Home with video → services for buyers, sellers and management → featured listings → catalogue with a filter → property page: gallery, area, bedrooms, price, advisor → blog → contacts and consultation form."
+    },
+    "features": [
+      {
+        "ru": "Каталог объектов с фильтром и страницами объектов из Markdown",
+        "en": "Property catalogue with a filter and pages generated from Markdown",
+        "kind": "production-ready"
+      },
+      {
+        "ru": "Блог с категориями, команда, FAQ-аккордеоны",
+        "en": "Blog with categories, team, FAQ accordions",
+        "kind": "production-ready"
+      },
+      {
+        "ru": "Форма консультации без отправки",
+        "en": "Consultation form that sends nothing",
+        "kind": "demo-logic"
+      },
+      {
+        "ru": "Отправка заявок в CRM агентства",
+        "en": "Sending leads to the agency's CRM",
+        "kind": "missing-integration"
+      }
+    ],
+    "limits": {
+      "ru": "Агентство, команда, объекты и отзывы вымышлены; форма ничего не отправляет.",
+      "en": "The agency, team, listings and testimonials are fictional; the form sends nothing."
+    },
+    "studio": {
+      "ru": [
+        "Нашли и отобрали тему Marby (MIT) за редакционную вёрстку и полноценные внутренние страницы",
+        "Перевели сайт на русский (6 объектов, 6 статей, интерфейс) и перенесли агентство в Бишкек, на Иссык-Куль и в Алматы; подключили кириллический шрифт для заголовков",
+        "Отключили сглаженную прокрутку Lenis — страница прокручивается нативно",
+        "Рекламную кнопку магазина тем превратили в метку «Demo · MicroStudio»",
+        "Форма честно пишет, что ничего не отправлено; отзывы подписаны как примеры",
+        "Заменили пустые ссылки на соцсети ссылками на проект и исходную тему, добавили noindex; исправили ошибку исходника: у всех общих вопросов FAQ был один и тот же ответ"
+      ],
+      "en": [
+        "Found and selected the Marby theme (MIT) for its editorial layout and full inner pages",
+        "Translated the site to Russian (6 listings, 6 articles, UI) and moved the agency to Bishkek, Issyk-Kul and Almaty; added a Cyrillic heading font",
+        "Turned off Lenis smooth scrolling — the page scrolls natively",
+        "Turned the theme-store promo button into a Demo · MicroStudio badge",
+        "The form says honestly that nothing was sent; testimonials are labelled as samples",
+        "Replaced placeholder social links with the project and theme pages, added noindex; fixed an upstream bug: every general FAQ question had the same answer"
+      ]
+    },
+    "provenance": {
+      "type": "derived",
+      "ru": "Адаптация открытой темы Marby (Startfrom, MIT). Дизайн, вёрстка, фото, видео и страницы — исходные.",
+      "en": "An adaptation of the open-source Marby theme (Startfrom, MIT). Design, layout, photos, video and pages are original to the theme.",
+      "assets": [],
+      "upstream": {
+        "name": "Marby",
+        "url": "https://github.com/agnilem/marby-astro",
+        "sha": "4722d38cfc4a4e70da37a29ffef5e9eccda41bc4",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/agnilem/marby-astro/blob/4722d38cfc4a4e70da37a29ffef5e9eccda41bc4/LICENSE",
+        "authors": "Startfrom (Alex Prokhorov)",
+        "demo": "https://marby.startfrom.co",
+        "fork": "https://github.com/kirill-dorkin/ms-marby-realty"
+      }
+    },
+    "client": null,
+    "demoUrl": "https://ms-marby-realty.vercel.app",
+    "hosting": "showcase",
+    "publishedAt": "2026-10-19",
+    "verifiedAt": "2026-10-19",
+    "featuredRank": 5,
+    "language": "ru",
+    "mobileFirst": false,
+    "images": {
+      "desktop": {
+        "src": "/portfolio/marby-realty/desktop.1744fa68.webp",
+        "width": 1440,
+        "height": 900
+      },
+      "mobile": {
+        "src": "/portfolio/marby-realty/mobile.a1b7874d.webp",
+        "width": 780,
+        "height": 1688
+      },
+      "gallery": [
+        {
+          "src": "/portfolio/marby-realty/listings.7fab04b6.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Каталог объектов",
+            "en": "Property catalogue"
+          }
+        },
+        {
+          "src": "/portfolio/marby-realty/property.c0c2433d.webp",
+          "width": 780,
+          "height": 1688,
+          "viewport": "mobile",
+          "alt": {
+            "ru": "Страница объекта на телефоне",
+            "en": "Property page on a phone"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "slug": "best-electronics-link",
+    "workType": "client",
+    "format": "landing",
+    "industry": "local-services",
+    "niche": {
+      "ru": "Сервис электроники",
+      "en": "Electronics repair"
+    },
+    "title": {
+      "ru": "BestElectronics — страница сервисного центра",
+      "en": "BestElectronics — service centre page"
+    },
+    "summary": {
+      "ru": "Мобильная страница сервисного центра: звонок и WhatsApp в одно касание, адрес и выбор ремонта.",
+      "en": "Mobile page for a repair centre: one-tap call and WhatsApp, address and repair picker."
+    },
+    "problem": {
+      "ru": "Клиенты сервисного центра приходят с телефона и хотят быстро спросить про ремонт. Страница даёт звонок и WhatsApp на первом экране и готовое сообщение под выбранную поломку.",
+      "en": "Repair customers arrive on a phone and want to ask about a repair fast. The page puts call and WhatsApp on the first screen and pre-writes a message for the chosen problem."
+    },
+    "scenario": {
+      "ru": "Клиенты сервисного центра приходят с телефона и хотят одного — быстро спросить про ремонт. Поэтому страница начинается с двух кнопок: «Позвонить» и «WhatsApp». Ниже — адрес на карте со ссылкой в 2ГИС и список типовых поломок: человек выбирает «Ноутбук» или «Чистка» — и WhatsApp открывается с уже написанным сообщением.",
+      "en": "Repair customers arrive on a phone and want one thing: to ask about a repair quickly. So the page opens with two buttons — Call and WhatsApp. Below are the address on a map with a 2GIS link and a list of common problems: a visitor taps “Laptop” or “Cleaning” and WhatsApp opens with the message already written."
+    },
+    "features": [
+      {
+        "ru": "Звонок и WhatsApp на первом экране",
+        "en": "Call and WhatsApp on the first screen",
+        "kind": "production-ready"
+      },
+      {
+        "ru": "Выбор ремонта с готовым сообщением",
+        "en": "Repair picker with a ready message",
+        "kind": "production-ready"
+      },
+      {
+        "ru": "Адрес, карта и ссылка в 2ГИС",
+        "en": "Address, map and 2GIS link",
+        "kind": "production-ready"
+      }
+    ],
+    "limits": {
+      "ru": "Сайт размещён в собственном аккаунте владельца; исходники в приватном репозитории.",
+      "en": "Hosted in the owner's own account; sources are in a private repository."
+    },
+    "studio": {
+      "ru": [
+        "Звонок и WhatsApp на первом экране",
+        "Выбор ремонта с готовым сообщением",
+        "Адрес, карта и ссылка в 2ГИС"
+      ],
+      "en": [
+        "Call and WhatsApp on the first screen",
+        "Repair picker with a ready message",
+        "Address, map and 2GIS link"
+      ]
+    },
+    "provenance": {
+      "type": "client",
+      "ru": "Проект для клиента BestElectronics: дизайн и разработка MicroStudio.",
+      "en": "Client project for BestElectronics: design and development by MicroStudio.",
+      "assets": []
+    },
+    "client": {
+      "name": "BestElectronics",
+      "permission": "Подтверждено владельцем MicroStudio как реальный проект (бриф от 2026-10-18)"
+    },
+    "demoUrl": "https://be-lending.vercel.app",
+    "hosting": "external",
+    "publishedAt": "2026-10-19",
+    "verifiedAt": "2026-10-19",
+    "featuredRank": 7,
+    "language": "ru",
+    "mobileFirst": true,
+    "images": {
+      "desktop": {
+        "src": "/portfolio/best-electronics-link/desktop.416f7728.webp",
+        "width": 1440,
+        "height": 900
+      },
+      "mobile": {
+        "src": "/portfolio/best-electronics-link/mobile.37b99f7e.webp",
+        "width": 780,
+        "height": 1688
+      },
+      "gallery": [
+        {
+          "src": "/portfolio/best-electronics-link/next.5fba3549.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Следующий экран на компьютере",
+            "en": "Next screen on desktop"
+          }
+        },
+        {
+          "src": "/portfolio/best-electronics-link/mobile-next.ed5dad94.webp",
+          "width": 780,
+          "height": 1688,
+          "viewport": "mobile",
+          "alt": {
+            "ru": "Следующий экран на телефоне",
+            "en": "Next screen on a phone"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "slug": "tikitaki",
+    "workType": "product",
+    "format": "landing",
+    "industry": "products",
+    "niche": {
+      "ru": "Онлайн-запись",
+      "en": "Online booking"
+    },
+    "title": {
+      "ru": "TikiTaki — сервис онлайн-записи",
+      "en": "TikiTaki — online booking service"
+    },
+    "summary": {
+      "ru": "Сайт сервиса онлайн-записи: сценарии по отраслям, запись по QR-коду, управление в Telegram.",
+      "en": "Online booking product site: industry scenarios, QR booking, management in Telegram."
+    },
+    "problem": {
+      "ru": "Владельцу салона или студии нужно понять, подойдёт ли сервис записи его отрасли. Продуктовая страница показывает сценарии по отраслям, запись по QR-коду и управление в Telegram.",
+      "en": "A salon or studio owner wants to know whether a booking service fits their industry. The product page shows industry scenarios, QR booking and management in Telegram."
+    },
+    "scenario": {
+      "ru": "Тёмная продуктовая страница для сервиса записи клиентов: показывает, для каких отраслей он подходит — от салонов до автосервисов, — как клиент записывается по QR-коду без приложений и как владелец управляет записями через Telegram.",
+      "en": "A dark product page for a client booking service: which industries it suits — from salons to car services — how customers book via a QR code without an app, and how owners manage bookings in Telegram."
+    },
+    "features": [
+      {
+        "ru": "Сценарии для разных отраслей",
+        "en": "Scenarios for different industries",
+        "kind": "production-ready"
+      },
+      {
+        "ru": "Запись по QR-коду",
+        "en": "QR-code booking",
+        "kind": "production-ready"
+      },
+      {
+        "ru": "Управление через Telegram",
+        "en": "Management via Telegram",
+        "kind": "production-ready"
+      }
+    ],
+    "limits": {
+      "ru": "Показан продуктовый сайт. Запись и кабинет сервиса требуют регистрации и в портфолио не открываются.",
+      "en": "The product site is shown. Booking and the dashboard require sign-up and are not part of the portfolio view."
+    },
+    "studio": {
+      "ru": [
+        "Сценарии для разных отраслей",
+        "Запись по QR-коду",
+        "Управление через Telegram"
+      ],
+      "en": [
+        "Scenarios for different industries",
+        "QR-code booking",
+        "Management via Telegram"
+      ]
+    },
+    "provenance": {
+      "type": "own",
+      "ru": "Собственный продукт MicroStudio: ссылка поддержки на сайте ведёт в Telegram студии. Статус подтверждён по сайту, не отдельным документом.",
+      "en": "MicroStudio's own product: the support link on the site leads to the studio's Telegram. Status inferred from the site, not a separate document.",
+      "assets": []
+    },
+    "client": null,
+    "demoUrl": "https://tiki-taki.vercel.app",
+    "hosting": "external",
+    "publishedAt": "2026-10-19",
+    "verifiedAt": "2026-10-19",
+    "featuredRank": 8,
+    "language": "ru",
+    "mobileFirst": false,
+    "images": {
+      "desktop": {
+        "src": "/portfolio/tikitaki/desktop.5784b287.webp",
+        "width": 1440,
+        "height": 900
+      },
+      "mobile": {
+        "src": "/portfolio/tikitaki/mobile.277f1a7c.webp",
+        "width": 780,
+        "height": 1688
+      },
+      "gallery": [
+        {
+          "src": "/portfolio/tikitaki/next.5ab808ca.webp",
+          "width": 1440,
+          "height": 900,
+          "viewport": "desktop",
+          "alt": {
+            "ru": "Следующий экран на компьютере",
+            "en": "Next screen on desktop"
+          }
+        },
+        {
+          "src": "/portfolio/tikitaki/mobile-next.8849ff23.webp",
+          "width": 780,
+          "height": 1688,
+          "viewport": "mobile",
+          "alt": {
+            "ru": "Следующий экран на телефоне",
+            "en": "Next screen on a phone"
+          }
+        }
+      ]
+    }
+  }
+]

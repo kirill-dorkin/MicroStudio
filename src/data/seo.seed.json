@@ -1,0 +1,72 @@
+{
+  "home": {
+    "ru": {
+      "title": "MicroStudio — разработка сайтов и дизайн для бизнеса",
+      "description": "Делаем сайты для сервисов, магазинов, мастеров и школ — от страницы-визитки за 1 500 сом до интернет-магазина. Клиенты пишут вам в WhatsApp."
+    },
+    "en": {
+      "title": "MicroStudio — Websites and Design for Business",
+      "description": "Websites for service businesses, shops, makers and schools — from a one-page site for 1,500 KGS to an online store. Customers message you on WhatsApp."
+    }
+  },
+  "work": {
+    "ru": {
+      "title": "Наши работы — сайты MicroStudio",
+      "description": "Сайты и веб-сервисы MicroStudio: сервисный центр и магазин электроники, витрина мастера, онлайн-школа, маркетплейс и сервис записи."
+    },
+    "en": {
+      "title": "Our Work — Websites by MicroStudio",
+      "description": "Websites and web services built by MicroStudio: a repair centre and electronics store, a maker shop, an online school, a marketplace and a booking service."
+    }
+  },
+  "services": {
+    "ru": {
+      "title": "Услуги MicroStudio — разработка, дизайн и реклама",
+      "description": "Разработка сайтов и магазинов, UX/UI, настройка рекламы, техническая поддержка и развитие проектов."
+    },
+    "en": {
+      "title": "MicroStudio Services — Web Development and Design",
+      "description": "Company websites, online stores, UX/UI design, advertising setup, improvements and support."
+    }
+  },
+  "special": {
+    "ru": {
+      "title": "Одностраничный сайт за 1 500 сом — MicroStudio",
+      "description": "Специальное предложение MicroStudio: компактный одностраничный сайт для бизнеса за 1 500 сом. Условия и дополнительные услуги."
+    },
+    "en": {
+      "title": "One-Page Business Website for 1,500 KGS — MicroStudio",
+      "description": "MicroStudio special offer: a compact one-page business website for 1,500 KGS. View the scope and exclusions."
+    }
+  },
+  "contact": {
+    "ru": {
+      "title": "Обсудить проект — MicroStudio",
+      "description": "Расскажите о вашем сайте, магазине или рекламной задаче. Выберите услугу и подготовьте сообщение для MicroStudio."
+    },
+    "en": {
+      "title": "Discuss Your Project — MicroStudio",
+      "description": "Tell us about your website, store or advertising goals. Choose a service and prepare your message to MicroStudio."
+    }
+  },
+  "blog": {
+    "ru": {
+      "title": "Статьи о сайтах для бизнеса — MicroStudio",
+      "description": "Как выбрать формат сайта, подготовить материалы и соединить рекламу с удобным обращением клиента."
+    },
+    "en": {
+      "title": "Website and Digital Marketing Guides — MicroStudio",
+      "description": "Practical guides to choosing a website, preparing a brief and connecting your campaigns with an enquiry flow."
+    }
+  },
+  "about": {
+    "ru": {
+      "title": "О MicroStudio — подход к разработке сайтов",
+      "description": "MicroStudio: аккуратная разработка, дизайн и понятные цифровые решения для бизнеса. Узнайте, как строится работа."
+    },
+    "en": {
+      "title": "About MicroStudio — Our Approach to Web Design",
+      "description": "Discover MicroStudio’s approach to clear, responsive websites and practical digital experiences."
+    }
+  }
+}
