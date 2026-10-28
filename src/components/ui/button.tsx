@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-export type ButtonVariant = "primary" | "secondary" | "quiet" | "ghost";
+export type ButtonVariant = "primary" | "secondary" | "quiet" | "ghost" | "onLight";
 export type ButtonSize = "sm" | "md" | "lg";
 
 const base =
@@ -16,6 +16,8 @@ const variants: Record<ButtonVariant, string> = {
   // Quiet: filled neutral surface for tertiary actions inside cards.
   quiet: "bg-white/[0.06] text-text hover:bg-white/[0.11]",
   ghost: "text-text underline-offset-4 hover:text-lime hover:underline",
+  // Outlined button for light sections.
+  onLight: "border border-[#c9c8bf] bg-transparent text-[#14171a] hover:border-[#14171a] hover:bg-[#14171a]/[0.04]",
 };
 
 const sizes: Record<ButtonSize, string> = {

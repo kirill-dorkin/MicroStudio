@@ -12,6 +12,7 @@ import { href } from "./i18n";
  */
 export type ContactIntent =
   | { kind: "generic" }
+  | { kind: "audit" }
   | { kind: "special" }
   | { kind: "format"; id: "company" | "store" | "custom" }
   | { kind: "service"; slug: ServiceSlug }
@@ -31,6 +32,8 @@ export function intentMessage(locale: Locale, intent: ContactIntent) {
   const t = getDictionary(locale);
   const m = t.wa.messages;
   switch (intent.kind) {
+    case "audit":
+      return m.audit;
     case "special":
       return m.special;
     case "format":

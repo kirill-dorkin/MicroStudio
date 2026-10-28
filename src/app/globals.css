@@ -102,6 +102,20 @@
   .card { border: 1px solid var(--color-line); background: var(--color-elevated); border-radius: 20px; }
   .label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-subtle); }
 
+  /* Faint grid behind the hero, fading out towards the edges. */
+  .hero-grid {
+    background-image:
+      linear-gradient(to right, rgb(255 255 255 / 0.035) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(255 255 255 / 0.035) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse 70% 60% at 60% 35%, #000 30%, transparent 75%);
+  }
+  /* The main action breathes once in a while so the eye finds it first. */
+  .cta-glow { box-shadow: 0 10px 30px -10px rgb(199 246 108 / 0.6); }
+  @media (prefers-reduced-motion: no-preference) {
+    .cta-glow { animation: ms-glow 3.2s var(--ease-out-soft) 1.2s infinite; }
+  }
+
   .prose-ms { color: #d9dcd7; font-size: 1.0625rem; line-height: 1.75; max-width: 66ch; hyphens: auto; }
   @media (min-width: 768px) { .prose-ms { font-size: 1.125rem; } }
   .prose-ms > * + * { margin-top: 1.15em; }
@@ -122,6 +136,11 @@
   .no-scrollbar { scrollbar-width: none; }
   .no-scrollbar::-webkit-scrollbar { display: none; }
   .text-balance { text-wrap: balance; }
+}
+
+@keyframes ms-glow {
+  0%, 100% { box-shadow: 0 10px 30px -10px rgb(199 246 108 / 0.55); }
+  50% { box-shadow: 0 10px 44px -6px rgb(199 246 108 / 0.85); }
 }
 
 @keyframes ms-fade-up {

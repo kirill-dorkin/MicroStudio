@@ -28,6 +28,7 @@ export function CtaBand({
   location,
   intent = { kind: "generic" },
   ctaId,
+  label,
 }: {
   locale: Locale;
   title?: string;
@@ -36,6 +37,8 @@ export function CtaBand({
   intent?: ContactIntent;
   /** Id of the actions block, e.g. for a sticky CTA to watch. */
   ctaId?: string;
+  /** Main button text; defaults to the generic WhatsApp label. */
+  label?: string;
 }) {
   const t = getDictionary(locale);
   return (
@@ -49,7 +52,7 @@ export function CtaBand({
             <p className="lead mt-4">{body ?? t.finalCta.copy}</p>
           </div>
           <div id={ctaId} className="mt-8 flex flex-col gap-3 lg:mt-0">
-            <WhatsappCta locale={locale} intent={intent} location={location} size="lg" className="w-full" label={intent.kind === "special" ? t.specialPage.cta : undefined} />
+            <WhatsappCta locale={locale} intent={intent} location={location} size="lg" className="w-full" label={label ?? (intent.kind === "special" ? t.specialPage.cta : undefined)} />
             <div className="mt-1 grid grid-cols-1 gap-3 xs:grid-cols-2">
               <Link href={briefHref(locale, intent)} className={buttonClass("secondary", "w-full", "sm")}>
                 {t.finalCta.briefShort}

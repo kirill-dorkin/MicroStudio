@@ -116,13 +116,13 @@ test("36. reduced motion removes transitions and smooth scrolling", async ({ bro
   await context.close();
 });
 
-test("hero: full-cycle offer, two actions, real screenshots and a secondary promo", async ({ page }) => {
+test("hero: free-review offer, two actions, real screenshots and the fixed-price fact", async ({ page }) => {
   await page.goto("/ru");
   const hero = page.locator("section[aria-labelledby='hero-title']");
-  await expect(hero.getByRole("heading", { level: 1 })).toHaveText("Создаём сайты. Помогаем бизнесу расти.");
-  const wa = hero.getByRole("link", { name: /Обсудить проект/ });
-  expect(new URL((await wa.getAttribute("href"))!).searchParams.get("text")).toBe("Здравствуйте! Хочу обсудить проект для моего бизнеса.");
-  await expect(hero.getByRole("link", { name: /Смотреть проекты/ })).toHaveAttribute("href", "/ru/work");
+  await expect(hero.getByRole("heading", { level: 1 })).toHaveText("Сайты, после которых вам пишут клиенты");
+  const wa = hero.getByRole("link", { name: /Получить бесплатный разбор/ });
+  expect(new URL((await wa.getAttribute("href"))!).searchParams.get("text")).toBe("Здравствуйте! Хочу бесплатный разбор сайта.");
+  await expect(hero.getByRole("link", { name: /Смотреть работы/ })).toHaveAttribute("href", "#work");
   // The hero shows real screenshots that link to published case pages.
   const caseLinks = await hero.locator('a[href^="/ru/work/"]').evaluateAll((as) => as.map((a) => a.getAttribute("href")));
   expect(caseLinks.length).toBeGreaterThan(0);
@@ -130,9 +130,23 @@ test("hero: full-cycle offer, two actions, real screenshots and a secondary prom
   await expect(hero.getByRole("link", { name: /1\s500 сом/ })).toHaveAttribute("href", "/ru/special");
 });
 
-test("home lists six full-cycle services", async ({ page }) => {
+test("home shows four formats with one fixed-price entry offer", async ({ page }) => {
   await page.goto("/ru");
-  await expect(page.locator("section[aria-labelledby='services-title'] li")).toHaveCount(6);
+  const formats = page.locator("#formats > div > ul > li");
+  await expect(formats).toHaveCount(4);
+  await expect(formats.first()).toContainText("1 500 сом");
+});
+
+test("site self-check puts the missing items and the site into the WhatsApp message", async ({ page }) => {
+  await page.goto("/ru");
+  const check = page.locator("#check");
+  await check.locator("ul label").nth(0).click();
+  await check.getByLabel(/Адрес сайта или Instagram/).fill("mysite.kg");
+  const text = new URL((await check.locator('a[href*="wa.me"]').getAttribute("href"))!).searchParams.get("text")!;
+  expect(text).toContain("Хочу бесплатный разбор сайта");
+  expect(text).toContain("Сайт: mysite.kg");
+  expect(text).toContain("— Кнопка связи видна без прокрутки");
+  expect(text).not.toContain("— С первого экрана понятно");
 });
 
 test("fixed header does not cover anchored headings", async ({ page }) => {
