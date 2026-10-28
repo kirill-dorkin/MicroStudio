@@ -6,8 +6,8 @@ test.describe("routing and locales", () => {
     await page.goto("/ru");
     await expect(page).toHaveTitle(/MicroStudio/);
     await expect(page.locator("html")).toHaveAttribute("lang", "ru");
-    await expect(page.getByRole("heading", { level: 1 })).toHaveText("Создаём сайты. Помогаем бизнесу расти.");
-    const cta = page.locator("main").getByRole("link", { name: /Обсудить проект/ }).first();
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText("Сайты, после которых вам пишут клиенты");
+    const cta = page.locator("main").getByRole("link", { name: /Получить бесплатный разбор/ }).first();
     await expect(cta).toBeInViewport();
     await expect(cta).toHaveAttribute("href", /^https:\/\/wa\.me\/996700779919\?text=/);
   });
@@ -15,7 +15,7 @@ test.describe("routing and locales", () => {
   test("2. EN home loads in English", async ({ page }) => {
     await page.goto("/en");
     await expect(page.locator("html")).toHaveAttribute("lang", "en");
-    await expect(page.getByRole("heading", { level: 1 })).toHaveText("We build websites. We help businesses grow.");
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText("Websites that make customers message you");
   });
 
   test("3. root redirects to /ru", async ({ page }) => {
